@@ -61,7 +61,7 @@ Upstream commit: `ebc32b20c2016282976d2375af5821b530fa66bf`. Branch: `hackathon/
 | `GET /health` | `{"status":"ok"}` |
 | Research without a key | run stored as `failed / missing_key` with a readable message; API stays up |
 | Research with a mocked provider (tests) | completed; stored in DuckDB; shown in the feed |
-| **Live Context.dev run** | **NOT YET VERIFIED: needs `CONTEXT_DEV_API_KEY`** |
+| Live Context.dev run | Verified: narrow query completed (1 finding, 2 sources); full EV objective completed at a 300 s deadline (4 provider-cited findings, 4 reachable pib.gov.in sources). The 180 s default returned partial. |
 
 ## Commands
 
@@ -103,5 +103,5 @@ To capture a live run for the offline/static build, stop the API and run `uv run
 
 ## Remaining work
 
-- Run one live research with a real key, then confirm the sources and findings.
+- Live research verified. Use COMPETE_RESEARCH_TIMEOUT=300 for broad objectives.
 - Optionally run `export_static_data.py` so the static build carries the live snapshot.
