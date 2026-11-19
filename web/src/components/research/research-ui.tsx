@@ -82,12 +82,12 @@ export function KindBadge({ kind, flags }: { kind: ResearchFinding["kind"]; flag
   if (kind === "verified_fact")
     return (
       <Badge variant="outline" className="border-emerald-500/40 text-emerald-700 dark:text-emerald-400">
-        <ShieldCheck className="h-3 w-3" /> Sourced fact
+        <ShieldCheck className="h-3 w-3" /> Provider-cited fact
       </Badge>
     );
-  const unverified = flags.includes("unverified_citation");
+  const unverified = flags.includes("unverified_citation") || flags.includes("dead_citation");
   return (
-    <Badge variant="outline" className="text-muted-foreground" title={unverified ? "Provider labelled this a fact, but its citation was not among the returned sources" : undefined}>
+    <Badge variant="outline" className="text-muted-foreground" title={unverified ? "The provider labelled this a fact, but its cited link was missing or unreachable" : undefined}>
       Analysis{unverified ? " · citation unverified" : ""}
     </Badge>
   );

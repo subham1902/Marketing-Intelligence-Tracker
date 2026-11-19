@@ -128,8 +128,15 @@ class NormalizedResult:
 def build_task(req: ResearchRequest) -> str:
     window = TIME_WINDOWS.get(req.time_window, "the last six months")
     prefs = [SOURCE_PREFERENCES[p] for p in req.source_preferences if p in SOURCE_PREFERENCES]
+    rules = (
+        "Rules: only report developments supported by sources you read; put the supporting URLs in "
+        "each finding's source_urls; mark kind=verified_fact only for facts stated in a source, "
+        "kind=analysis for your inferences; never invent dates, figures or quotes; leave unknown "
+        "fields empty. significance is 1-5, confidence 0-1."
+    )
     lines = [
-        f"Research objective: {req.objective.strip()}",
+        rules,
+        f"Research objective: {req.objective.strip()[:1200]}",
         f"Geography: {req.geography}. Time window: {window} (relative to {datetime.now(UTC):%B %Y}).",
     ]
     if req.industry:
@@ -138,12 +145,6 @@ def build_task(req: ResearchRequest) -> str:
         lines.append("Companies of interest: " + ", ".join(req.companies[:12]) + ".")
     if prefs:
         lines.append("Prioritize: " + "; ".join(prefs) + ".")
-    lines.append(
-        "Rules: only report developments supported by sources you read; put the supporting URLs in "
-        "each finding's source_urls; mark kind=verified_fact only for facts stated in a source, "
-        "kind=analysis for your inferences; never invent dates, figures or quotes; leave unknown "
-        "fields empty. significance is 1-5, confidence 0-1."
-    )
     return "\n".join(lines)[:2000]
 
 
@@ -173,9 +174,18 @@ def classify_source(url: str, company_domains: set[str] | None = None) -> str:
     return "web"
 
 
+def _item_text(x: Any) -> str:
+    if isinstance(x, (str, int, float)):
+        return str(x).strip()
+    if isinstance(x, dict):  # tolerate object-shaped items: join their scalar values
+        vals = [str(v).strip() for v in x.values() if isinstance(v, (str, int, float))]
+        return " - ".join(v for v in vals if v)
+    return ""
+
+
 def _str_list(v: Any) -> list[str]:
     if isinstance(v, list):
-        return [str(x).strip() for x in v if isinstance(x, (str, int, float)) and str(x).strip()]
+        return [t for t in (_item_text(x) for x in v) if t]
     if isinstance(v, str) and v.strip():
         return [v.strip()]
     return []
@@ -238,9 +248,11 @@ def normalize(
     company_domains: set[str] | None = None,
     partial: bool = False,
     request_id: str | None = None,
+    link_status: dict[str, str] | None = None,
 ) -> NormalizedResult:
     now = datetime.now(UTC)
     search_meta = search_meta or {}
+    link_status = link_status or {}
 
     # ---- sources: provider-returned URLs only, deduped ----
     sources: list[dict[str, Any]] = []
@@ -263,6 +275,7 @@ def normalize(
                 "published_at": None,  # not provided by the provider API
                 "retrieved_at": now,
                 "snippet": meta.get("snippet"),
+                "link_status": link_status.get(key, "unchecked"),
             }
         )
 
@@ -285,6 +298,13 @@ def normalize(
         if kind == "verified_fact" and not matched:
             kind = "analysis"
             flags.append("unverified_citation")
+        # Context.dev appends URLs cited in json_content to `sources`, so presence
+        # alone is not proof. If every cited link is unreachable (404/410/DNS),
+        # treat the citation as likely fabricated.
+        live = [_norm_url(u) for u in cited if _norm_url(u) in seen]
+        if live and all(link_status.get(k) == "dead" for k in live):
+            kind = "analysis"
+            flags.append("dead_citation")
         if not cited:
             flags.append("no_citation")
         findings.append(
@@ -312,9 +332,10 @@ def normalize(
     }
     for key in REPORT_SECTIONS:
         val = content.get(key)
-        report[key] = str(val).strip() if key == "industry_overview" and isinstance(val, str) else _str_list(val)
-    if report.get("industry_overview") == []:
-        report["industry_overview"] = None
+        if key == "industry_overview":
+            report[key] = " ".join(_str_list(val)) or None
+        else:
+            report[key] = _str_list(val)
     return NormalizedResult(report, sources, findings, partial, request_id)
 
 
@@ -326,12 +347,45 @@ def _search_query(req: ResearchRequest) -> str:
     return q[:400]
 
 
+def check_links(urls: list[str], *, timeout: float = 8.0, max_urls: int = 40) -> dict[str, str]:
+    """Best-effort reachability: ok | dead (404/410/DNS/connect) | unknown (403/429/5xx/timeout)."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    import httpx
+
+    def one(url: str) -> tuple[str, str]:
+        try:
+            with httpx.Client(
+                timeout=timeout,
+                follow_redirects=True,
+                headers={"User-Agent": "Mozilla/5.0 (market-intel link check)"},
+            ) as c:
+                r = c.get(url)
+            if r.status_code < 400:
+                return url, "ok"
+            if r.status_code in (404, 410):
+                return url, "dead"
+            return url, "unknown"
+        except httpx.ConnectError:
+            return url, "dead"
+        except Exception:
+            return url, "unknown"
+
+    unique = list(dict.fromkeys(urls))[:max_urls]
+    if not unique:
+        return {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        results = dict(pool.map(one, unique))
+    return {_norm_url(u): st for u, st in results.items()}
+
+
 def run_research(
     run_id: str,
     req: ResearchRequest,
     provider: ResearchProvider,
     *,
     company_domains: set[str] | None = None,
+    link_checker: Any = None,
 ) -> NormalizedResult:
     """Call the provider and return a validated, normalized result.
 
@@ -359,10 +413,16 @@ def run_research(
     except ProviderError:
         pass
 
+    try:
+        link_status = (link_checker or check_links)(ans.sources)
+    except Exception:
+        link_status = {}
+
     return normalize(
         run_id,
         ans.json_content,
         ans.sources,
+        link_status=link_status,
         industry=req.industry,
         search_meta=search_meta,
         company_domains=company_domains,

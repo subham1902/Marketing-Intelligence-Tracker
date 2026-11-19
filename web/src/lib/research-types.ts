@@ -87,6 +87,7 @@ export interface ResearchSource {
   published_at: string | null;
   retrieved_at: string | null;
   snippet: string | null;
+  link_status?: string | null;
 }
 
 export interface ResearchFinding {

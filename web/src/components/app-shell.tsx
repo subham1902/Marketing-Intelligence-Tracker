@@ -5,7 +5,6 @@ import {
   FlaskConical,
   Newspaper,
   GitCompareArrows,
-  Home,
   LayoutDashboard,
   Menu,
   FileText,
@@ -101,12 +100,6 @@ export function AppShell({ children }: { children: ReactNode }) {
           <NavLinks pathname={pathname} />
         </div>
         <div className="px-1">
-          <Link
-            href="/"
-            className="mb-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Home className="h-3.5 w-3.5" /> Back to site
-          </Link>
           <p className="px-2 text-xs text-muted-foreground">
             Market Intelligence Tracker
             <br />

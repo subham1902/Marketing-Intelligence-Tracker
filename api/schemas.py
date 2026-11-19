@@ -230,6 +230,7 @@ class ResearchSource(BaseModel):
     published_at: datetime | None = None
     retrieved_at: datetime | None = None
     snippet: str | None = None
+    link_status: str | None = None
 
 
 class ResearchFinding(BaseModel):

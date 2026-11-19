@@ -38,7 +38,11 @@ ANSWER = {
             },
         ],
     },
-    "sources": ["https://acme.in/news/plant", "https://pib.gov.in/release?id=1"],
+    "sources": [
+        "https://acme.in/news/plant",
+        "https://pib.gov.in/release?id=1",
+        "https://nowhere.example/x",
+    ],
 }
 
 SEARCH = {
@@ -84,8 +88,15 @@ def test_build_task_contains_context() -> None:
 
 
 def test_run_research_validates_citations() -> None:
-    res = run_research("r1", REQ, _provider(), company_domains={"acme.in"})
-    assert len(res.sources) == 2
+    status = {
+        "acme.in/news/plant": "ok",
+        "pib.gov.in/release?id=1": "unknown",
+        "nowhere.example/x": "dead",
+    }
+    res = run_research(
+        "r1", REQ, _provider(), company_domains={"acme.in"}, link_checker=lambda urls: status
+    )
+    assert len(res.sources) == 3
     by_domain = {s["domain"]: s for s in res.sources}
     assert by_domain["pib.gov.in"]["source_type"] == "government"
     assert by_domain["pib.gov.in"]["title"] == "PIB release"  # from Search, exact URL
@@ -96,7 +107,7 @@ def test_run_research_validates_citations() -> None:
     assert good["kind"] == "verified_fact" and good["source_ids"]
     assert good["category"] == "expansion"
     assert good["significance"] == 5 and good["confidence"] == 0.85
-    assert bad["kind"] == "analysis" and "unverified_citation" in bad["flags"]
+    assert bad["kind"] == "analysis" and "dead_citation" in bad["flags"]
     assert res.report["executive_summary"] == "EV adoption is rising."
 
 
@@ -145,6 +156,9 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     from api.routers import research
 
     monkeypatch.setattr(research, "provider_factory", lambda: _provider())
+    import pipeline.research.service as svc
+
+    monkeypatch.setattr(svc, "check_links", lambda urls: {})
     with TestClient(app) as c:
         yield c
     get_settings.cache_clear()
@@ -157,9 +171,9 @@ def test_research_end_to_end(client) -> None:
     # TestClient runs background tasks before returning.
     run = client.get(f"/research/{run_id}").json()
     assert run["status"] == "completed", run
-    assert run["source_count"] == 2 and run["finding_count"] == 2
+    assert run["source_count"] == 3 and run["finding_count"] == 2
     assert run["result"]["executive_summary"]
-    assert len(client.get(f"/research/{run_id}/sources").json()) == 2
+    assert len(client.get(f"/research/{run_id}/sources").json()) == 3
     assert len(client.get(f"/research/{run_id}/findings").json()) == 2
     assert client.get("/research").json()[0]["id"] == run_id
     feed = client.get("/findings?category=expansion").json()
@@ -183,3 +197,22 @@ def test_research_without_key_fails_cleanly(client, monkeypatch) -> None:
     assert r.status_code == 202
     assert r.json()["status"] == "failed" and r.json()["error_code"] == "missing_key"
     assert client.get("/research/config").json()["live_available"] is False
+
+
+def test_build_task_keeps_rules_with_long_objective() -> None:
+    req = ResearchRequest(
+        objective="x" * 1200,
+        industry="EV",
+        companies=["A"] * 12,
+        source_preferences=["official_company", "government", "tenders", "regulatory", "news", "industry"],
+    )
+    t = build_task(req)
+    assert len(t) <= 2000 and t.startswith("Rules:")
+
+
+def test_normalize_list_overview_and_object_items() -> None:
+    res = normalize(
+        "r", {"industry_overview": ["a", "b"], "risks": [{"risk": "Cell imports"}]}, [], industry=None
+    )
+    assert res.report["industry_overview"] == "a b"
+    assert res.report["risks"] == ["Cell imports"]

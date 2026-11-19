@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS research.research_sources (
     source_type     VARCHAR,
     published_at    TIMESTAMPTZ,
     retrieved_at    TIMESTAMPTZ,
-    snippet         VARCHAR
+    snippet         VARCHAR,
+    link_status     VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS research.research_findings (
@@ -71,6 +72,7 @@ CREATE TABLE IF NOT EXISTS research.research_findings (
 
 def bootstrap(db: ApiDB) -> None:
     db.execute(RESEARCH_SCHEMA_SQL)
+    db.execute("ALTER TABLE research.research_sources ADD COLUMN IF NOT EXISTS link_status VARCHAR")
     # A restart mid-run would leave a spinner forever; be honest instead.
     db.execute(
         """UPDATE research.research_runs
@@ -150,10 +152,11 @@ def complete_run(
     for s in sources:
         db.execute(
             """INSERT INTO research.research_sources
-               (id, research_run_id, url, domain, title, source_type, published_at, retrieved_at, snippet)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+               (id, research_run_id, url, domain, title, source_type, published_at, retrieved_at,
+                snippet, link_status)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             [s["id"], run_id, s["url"], s.get("domain"), s.get("title"), s.get("source_type"),
-             s.get("published_at"), s.get("retrieved_at"), s.get("snippet")],
+             s.get("published_at"), s.get("retrieved_at"), s.get("snippet"), s.get("link_status")],
         )
     for f in findings:
         db.execute(
@@ -207,7 +210,8 @@ def get_run(db: ApiDB, run_id: str) -> dict[str, Any] | None:
 
 def list_sources(db: ApiDB, run_id: str) -> list[dict[str, Any]]:
     return db.query(
-        """SELECT id, research_run_id, url, domain, title, source_type, published_at, retrieved_at, snippet
+        """SELECT id, research_run_id, url, domain, title, source_type, published_at, retrieved_at,
+                  snippet, link_status
            FROM research.research_sources WHERE research_run_id=? ORDER BY source_type, domain""",
         [run_id],
     )

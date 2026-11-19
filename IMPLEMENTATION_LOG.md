@@ -20,7 +20,9 @@ Upstream commit: `ebc32b20c2016282976d2375af5821b530fa66bf`. Branch: `hackathon/
   - Integrity rules:
     - Source URLs come only from the provider. Titles and snippets come only from Search, matched by exact URL.
     - Publication dates are left null because the provider does not return them.
-    - A finding counts as a `verified_fact` only when one of its cited URLs appears in the returned `sources`. Otherwise it is downgraded to `analysis` and flagged `unverified_citation`.
+    - The fact / analysis label comes from the provider, so it is shown as "Provider-cited fact", not as independently verified. Context.dev appends every URL cited in its answer to `sources`, so a URL being in `sources` proves nothing on its own.
+    - Each returned URL gets a reachability check (8 s timeout, redirects followed): `ok`, `dead` (404, 410 or connection/DNS failure) or `unknown` (403, 429, 5xx or timeout; government sites often block bots).
+    - A "fact" whose cited links are all `dead` is downgraded to analysis and flagged `dead_citation`. A "fact" with no cited source is downgraded and flagged `unverified_citation`.
 - **DuckDB.** A new `research` schema holds `research_runs`, `research_sources` and `research_findings`.
   - It is kept separate from `raw.signals`.
   - It is created at API startup, so existing warehouses pick it up without reseeding.
@@ -47,13 +49,13 @@ Upstream commit: `ebc32b20c2016282976d2375af5821b530fa66bf`. Branch: `hackathon/
   - A demo research snapshot (`is_demo`) is shown with a "Demo snapshot" badge. Its findings are all analysis, never facts.
   - The pricing mart now parses ₹/INR.
   - The static export now includes research data.
-- **Tests.** 12 new tests in `tests/test_research.py`. The provider is mocked with `httpx.MockTransport`, so they need no network and use no credits.
+- **Tests.** 14 new tests in `tests/test_research.py`. The provider is mocked with `httpx.MockTransport`, so they need no network and use no credits.
 
 ## Quality gates (latest run)
 
 | Gate | Result |
 |---|---|
-| `uv run pytest` | 53 passed |
+| `uv run pytest` | 55 passed |
 | `npx tsc --noEmit` (web) | clean |
 | `next build` | success; all routes prerender, including `/research`, `/research/view` and `/feed` |
 | `GET /health` | `{"status":"ok"}` |
@@ -76,6 +78,19 @@ npm run dev                    # http://localhost:3000/dashboard
 ```
 
 To capture a live run for the offline/static build, stop the API and run `uv run python scripts/export_static_data.py`.
+
+## Recommended demo sequence (about 5 minutes)
+
+1. **Overview** (`/dashboard`): companies tracked, important developments, recent research runs. Point out the "Demo snapshot" badges.
+2. **Companies**: open Ather Energy to show tracked URLs, change signals, the INR pricing chart and hiring. All of these are labelled `[Sample]`.
+3. **Research**: the example EV objective is prefilled. Set the time window to 6 months, keep Company announcements, Government and Tenders selected, then click **Run research**.
+4. The report page shows **Queued**, then **Researching**. It polls the real backend status every 3 s; a run takes about 30-180 s.
+5. **Report** tab: executive summary, overview, then sections covering trends, launches, manufacturing, partnerships, policy, tenders, opportunities and risks.
+6. **Findings** tab: category, provider-cited fact vs analysis, significance, confidence and clickable source domains.
+7. **Sources** tab: domain, type (government, tender, company, news, web), link-check status and **Open source**.
+8. **Feed**: filter by Policy or Tender, and toggle "Include demo snapshot" off so only live findings remain.
+9. Revisit the run from the Research list. It loads from DuckDB without another API call.
+10. Failure handling: show a failed run (for example, without a key the run is stored as `missing_key` with a readable error).
 
 ## Known limitations
 

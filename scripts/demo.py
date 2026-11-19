@@ -50,7 +50,11 @@ def main() -> None:
         [sys.executable, "-m", "uvicorn", "api.main:app", "--port", "8000"], cwd=REPO
     )
     time.sleep(2)
-    web = subprocess.Popen([NPM, "run", "dev"], cwd=WEB)
+    # Talk to the live API (overrides web/.env.development static mode).
+    import os
+
+    web_env = {**os.environ, "NEXT_PUBLIC_STATIC_DATA": "0"}
+    web = subprocess.Popen([NPM, "run", "dev"], cwd=WEB, env=web_env)
 
     try:
         web.wait()

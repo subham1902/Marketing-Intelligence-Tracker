@@ -47,7 +47,7 @@ export default function FeedPage() {
             Facts & analysis
           </button>
           <button className={chip(kind === "verified_fact")} onClick={() => setKind("verified_fact")}>
-            Sourced facts only
+            Provider-cited facts only
           </button>
           <button className={chip(kind === "analysis")} onClick={() => setKind("analysis")}>
             Analysis only

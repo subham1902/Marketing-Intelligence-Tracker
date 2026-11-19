@@ -196,6 +196,12 @@ function ReportView() {
                             <div className="flex flex-wrap items-center gap-2">
                               <Badge variant="secondary" className="capitalize">{s.source_type ?? "web"}</Badge>
                               <span className="text-sm font-medium">{s.domain}</span>
+                              {s.link_status === "dead" && (
+                                <Badge variant="outline" className="border-destructive/40 text-destructive">Link unreachable</Badge>
+                              )}
+                              {s.link_status === "ok" && (
+                                <Badge variant="outline" className="text-muted-foreground">Link checked</Badge>
+                              )}
                             </div>
                             {s.title && <p className="mt-1 text-sm">{s.title}</p>}
                             <p className="mt-0.5 break-all text-xs text-muted-foreground">{s.url}</p>
