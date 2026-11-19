@@ -276,3 +276,19 @@ def test_sebi_is_regulatory_not_government() -> None:
     assert classify_source("https://www.sebi.gov.in/filings/x.html") == "regulatory"
     assert classify_source("https://pib.gov.in/PressRelease.aspx") == "government"
     assert classify_source("https://gem.gov.in/bid/1") == "tender"
+
+
+def test_outside_window_is_flagged_not_hidden() -> None:
+    from datetime import date
+
+    content = {
+        "findings": [
+            {"title": "Old", "date": "2022-07-28", "source_urls": []},
+            {"title": "Recent", "date": "2026-10-01", "source_urls": []},
+            {"title": "Month only", "date": "2026-05", "source_urls": []},
+            {"title": "Undated", "source_urls": []},
+        ]
+    }
+    res = normalize("r", content, [], industry=None, window_start=date(2026, 5, 22))
+    flagged = {f["title"]: "outside_window" in f["flags"] for f in res.findings}
+    assert flagged == {"Old": True, "Recent": False, "Month only": False, "Undated": False}

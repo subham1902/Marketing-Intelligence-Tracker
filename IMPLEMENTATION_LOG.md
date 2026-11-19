@@ -112,3 +112,9 @@ To capture a live run for the offline/static build, stop the API and run `uv run
 - **Link check fix** (`pipeline/research/service.py`): TLS/certificate failures were raised by httpcore as `ConnectError` and so classified `dead`, which downgraded real citations to analysis with `dead_citation`. TLS failures are now `unknown`; only genuine DNS/connection failures are `dead`.
 - **Source type fix**: `sebi.gov.in` was classified `government` because the `.gov.in` rule ran first. Regulators are now checked before the generic government rule.
 - 3 new tests in `tests/test_research.py`. `uv run pytest`: 59 passed (also re-run on Windows; `tsc --noEmit` clean and `npm run build` succeeds).
+
+## Display fixes (20 Nov 2026)
+
+- Pricing chart used a hardcoded USD formatter; it now uses the currency carried by the data (INR shows as ₹ with Indian digit grouping, e.g. ₹1,20,000).
+- Company page breadcrumb renamed from "Competitors" to "Companies".
+- Findings dated before the run's time window are flagged `outside_window` and shown with an "Outside time window" badge. They are flagged, not hidden. Stored runs are backfilled at API startup. 1 new test; `uv run pytest`: 60 passed; `tsc` clean; `npm run build` succeeds.

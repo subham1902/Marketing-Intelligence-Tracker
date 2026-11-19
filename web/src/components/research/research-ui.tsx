@@ -109,6 +109,11 @@ export function FindingCard({
       <div className="flex flex-wrap items-center gap-2">
         <CategoryBadge category={finding.category} />
         <KindBadge kind={finding.kind} flags={finding.flags} />
+        {finding.flags.includes("outside_window") && (
+          <Badge variant="outline" className="border-amber-500/40 text-amber-700 dark:text-amber-400" title="Dated before the run's time window; shown as background context">
+            Outside time window
+          </Badge>
+        )}
         {showRun && feed.is_demo && <DataOriginBadge isDemo />}
         {finding.entity && <span className="text-sm font-medium">{finding.entity}</span>}
         <span className="ml-auto flex items-center gap-2">

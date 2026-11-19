@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS research.research_findings (
 def bootstrap(db: ApiDB) -> None:
     db.execute(RESEARCH_SCHEMA_SQL)
     db.execute("ALTER TABLE research.research_sources ADD COLUMN IF NOT EXISTS link_status VARCHAR")
+    _backfill_outside_window(db)
     # A restart mid-run would leave a spinner forever; be honest instead.
     db.execute(
         """UPDATE research.research_runs
@@ -81,6 +82,25 @@ def bootstrap(db: ApiDB) -> None:
                completed_at=now()
            WHERE status IN ('queued','running')"""
     )
+
+
+def _backfill_outside_window(db: ApiDB) -> None:
+    """Flag stored findings dated before their run's window (runs saved before this check existed)."""
+    from pipeline.research.service import _parse_event_date
+
+    rows = db.query(
+        """SELECT f.id, f.event_date, f.flags, r.date_from FROM research.research_findings f
+           JOIN research.research_runs r ON r.id = f.research_run_id
+           WHERE f.event_date IS NOT NULL AND r.date_from IS NOT NULL"""
+    )
+    for r in rows:
+        flags = _json(r["flags"]) or []
+        parsed = _parse_event_date(r["event_date"])
+        if parsed and parsed < r["date_from"] and "outside_window" not in flags:
+            db.execute(
+                "UPDATE research.research_findings SET flags=? WHERE id=?",
+                [json.dumps([*flags, "outside_window"]), r["id"]],
+            )
 
 
 def _json(v: Any) -> Any:

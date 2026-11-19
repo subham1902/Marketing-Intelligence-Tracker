@@ -15,7 +15,8 @@ from __future__ import annotations
 
 import hashlib
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+import re
+from datetime import UTC, date, datetime, timedelta
 from typing import Any
 from urllib.parse import urlparse
 
@@ -69,6 +70,28 @@ _NEWS_DOMAINS = (
     "timesofindia", "hindustantimes", "ndtv", "cnbctv18", "techcrunch", "inc42",
     "yourstory", "evreporter", "rushlane", "thehindubusinessline", "indianexpress",
 )
+
+WINDOW_DAYS = {"1m": 30, "3m": 91, "6m": 182, "12m": 365}
+
+
+def _parse_event_date(s: str | None) -> date | None:
+    """Parse YYYY-MM-DD, YYYY-MM or YYYY (end of period, so partial dates are not over-flagged)."""
+    if not s:
+        return None
+    m = re.match(r"^(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?", s.strip())
+    if not m:
+        return None
+    y, mo, d = int(m.group(1)), m.group(2), m.group(3)
+    try:
+        if d:
+            return date(y, int(mo), int(d))
+        if mo:
+            mo_i = int(mo)
+            return (date(y + (mo_i == 12), mo_i % 12 + 1, 1) - timedelta(days=1))
+        return date(y, 12, 31)
+    except ValueError:
+        return None
+
 
 TIME_WINDOWS = {
     "1m": "the last month",
@@ -250,6 +273,7 @@ def normalize(
     partial: bool = False,
     request_id: str | None = None,
     link_status: dict[str, str] | None = None,
+    window_start: date | None = None,
 ) -> NormalizedResult:
     now = datetime.now(UTC)
     search_meta = search_meta or {}
@@ -308,6 +332,11 @@ def normalize(
             flags.append("dead_citation")
         if not cited:
             flags.append("no_citation")
+        # The provider may return older background events; flag (don't hide) them.
+        event_date = str(f.get("date") or "").strip() or None
+        parsed = _parse_event_date(event_date)
+        if window_start and parsed and parsed < window_start:
+            flags.append("outside_window")
         findings.append(
             {
                 "id": _hid(run_id, str(i), title),
@@ -441,6 +470,7 @@ def run_research(
         ans.json_content,
         ans.sources,
         link_status=link_status,
+        window_start=(datetime.now(UTC) - timedelta(days=WINDOW_DAYS.get(req.time_window, 182))).date(),
         industry=req.industry,
         search_meta=search_meta,
         company_domains=company_domains,

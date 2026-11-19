@@ -14,9 +14,11 @@ export function initials(name: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-const CURRENCY: Record<string, string> = { USD: "$", EUR: "€", GBP: "£" };
+const CURRENCY: Record<string, string> = { USD: "$", EUR: "€", GBP: "£", INR: "₹" };
 
 export function formatPrice(price: number, currency?: string | null): string {
   const symbol = currency ? (CURRENCY[currency] ?? "") : "";
-  return `${symbol}${price % 1 === 0 ? price.toFixed(0) : price.toFixed(2)}`;
+  const locale = currency === "INR" ? "en-IN" : "en-US";
+  const digits = price % 1 === 0 ? 0 : 2;
+  return `${symbol}${price.toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
 }

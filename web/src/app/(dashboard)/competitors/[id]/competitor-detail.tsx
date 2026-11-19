@@ -33,6 +33,8 @@ export function CompetitorDetail({ id }: { id: string }) {
     row[p.plan] = p.price;
     pricingByDate.set(d, row);
   }
+  // Use the currency the data carries (seed and mart emit INR or USD), never a hardcoded one.
+  const pricingCurrency = (pricing.data ?? []).find((p) => p.currency)?.currency ?? null;
   const pricingData = Array.from(pricingByDate.values()).sort((a, b) =>
     String(a.date).localeCompare(String(b.date)),
   );
@@ -53,7 +55,7 @@ export function CompetitorDetail({ id }: { id: string }) {
         href="/competitors"
         className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> Competitors
+        <ArrowLeft className="h-4 w-4" /> Companies
       </Link>
 
       {/* Header */}
@@ -116,9 +118,9 @@ export function CompetitorDetail({ id }: { id: string }) {
                   index="date"
                   categories={plans}
                   colors={["lime", "emerald", "amber", "stone", "teal"]}
-                  valueFormatter={(v) => formatPrice(v, "USD")}
+                  valueFormatter={(v) => formatPrice(v, pricingCurrency)}
                   showAnimation
-                  yAxisWidth={44}
+                  yAxisWidth={pricingCurrency === "INR" ? 72 : 44}
                   className="h-60"
                   connectNulls
                 />
