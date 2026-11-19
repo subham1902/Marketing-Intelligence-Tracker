@@ -163,10 +163,11 @@ def classify_source(url: str, company_domains: set[str] | None = None) -> str:
     d = domain_of(url)
     if any(t in d for t in ("gem.gov.in", "eprocure", "tender")):
         return "tender"
-    if d.endswith(".gov.in") or d.endswith(".nic.in") or d == "gov.in":
-        return "government"
+    # Regulators before the generic .gov.in rule, or sebi.gov.in is never "regulatory".
     if any(t in d for t in ("sebi.gov", "bseindia", "nseindia")):
         return "regulatory"
+    if d.endswith(".gov.in") or d.endswith(".nic.in") or d == "gov.in":
+        return "government"
     if company_domains and any(d == cd or d.endswith("." + cd) for cd in company_domains):
         return "company"
     if any(n in d for n in _NEWS_DOMAINS):
@@ -347,6 +348,20 @@ def _search_query(req: ResearchRequest) -> str:
     return q[:400]
 
 
+def _is_tls_error(exc: BaseException) -> bool:
+    import ssl
+
+    seen: set[int] = set()
+    e: BaseException | None = exc
+    while e is not None and id(e) not in seen:
+        if isinstance(e, ssl.SSLError):
+            return True
+        seen.add(id(e))
+        e = e.__cause__ or e.__context__
+    msg = str(exc).upper()
+    return "SSL" in msg or "CERTIFICATE" in msg or "TLS" in msg
+
+
 def check_links(urls: list[str], *, timeout: float = 8.0, max_urls: int = 40) -> dict[str, str]:
     """Best-effort reachability: ok | dead (404/410/DNS/connect) | unknown (403/429/5xx/timeout)."""
     from concurrent.futures import ThreadPoolExecutor
@@ -366,8 +381,11 @@ def check_links(urls: list[str], *, timeout: float = 8.0, max_urls: int = 40) ->
             if r.status_code in (404, 410):
                 return url, "dead"
             return url, "unknown"
-        except httpx.ConnectError:
-            return url, "dead"
+        except httpx.ConnectError as exc:
+            # httpcore maps TLS handshake failures to ConnectError too. A bad
+            # certificate chain (common on Indian gov sites) is not evidence the
+            # page is gone, so only genuine DNS/connection failures count as dead.
+            return url, ("unknown" if _is_tls_error(exc) else "dead")
         except Exception:
             return url, "unknown"
 

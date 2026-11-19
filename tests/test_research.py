@@ -232,3 +232,47 @@ def test_normalize_list_overview_and_object_items() -> None:
     )
     assert res.report["industry_overview"] == "a b"
     assert res.report["risks"] == ["Cell imports"]
+
+
+# ---- link-check classification (release hardening) ----
+
+
+def _client_raising(monkeypatch, exc: Exception) -> None:
+    """Make check_links' httpx.Client raise ``exc`` on every request."""
+    real_client = httpx.Client
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise exc
+
+    def fake_client(*args, **kwargs):
+        kwargs["transport"] = httpx.MockTransport(handler)
+        return real_client(*args, **kwargs)
+
+    monkeypatch.setattr(httpx, "Client", fake_client)
+
+
+def test_tls_failure_is_unknown_not_dead(monkeypatch) -> None:
+    """Indian gov sites often have broken cert chains; that is not evidence the page is gone."""
+    import ssl
+
+    from pipeline.research.service import check_links
+
+    err = httpx.ConnectError("[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed")
+    err.__cause__ = ssl.SSLCertVerificationError(1, "certificate verify failed")
+    _client_raising(monkeypatch, err)
+    assert check_links(["https://pib.gov.in/x"]) == {"pib.gov.in/x": "unknown"}
+
+
+def test_dns_failure_is_dead(monkeypatch) -> None:
+    from pipeline.research.service import check_links
+
+    _client_raising(monkeypatch, httpx.ConnectError("[Errno -2] Name or service not known"))
+    assert check_links(["https://nope.example/x"]) == {"nope.example/x": "dead"}
+
+
+def test_sebi_is_regulatory_not_government() -> None:
+    from pipeline.research.service import classify_source
+
+    assert classify_source("https://www.sebi.gov.in/filings/x.html") == "regulatory"
+    assert classify_source("https://pib.gov.in/PressRelease.aspx") == "government"
+    assert classify_source("https://gem.gov.in/bid/1") == "tender"

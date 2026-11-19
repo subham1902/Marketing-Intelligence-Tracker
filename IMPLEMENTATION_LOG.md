@@ -105,3 +105,10 @@ To capture a live run for the offline/static build, stop the API and run `uv run
 
 - Live research verified. Use COMPETE_RESEARCH_TIMEOUT=300 for broad objectives.
 - Optionally run `export_static_data.py` so the static build carries the live snapshot.
+
+## Release hardening (20 Nov 2026)
+
+- Re-verified on HEAD `74a205f`: `uv run pytest` 56 passed (the log above predates the retry/backoff commit).
+- **Link check fix** (`pipeline/research/service.py`): TLS/certificate failures were raised by httpcore as `ConnectError` and so classified `dead`, which downgraded real citations to analysis with `dead_citation`. TLS failures are now `unknown`; only genuine DNS/connection failures are `dead`.
+- **Source type fix**: `sebi.gov.in` was classified `government` because the `.gov.in` rule ran first. Regulators are now checked before the generic government rule.
+- 3 new tests in `tests/test_research.py`. `uv run pytest`: 59 passed (also re-run on Windows; `tsc --noEmit` clean and `npm run build` succeeds).
