@@ -74,7 +74,23 @@ def _transport(answer_status: int = 200, answer_body: object = ANSWER) -> httpx.
 
 
 def _provider(**kw) -> ContextDevProvider:
-    return ContextDevProvider("test-key", transport=_transport(**kw))
+    prov = ContextDevProvider("test-key", transport=_transport(**kw))
+    prov._sleep = lambda s: None  # no real backoff in tests
+    return prov
+
+
+def test_retries_429_then_succeeds() -> None:
+    calls = {"n": 0}
+
+    def handler(req: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        if calls["n"] == 1:
+            return httpx.Response(429, headers={"Retry-After": "1"}, json={"message": "slow"})
+        return httpx.Response(200, json=ANSWER)
+
+    prov = ContextDevProvider("test-key", transport=httpx.MockTransport(handler))
+    prov._sleep = lambda s: None
+    assert prov.answer("t", {}).sources and calls["n"] == 2
 
 
 REQ = ResearchRequest(objective="Research Indian EV market", industry="EV", companies=["Acme"],

@@ -12,6 +12,7 @@ The API key is read server-side and is never logged or echoed.
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -109,15 +110,35 @@ class ContextDevProvider:
     def close(self) -> None:
         self._client.close()
 
+    # Bounded retries: 429 honours Retry-After; 408/5xx back off. 4xx validation errors never retry.
+    max_retries = 2
+    _sleep = staticmethod(time.sleep)
+
     def _post(self, path: str, body: dict[str, Any]) -> dict[str, Any]:
-        try:
-            res = self._client.post(path, json=body)
-        except httpx.TimeoutException as exc:
-            raise ProviderError("The research provider did not respond in time.", code="timeout") from exc
-        except httpx.HTTPError as exc:
-            raise ProviderError(
-                f"Could not reach the research provider ({type(exc).__name__}).", code="network"
-            ) from exc
+        attempt = 0
+        while True:
+            try:
+                res = self._client.post(path, json=body)
+            except httpx.TimeoutException as exc:
+                raise ProviderError(
+                    "The research provider did not respond in time.", code="timeout"
+                ) from exc
+            except httpx.HTTPError as exc:
+                raise ProviderError(
+                    f"Could not reach the research provider ({type(exc).__name__}).", code="network"
+                ) from exc
+            retryable = res.status_code in (408, 429) or res.status_code >= 500
+            if not retryable or attempt >= self.max_retries:
+                break
+            attempt += 1
+            delay = 2.0 * 2 ** (attempt - 1)
+            if res.status_code == 429:
+                try:
+                    delay = float(res.headers.get("Retry-After", delay))
+                except ValueError:
+                    pass
+            log.info("provider %s -> %s, retry %d in %.0fs", path, res.status_code, attempt, delay)
+            self._sleep(min(delay, 30.0))
 
         if res.status_code >= 400:
             code, msg = _STATUS_MESSAGES.get(
