@@ -433,11 +433,24 @@ def run_research(
     *,
     company_domains: set[str] | None = None,
     link_checker: Any = None,
+    status_cb: Any = None,
 ) -> NormalizedResult:
     """Call the provider and return a validated, normalized result.
 
     Raises ``ProviderError`` for user-explainable failures.
     """
+    # Whole-run providers (the free "open" provider) do discovery, fetching and
+    # synthesis themselves and already emit provenance-checked results.
+    if hasattr(provider, "research"):
+        res = provider.research(run_id, req, status_cb=status_cb)
+        ws = (datetime.now(UTC) - timedelta(days=WINDOW_DAYS.get(req.time_window, 182))).date()
+        for f in res.findings:
+            d = _parse_event_date(f.get("event_date"))
+            if d and d < ws and "outside_window" not in f["flags"]:
+                f["flags"].append("outside_window")
+        return res
+    if status_cb:
+        status_cb("Waiting for Context.dev answer")
     ans = provider.answer(build_task(req), JSON_FORMAT)
     if not ans.json_content and not ans.sources:
         raise ProviderError("The research provider returned an empty answer.", code="empty")

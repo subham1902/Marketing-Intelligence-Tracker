@@ -161,6 +161,7 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setenv("COMPETE_DUCKDB_PATH", str(tmp_path / "r.duckdb"))
     monkeypatch.setenv("COMPETE_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("CONTEXT_DEV_API_KEY", "test-key")
+    monkeypatch.setenv("COMPETE_RESEARCH_PROVIDER", "contextdev")
     from fastapi.testclient import TestClient
     from pipeline.config import get_settings
     from pipeline.storage.duckdb_store import Warehouse
@@ -171,7 +172,7 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     from api.main import app
     from api.routers import research
 
-    monkeypatch.setattr(research, "provider_factory", lambda: _provider())
+    monkeypatch.setattr(research, "provider_factory", lambda *a: _provider())
     import pipeline.research.service as svc
 
     monkeypatch.setattr(svc, "check_links", lambda urls: {})
@@ -200,7 +201,7 @@ def test_research_end_to_end(client) -> None:
 def test_research_provider_failure_marks_failed(client, monkeypatch) -> None:
     from api.routers import research
 
-    monkeypatch.setattr(research, "provider_factory", lambda: _provider(answer_status=402))
+    monkeypatch.setattr(research, "provider_factory", lambda *a: _provider(answer_status=402))
     run_id = client.post("/research", json={"objective": "Research Indian EV market"}).json()["id"]
     run = client.get(f"/research/{run_id}").json()
     assert run["status"] == "failed" and run["error_code"] == "credits_exhausted"

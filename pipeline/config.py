@@ -79,6 +79,11 @@ class Settings(BaseSettings):
     )
     context_dev_mode: str = Field(default="fast", alias="CONTEXT_DEV_MODE")
     research_timeout_seconds: int = Field(default=180, alias="COMPETE_RESEARCH_TIMEOUT")
+    # Research provider: "open" (free, keyless, default) | "contextdev" (paid, optional).
+    research_provider: str = Field(default="open", alias="COMPETE_RESEARCH_PROVIDER")
+    # Synthesis for the open provider: auto (Ollama if a >=7B model is installed) | extractive | ollama
+    research_synthesis: str = Field(default="auto", alias="COMPETE_RESEARCH_SYNTHESIS")
+    research_ollama_model: str | None = Field(default=None, alias="COMPETE_RESEARCH_OLLAMA_MODEL")
 
     # API
     api_host: str = Field(default="127.0.0.1", alias="COMPETE_API_HOST")

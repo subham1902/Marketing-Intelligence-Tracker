@@ -84,11 +84,14 @@ export default function ResearchPage() {
                 "Checking provider…"
               ) : live ? (
                 <span className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400">
-                  <Sparkles className="h-3.5 w-3.5" /> Live research via {config.data?.provider} ({config.data?.mode} mode)
+                  <Sparkles className="h-3.5 w-3.5" />{" "}
+                  {config.data?.provider === "open"
+                    ? `Free public sources (no key) · synthesis: ${config.data?.synthesis ?? "extractive"}`
+                    : `Live research via ${config.data?.provider} (${config.data?.mode} mode)`}
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-1.5 text-amber-700 dark:text-amber-400">
-                  <KeyRound className="h-3.5 w-3.5" /> Live research not configured. Set CONTEXT_DEV_API_KEY on the server. The demo snapshot below is still browsable.
+                  <KeyRound className="h-3.5 w-3.5" /> Live research not configured. Set COMPETE_RESEARCH_PROVIDER=open (free) or a CONTEXT_DEV_API_KEY on the server. The demo snapshot below is still browsable.
                 </span>
               )}
             </CardDescription>
@@ -176,7 +179,9 @@ export default function ResearchPage() {
                 {create.isPending ? "Submitting…" : "Run research"}
               </Button>
               <span className="text-xs text-muted-foreground">
-                One run uses ~12 provider credits (fast answer + source enrichment).
+                {config.data?.provider === "open"
+                  ? "Free: DuckDuckGo news, Google News, PIB and GDELT. No credits used."
+                  : "One run uses ~12 provider credits (fast answer + source enrichment)."}
               </span>
             </div>
           </CardContent>

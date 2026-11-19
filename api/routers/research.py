@@ -42,9 +42,32 @@ def _fresh_settings() -> Settings:
     return Settings()
 
 
-def provider_factory() -> ResearchProvider:
+def _provider_name(requested: str | None = None) -> str:
+    name = (requested or _fresh_settings().research_provider or "open").strip().lower()
+    return "contextdev" if name in ("contextdev", "context.dev", "context_dev") else "open"
+
+
+def _ollama_model(s: Settings) -> str | None:
+    if s.research_synthesis == "extractive":
+        return None
+    from pipeline.research.open_provider import detect_ollama_model
+
+    return detect_ollama_model(s.ollama_base_url, s.research_ollama_model)
+
+
+def provider_factory(name: str | None = None) -> ResearchProvider:
     """Build the configured provider. Overridden in tests."""
     s = _fresh_settings()
+    if _provider_name(name) == "open":
+        from pipeline.research.open_provider import OpenConfig, OpenResearchProvider
+
+        return OpenResearchProvider(
+            OpenConfig(
+                cache_dir=s.data_dir / "research_cache",
+                llm_model=_ollama_model(s),
+                ollama_base_url=s.ollama_base_url,
+            )
+        )
     return ContextDevProvider(
         s.context_dev_api_key or "",
         base_url=s.context_dev_base_url,
@@ -58,13 +81,20 @@ def _company_domains(db: ApiDB) -> set[str]:
     return {str(r["domain"]).lower().removeprefix("www.") for r in rows if r.get("domain")}
 
 
-def process_run(db: ApiDB, run_id: str, req: ResearchRequest) -> None:
+def process_run(db: ApiDB, run_id: str, req: ResearchRequest, provider_name: str | None = None) -> None:
     """Background worker. Never raises: every failure becomes a failed run."""
     provider = None
     try:
         store.set_status(db, run_id, "running")
-        provider = provider_factory()
-        result = run_research(run_id, req, provider, company_domains=_company_domains(db))
+        provider = provider_factory(provider_name) if provider_name else provider_factory()
+        domains = _company_domains(db)
+        cfg = getattr(provider, "cfg", None)
+        if cfg is not None:
+            cfg.company_domains = domains
+        result = run_research(
+            run_id, req, provider, company_domains=domains,
+            status_cb=lambda m: store.set_message(db, run_id, m),
+        )
         store.complete_run(
             db,
             run_id,
@@ -93,10 +123,22 @@ def process_run(db: ApiDB, run_id: str, req: ResearchRequest) -> None:
 @router.get("/research/config", response_model=ResearchConfig)
 def research_config() -> ResearchConfig:
     s = _fresh_settings()
+    providers = ["open"] + (["contextdev"] if s.context_dev_api_key else [])
+    if _provider_name() == "open":
+        model = _ollama_model(s)
+        return ResearchConfig(
+            provider="open",
+            live_available=True,
+            mode="free",
+            synthesis=f"local LLM ({model})" if model else "extractive (no LLM)",
+            providers=providers,
+        )
     return ResearchConfig(
         provider="context.dev",
         live_available=bool(s.context_dev_api_key),
         mode=s.context_dev_mode,
+        synthesis="context.dev answers",
+        providers=providers,
     )
 
 
@@ -109,7 +151,8 @@ def create_research(
 ) -> dict:
     run_id = f"rr-{datetime.now(UTC):%Y%m%d}-{uuid.uuid4().hex[:8]}"
     today = date.today()
-    has_key = bool(_fresh_settings().context_dev_api_key)
+    pname = _provider_name(body.provider)
+    has_key = pname == "open" or bool(_fresh_settings().context_dev_api_key)
     run = {
         "id": run_id,
         "objective": body.objective.strip(),
@@ -121,7 +164,7 @@ def create_research(
         "companies": body.companies,
         "source_preferences": list(body.source_preferences),
         "status": "queued" if has_key else "failed",
-        "provider": "context.dev",
+        "provider": "open" if pname == "open" else "context.dev",
     }
     store.create_run(db, run)
     if not has_key:
@@ -141,7 +184,7 @@ def create_research(
             companies=body.companies,
             source_preferences=list(body.source_preferences),
         )
-        background.add_task(process_run, request.app.state.db, run_id, req)
+        background.add_task(process_run, request.app.state.db, run_id, req, pname)
     found = store.get_run(db, run_id)
     assert found is not None
     return found
@@ -178,7 +221,9 @@ def get_research_findings(run_id: str, db: ApiDB = Depends(get_db)) -> list[dict
 def findings_feed(
     db: ApiDB = Depends(get_db),
     category: str | None = Query(default=None),
-    kind: str | None = Query(default=None, pattern="^(verified_fact|analysis)$"),
+    kind: str | None = Query(
+        default=None, pattern="^(verified_fact|analysis|source_supported|source_excerpt)$"
+    ),
     include_demo: bool = Query(default=True),
     limit: int = Query(default=100, ge=1, le=200),
     offset: int = Query(default=0, ge=0),
@@ -194,3 +239,35 @@ def findings_feed(
 @router.get("/findings/categories", response_model=list[CategoryCount])
 def findings_categories(db: ApiDB = Depends(get_db)) -> list[dict]:
     return store.category_counts(db)
+
+
+# ------------------------- company refresh (free) -------------------------- #
+@router.post("/companies/{competitor_id}/refresh", response_model=ResearchRun, status_code=202)
+def refresh_company(
+    competitor_id: str, background: BackgroundTasks, request: Request, db: ApiDB = Depends(get_db)
+) -> dict:
+    """Run the free open provider for one company over the last month."""
+    from api import repository as repo
+
+    comp = repo.get_competitor(db, competitor_id)
+    if not comp:
+        raise HTTPException(status_code=404, detail=f"Company '{competitor_id}' not found.")
+    body = ResearchCreate(
+        objective=f"Latest developments for {comp['name']} in India",
+        industry=comp.get("industry"),
+        time_window="1m",
+        companies=[comp["name"]],
+        source_preferences=["official_company", "news"],
+        provider="open",
+    )
+    return create_research(body, background, request, db)
+
+
+@router.get("/companies/{competitor_id}/developments", response_model=list[FeedFinding])
+def company_developments(competitor_id: str, db: ApiDB = Depends(get_db)) -> list[dict]:
+    from api import repository as repo
+
+    comp = repo.get_competitor(db, competitor_id)
+    if not comp:
+        raise HTTPException(status_code=404, detail=f"Company '{competitor_id}' not found.")
+    return store.company_developments(db, comp["name"])

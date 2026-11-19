@@ -177,6 +177,9 @@ class ResearchCreate(BaseModel):
     time_window: TimeWindow = "6m"
     companies: list[str] = Field(default_factory=list, max_length=12)
     source_preferences: list[SourcePreference] = Field(default_factory=list)
+    provider: Literal["open", "contextdev"] | None = Field(
+        default=None, description="Override COMPETE_RESEARCH_PROVIDER for this run."
+    )
 
 
 class ResearchRunSummary(BaseModel):
@@ -198,6 +201,7 @@ class ResearchRunSummary(BaseModel):
     completed_at: datetime | None = None
     error_code: str | None = None
     error_message: str | None = None
+    status_message: str | None = None
     source_count: int = 0
     finding_count: int = 0
 
@@ -214,6 +218,8 @@ class ResearchReport(BaseModel):
     tenders_and_procurement: list[str] = Field(default_factory=list)
     commercial_opportunities: list[str] = Field(default_factory=list)
     risks: list[str] = Field(default_factory=list)
+    method: str | None = None
+    coverage_notes: list[str] = Field(default_factory=list)
 
 
 class ResearchRun(ResearchRunSummary):
@@ -231,6 +237,7 @@ class ResearchSource(BaseModel):
     retrieved_at: datetime | None = None
     snippet: str | None = None
     link_status: str | None = None
+    discovered_via: str | None = None
 
 
 class ResearchFinding(BaseModel):
@@ -243,11 +250,12 @@ class ResearchFinding(BaseModel):
     summary: str | None = None
     significance: int | None = None
     confidence: float | None = None
-    kind: Literal["verified_fact", "analysis"]
+    kind: Literal["verified_fact", "analysis", "source_supported", "source_excerpt"]
     event_date: str | None = None
     source_ids: list[str] = Field(default_factory=list)
     flags: list[str] = Field(default_factory=list)
     created_at: datetime | None = None
+    evidence_quote: str | None = None
 
 
 class FeedFinding(ResearchFinding):
@@ -265,3 +273,5 @@ class ResearchConfig(BaseModel):
     provider: str
     live_available: bool
     mode: str
+    synthesis: str | None = None
+    providers: list[str] = Field(default_factory=list)

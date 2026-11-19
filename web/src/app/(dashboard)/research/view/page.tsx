@@ -80,6 +80,7 @@ function ReportView() {
                   </>
                 )}
                 {run.data.provider_request_id && ` · provider request ${run.data.provider_request_id}`}
+                {run.data.result?.method && ` · method: ${run.data.result.method}`}
               </p>
             </div>
 
@@ -89,12 +90,15 @@ function ReportView() {
                   <Loader2 className="mt-0.5 h-5 w-5 animate-spin text-primary" />
                   <div>
                     <p className="text-sm font-medium">
-                      {run.data.status === "queued" ? "Queued on the backend" : "The research provider is working"}
+                      {run.data.status === "queued"
+                        ? "Queued on the backend"
+                        : (run.data.status_message ?? "The research provider is working")}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The provider searches, reads pages and assembles a structured answer in a single call
-                      (typically 30-180 s). This page checks the backend every 3 seconds and updates when
-                      the run finishes.
+                      {run.data.provider === "open"
+                        ? "Stages reported by the backend: discovering sources, fetching pages, synthesizing. Typically 30-120 s."
+                        : "The provider searches, reads pages and assembles a structured answer in a single call (typically 30-180 s)."}{" "}
+                      This page checks the backend every 3 seconds.
                     </p>
                   </div>
                 </CardContent>
@@ -159,9 +163,26 @@ function ReportView() {
                       );
                     })}
                   </div>
+                  {(run.data.result.coverage_notes?.length ?? 0) > 0 && (
+                    <Card>
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-base">Coverage notes</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="list-disc space-y-1 pl-4 text-xs text-muted-foreground">
+                          {run.data.result.coverage_notes!.map((n, i) => (
+                            <li key={i}>{n}</li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  )}
                   <p className="text-xs text-muted-foreground">
-                    Section text is the provider&apos;s synthesis. Use the Findings tab for item-level
-                    source links and the fact / analysis distinction.
+                    {run.data.result.method === "extractive"
+                      ? "Extractive mode: section items are source headlines; finding summaries are verbatim source text. No generated prose."
+                      : run.data.result.method?.startsWith("llm")
+                        ? `Sections written by ${run.data.result.method}. Only findings whose quote was found in the cited source are marked source-supported.`
+                        : "Section text is the provider synthesis. Use the Findings tab for item-level source links and the fact / analysis distinction."}
                   </p>
                 </TabsContent>
 
@@ -204,6 +225,17 @@ function ReportView() {
                               )}
                             </div>
                             {s.title && <p className="mt-1 text-sm">{s.title}</p>}
+                            <p className="mt-0.5 text-xs text-muted-foreground">
+                              Published:{" "}
+                              {s.published_at
+                                ? new Date(s.published_at).toLocaleDateString("en-IN", {
+                                    day: "numeric",
+                                    month: "short",
+                                    year: "numeric",
+                                  })
+                                : "Not available"}
+                              {s.discovered_via && ` · via ${s.discovered_via.replace("_", " ")}`}
+                            </p>
                             <p className="mt-0.5 break-all text-xs text-muted-foreground">{s.url}</p>
                             {s.snippet && <p className="mt-1 line-clamp-3 text-xs text-muted-foreground">{s.snippet}</p>}
                           </div>

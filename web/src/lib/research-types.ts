@@ -24,10 +24,20 @@ export const SOURCE_PREFERENCES = [
 ] as const;
 export type SourcePreference = (typeof SOURCE_PREFERENCES)[number];
 
+export type FindingKind = "verified_fact" | "analysis" | "source_supported" | "source_excerpt";
+
+export const KIND_LABEL: Record<FindingKind, string> = {
+  verified_fact: "Provider-cited fact",
+  source_supported: "Source-supported (quote verified)",
+  source_excerpt: "Source excerpt",
+  analysis: "Analysis",
+};
+
 export type TimeWindow = "1m" | "3m" | "6m" | "12m";
 export type ResearchStatus = "queued" | "running" | "completed" | "partial" | "failed";
 
 export interface ResearchCreate {
+  provider?: "open" | "contextdev";
   objective: string;
   industry?: string | null;
   geography?: string;
@@ -55,6 +65,7 @@ export interface ResearchRunSummary {
   completed_at: string | null;
   error_code: string | null;
   error_message: string | null;
+  status_message?: string | null;
   source_count: number;
   finding_count: number;
 }
@@ -71,6 +82,8 @@ export interface ResearchReport {
   tenders_and_procurement: string[];
   commercial_opportunities: string[];
   risks: string[];
+  method?: string | null;
+  coverage_notes?: string[];
 }
 
 export interface ResearchRun extends ResearchRunSummary {
@@ -88,6 +101,7 @@ export interface ResearchSource {
   retrieved_at: string | null;
   snippet: string | null;
   link_status?: string | null;
+  discovered_via?: string | null;
 }
 
 export interface ResearchFinding {
@@ -100,11 +114,12 @@ export interface ResearchFinding {
   summary: string | null;
   significance: number | null;
   confidence: number | null;
-  kind: "verified_fact" | "analysis";
+  kind: FindingKind;
   event_date: string | null;
   source_ids: string[];
   flags: string[];
   created_at: string | null;
+  evidence_quote?: string | null;
 }
 
 export interface FeedFinding extends ResearchFinding {
@@ -115,7 +130,7 @@ export interface FeedFinding extends ResearchFinding {
 
 export interface FindingQuery {
   category?: FindingCategory;
-  kind?: "verified_fact" | "analysis";
+  kind?: FindingKind;
   include_demo?: boolean;
   limit?: number;
   offset?: number;
@@ -125,6 +140,8 @@ export interface ResearchConfig {
   provider: string;
   live_available: boolean;
   mode: string;
+  synthesis?: string | null;
+  providers?: string[];
 }
 
 export const CATEGORY_LABEL: Record<FindingCategory, string> = {

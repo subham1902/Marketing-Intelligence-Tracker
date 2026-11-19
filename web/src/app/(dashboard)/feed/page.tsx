@@ -9,12 +9,18 @@ import { PageHeader } from "@/components/page-header";
 import { FindingCard } from "@/components/research/research-ui";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFindingsFeed } from "@/lib/research-api";
-import { CATEGORY_LABEL, FINDING_CATEGORIES, type FindingCategory } from "@/lib/research-types";
+import {
+  CATEGORY_LABEL,
+  FINDING_CATEGORIES,
+  KIND_LABEL,
+  type FindingCategory,
+  type FindingKind,
+} from "@/lib/research-types";
 import { cn } from "@/lib/utils";
 
 export default function FeedPage() {
   const [category, setCategory] = useState<FindingCategory | undefined>();
-  const [kind, setKind] = useState<"verified_fact" | "analysis" | undefined>();
+  const [kind, setKind] = useState<FindingKind | undefined>();
   const [includeDemo, setIncludeDemo] = useState(true);
   const feed = useFindingsFeed({ category, kind, include_demo: includeDemo, limit: 200 });
 
@@ -44,14 +50,13 @@ export default function FeedPage() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <button className={chip(!kind)} onClick={() => setKind(undefined)}>
-            Facts & analysis
+            All kinds
           </button>
-          <button className={chip(kind === "verified_fact")} onClick={() => setKind("verified_fact")}>
-            Provider-cited facts only
-          </button>
-          <button className={chip(kind === "analysis")} onClick={() => setKind("analysis")}>
-            Analysis only
-          </button>
+          {(Object.keys(KIND_LABEL) as FindingKind[]).map((k) => (
+            <button key={k} className={chip(kind === k)} onClick={() => setKind(k)}>
+              {KIND_LABEL[k]}
+            </button>
+          ))}
           <label className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
             <input type="checkbox" checked={includeDemo} onChange={(e) => setIncludeDemo(e.target.checked)} />
             Include demo snapshot

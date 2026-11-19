@@ -52,7 +52,8 @@ export function DataOriginBadge({ isDemo, provider }: { isDemo: boolean; provide
     </Badge>
   ) : (
     <Badge variant="outline" className="border-emerald-500/40 text-emerald-700 dark:text-emerald-400">
-      <Sparkles className="h-3 w-3" /> Live · {provider ?? "provider"}
+      <Sparkles className="h-3 w-3" />{" "}
+      {provider === "open" ? "Live · free public sources" : `Live · ${provider ?? "provider"}`}
     </Badge>
   );
 }
@@ -79,16 +80,44 @@ export function CategoryBadge({ category }: { category: FindingCategory }) {
 }
 
 export function KindBadge({ kind, flags }: { kind: ResearchFinding["kind"]; flags: string[] }) {
+  if (kind === "source_supported")
+    return (
+      <Badge
+        variant="outline"
+        className="border-emerald-500/40 text-emerald-700 dark:text-emerald-400"
+        title="The evidence quote was found verbatim in the cited source"
+      >
+        <ShieldCheck className="h-3 w-3" /> Source-supported (quote verified)
+      </Badge>
+    );
+  if (kind === "source_excerpt")
+    return (
+      <Badge
+        variant="outline"
+        className="border-sky-500/40 text-sky-700 dark:text-sky-400"
+        title="Verbatim text from the source; no generated prose"
+      >
+        Source excerpt{flags.includes("aggregator_link") ? " · aggregator link" : ""}
+      </Badge>
+    );
   if (kind === "verified_fact")
     return (
       <Badge variant="outline" className="border-emerald-500/40 text-emerald-700 dark:text-emerald-400">
         <ShieldCheck className="h-3 w-3" /> Provider-cited fact
       </Badge>
     );
-  const unverified = flags.includes("unverified_citation") || flags.includes("dead_citation");
+  const unverified =
+    flags.includes("unverified_citation") ||
+    flags.includes("dead_citation") ||
+    flags.includes("quote_not_found");
   return (
     <Badge variant="outline" className="text-muted-foreground" title={unverified ? "The provider labelled this a fact, but its cited link was missing or unreachable" : undefined}>
-      Analysis{unverified ? " · citation unverified" : ""}
+      Analysis
+      {flags.includes("quote_not_found")
+        ? " · quote not found in source"
+        : unverified
+          ? " · citation unverified"
+          : ""}
     </Badge>
   );
 }
@@ -125,6 +154,11 @@ export function FindingCard({
       </div>
       <p className="mt-2 text-sm font-semibold">{finding.title}</p>
       {finding.summary && <p className="mt-1 text-sm text-muted-foreground">{finding.summary}</p>}
+      {finding.evidence_quote && finding.kind === "source_supported" && (
+        <blockquote className="mt-2 border-l-2 border-emerald-500/50 pl-3 text-xs italic text-muted-foreground">
+          &ldquo;{finding.evidence_quote}&rdquo;
+        </blockquote>
+      )}
       <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
         {finding.confidence != null && <span>Confidence {Math.round(finding.confidence * 100)}%</span>}
         {cited.map((s) => (
@@ -160,6 +194,9 @@ export function RunRow({ run }: { run: ResearchRunSummary }) {
     >
       <div className="flex flex-wrap items-center gap-2">
         <StatusBadge status={run.status} />
+        {(run.status === "running" || run.status === "queued") && run.status_message && (
+          <span className="text-xs text-muted-foreground">{run.status_message}</span>
+        )}
         <DataOriginBadge isDemo={run.is_demo} provider={run.provider} />
         <RelativeTime value={run.created_at} className="ml-auto text-xs" />
       </div>
