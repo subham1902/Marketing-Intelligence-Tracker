@@ -17,9 +17,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from fastapi.testclient import TestClient
-
 from api.main import app
+from fastapi.testclient import TestClient
 
 OUT = Path(__file__).resolve().parents[1] / "web" / "public" / "api-static"
 
@@ -98,6 +97,17 @@ def main() -> None:
             pdf = client.get(f"/reports/{rid}/pdf")
             if pdf.status_code == 200:
                 _write_bytes(f"reports/{rid}.pdf", pdf.content)
+
+        # Research runs (completed/partial only), their sources/findings, and the feed.
+        runs = [r for r in _get(client, "/research") if r["status"] in ("completed", "partial")]
+        _write_json("research.json", runs)
+        for r in runs:
+            rid = r["id"]
+            _write_json(f"research/{rid}.json", _get(client, f"/research/{rid}"))
+            _write_json(f"research/{rid}/sources.json", _get(client, f"/research/{rid}/sources"))
+            _write_json(f"research/{rid}/findings.json", _get(client, f"/research/{rid}/findings"))
+        _write_json("findings.json", _collect_all(client, "/findings"))
+        _write_json("findings-categories.json", _get(client, "/findings/categories"))
 
     print("Done.")
 

@@ -41,200 +41,237 @@ def _ago(days: float) -> datetime:
     return NOW - timedelta(days=days)
 
 
+# ---------------------------------------------------------------------------
+# DEMO SNAPSHOT - Indian EV & mobility.
+# Every record below is SAMPLE data for offline demos. Titles carry a
+# "[Sample]" prefix and signals point only at the company's real home page
+# (never a fabricated article URL), so nothing here can be mistaken for live
+# intelligence. Live findings come from the Research workspace (Context.dev)
+# with real source links.
+# ---------------------------------------------------------------------------
+DEMO_INDUSTRY = "EV & Mobility (India)"
+
 COMPETITORS = [
-    ("anthropic", "Anthropic", "anthropic.com", "AI / LLM", 1),
-    ("openai", "OpenAI", "openai.com", "AI / LLM", 1),
-    ("google-deepmind", "Google DeepMind", "deepmind.google", "AI / LLM", 1),
-    ("mistral", "Mistral AI", "mistral.ai", "AI / LLM", 2),
-    ("cohere", "Cohere", "cohere.com", "AI / Enterprise NLP", 2),
+    ("tata-motors", "Tata Motors", "tatamotors.com", "EV & Mobility - Passenger & Commercial", 1),
+    ("mahindra", "Mahindra", "mahindra.com", "EV & Mobility - Passenger & Commercial", 1),
+    ("tvs-motor", "TVS Motor", "tvsmotor.com", "EV & Mobility - Two/Three-wheelers", 1),
+    ("ather-energy", "Ather Energy", "atherenergy.com", "EV & Mobility - Two-wheelers", 1),
+    ("ola-electric", "Ola Electric", "olaelectric.com", "EV & Mobility - Two-wheelers", 1),
+    ("exide", "Exide Industries", "exideindustries.com", "EV & Mobility - Batteries", 2),
+    ("amara-raja", "Amara Raja Energy & Mobility", "amararajaeandm.com", "EV & Mobility - Batteries", 2),
 ]
 
 TRACKED = {
-    "anthropic": [
-        ("https://www.anthropic.com/news", "static", "press_release"),
-        ("https://www.anthropic.com/pricing", "static", "pricing_change"),
-    ],
-    "openai": [("https://openai.com/news", "dynamic", "product_launch")],
-    "google-deepmind": [("https://deepmind.google/discover/blog/", "static", "blog_post")],
-    "mistral": [("https://mistral.ai/news", "dynamic", "product_launch")],
-    "cohere": [("https://cohere.com/blog", "static", "blog_post")],
+    "tata-motors": [("https://www.tatamotors.com/", "static", "press_release")],
+    "mahindra": [("https://www.mahindra.com/", "static", "press_release")],
+    "tvs-motor": [("https://www.tvsmotor.com/", "static", "product_launch")],
+    "ather-energy": [("https://www.atherenergy.com/", "dynamic", "product_launch")],
+    "ola-electric": [("https://www.olaelectric.com/", "dynamic", "product_launch")],
+    "exide": [("https://www.exideindustries.com/", "static", "press_release")],
+    "amara-raja": [("https://www.amararajaeandm.com/", "static", "press_release")],
 }
 
-# (days_ago, signal_type, title, summary, significance)
+# (days_ago, signal_type, title, summary, significance) - illustrative only.
 CONTENT = {
-    "anthropic": [
-        (
-            3,
-            "product_launch",
-            "Claude Opus 4.8 released",
-            "Anthropic launched Claude Opus 4.8 with stronger coding and agentic performance. Available today via API and Claude apps.",
-            5,
-        ),
-        (
-            9,
-            "press_release",
-            "Enterprise expansion in EMEA",
-            "Anthropic announced new London and Dublin offices to serve enterprise demand across Europe.",
-            3,
-        ),
-        (
-            16,
-            "leadership_change",
-            "New VP of Sales hired",
-            "Anthropic appointed a new VP of Sales to lead its go-to-market expansion.",
-            4,
-        ),
-        (
-            24,
-            "blog_post",
-            "Interpretability research update",
-            "A research post detailing progress on feature steering in large models.",
-            2,
-        ),
-        (
-            38,
-            "funding_news",
-            "Series F at $60B valuation",
-            "Anthropic raised a Series F round reportedly valuing the company around $60B.",
-            5,
-        ),
+    "tata-motors": [
+        (3, "product_launch", "[Sample] New EV variant listed on website",
+         "Illustrative demo signal: a new electric variant page appeared on the tracked site.", 4),
+        (17, "press_release", "[Sample] Charging partnership announcement",
+         "Illustrative demo signal: a press page mentions a charging-network partnership.", 3),
     ],
-    "openai": [
-        (
-            2,
-            "product_launch",
-            "GPT-5.2 Turbo announced",
-            "OpenAI introduced GPT-5.2 Turbo with a larger context window and lower latency.",
-            5,
-        ),
-        (
-            12,
-            "pricing_change",
-            "API price cut for flagship model",
-            "OpenAI reduced flagship API pricing, with the Pro plan now $18/mo for individuals.",
-            4,
-        ),
-        (
-            20,
-            "leadership_change",
-            "CFO transition",
-            "OpenAI announced a CFO transition as it scales commercial operations.",
-            4,
-        ),
-        (
-            33,
-            "blog_post",
-            "Safety evaluations framework",
-            "A blog post outlining an updated safety evaluation framework.",
-            2,
-        ),
+    "mahindra": [
+        (5, "product_launch", "[Sample] Electric SUV booking page update",
+         "Illustrative demo signal: booking details changed on an electric SUV page.", 4),
+        (26, "funding_news", "[Sample] EV subsidiary investment note",
+         "Illustrative demo signal: investor material references EV-unit capital allocation.", 4),
     ],
-    "google-deepmind": [
-        (
-            5,
-            "product_launch",
-            "Gemini 3 Flash general availability",
-            "Google DeepMind made Gemini 3 Flash generally available with improved multimodal reasoning.",
-            5,
-        ),
-        (
-            18,
-            "blog_post",
-            "AlphaProof milestone",
-            "A research blog on new math-reasoning benchmarks results.",
-            3,
-        ),
-        (
-            29,
-            "press_release",
-            "Cloud partnership expansion",
-            "DeepMind models expanded across additional Google Cloud regions.",
-            3,
-        ),
+    "tvs-motor": [
+        (4, "product_launch", "[Sample] Electric scooter range refresh",
+         "Illustrative demo signal: the specification table for an electric scooter was updated.", 3),
+        (21, "press_release", "[Sample] Export market expansion",
+         "Illustrative demo signal: a press page lists new export markets for EV models.", 3),
     ],
-    "mistral": [
-        (
-            4,
-            "product_launch",
-            "Mistral Large 3 launched",
-            "Mistral released Mistral Large 3, a unified agent for long-horizon productivity tasks.",
-            5,
-        ),
-        (
-            14,
-            "funding_news",
-            "New financing round",
-            "Mistral AI closed a new financing round to fund European data-center capacity.",
-            4,
-        ),
-        (
-            27,
-            "blog_post",
-            "Open-weights model update",
-            "Mistral published updated open-weights checkpoints for the community.",
-            3,
-        ),
+    "ather-energy": [
+        (2, "product_launch", "[Sample] Software update for scooter lineup",
+         "Illustrative demo signal: a release-notes page lists new connected features.", 3),
+        (14, "press_release", "[Sample] New experience centres",
+         "Illustrative demo signal: the store-locator count increased across Tier-2 cities.", 2),
     ],
-    "cohere": [
-        (
-            6,
-            "product_launch",
-            "Command R+ refresh",
-            "Cohere shipped a Command R+ refresh focused on enterprise RAG accuracy.",
-            4,
-        ),
-        (
-            21,
-            "press_release",
-            "SOC 2 Type II + new compliance",
-            "Cohere announced expanded compliance certifications for regulated industries.",
-            3,
-        ),
-        (
-            35,
-            "blog_post",
-            "Multilingual embeddings",
-            "A post on improved multilingual embedding quality.",
-            2,
-        ),
+    "ola-electric": [
+        (6, "product_launch", "[Sample] Cell manufacturing page update",
+         "Illustrative demo signal: a page on in-house cell manufacturing was revised.", 4),
+        (30, "leadership_change", "[Sample] Leadership page change",
+         "Illustrative demo signal: the leadership page added a new executive.", 3),
+    ],
+    "exide": [
+        (9, "press_release", "[Sample] Lithium-ion cell plant progress",
+         "Illustrative demo signal: an investor page mentions lithium-ion cell plant milestones.", 4),
+    ],
+    "amara-raja": [
+        (12, "press_release", "[Sample] Cell giga-factory project update",
+         "Illustrative demo signal: a project update on advanced-chemistry cell capacity.", 4),
     ],
 }
 
-# (days_ago, plan, price) -> emitted as pricing_change signals (chart source)
+# (days_ago, plan, price_inr) - sample ex-showroom prices for the pricing chart.
 PRICING = {
-    "anthropic": [(60, "Pro", 20), (30, "Pro", 20), (8, "Team", 30), (8, "Max", 100)],
-    "openai": [(55, "Plus", 20), (25, "Plus", 20), (12, "Pro", 18), (12, "Team", 25)],
-    "google-deepmind": [(40, "Pro", 20), (10, "Pro", 22)],
-    "mistral": [(45, "Pro", 15), (15, "Pro", 15), (15, "Team", 25)],
-    "cohere": [(50, "Starter", 0), (20, "Scale", 50)],
+    "ather-energy": [(60, "Pro", 145000), (20, "Pro", 139999), (20, "Plus", 119999)],
+    "ola-electric": [(55, "Pro", 139999), (25, "Pro", 129999), (10, "Plus", 99999)],
+    "tvs-motor": [(45, "Premium", 125000), (15, "Premium", 122000)],
 }
 
-# (role, location, days_ago)
+# (role, location, days_ago) - sample hiring snapshots.
 JOBS = {
-    "anthropic": [
-        ("Staff Software Engineer, Inference", "San Francisco, CA", 2),
-        ("Product Manager, Claude Code", "San Francisco, CA | Seattle, WA", 6),
-        ("Research Scientist, Alignment", "London, UK", 11),
-        ("Enterprise Account Executive", "New York City, NY", 15),
+    "tata-motors": [
+        ("Battery Systems Engineer", "Pune, India", 3),
+        ("EV Charging Partnerships Manager", "Mumbai, India", 10),
     ],
-    "openai": [
-        ("Member of Technical Staff, Scaling", "San Francisco, CA", 3),
-        ("Solutions Architect", "Remote, US", 9),
-        ("Recruiter, Technical", "San Francisco, CA", 17),
+    "mahindra": [("Electric Powertrain Lead", "Chennai, India", 5)],
+    "tvs-motor": [("BMS Firmware Engineer", "Hosur, India", 4)],
+    "ather-energy": [
+        ("Embedded Software Engineer", "Bengaluru, India", 2),
+        ("Retail Expansion Manager", "Bengaluru, India", 15),
     ],
-    "google-deepmind": [
-        ("Research Engineer, Gemini", "Mountain View, CA", 4),
-        ("Program Manager, Responsible AI", "London, UK", 13),
-    ],
-    "mistral": [
-        ("Infrastructure Engineer", "Paris, France", 5),
-        ("Developer Relations Engineer", "Remote, EU", 19),
-    ],
-    "cohere": [
-        ("ML Engineer, Retrieval", "Toronto, Canada", 7),
-        ("Enterprise Solutions Engineer", "Remote, US", 22),
-    ],
+    "ola-electric": [("Cell Chemistry Scientist", "Krishnagiri, India", 6)],
+    "exide": [("Li-ion Process Engineer", "Bengaluru, India", 9)],
+    "amara-raja": [("Cell Manufacturing Engineer", "Telangana, India", 11)],
 }
+
+# Demo research snapshot (is_demo = true). Sources are real, generic portal /
+# home pages - NOT citations for specific claims - and every finding is
+# labelled analysis, never verified fact.
+DEMO_RESEARCH_OBJECTIVE = (
+    "[Demo snapshot] India electric mobility landscape: competitor developments, policy, "
+    "procurement and commercial opportunities."
+)
+DEMO_RESEARCH_SOURCES = [
+    ("https://heavyindustries.gov.in/", "government"),
+    ("https://pib.gov.in/", "government"),
+    ("https://gem.gov.in/", "tender"),
+    ("https://www.tatamotors.com/", "company"),
+    ("https://www.atherenergy.com/", "company"),
+    ("https://www.olaelectric.com/", "company"),
+]
+DEMO_RESEARCH_FINDINGS = [
+    ("[Sample] Two-wheelers drive EV unit volumes", "market_entry", None,
+     "Demo snapshot: illustrative analysis that electric two-wheelers are the largest EV segment by units.", 4),
+    ("[Sample] Domestic cell manufacturing build-out", "expansion", "Battery makers",
+     "Demo snapshot: illustrative analysis of battery companies investing in local cell capacity.", 4),
+    ("[Sample] Incentive scheme changes affect pricing", "policy", "Government of India",
+     "Demo snapshot: illustrative analysis that demand-incentive revisions influence retail pricing.", 4),
+    ("[Sample] Public procurement of electric buses", "tender", "State transport undertakings",
+     "Demo snapshot: illustrative example of procurement opportunities for electric buses.", 3),
+    ("[Sample] OEM and charging-network tie-ups", "partnership", "OEMs",
+     "Demo snapshot: illustrative analysis of OEMs partnering with charging operators.", 3),
+    ("[Sample] Connected software as a differentiator", "technology", "Two-wheeler OEMs",
+     "Demo snapshot: illustrative analysis of competition on connected features.", 2),
+    ("[Sample] Hiring demand in battery engineering", "hiring", None,
+     "Demo snapshot: illustrative analysis of hiring demand for BMS and cell engineers.", 2),
+]
+DEMO_RESEARCH_REPORT = {
+    "executive_summary": (
+        "DEMO SNAPSHOT - sample content for offline demonstration, not live research. "
+        "Configure CONTEXT_DEV_API_KEY and run a research objective to generate a "
+        "source-linked report."
+    ),
+    "industry_overview": (
+        "Sample overview: India's EV market spans two-wheelers, three-wheelers, passenger "
+        "cars, buses and the battery supply chain."
+    ),
+    "market_trends": ["[Sample] Electrification led by two- and three-wheelers."],
+    "company_developments": ["[Sample] OEMs expanding EV portfolios and retail reach."],
+    "product_launches": ["[Sample] Frequent variant refreshes in electric scooters."],
+    "manufacturing_expansion": ["[Sample] Investment in domestic cell manufacturing."],
+    "partnerships_and_investment": ["[Sample] OEM-charging operator partnerships."],
+    "policy_and_regulatory": ["[Sample] Central and state incentive schemes shape demand."],
+    "tenders_and_procurement": ["[Sample] Public e-bus procurement creates B2G openings."],
+    "commercial_opportunities": ["[Sample] Fleet electrification and battery recycling."],
+    "risks": ["[Sample] Incentive changes, cell import dependence and price competition."],
+}
+
+
+def seed_demo_research(db_path) -> int:
+    """Insert (or refresh) the clearly-labelled demo research snapshot.
+
+    Live research runs already in the warehouse are preserved.
+    """
+    from api import research_store as rstore
+    from api.db import ApiDB
+
+    db = ApiDB(db_path)
+    try:
+        rstore.bootstrap(db)
+        old = db.query("SELECT id FROM research.research_runs WHERE is_demo")
+        for r in old:
+            db.execute("DELETE FROM research.research_sources WHERE research_run_id=?", [r["id"]])
+            db.execute("DELETE FROM research.research_findings WHERE research_run_id=?", [r["id"]])
+            db.execute("DELETE FROM research.research_runs WHERE id=?", [r["id"]])
+        run_id = "demo-ev-india"
+        created = _ago(1)
+        rstore.create_run(
+            db,
+            {
+                "id": run_id,
+                "objective": DEMO_RESEARCH_OBJECTIVE,
+                "industry": DEMO_INDUSTRY,
+                "geography": "India",
+                "time_window": "6m",
+                "date_from": _ago(182).date(),
+                "date_to": NOW.date(),
+                "companies": [c[1] for c in COMPETITORS],
+                "source_preferences": ["official_company", "government", "tenders"],
+                "status": "queued",
+                "provider": "demo",
+                "is_demo": True,
+                "created_at": created,
+            },
+        )
+        sources = []
+        for url, stype in DEMO_RESEARCH_SOURCES:
+            sources.append(
+                {
+                    "id": _hash(f"{run_id}:{url}"),
+                    "url": url,
+                    "domain": url.split("//", 1)[1].split("/", 1)[0].removeprefix("www."),
+                    "title": None,
+                    "source_type": stype,
+                    "published_at": None,
+                    "retrieved_at": None,
+                    "snippet": "Demo snapshot: generic portal/home page, not a citation for a specific claim.",
+                }
+            )
+        findings = []
+        for title, cat, entity, summary, sig in DEMO_RESEARCH_FINDINGS:
+            findings.append(
+                {
+                    "id": _hash(f"{run_id}:{title}"),
+                    "title": title,
+                    "category": cat,
+                    "entity": entity,
+                    "industry": DEMO_INDUSTRY,
+                    "summary": summary,
+                    "significance": sig,
+                    "confidence": 0.5,
+                    "kind": "analysis",
+                    "event_date": None,
+                    "source_ids": [],
+                    "flags": ["demo"],
+                    "created_at": created,
+                }
+            )
+        rstore.complete_run(
+            db,
+            run_id,
+            report=DEMO_RESEARCH_REPORT,
+            sources=sources,
+            findings=findings,
+            partial=False,
+            request_id=None,
+            completed_at=created,
+        )
+        return 1
+    finally:
+        db.close()
 
 
 def _wipe(wh: Warehouse) -> None:
@@ -252,9 +289,9 @@ def _store_signal_and_change(
     summary: str,
     significance: int,
 ) -> int:
-    url = f"https://{domain}/news/{_slug(title)}"
+    url = TRACKED[comp_id][0][0] if TRACKED.get(comp_id) else None
     source_hash = _hash(f"{comp_id}:{title}:{when.isoformat()}")
-    sid = _hash(f"{url}:{source_hash}")
+    sid = _hash(f"{comp_id}:{title}:{source_hash}")
     wh.upsert_signal(
         signal_id=sid,
         competitor_id=comp_id,
@@ -306,10 +343,8 @@ def seed(wh: Warehouse) -> dict[str, int]:
             counts["changes"] += 1
 
         for days, plan, price in PRICING.get(cid, []):
-            title = f"{plan} plan pricing update"
-            summary = (
-                f"The {plan} plan is now ${price}/mo." if price else f"The {plan} plan is now free."
-            )
+            title = f"[Sample] {plan} variant price update"
+            summary = f"[Sample] The {plan} variant is listed at ₹{price:,} ex-showroom."
             _store_signal_and_change(
                 wh, cid, domain, _ago(days), "pricing_change", title, summary, 3
             )
@@ -324,7 +359,7 @@ def seed(wh: Warehouse) -> dict[str, int]:
                 RawPage(
                     id=_hash(f"jobs:{cid}:{role}"),
                     competitor_id=cid,
-                    url=f"https://boards.{domain}/jobs/{_slug(role)}",
+                    url=f"https://www.{domain}/#careers-{_slug(role)}",
                     source_type=SourceType.JOBS,
                     raw_html=body,
                     clean_text=body,
@@ -340,8 +375,8 @@ def seed(wh: Warehouse) -> dict[str, int]:
         wh.log_llm_call(
             call_id=f"seed-call-{i}",
             ts=_ago(i),
-            provider="gemini",
-            model="gemini-1.5-flash",
+            provider="mock",
+            model="seed",
             url="https://example.com",
             prompt_tokens=1200,
             completion_tokens=180,
@@ -352,26 +387,28 @@ def seed(wh: Warehouse) -> dict[str, int]:
         )
 
     # Two demo weekly reports.
-    for wk, title in [(7, "Weekly Competitive Brief"), (14, "Weekly Competitive Brief")]:
+    for wk, title in [(7, "[Demo] Weekly EV Competitive Brief"), (14, "[Demo] Weekly EV Competitive Brief")]:
         week_start = (_ago(wk)).date()
         body = (
             f"# {title} - week of {week_start}\n\n"
+            "> DEMO SNAPSHOT - sample report generated from the seeded [Sample] signals. "
+            "Not live market intelligence.\n\n"
             "## Executive summary\n"
-            "Major model launches from Anthropic and OpenAI dominated the week, alongside "
-            "pricing movement and continued hiring in inference and GTM roles.\n\n"
-            "## Top changes\n"
-            "1. **Anthropic - Claude Opus 4.8 released** (significance 5)\n"
-            "2. **OpenAI - GPT-5.2 Turbo announced** (significance 5)\n"
-            "3. **OpenAI - API price cut**, Pro now $18/mo (significance 4)\n\n"
+            "Sample week: EV variant updates from two-wheeler OEMs, battery makers signalling "
+            "cell-manufacturing progress, and steady hiring in battery engineering.\n\n"
+            "## Top changes (sample)\n"
+            "1. **Tata Motors - [Sample] New EV variant listed** (significance 4)\n"
+            "2. **Ola Electric - [Sample] Cell manufacturing page update** (significance 4)\n"
+            "3. **Ather Energy - [Sample] Pro variant price update** (significance 3)\n\n"
             "## What to watch\n"
-            "- European data-center buildout (Mistral financing).\n"
-            "- Enterprise compliance positioning (Cohere).\n"
+            "- Domestic cell capacity (Exide, Amara Raja).\n"
+            "- Use the Research workspace for live, source-linked findings.\n"
         )
         wh.upsert_report(
             report_id=f"report-{week_start}",
             title=f"{title} - {week_start}",
             week_start=week_start,
-            summary="Model launches from Anthropic & OpenAI; pricing moves; steady hiring.",
+            summary="Sample data: EV variant updates, cell-manufacturing signals, battery hiring.",
             body_md=body,
             created_at=_ago(wk - 0.2),
         )
@@ -401,6 +438,7 @@ def main() -> None:
     wh = Warehouse.from_settings(settings)
     counts = seed(wh)
     wh.close()
+    counts["research_runs"] = seed_demo_research(settings.duckdb_path)
     log.info("seeded: %s", counts)
     print("Seeded demo data:", counts)
 

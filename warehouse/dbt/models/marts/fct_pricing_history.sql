@@ -31,8 +31,10 @@ extracted as (
             ),
             'Unknown'
         ) as plan,
-        try_cast(regexp_extract(txt, '\$\s*([0-9]+(?:\.[0-9]{1,2})?)', 1) as double) as price,
-        case when txt like '%$%' then 'USD' else null end as currency,
+        try_cast(replace(regexp_extract(txt, '(?:\$|₹|Rs\.?|INR)\s*([0-9][0-9,]*(?:\.[0-9]{1,2})?)', 1), ',', '') as double) as price,
+        case when txt like '%$%' then 'USD'
+             when txt like '%₹%' or txt like '%INR%' or txt like '%Rs%' then 'INR'
+             else null end as currency,
         extracted_at as captured_at
     from pricing_signals
 )

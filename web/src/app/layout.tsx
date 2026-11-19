@@ -27,7 +27,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://compete.yerradouan
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "compete — Competitive Intelligence, on autopilot",
+    default: "Market Intelligence Tracker — India-first market & competitor research",
     template: "%s · compete",
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     apple: "/compete-logo1.svg",
   },
   openGraph: {
-    title: "compete — Competitive Intelligence, on autopilot",
+    title: "Market Intelligence Tracker — India-first market & competitor research",
     description:
       "Track every move your competitors make. Pricing, hiring, launches, messaging - ranked and explained.",
     type: "website",

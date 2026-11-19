@@ -29,6 +29,8 @@ def run(cmd: list[str], cwd: Path | None = None) -> None:
 
 
 def main() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # Windows cp1252 consoles
     parser = argparse.ArgumentParser(description="Run the compete demo (API + web).")
     parser.add_argument("--skip-seed", action="store_true", help="Reuse the existing warehouse.")
     args = parser.parse_args()

@@ -2,6 +2,8 @@
 
 import {
   Building2,
+  FlaskConical,
+  Newspaper,
   GitCompareArrows,
   Home,
   LayoutDashboard,
@@ -22,7 +24,9 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
-  { href: "/competitors", label: "Competitors", icon: Building2 },
+  { href: "/research", label: "Research", icon: FlaskConical },
+  { href: "/feed", label: "Feed", icon: Newspaper },
+  { href: "/competitors", label: "Companies", icon: Building2 },
   { href: "/signals", label: "Signals", icon: Signal },
   { href: "/changes", label: "Changes", icon: GitCompareArrows },
   { href: "/reports", label: "Reports", icon: FileText },
@@ -30,7 +34,9 @@ const NAV = [
 ];
 
 // The bottom bar fits five comfortably; Settings stays in the sidebar/menu.
-const MOBILE_NAV = NAV.filter((n) => n.href !== "/settings");
+const MOBILE_NAV = NAV.filter((n) =>
+  ["/dashboard", "/research", "/feed", "/competitors", "/reports"].includes(n.href),
+);
 
 function isActive(pathname: string, href: string): boolean {
   return href === "/dashboard" ? pathname === "/dashboard" : pathname.startsWith(href);
@@ -77,7 +83,7 @@ function Brand() {
         priority
         className="h-8 w-8 rounded-lg"
       />
-      <span className="text-base font-semibold tracking-tight">compete</span>
+      <span className="text-base font-semibold leading-tight tracking-tight">Market Intel<span className="block text-[10px] font-normal text-muted-foreground">India-first tracker</span></span>
     </Link>
   );
 }
@@ -102,9 +108,9 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Home className="h-3.5 w-3.5" /> Back to site
           </Link>
           <p className="px-2 text-xs text-muted-foreground">
-            Competitive Intelligence
+            Market Intelligence Tracker
             <br />
-            <span className="text-muted-foreground/60">v0.1 · demo data</span>
+            <span className="text-muted-foreground/60">Built on compete (MIT)</span>
           </p>
         </div>
       </aside>
@@ -135,7 +141,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               height={24}
               className="h-6 w-6 rounded-md"
             />
-            <span className="font-semibold">compete</span>
+            <span className="font-semibold">Market Intel</span>
           </Link>
 
           <div className="ml-auto flex items-center gap-2">

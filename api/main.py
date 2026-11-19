@@ -17,8 +17,9 @@ from pipeline.config import get_settings
 from pipeline.logging_setup import get_logger
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from api import research_store
 from api.db import ApiDB
-from api.routers import analytics, competitors, pipeline, reports, signals
+from api.routers import analytics, competitors, pipeline, reports, research, signals
 
 log = get_logger("api")
 
@@ -28,6 +29,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     settings.ensure_dirs()
     app.state.db = ApiDB(settings.duckdb_path)
+    research_store.bootstrap(app.state.db)
     log.info("API connected to warehouse at %s", settings.duckdb_path)
     try:
         yield
@@ -77,7 +79,7 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-for r in (competitors.router, signals.router, analytics.router, reports.router, pipeline.router):
+for r in (competitors.router, signals.router, analytics.router, reports.router, pipeline.router, research.router):
     app.include_router(r)
 
 

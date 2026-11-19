@@ -1,7 +1,7 @@
 "use client";
 
 import { AreaChart, DonutChart, SparkAreaChart } from "@/components/charts";
-import { Activity, Bell, Building2, Signal as SignalIcon, TrendingUp, Inbox } from "lucide-react";
+import { Activity, Bell, Building2, FlaskConical, Signal as SignalIcon, TrendingUp, Inbox } from "lucide-react";
 import Link from "next/link";
 
 import { AsyncState } from "@/components/async-state";
@@ -9,18 +9,22 @@ import { ChartCard } from "@/components/chart-card";
 import { CompetitorAvatar } from "@/components/competitor-avatar";
 import { EmptyState } from "@/components/empty-state";
 import { PageHeader } from "@/components/page-header";
+import { FindingCard, RunRow } from "@/components/research/research-ui";
 import { RunPipelineButton } from "@/components/run-pipeline-button";
 import { SignalCard } from "@/components/signal-card";
 import { StatCard } from "@/components/stat-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCompetitors, useOverview, useSignals } from "@/lib/hooks";
+import { useFindingsFeed, useResearchRuns } from "@/lib/research-api";
 import { signalMeta } from "@/lib/signal-meta";
 
 export default function OverviewPage() {
   const overview = useOverview();
   const signals = useSignals({ limit: 8 });
   const competitors = useCompetitors();
+  const findings = useFindingsFeed({ limit: 50 });
+  const runs = useResearchRuns();
 
   const nameById = new Map((competitors.data ?? []).map((c) => [c.id, c.name]));
   const stats = overview.data;
@@ -36,14 +40,14 @@ export default function OverviewPage() {
     <div>
       <PageHeader
         title="Overview"
-        description="Competitive signals across everyone you track."
+        description="Market research findings and company signals in one view."
         actions={<RunPipelineButton />}
       />
 
       {/* Metric cards: 2-up on phones, 4-up once there's room. */}
       <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         <StatCard
-          label="Competitors tracked"
+          label="Companies tracked"
           value={stats?.competitors_tracked ?? "-"}
           icon={Building2}
           loading={overview.isLoading}
@@ -80,6 +84,67 @@ export default function OverviewPage() {
           accent={stats && stats.active_alerts > 0 ? "bg-destructive/10 text-destructive" : undefined}
           loading={overview.isLoading}
         />
+      </div>
+
+      {/* Market research: latest runs + important findings */}
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              Important developments
+            </h2>
+            <Link href="/feed" className="text-sm text-primary hover:underline">
+              Intelligence feed
+            </Link>
+          </div>
+          <AsyncState
+            isLoading={findings.isLoading}
+            isError={findings.isError}
+            error={findings.error}
+            onRetry={() => findings.refetch()}
+            isEmpty={(findings.data?.items.length ?? 0) === 0}
+            skeleton={<Skeleton className="h-40 w-full" />}
+            empty={
+              <EmptyState
+                icon={FlaskConical}
+                title="No research findings yet"
+                description="Run a research objective to populate market developments."
+              />
+            }
+          >
+            <div className="flex flex-col gap-3">
+              {[...(findings.data?.items ?? [])]
+                .sort((a, b) => (b.significance ?? 0) - (a.significance ?? 0))
+                .slice(0, 4)
+                .map((f) => (
+                  <FindingCard key={f.id} finding={f} showRun />
+                ))}
+            </div>
+          </AsyncState>
+        </div>
+        <div>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              Recent research
+            </h2>
+            <Link href="/research" className="text-sm text-primary hover:underline">
+              New research
+            </Link>
+          </div>
+          <AsyncState
+            isLoading={runs.isLoading}
+            isError={runs.isError}
+            error={runs.error}
+            onRetry={() => runs.refetch()}
+            isEmpty={(runs.data?.length ?? 0) === 0}
+            skeleton={<Skeleton className="h-40 w-full" />}
+            empty={<EmptyState icon={FlaskConical} title="No research runs" />}
+          >
+            <div className="flex flex-col gap-3">
+              {runs.data?.slice(0, 4).map((r) => <RunRow key={r.id} run={r} />)}
+            </div>
+          </AsyncState>
+        </div>
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">

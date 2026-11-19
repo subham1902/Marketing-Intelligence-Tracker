@@ -72,6 +72,14 @@ class Settings(BaseSettings):
     smtp_password: str | None = Field(default=None, alias="SMTP_PASSWORD")
     alert_email_to: str | None = Field(default=None, alias="ALERT_EMAIL_TO")
 
+    # Research provider (Context.dev). Server-side only - never sent to the browser.
+    context_dev_api_key: str | None = Field(default=None, alias="CONTEXT_DEV_API_KEY")
+    context_dev_base_url: str = Field(
+        default="https://api.context.dev/v1", alias="CONTEXT_DEV_BASE_URL"
+    )
+    context_dev_mode: str = Field(default="fast", alias="CONTEXT_DEV_MODE")
+    research_timeout_seconds: int = Field(default=180, alias="COMPETE_RESEARCH_TIMEOUT")
+
     # API
     api_host: str = Field(default="127.0.0.1", alias="COMPETE_API_HOST")
     api_port: int = Field(default=8000, alias="COMPETE_API_PORT")

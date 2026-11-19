@@ -22,8 +22,8 @@ export default function CompetitorsPage() {
   return (
     <div>
       <PageHeader
-        title="Competitors"
-        description="Everyone you track, with their signal activity at a glance."
+        title="Companies"
+        description="Tracked companies, their URLs, and change signals (pricing, hiring, launches)."
         actions={
           <Button variant="outline" size="sm" asChild>
             <Link href="/settings">Manage in Settings</Link>
