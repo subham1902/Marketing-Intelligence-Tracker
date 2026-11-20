@@ -1,0 +1,321 @@
+# In-app guide knowledge base. Generated from docs/APP_MAP.md; every claim must match the UI.
+entries:
+  # ---------------------------------------------------------------- navigation
+  - id: nav-overview
+    title: The Overview page
+    keywords: [overview, dashboard, home, start, main page, stats]
+    answer: >-
+      **Overview** is the home page. It shows the stat cards (companies tracked, signals this week,
+      high significance, active alerts), **Latest live developments** (real findings, verified ones first),
+      **Recent research**, and a **Market pulse** chart of findings by category.
+    route: /dashboard
+    action_label: Open Overview
+    related: [nav-feed, howto-run-research]
+  - id: nav-research
+    title: Where to run research
+    keywords: [where, research, workspace, ask, question, objective, new research, run]
+    answer: >-
+      Research lives on the **Research** page in the left sidebar (or press **Ctrl+K** and choose
+      *New research*). Type an objective, pick a time window and sources, then click **Run research**.
+    route: /research
+    action_label: Open Research
+    related: [howto-run-research, howto-templates]
+  - id: nav-feed
+    title: The Intelligence feed
+    keywords: [feed, intelligence feed, findings, all findings, list, newest]
+    answer: >-
+      **Feed** lists findings from every research run, newest first. Filter by category (Policy, Tender,
+      Funding…) or by kind (Source excerpt, Source-supported, Provider-cited fact, Analysis), and untick
+      **Include demo snapshot** to see live data only.
+    route: /feed
+    action_label: Open Feed
+    related: [howto-filter-feed, howto-hide-demo]
+  - id: nav-companies
+    title: Companies and company profiles
+    keywords: [companies, competitors, company, profile, tracked, tata, ather, ola, mahindra, tvs]
+    answer: >-
+      **Companies** shows every tracked company. Open one for its profile: **Live developments** from
+      free public sources, pricing history, hiring by location, content cadence and the **Sample signals
+      (demo seed)**.
+    route: /competitors
+    action_label: Open Companies
+    related: [howto-refresh-news, concept-sample]
+  - id: nav-settings
+    title: Settings and adding a company
+    keywords: [settings, add company, add competitor, edit company, delete company, manage]
+    answer: >-
+      Go to **Settings** to add, edit or delete tracked companies (name, domain, industry, tier and
+      tracked URLs), and to change appearance.
+    route: /settings
+    action_label: Open Settings
+    related: [nav-companies]
+  - id: nav-reports
+    title: Weekly reports
+    keywords: [reports, weekly, brief, pdf, download]
+    answer: >-
+      **Reports** holds the weekly competitive briefs with a PDF version. The seeded briefs are marked
+      **[Demo]**. For live, source-linked reports use the Research page.
+    route: /reports
+    action_label: Open Reports
+    related: [concept-demo]
+  - id: nav-signals-changes
+    title: Signals and Changes pages
+    keywords: [signals, changes, detected, page changes, timeline]
+    answer: >-
+      **Signals** and **Changes** show page-change signals for tracked companies (pricing, launches,
+      hiring). In this demo they come from the labelled **[Sample]** seed data, not live collection.
+    route: /signals
+    action_label: Open Signals
+    related: [concept-sample]
+  - id: nav-palette
+    title: Ctrl+K quick search
+    keywords: [ctrl+k, ctrl k, command, palette, jump, search, shortcut, keyboard]
+    answer: >-
+      Press **Ctrl+K** (or click *Jump to…* in the top bar) to jump to any page, company or saved
+      research report by typing. Use the arrow keys and **Enter**. Press **Ctrl+/** to open this guide.
+    related: [nav-research, howto-reopen-run]
+
+  # ------------------------------------------------------------------- how-to
+  - id: howto-run-research
+    title: How to run research
+    keywords: [how, run research, start research, submit, objective, research run, query]
+    answer: |-
+      1. Open **Research**.
+      2. Write an objective, or click a template.
+      3. Pick a **time window** and **source preferences**.
+      4. Click **Run research**.
+
+      You'll land on the report page, where a progress bar shows the real stages: Discovering →
+      Fetching → Synthesizing → Done. Runs typically take 30–120 seconds.
+    route: /research
+    action_label: Open Research
+    related: [howto-templates, concept-stages, trouble-slow]
+  - id: howto-templates
+    title: Research templates
+    keywords: [template, templates, preset, quick, policy, tenders, competitor moves, market overview]
+    answer: >-
+      Above the objective box on **Research** are four templates: **Market overview**, **Policy &
+      incentives**, **Tenders & procurement** and **Competitor moves**. A click fills in the objective,
+      the sources and the time window. You can still edit them before running.
+    route: /research
+    action_label: Open Research
+    related: [howto-run-research]
+  - id: howto-refresh-news
+    title: Refresh a company's news
+    keywords: [refresh, refresh news, company news, latest news, update company, live developments]
+    answer: >-
+      Open a company under **Companies** and click **Refresh news**. It searches the last month of free
+      public sources for that company. A progress bar shows the stages, and the results appear under
+      **Live developments**, kept separate from the sample signals.
+    route: /competitors
+    action_label: Open Companies
+    related: [nav-companies, concept-stages]
+  - id: howto-filter-feed
+    title: Filter the feed
+    keywords: [filter, category, kind, policy only, tender only, feed filter]
+    answer: >-
+      On **Feed**, click a category chip (for example *Policy* or *Tender*) and a kind chip (for example
+      *Source-supported*). Click **All categories** or **All kinds** to reset.
+    route: /feed
+    action_label: Open Feed
+    related: [howto-hide-demo, nav-feed]
+  - id: howto-hide-demo
+    title: Hide the demo snapshot
+    keywords: [hide demo, demo snapshot, sample data, live only, real data only]
+    answer: >-
+      On **Feed**, untick **Include demo snapshot** to show only live findings. The Overview's
+      *Latest live developments* already excludes demo data.
+    route: /feed
+    action_label: Open Feed
+    related: [concept-demo]
+  - id: howto-reopen-run
+    title: Reopen a saved research run
+    keywords: [reopen, saved run, old research, previous, history, past runs, revisit]
+    answer: >-
+      Every run is saved. Open it from the **Research runs** list on the Research page, from **Recent
+      research** on Overview, or with **Ctrl+K**. Reopening loads it from the database without searching
+      the web again.
+    route: /research
+    action_label: Open Research
+    related: [nav-palette]
+  - id: howto-open-source
+    title: Open the source behind a finding
+    keywords: [open source, source link, citation, where from, evidence, url, sources tab]
+    answer: >-
+      In a report, open the **Sources** tab and click **Open source** next to any source. Each source
+      shows its type (government, company, news, aggregator), publish date and snippet. On the **Findings**
+      tab, the domain links under each finding open the cited page.
+    related: [concept-source-excerpt, concept-aggregator]
+  - id: howto-connect-llm
+    title: Connect an LLM for AI summaries
+    keywords: [llm, ai, connect llm, api key, openai, groq, gemini, ollama, summaries, local model]
+    answer: >-
+      Click **Connect LLM** in the top bar. Choose **Off** (cited extracts, the default), **Local model
+      (Ollama)** or **API key** (OpenAI, Groq, Gemini, OpenRouter or custom). Click **Test**, then
+      **Save and connect**. The key stays on the server. Research works fully with AI off.
+    related: [concept-ai-off, concept-source-supported]
+  - id: howto-theme
+    title: Light and dark mode
+    keywords: [dark mode, light mode, theme, appearance]
+    answer: Use the sun/moon button at the right of the top bar to switch between light and dark themes.
+    related: [nav-settings]
+
+  # ------------------------------------------------------------------ concepts
+  - id: concept-source-excerpt
+    title: What "Source excerpt" means
+    keywords: [source excerpt, excerpt, verbatim, quoted, extractive]
+    answer: >-
+      **Source excerpt** means the finding's text is quoted straight from the source page, with no
+      AI-written prose, and it links to that page. It's what you get with AI summaries **Off**.
+    related: [concept-source-supported, concept-ai-off]
+  - id: concept-source-supported
+    title: What "Source-supported (quote verified)" means
+    keywords: [source supported, quote verified, verified, ai finding, evidence quote]
+    answer: >-
+      An AI finding gets **Source-supported (quote verified)** only when its evidence quote was found
+      word for word in the cited source. The quote appears under the finding. If the quote isn't found,
+      the finding is downgraded to **Analysis · quote not found in source**.
+    related: [concept-analysis, howto-connect-llm]
+  - id: concept-provider-cited
+    title: What "Provider-cited fact" means
+    keywords: [provider cited, provider-cited, context.dev, fact]
+    answer: >-
+      **Provider-cited fact** appears on runs made with the optional Context.dev provider. That provider
+      said a source supports the finding; the app doesn't verify it independently.
+    related: [concept-providers]
+  - id: concept-analysis
+    title: What "Analysis" means
+    keywords: [analysis, unverified, interpretation, citation unverified, quote not found]
+    answer: >-
+      **Analysis** is interpretation, or a claim whose citation couldn't be confirmed. The badge says
+      why, for example *quote not found in source* or *citation unverified*. Treat it as a lead to
+      check, not a fact.
+    related: [concept-source-supported]
+  - id: concept-demo
+    title: Demo snapshot
+    keywords: [demo snapshot, demo, sample run, fake, preloaded]
+    answer: >-
+      **Demo snapshot** marks preloaded sample research so the app has something to show before you run
+      your own. It is never live data. Hide it with **Include demo snapshot** on the Feed.
+    related: [howto-hide-demo, concept-sample]
+  - id: concept-sample
+    title: "[Sample] signals"
+    keywords: [sample, "[sample]", seed, sample signals, illustrative]
+    answer: >-
+      Items marked **[Sample]** (company signals, prices, hiring) are illustrative seed data for the demo.
+      Real, current items come from **Refresh news** and the **Research** page.
+    related: [howto-refresh-news, concept-demo]
+  - id: concept-date-na
+    title: Why a date says "Not available"
+    keywords: [date, not available, no date, missing date, published]
+    answer: >-
+      The app never guesses a date. If the source page has no publish date in its metadata or text (common
+      on some government pages), the date shows as **Not available**.
+    related: [concept-aggregator]
+  - id: concept-aggregator
+    title: Aggregator links
+    keywords: [aggregator, google news, redirect, aggregator link]
+    answer: >-
+      Some results come from Google News, whose links are redirects that can't be resolved to the
+      publisher automatically. They're labelled **aggregator link** and use the headline, publisher and
+      date from the news feed.
+    related: [concept-sources]
+  - id: concept-gdelt
+    title: GDELT coverage window
+    keywords: [gdelt, window, 3 months, older news, coverage, rate limit]
+    answer: >-
+      GDELT covers roughly the last 3 months and is often rate-limited. When it's skipped, the report's
+      **Coverage notes** say so. Other sources (DuckDuckGo news, Google News, PIB) still run.
+    related: [concept-sources, trouble-no-results]
+  - id: concept-sources
+    title: Where the data comes from
+    keywords: [sources, data, free, where data, duckduckgo, pib, google news, gdelt]
+    answer: >-
+      By default research uses free public sources with no key: **DuckDuckGo news**, **Google News**,
+      **PIB** (government press releases) and **GDELT**. Pages are fetched and their text is extracted.
+      Government sources are ranked first, then company and news sites.
+    related: [concept-providers, concept-gdelt]
+  - id: concept-providers
+    title: Free vs optional providers
+    keywords: [provider, context.dev, paid, free, optional, open provider]
+    answer: >-
+      The default research provider is free and keyless. **Context.dev** is an optional paid provider
+      set by the server admin (`COMPETE_RESEARCH_PROVIDER=contextdev` plus a key). AI summaries are
+      separate and optional: use **Connect LLM**.
+    related: [howto-connect-llm, concept-provider-cited]
+  - id: concept-ai-off
+    title: Does it work without AI?
+    keywords: [without ai, no llm, no key, extractive, ai off, free]
+    answer: >-
+      Yes. With AI summaries **Off** (the default) research is fully extractive: every finding is
+      quoted from its source and linked. No key and no local model are needed. That's also how it runs
+      on hosted servers.
+    related: [concept-source-excerpt, howto-connect-llm]
+  - id: concept-stages
+    title: Research stages
+    keywords: [stages, progress, status, discovering, fetching, synthesizing, queued]
+    answer: >-
+      A run moves through real backend stages: **Queued → Discovering sources → Fetching pages →
+      Synthesizing → Done**. The battery-style bar on the report page fills as each stage completes.
+    related: [trouble-slow, howto-run-research]
+  - id: concept-outside-window
+    title: Outside time window
+    keywords: [outside time window, old, older, window, background]
+    answer: >-
+      **Outside time window** marks a finding dated before the run's chosen window. It's kept as
+      background context rather than hidden.
+    related: [concept-date-na]
+  - id: concept-multi-source
+    title: Covered by N sources
+    keywords: [covered by, multiple sources, duplicate, same story]
+    answer: >-
+      When several publishers report the same story, the findings are merged into one, marked **Covered
+      by N sources**, with every source linked.
+    related: [howto-open-source]
+
+  # ------------------------------------------------------------ troubleshooting
+  - id: trouble-failed
+    title: A research run failed
+    keywords: [failed, error, fail, broken, did not work, research failed, why fail]
+    answer: >-
+      Open the run: the red box gives the reason. **no_sources** means nothing relevant was found for the
+      window, so try a broader objective or a longer window. **missing_key** means the optional
+      Context.dev provider was chosen without a key. The Activity drawer also lists failures.
+    route: /research
+    action_label: Open Research
+    related: [trouble-no-results]
+  - id: trouble-slow
+    title: Research is slow
+    keywords: [slow, taking long, stuck, waiting, long time]
+    answer: >-
+      Runs usually take 30–120 seconds because the app fetches about 25 real pages. With a local AI model
+      connected, synthesis adds time. The stage bar shows where the run is. You can leave the page; the run
+      continues and is saved.
+    related: [concept-stages, howto-connect-llm]
+  - id: trouble-no-results
+    title: No results or few findings
+    keywords: [no results, nothing found, empty, few findings, no findings]
+    answer: >-
+      Try a broader objective, a longer time window (3–12 months), or name a company directly (for
+      example "Ola Electric developments"). Check **Coverage notes** in the report to see which sources were
+      skipped.
+    related: [concept-gdelt, trouble-failed]
+
+  # --------------------------------------------------------------------- about
+  - id: about-product
+    title: What this app does
+    keywords: [what is this, about, purpose, what does it do, product, market intelligence]
+    answer: >-
+      Market Intel Tracker is an India-first market intelligence workspace. It tracks companies, runs
+      on-demand research across free public sources (including government and tender pages) and turns the
+      results into structured, labelled findings with links to every source. The demo industry is Indian EV
+      and mobility, but it works for any industry.
+    related: [about-limits, howto-run-research]
+  - id: about-limits
+    title: What it does not do
+    keywords: [limits, limitations, cannot, does not, missing, roadmap, not supported]
+    answer: >-
+      It doesn't (yet) do scheduled monitoring, alert delivery, multi-user accounts or predictions.
+      Some government pages have no date, Google News links are aggregator redirects, and on hosted servers
+      new runs may be lost on redeploy. AI-written prose is not quote-verified.
+    related: [about-product]

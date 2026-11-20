@@ -19,7 +19,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from api import research_store
 from api.db import ApiDB
-from api.routers import analytics, competitors, pipeline, reports, research, signals
+from api.routers import analytics, assistant, competitors, pipeline, reports, research, signals
 
 log = get_logger("api")
 
@@ -116,7 +116,10 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-for r in (competitors.router, signals.router, analytics.router, reports.router, pipeline.router, research.router):
+for r in (
+    competitors.router, signals.router, analytics.router, reports.router, pipeline.router,
+    research.router, assistant.router,
+):
     app.include_router(r)
     # Hosted deployments (e.g. Emergent) route /api/* to the backend without
     # stripping the prefix, so every route is also served under /api.
