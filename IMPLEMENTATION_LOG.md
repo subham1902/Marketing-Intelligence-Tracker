@@ -118,3 +118,16 @@ To capture a live run for the offline/static build, stop the API and run `uv run
 - Pricing chart used a hardcoded USD formatter; it now uses the currency carried by the data (INR shows as ₹ with Indian digit grouping, e.g. ₹1,20,000).
 - Company page breadcrumb renamed from "Competitors" to "Companies".
 - Findings dated before the run's time window are flagged `outside_window` and shown with an "Outside time window" badge. They are flagged, not hidden. Stored runs are backfilled at API startup. 1 new test; `uv run pytest`: 60 passed; `tsc` clean; `npm run build` succeeds.
+
+## Overnight build (20 Nov 2026, 01:46-05:10 IST)
+
+Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Progress per phase is in `PROGRESS.md`; the summary is in `MORNING_REPORT.md`.
+
+- **Phase 1:** baseline green. Added dependency `ddgs` 9.16.1 (pre-approved). Ollama models: qwen2.5:7b-instruct (pulled tonight), qwen3.5:9b, qwen3.5:4b.
+- **Phase 2:** free `open` provider (default), real status stages, new kinds `source_excerpt` / `source_supported`, columns `evidence_quote`, `discovered_via`, `status_message` (added with `ALTER ... IF NOT EXISTS`). 12 fixture tests.
+- **Phase 3:** `POST /companies/{id}/refresh`, `GET /companies/{id}/developments`, and a Live developments card.
+- **Phase 4:** real EV snapshot, `config/research_snapshot.json`, `/api` mirror, first-boot autoseed, `requirements.txt`.
+- **Phase 5:** hosting defaults (frontend live mode, `COMPETE_LLM_PROVIDER=mock`), Emergent hand-off doc, README quick start.
+- **Phase 6:** browser QA fixes: background polling, objective-driven discovery and ranking, verified-first ordering, a label on the unverified LLM summary.
+- **Gates:** pytest 72 passed; tsc clean; `npm run build` success; `/api/health` ok.
+- **Alternative not taken:** Emergent's universal LLM key for hosted summaries. It's a P0 idea in the hand-off doc and must keep the `quote_in_text` rule.
