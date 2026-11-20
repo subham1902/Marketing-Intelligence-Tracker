@@ -116,8 +116,22 @@ def _parse_dt(v: Any) -> datetime | None:
     return None
 
 
+_BOILERPLATE = re.compile(
+    r"(ADVERTISEMENT|Advertisement|Story continues below|Also Read:?|Read More:?|Follow us on \w+|"
+    r"(Published|Updated|Last Updated)\s*(On|:)?\s*[A-Z][a-z]{2,8}\.? ?\d{1,2},? \d{4}(\s*[|,]?\s*\d{1,2}:\d{2}\s*(IST|AM|PM)?)?"
+    r"(\s*-\s*)?)",
+)
+
+
+def clean_boilerplate(text: str) -> str:
+    """Remove common news-page chrome (ad markers, publish/update stamps) from extracted text."""
+    t = _BOILERPLATE.sub(" ", text or "")
+    t = re.sub(r"^\W+", "", re.sub(r"\s*\|\s*(?=\s|$)", " ", t))
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def _lead_sentences(text: str, n: int = 2, max_chars: int = 400) -> str:
-    text = re.sub(r"\s+", " ", text or "").strip()
+    text = clean_boilerplate(text)
     parts = re.split(r"(?<=[.!?])\s+", text)
     out = " ".join(parts[:n]).strip()
     return out[:max_chars].rsplit(" ", 1)[0] + "…" if len(out) > max_chars else out

@@ -318,3 +318,12 @@ def test_looks_old() -> None:
     assert _looks_old("https://example.com/news/2019/05/ev.html", 2026)
     assert not _looks_old("https://newindiasamachar.pib.gov.in/WriteReadData/Magazine//2026/Feb/M1.pdf", 2026)
     assert not _looks_old("https://pib.gov.in/PressReleasePage.aspx?PRID=2072136", 2026)
+
+
+def test_clean_boilerplate() -> None:
+    from pipeline.research.open_provider import _lead_sentences
+
+    raw = ("Published OnNov 16, 2026 | 04:50 IST - Last Updated OnNov 16, 2026 | 09:16 IST "
+           "Tata Motors PV shares fell 8%. ADVERTISEMENT Analysts cut targets.")
+    out = _lead_sentences(raw)
+    assert out.startswith("Tata Motors PV shares fell 8%.") and "ADVERTISEMENT" not in out
