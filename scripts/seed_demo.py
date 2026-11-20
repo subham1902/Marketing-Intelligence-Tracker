@@ -417,6 +417,49 @@ def seed(wh: Warehouse) -> dict[str, int]:
     return counts
 
 
+def load_research_snapshot(db_path) -> int:
+    """Load real research runs from config/research_snapshot.json (if present).
+
+    These are genuine captured runs (is_demo=false), so hosted deployments start
+    with real, source-linked reports. Existing runs with the same id are kept.
+    """
+    from datetime import datetime as _dt
+
+    from api import research_store as rstore
+    from api.db import ApiDB
+
+    path = REPO_ROOT / "config" / "research_snapshot.json"
+    if not path.exists():
+        return 0
+    runs = json.loads(path.read_text(encoding="utf-8"))
+
+    def ts(v):
+        return _dt.fromisoformat(v) if isinstance(v, str) else v
+
+    db = ApiDB(db_path)
+    n = 0
+    try:
+        rstore.bootstrap(db)
+        for r in runs:
+            if db.query_one("SELECT id FROM research.research_runs WHERE id=?", [r["id"]]):
+                continue
+            rstore.create_run(db, {**r, "status": "queued", "created_at": ts(r["created_at"])})
+            for s in r["sources"]:
+                s["published_at"] = ts(s.get("published_at"))
+                s["retrieved_at"] = ts(s.get("retrieved_at"))
+            for f in r["findings"]:
+                f["created_at"] = ts(f.get("created_at"))
+            rstore.complete_run(
+                db, r["id"], report=r.get("result") or {}, sources=r["sources"],
+                findings=r["findings"], partial=r["status"] == "partial",
+                request_id=r.get("provider_request_id"), completed_at=ts(r.get("completed_at")),
+            )
+            n += 1
+    finally:
+        db.close()
+    return n
+
+
 def run_dbt_build() -> bool:
     import os
 
@@ -439,6 +482,7 @@ def main() -> None:
     counts = seed(wh)
     wh.close()
     counts["research_runs"] = seed_demo_research(settings.duckdb_path)
+    counts["real_research_runs"] = load_research_snapshot(settings.duckdb_path)
     log.info("seeded: %s", counts)
     print("Seeded demo data:", counts)
 

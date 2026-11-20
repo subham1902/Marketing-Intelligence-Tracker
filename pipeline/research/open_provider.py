@@ -265,6 +265,24 @@ class OpenResearchProvider:
             ))
         return out
 
+    def _ddgs_text(self, q: str, days: int) -> list[Candidate]:
+        timelimit = "m" if days <= 31 else "y"
+        key = f"ddgs-text:{q}:{timelimit}"
+        rows = self._cache_get(key)
+        if rows is None:
+            try:
+                rows = list(self._ddgs_factory().text(q, region="in-en", max_results=10, timelimit=timelimit))
+                self._cache_put(key, rows)
+            except Exception as exc:
+                self.notes.append(f"Web search for official/tender pages unavailable ({type(exc).__name__}).")
+                return []
+        out = []
+        for r in rows or []:
+            if isinstance(r, dict) and str(r.get("href", "")).startswith("http"):
+                out.append(Candidate(url=r["href"], title=r.get("title") or None,
+                                     snippet=r.get("body") or None, via="duckduckgo_web"))
+        return out
+
     def _google_news(self, q: str, days: int) -> list[Candidate]:
         import feedparser
 
@@ -346,6 +364,12 @@ class OpenResearchProvider:
         keywords = [*(req.companies or []), *(req.industry or "electric vehicle").split()[:3],
                     "electric", "EV", "battery", "charging", "e-mobility"]
         cands += self._pib(keywords)
+        prefs = set(req.source_preferences or [])
+        base = req.industry or "electric vehicle"
+        if "government" in prefs or "regulatory" in prefs:
+            cands += self._ddgs_text(f"{base} site:pib.gov.in", days)
+        if "tenders" in prefs:
+            cands += self._ddgs_text(f"{base} tender site:gem.gov.in OR site:eprocure.gov.in", days)
         cands += self._gdelt(f'"{(req.industry or "electric vehicle")}"', days)
         return cands
 
@@ -638,6 +662,16 @@ class OpenResearchProvider:
             report = self._report_from(findings, sources, "extractive")
         else:
             report, findings = result
+            # Sources the LLM did not cite still become labelled verbatim excerpts,
+            # so nothing gathered is silently dropped.
+            cited = {sid for f in findings for sid in f.get("source_ids") or []}
+            pairs = [(c, s) for c, s in zip(picked, sources, strict=True) if s["id"] not in cited]
+            if pairs:
+                extra = self.extractive(run_id, req, [c for c, _ in pairs], [s for _, s in pairs])
+                findings = findings + extra
+                for f in extra:
+                    sec = _SECTION_FOR_CATEGORY.get(f["category"], "company_developments")
+                    report.setdefault(sec, []).append(f["title"])
         return NormalizedResult(report, sources, findings, partial=False, request_id=None)
 
 

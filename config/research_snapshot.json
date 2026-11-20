@@ -1,0 +1,2456 @@
+[
+ {
+  "id": "rr-20261120-f3edb787",
+  "objective": "Research India's electric mobility industry. Identify significant competitor developments, product launches, manufacturing expansions, partnerships, investment activity, policy developments, procurement opportunities and emerging commercial opportunities. Prioritize original company announcements and official government sources. Separate verified facts from analysis and provide the sources supporting every finding.",
+  "industry": "electric vehicle",
+  "geography": "India",
+  "time_window": "3m",
+  "date_from": "2026-08-21",
+  "date_to": "2026-11-20",
+  "companies": [
+   "Tata Motors",
+   "Mahindra",
+   "TVS Motor",
+   "Ather Energy",
+   "Ola Electric",
+   "Exide Industries",
+   "Amara Raja"
+  ],
+  "source_preferences": [
+   "official_company",
+   "government",
+   "tenders"
+  ],
+  "status": "completed",
+  "provider": "open",
+  "is_demo": false,
+  "provider_request_id": null,
+  "created_at": "2026-11-20T10:08:07.702540+05:30",
+  "started_at": "2026-11-20T10:08:07.855584+05:30",
+  "completed_at": "2026-11-20T10:09:28.595803+05:30",
+  "error_code": null,
+  "error_message": null,
+  "status_message": "Done",
+  "source_count": 25,
+  "finding_count": 24,
+  "result": {
+   "executive_summary": "India's electric mobility industry is experiencing significant growth, driven by government initiatives such as the PM E-DRIVE Scheme. The industry is seeing substantial investment, policy support, and technological advancements. Key players like Mahindra are expanding their EV offerings and achieving safety certifications. The industry is also facing challenges such as export bans on battery black mass, which could reshape the domestic recycling industry.",
+   "industry_overview": "India is focusing on electric mobility to reduce carbon emissions and promote green technology. The government has launched the PM E-DRIVE Scheme to boost EV adoption and infrastructure. The industry is expected to see a surge in investment and employment opportunities. Mahindra is leading in the EV market with safety certifications and innovative solutions.",
+   "market_trends": [
+    "Government incentives for EV adoption",
+    "Increase in EV charging stations",
+    "Safety certifications for EVs",
+    "Focus on recycling and battery management"
+   ],
+   "company_developments": [
+    "ELECTRIC VEHICLE CHARGING STATIONS",
+    "Amendments in Model Building Bye-Laws (MBBL - 2016) for ...",
+    "Press Release Page | Press Information Bureau",
+    "Mahindra 6 Seater Cars in India (2)",
+    "Tata Motors PV shares fall over 8% after multiple price target cuts on Q2 loss, JLR guidance revision",
+    "Why India's black mass export ban matters for its EV battery ambitions",
+    "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow",
+    "Ola Electric Scooters in India (3)"
+   ],
+   "product_launches": [
+    "Mahindra XEV 9S Achieves 5-Star Safety Rating (mahindra.com, 2026-11-17)",
+    "Upcoming Mahindra cars in India (7)",
+    "Ola Electric's cash cushion dwindles as market share slips and losses persist",
+    "BYD brings it’s luxury electric brand Denza into India, introduces two models",
+    "Mahindra Electric SUVs UK Launch 2027 Planned - Export From India"
+   ],
+   "manufacturing_expansion": [],
+   "partnerships_and_investment": [
+    "Mahindra Wins Earthshot Prize (mahindra.com, 2026-11-18)",
+    "Honda and Hyundai in Talks with Tata for Collaboration (rushlane.com, 2026-11-19)",
+    "BYD offers full refunds to 1,265 Australian customers who bought cars believing they were 2026 models, only to discover the vehicles were built in 2025",
+    "TVS Motor family feud: Lakshmi Venu seeks partition of family stakes in group companies",
+    "Tata Motors shares: 22% down in 2026, right time to buy famous auto stock? What brokerages say after loss narrows in Q2",
+    "India not a refuge but 'compelling' AI opportunity: Anand Mahindra"
+   ],
+   "policy_and_regulatory": [
+    "Government Launches PM E-DRIVE Scheme (pib.gov.in)",
+    "India Bans Export of Lithium-Ion Battery Black Mass (financialexpress.com, 2026-11-19)",
+    "PM E-DRIVE Scheme",
+    "Uttar Pradesh EV Manufacturing and Mobility Policy, 2022: Things to know"
+   ],
+   "tenders_and_procurement": [
+    "Govt makes EVs default choice for staff cars, sets ₹20 lakh procurement cap"
+   ],
+   "commercial_opportunities": [
+    "Partnerships with Indian auto companies for cost reduction and market expansion",
+    "Investment in EV charging infrastructure",
+    "Development of new vehicle platforms",
+    "Expansion of EV manufacturing facilities"
+   ],
+   "risks": [
+    "Dependence on imported critical minerals",
+    "Regulatory changes affecting export policies",
+    "Competition from international players",
+    "Technological challenges in battery management"
+   ],
+   "method": "llm (qwen2.5:7b-instruct)",
+   "coverage_notes": [
+    "GDELT unreachable."
+   ]
+  },
+  "sources": [
+   {
+    "id": "059060f809899b0e9590",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://archive.pib.gov.in/documents/rlink/2019/feb/p201921501.pdf",
+    "domain": "archive.pib.gov.in",
+    "title": "Amendments in Model Building Bye-Laws (MBBL - 2016) for ...",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "As electric vehicle charging technology continues to advance, several standards and guidelines have become widely accepted across the industry. This section gives a brief overview of charging infrastructure technology, standards, and terminology.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "36d50e7fd6cd3c511b3e",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2101632",
+    "domain": "pib.gov.in",
+    "title": "PM E-DRIVE SCHEME FOR ELECTRIC VEHICLE ADOPTION",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Feb 11, 2025 · The Government of India has notified ‘PM Electric Drive Revolution in Innovative Vehicle Enhancement (PM E-DRIVE) Scheme' on 29.09.2024 to provide impetus to the green mobility & development of EV eco",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "aa7d5d9ac1368b60d5dc",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2070937",
+    "domain": "pib.gov.in",
+    "title": "PM E-DRIVE Scheme: Electric Vehicle Sales Soar",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Nov 5, 2024 · Through the promotion of electric vehicles (EVs) and supporting infrastructure, the scheme is expected to catalyze significant investment in the EV sector and its supply chain. Furthermore, it will generate substantial employment opportunities across the value chain, including jobs in manufacturing and charging infrastructure setup.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "d202c8028d183f23a252",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2204635&reg=3&lang=1",
+    "domain": "pib.gov.in",
+    "title": "ELECTRIC VEHICLE CHARGING STATIONS",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "The details of 29,151 electric vehicle charging stations (EVCS) installed all over India in each State and Union Territory during the last five years are provided at Annexure.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "a3342baabf362967eeea",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2294688&reg=48&lang=1",
+    "domain": "pib.gov.in",
+    "title": "Press Release Page | Press Information Bureau",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "India aims for 30% of all vehicle sales to be electric by 2030, aligning with the global EV30@30 initiative. The EV ecosystem is strengthened with the establishment of 1.32 million charging stations across India by 2030.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "f1ad0d071a0eb693af96",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10062_20261001_19244601.pdf",
+    "domain": "static.pib.gov.in",
+    "title": "PM E-DRIVE Scheme",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "• It provides demand incentives and infrastructure support across various vehicle categories and associated components. The categories covered include e-2 Wheelers (e-2Ws), e-3 Wheelers (e-3Ws) including registered e-rickshaws & e-carts and L5, e-Ambulances, e-Trucks, e-Buses, charging infra, and upgradation of testing agencies.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo_web"
+   },
+   {
+    "id": "681c332e2601a6769790",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.mahindra.com/news-room/press-release/en/mahindra-last-mile-mobility-wins-the-earthshot-prize-2026-for-transforming-last-mile-mobility-in-india",
+    "domain": "mahindra.com",
+    "title": "Mahindra Last Mile Mobility Wins The Earthshot Prize 2026 for Transforming Last-Mile Mobility in India",
+    "source_type": "company",
+    "published_at": "2026-11-18T10:03:41+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Mahindra Last Mile Mobility is the winner of The Earthshot Prize 2026 in the ‘Clean Our Air’ category for its efforts to advance cleaner last-mile mobility while supporting dr ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "315a71bbdd811d9c873f",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.mahindra.com/news-room/press-release/en/mahindra-xev-9s-becomes-indias-safest-7-seater-suv-first-7-seater-ev-to-achieve-a-5-star-bharat-ncap-rating",
+    "domain": "mahindra.com",
+    "title": "Mahindra XEV 9S Becomes India's Safest 7-seater SUV First 7-seater EV to achieve a 5-star Bharat NCAP Rating",
+    "source_type": "company",
+    "published_at": "2026-11-17T13:28:00+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Mumbai, November 17, 2026: Mahindra today announced that the XEV 9S has secured a 5-star rating under the Bharat New Car Assessment Programme (Bharat NCAP), making it India's safest 7-seater SUV across both ICE and electric segments. It is also the first 7-seater EV in India to achieve the top rating.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "ae652c5a3fc9397bc4df",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.financialexpress.com/market/stock-insights/indias-new-export-ban-keeps-battery-minerals-at-home-3-recycling-stocks-could-cash-in/4387982/",
+    "domain": "financialexpress.com",
+    "title": "India’s new export ban keeps battery minerals at home. 3 recycling stocks could cash in",
+    "source_type": "news",
+    "published_at": "2026-11-19T10:03:52+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "India bans lithium-ion battery black mass exports to boost domestic recycling, enhance raw material availability, and support ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9da148bbdf91298c1452",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.rushlane.com/honda-hyundai-in-talks-with-tata-for-parts-vehicles-platforms-collab-report-12561551.html",
+    "domain": "rushlane.com",
+    "title": "Honda, Hyundai In Talks With Tata For Parts, Vehicles, Platforms Collab – Report",
+    "source_type": "news",
+    "published_at": "2026-11-19T10:03:38+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Tata Group businesses AutoComp, Agratas, Tata Technologies, Elxsi and TCS, could contribute to joint development programmes ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "7e21d0333171b6adc660",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://timesofindia.indiatimes.com/world/rest-of-world/byd-offers-full-refunds-to-1265-australian-customers-who-bought-cars-believing-they-were-2026-models-only-to-discover-the-vehicles-were-built-in-2025/articleshow/135994857.cms",
+    "domain": "timesofindia.indiatimes.com",
+    "title": "BYD offers full refunds to 1,265 Australian customers who bought cars believing they were 2026 models, only to discover the vehicles were built in 2025",
+    "source_type": "news",
+    "published_at": "2026-11-19T10:03:32+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "More than 1,200 Australians who purchased electric and hybrid vehicles from BYD discovered that their cars were built in 2025 ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9b3c0d164cc50196c5fc",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.autocarindia.com/upcoming-mahindra-cars",
+    "domain": "autocarindia.com",
+    "title": "Upcoming Mahindra cars in India (7)",
+    "source_type": "news",
+    "published_at": "2026-11-19T05:31:00+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Explore 7 upcoming Mahindra cars in India. Check expected prices, launch dates, specs, images and more for all upcoming Mahindra models on Autocar India.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "c0e12e268a40e69be769",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://auto.economictimes.indiatimes.com/news/industry/tvs-motor-family-feud-lakshmi-venu-seeks-partition-of-family-stakes-in-group-companies/135923908",
+    "domain": "auto.economictimes.indiatimes.com",
+    "title": "TVS Motor family feud: Lakshmi Venu seeks partition of family stakes in group companies",
+    "source_type": "news",
+    "published_at": "2026-11-18T10:03:44+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Lakshmi Venu has filed for a partition of joint family assets within the TVS family, challenging the 2020 arrangement and ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "13ea122a637f7d2ca1d0",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.autocarindia.com/cars/mahindra-6-seater-cars",
+    "domain": "autocarindia.com",
+    "title": "Mahindra 6 Seater Cars in India (2)",
+    "source_type": "news",
+    "published_at": "2026-11-18T05:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Mahindra 6 Seater cars in India with latest prices, mileage, key specifications, features, images and expert reviews on Autocar India.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "2282354824671e375bd6",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.business-standard.com/economy/uttar-pradesh/uttar-pradesh-ev-manufacturing-and-mobility-policy-2022-things-to-know-126111600885_1.html",
+    "domain": "business-standard.com",
+    "title": "Uttar Pradesh EV Manufacturing and Mobility Policy, 2022: Things to know",
+    "source_type": "news",
+    "published_at": "2026-11-17T10:03:52+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "The policy is a combined industrial and transport framework intended to develop an electric-vehicle ecosystem in Uttar ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "6549a806444704f17657",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.livemint.com/companies/news/ola-electric-cash-reserves-fall-sales-market-share-loss-11794733370775.html",
+    "domain": "livemint.com",
+    "title": "Ola Electric's cash cushion dwindles as market share slips and losses persist",
+    "source_type": "news",
+    "published_at": "2026-11-16T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "While the company's October rights issue of ₹1,000 crore, of which it has raised about ₹600 crore so far, will support its ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "ad73968562f5d7f93a1b",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.cnbctv18.com/market/tata-motors-pv-share-price-q2-result-reaction-buy-sell-motilal-cuts-target-eps-estimates-jlr-headwinds-20034512.htm",
+    "domain": "cnbctv18.com",
+    "title": "Tata Motors PV shares fall over 8% after multiple price target cuts on Q2 loss, JLR guidance revision",
+    "source_type": "news",
+    "published_at": "2026-11-16T10:03:38+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Motilal Oswal has slashed its Earnings Per Share (EPS) estimates for Tata Motors PV by 69% for financial year 2027 and by 5% ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "57d569dd998b51f69735",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.livemint.com/market/stock-market-news/tata-motors-shares-22-down-in-2026-right-time-to-buy-famous-auto-stock-what-brokerages-say-after-loss-narrows-in-q2-11794720978958.html",
+    "domain": "livemint.com",
+    "title": "Tata Motors shares: 22% down in 2026, right time to buy famous auto stock? What brokerages say after loss narrows in Q2",
+    "source_type": "news",
+    "published_at": "2026-11-16T10:03:38+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Tata Motors PV reported a Q2 FY27 consolidated loss of ₹5,531 cr, including exceptional charges of ₹6,738 cr, even as revenue ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "f8876a59fee0856c4582",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.business-standard.com/industry/news/india-black-mass-export-ban-ev-battery-recycling-critical-minerals-126111300672_1.html",
+    "domain": "business-standard.com",
+    "title": "Why India's black mass export ban matters for its EV battery ambitions",
+    "source_type": "news",
+    "published_at": "2026-11-14T10:03:52+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "India's black mass export ban aims to keep valuable battery minerals within the country, support domestic recycling and ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "4a59a064e26a83119645",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.thehindu.com/life-and-style/motoring/byd-brings-its-luxury-electric-brand-denza-into-india-introduces-two-models/article71697207.ece",
+    "domain": "thehindu.com",
+    "title": "BYD brings it’s luxury electric brand Denza into India, introduces two models",
+    "source_type": "news",
+    "published_at": "2026-11-14T10:03:32+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Chinese electric vehicles major BYD has introduced it’s luxury electric brand Denza in India by launching two models, D9, a luxury high Multi-Purpose Vehicle (MPV) starting at ex showroom price of ₹90 ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "3dbefdf123c8733c0af0",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://economictimes.indiatimes.com/tech/startups/ola-electrics-q2-revenue-slumps-39-to-rs-421-crore-losses-narrow/articleshow/135769373.cms",
+    "domain": "economictimes.indiatimes.com",
+    "title": "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow",
+    "source_type": "news",
+    "published_at": "2026-11-13T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "dc668e152fbea2fe8851",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.rushlane.com/mahindra-electric-suvs-uk-launch-2027-planned-export-from-india-12560991.html",
+    "domain": "rushlane.com",
+    "title": "Mahindra Electric SUVs UK Launch 2027 Planned - Export From India",
+    "source_type": "news",
+    "published_at": "2026-11-12T18:28:00+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Mahindra is set to expand their global presence by launching the BE 6 and XEV 9e in UK some time in 2027 or 2028, followed by BE 7",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "85140a787ae6dd5d1483",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.livemint.com/news/govt-evs-default-choice-staff-cars-20-lakh-procurement-cap-11794317496374.html",
+    "domain": "livemint.com",
+    "title": "Govt makes EVs default choice for staff cars, sets ₹20 lakh procurement cap",
+    "source_type": "news",
+    "published_at": "2026-11-11T10:03:55+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Government departments should ordinarily replace retiring staff cars with EVs under revised procurement rules. The move ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "6b81f35120ddcd95438e",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.business-standard.com/technology/artificial-intelligence/india-not-a-refuge-but-compelling-ai-opportunity-anand-mahindra-126111000734_1.html",
+    "domain": "business-standard.com",
+    "title": "India not a refuge but 'compelling' AI opportunity: Anand Mahindra",
+    "source_type": "news",
+    "published_at": "2026-11-10T21:51:00+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "Anand Mahindra said India's software talent, systems integration capabilities and large domestic market could give it a distinct AI opportunity, supporting renewed investor interest in Indian equities",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "d718c684320ecb9e9473",
+    "research_run_id": "rr-20261120-f3edb787",
+    "url": "https://www.autocarindia.com/bikes/ola-electric-scooters",
+    "domain": "autocarindia.com",
+    "title": "Ola Electric Scooters in India (3)",
+    "source_type": "news",
+    "published_at": "2026-11-10T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:09:02.413578+05:30",
+    "snippet": "All 3 Ola electric scooters in India, priced from Rs. 79,999 to Rs. 1.3 lakh, with 108 to 320 km of range on a charge.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   }
+  ],
+  "findings": [
+   {
+    "id": "9374be239d52e53fc88e",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Government Launches PM E-DRIVE Scheme",
+    "category": "policy",
+    "entity": "Government of India",
+    "industry": "electric vehicle",
+    "summary": "The government has launched the PM E-DRIVE Scheme to promote electric vehicles and their infrastructure.",
+    "significance": 5,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": null,
+    "source_ids": [
+     "36d50e7fd6cd3c511b3e",
+     "aa7d5d9ac1368b60d5dc"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.005329+05:30",
+    "evidence_quote": "The Government of India has notified ‘PM Electric Drive Revolution in Innovative Vehicle Enhancement (PM E-DRIVE) Scheme' on 29.09.2024 to provide impetus to the green mobility & development of EV eco"
+   },
+   {
+    "id": "0e56381bd410a7bf3422",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Mahindra Wins Earthshot Prize",
+    "category": "partnership",
+    "entity": "Mahindra Last Mile Mobility",
+    "industry": "electric vehicle",
+    "summary": "Mahindra Last Mile Mobility has won the Earthshot Prize 2026 for its efforts in cleaner last-mile mobility.",
+    "significance": 5,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "681c332e2601a6769790"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.006586+05:30",
+    "evidence_quote": "Mahindra Last Mile Mobility Limited (MLMML) has been named the winner of The Earthshot Prize 2026 in the 'Clean Our Air' category."
+   },
+   {
+    "id": "b10fc7a37583e8faf140",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Mahindra XEV 9S Achieves 5-Star Safety Rating",
+    "category": "product_launch",
+    "entity": "Mahindra Group",
+    "industry": "electric vehicle",
+    "summary": "Mahindra XEV 9S has achieved a 5-star safety rating under the Bharat NCAP, making it the safest 7-seater EV in India.",
+    "significance": 5,
+    "confidence": 1.0,
+    "kind": "analysis",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "315a71bbdd811d9c873f"
+    ],
+    "flags": [
+     "quote_not_found"
+    ],
+    "created_at": "2026-11-20T10:09:27.007786+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "2aeefef99f65facfa77f",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Amendments in Model Building Bye-Laws (MBBL - 2016) for ...",
+    "category": "technology",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "As electric vehicle charging technology continues to advance, several standards and guidelines have become widely accepted across the industry. This section gives a brief overview of charging infrastructure technology, standards, and terminology.",
+    "significance": 4,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": null,
+    "source_ids": [
+     "059060f809899b0e9590"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "ca858e3b1d6ccac4043f",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "ELECTRIC VEHICLE CHARGING STATIONS",
+    "category": "other",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "The details of 29,151 electric vehicle charging stations (EVCS) installed all over India in each State and Union Territory during the last five years are provided at Annexure.",
+    "significance": 4,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": null,
+    "source_ids": [
+     "d202c8028d183f23a252"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "cfe2e6950fc1ef0b40e2",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Honda and Hyundai in Talks with Tata for Collaboration",
+    "category": "partnership",
+    "entity": "Tata Motors",
+    "industry": "electric vehicle",
+    "summary": "Honda and Hyundai are in talks with Tata Motors for potential collaborations involving vehicle platforms and parts.",
+    "significance": 4,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "9da148bbdf91298c1452"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": "Honda and Hyundai are in direct talks with Tata Motors for new collaborations involving vehi"
+   },
+   {
+    "id": "16020ca601c76ca971f1",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "India Bans Export of Lithium-Ion Battery Black Mass",
+    "category": "policy",
+    "entity": "Indian Government",
+    "industry": "electric vehicle",
+    "summary": "India has banned the export of lithium-ion battery black mass to keep valuable raw materials within the country.",
+    "significance": 4,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "ae652c5a3fc9397bc4df"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.009662+05:30",
+    "evidence_quote": "India has banned exports of lithium-ion battery black mass – material rich in critical minerals such as lithium, cobalt, nickel and manganese."
+   },
+   {
+    "id": "d46c51a4e8c79c185ebf",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "PM E-DRIVE Scheme",
+    "category": "policy",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "• It provides demand incentives and infrastructure support across various vehicle categories and associated components. The categories covered include e-2 Wheelers (e-2Ws), e-3 Wheelers (e-3Ws) including registered e-rickshaws & e-carts and L5, e-Ambulances, e-Trucks, e-Buses, charging infra, and upgradation of testing agencies.",
+    "significance": 4,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": null,
+    "source_ids": [
+     "f1ad0d071a0eb693af96"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "ea0895e5c8cb5c7f1c8d",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Press Release Page | Press Information Bureau",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "India aims for 30% of all vehicle sales to be electric by 2030, aligning with the global EV30@30 initiative. The EV ecosystem is strengthened with the establishment of 1.32 million charging stations across India by 2030.",
+    "significance": 4,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": null,
+    "source_ids": [
+     "a3342baabf362967eeea"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "2504042c4f5480e2fa3c",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "BYD brings it’s luxury electric brand Denza into India, introduces two models",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "Chinese electric vehicles major BYD has introduced it’s luxury electric brand Denza in India by launching two models, D9, a luxury high Multi-Purpose Vehicle (MPV) starting at ex showroom price of ₹90 lakh and a spots car called Z9 GT starting ₹1.57 crore, ex showroom. The company will have dedicated showrooms for Denza in six cities namely Mumbai, Gurugram, Ahmedabad, Bengaluru, Chennai and…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-14",
+    "source_ids": [
+     "4a59a064e26a83119645"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.026853+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "623a2c5756be84a70711",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "BYD offers full refunds to 1,265 Australian customers who bought cars believing they were 2026 models, only to discover the vehicles were built in 2025",
+    "category": "funding",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "More than 1,200 Australians who purchased electric and hybrid vehicles from BYD discovered that their cars were built in 2025, although they had believed they were buying 2026 models. The company initially offered affected customers $1,100 in compensation, but the amount prompted complaints from buyers who questioned whether it adequately addressed the mistake.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "7e21d0333171b6adc660"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.011810+05:30",
+    "evidence_quote": "More than 1,200 Australians who purchased electric and hybrid vehicles from BYD discovered that their cars were built in 2025, although they had believed they were buying 2026 models. The company initially offered affected customers $1,100 in compensation, but the amount prompted complaints from buyers who questioned whether it adequately addressed the mistake."
+   },
+   {
+    "id": "6c47fef6a6b646266375",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Govt makes EVs default choice for staff cars, sets ₹20 lakh procurement cap",
+    "category": "tender",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "New Delhi: The finance ministry has made electric vehicles (EVs) the default choice for government staff cars, signalling a shift away from petrol and diesel vehicles in official fleets as India seeks to cut oil imports and transport emissions. In a notification issued on Tuesday, the department of expenditure said ministries and government departments should ordinarily procure EVs when replacing…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-11",
+    "source_ids": [
+     "85140a787ae6dd5d1483"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.030015+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "554702edefba052503e5",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "India not a refuge but 'compelling' AI opportunity: Anand Mahindra",
+    "category": "funding",
+    "entity": "Mahindra",
+    "industry": "electric vehicle",
+    "summary": "Anand Mahindra said India's software talent, systems integration capabilities and large domestic market could give it a distinct AI opportunity, supporting renewed investor interest in Indian equities",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-10",
+    "source_ids": [
+     "6b81f35120ddcd95438e"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.030015+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "cb00d15c7419a4d6a2fb",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Mahindra 6 Seater Cars in India (2)",
+    "category": "other",
+    "entity": "Mahindra",
+    "industry": "electric vehicle",
+    "summary": "Discover the best Mahindra 6 Seater Cars. Our comprehensive guide covers detailed specifications, expert reviews, pricing information, and buying advice for Mahindra 6 Seater Cars.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "13ea122a637f7d2ca1d0"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.016001+05:30",
+    "evidence_quote": "Discover the best Mahindra 6 Seater Cars. Our comprehensive guide covers detailed specifications, expert reviews, pricing information, and buying advice for Mahindra 6 Seater Cars."
+   },
+   {
+    "id": "66fc7d696a0286ad0b6f",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Mahindra Electric SUVs UK Launch 2027 Planned - Export From India",
+    "category": "product_launch",
+    "entity": "Mahindra",
+    "industry": "electric vehicle",
+    "summary": "Made in India, for the Global markets. That was the ethos behind Mahindra Auto’s INGLO platform.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-12",
+    "source_ids": [
+     "dc668e152fbea2fe8851"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.027803+05:30",
+    "evidence_quote": "Made in India, for the Global markets. That was the ethos behind Mahindra Auto’s INGLO platform."
+   },
+   {
+    "id": "9b66a64660419fbbb72f",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Ola Electric Scooters in India (3)",
+    "category": "other",
+    "entity": "Ola Electric",
+    "industry": "electric vehicle",
+    "summary": "or select from slider ₹0 ₹1,00,00,000 Ola Scooter Ola Electric Scooters in India (3) The Ola Electric Scooters collection has 3 models, starting from the Ola S1 Z at Rs. 79,999, the most affordable in the series, to the Ola S1 Pro costing Rs.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-10",
+    "source_ids": [
+     "d718c684320ecb9e9473"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.030015+05:30",
+    "evidence_quote": "or select from slider ₹0 ₹1,00,00,000 Ola Scooter Ola Electric Scooters in India (3) The Ola Electric Scooters collection has 3 models, starting from the Ola S1 Z at Rs. 79,999, the most affordable in the series, to the Ola S1 Pro costing Rs."
+   },
+   {
+    "id": "73ce6c6f47ec95f514e9",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Ola Electric's cash cushion dwindles as market share slips and losses persist",
+    "category": "product_launch",
+    "entity": "Ola Electric",
+    "industry": "electric vehicle",
+    "summary": "Ola Electric's cash reserves have dwindled 87% from ₹5,918 crore a month after its stock market debut to ₹750 crore a little over two years later. Bhavish Aggarwal’s electric scooter maker has seen an average monthly cash depletion of ₹215 crore over the period, as sales declined and the former market leader slid to fifth place.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "6549a806444704f17657"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.016001+05:30",
+    "evidence_quote": "Ola Electric's cash reserves have dwindled 87% from ₹5,918 crore a month after its stock market debut to ₹750 crore a little over two years later. Bhavish Aggarwal’s electric scooter maker has seen an average monthly cash depletion of ₹215 crore over the period, as sales declined and the former market leader slid to fifth place."
+   },
+   {
+    "id": "a9ffbe11501869b0ec76",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow",
+    "category": "market_entry",
+    "entity": "Ola Electric",
+    "industry": "electric vehicle",
+    "summary": "Two-wheeler maker Ola Electric reported revenue from operations of Rs 421 crore for the September quarter, down 39% from Rs 690 crore a year earlier, as vehicle registrations continued to slide. The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by December.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "3dbefdf123c8733c0af0"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.027803+05:30",
+    "evidence_quote": "Two-wheeler maker Ola Electric reported revenue from operations of Rs 421 crore for the September quarter, down 39% from Rs 690 crore a year earlier, as vehicle registrations continued to slide. The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by December."
+   },
+   {
+    "id": "7987ee022da5399385c5",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "TVS Motor family feud: Lakshmi Venu seeks partition of family stakes in group companies",
+    "category": "funding",
+    "entity": "TVS Motor",
+    "industry": "electric vehicle",
+    "summary": "Lakshmi Venu has formally sought partition of the joint family assets of the Venu Srinivasan branch of the TVS family, including its interests in key automotive businesses such as TVS Motor Company and Sundaram-Clayton.In a partition notice issued to her father, Venu Srinivasan, on Tuesday, Lakshmi called for a fair and lawful division of the family assets. She has claimed an entitlement to a…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "c0e12e268a40e69be769"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.016001+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "73768f578cec059d7c49",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Tata Motors PV shares fall over 8% after multiple price target cuts on Q2 loss, JLR guidance revision",
+    "category": "other",
+    "entity": "Tata Motors",
+    "industry": "electric vehicle",
+    "summary": "Published OnNov 16, 2026 | 04:50 IST - Last Updated OnNov 16, 2026 | 09:16 IST Tata Motors PV reported a net loss of ₹5,531 crore, compared to a net profit of ₹76,170 crore during the same quarter last year. The net loss was due to exceptional items worth ₹6,738 crore during the quarter.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "ad73968562f5d7f93a1b"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.024323+05:30",
+    "evidence_quote": "Published OnNov 16, 2026 | 04:50 IST - Last Updated OnNov 16, 2026 | 09:16 IST Tata Motors PV reported a net loss of ₹5,531 crore, compared to a net profit of ₹76,170 crore during the same quarter last year. The net loss was due to exceptional items worth ₹6,738 crore during the quarter."
+   },
+   {
+    "id": "ea4f56e5ef5c9a7d3905",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Tata Motors shares: 22% down in 2026, right time to buy famous auto stock? What brokerages say after loss narrows in Q2",
+    "category": "partnership",
+    "entity": "Tata Motors",
+    "industry": "electric vehicle",
+    "summary": "Tata Motors Passenger Vehicles Ltd (TMPVL) shares will be in focus on Monday, 16 November, after the automaker reported its September quarter results, with a sharp increase in revenue and a narrowing of operational pressures but a substantial consolidated loss due to exceptional charges. The stock has declined nearly 22% so far in 2026, raising the question of whether the recent correction offers…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "57d569dd998b51f69735"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.024323+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "b5ecd1177e1e99405ee8",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Upcoming Mahindra cars in India (7)",
+    "category": "product_launch",
+    "entity": "Mahindra",
+    "industry": "electric vehicle",
+    "summary": "Thar OG RWD: Daily Driving? Upcoming Mahindra cars in India (7) As of November 2026, there are 7 upcoming Mahindra cars expected to launch in India.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "9b3c0d164cc50196c5fc"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.016001+05:30",
+    "evidence_quote": "Thar OG RWD: Daily Driving? Upcoming Mahindra cars in India (7) As of November 2026, there are 7 upcoming Mahindra cars expected to launch in India."
+   },
+   {
+    "id": "24e7b05acd75f6e05af2",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Uttar Pradesh EV Manufacturing and Mobility Policy, 2022: Things to know",
+    "category": "policy",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "The policy is a combined industrial and transport framework intended to develop an electric-vehicle ecosystem in Uttar ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "2282354824671e375bd6"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.016001+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "a238b18df2c5a87fbed4",
+    "research_run_id": "rr-20261120-f3edb787",
+    "title": "Why India's black mass export ban matters for its EV battery ambitions",
+    "category": "technology",
+    "entity": null,
+    "industry": "electric vehicle",
+    "summary": "India's black mass export ban aims to keep valuable battery minerals within the country, support domestic recycling and ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-14",
+    "source_ids": [
+     "f8876a59fee0856c4582"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:09:27.024323+05:30",
+    "evidence_quote": null
+   }
+  ]
+ },
+ {
+  "id": "rr-20261119-b001e1a6",
+  "objective": "Latest developments for Tata Motors in India",
+  "industry": "EV & Mobility - Passenger & Commercial",
+  "geography": "India",
+  "time_window": "1m",
+  "date_from": "2026-10-21",
+  "date_to": "2026-11-20",
+  "companies": [
+   "Tata Motors"
+  ],
+  "source_preferences": [
+   "official_company",
+   "news"
+  ],
+  "status": "completed",
+  "provider": "open",
+  "is_demo": false,
+  "provider_request_id": null,
+  "created_at": "2026-11-20T02:21:57.888413+05:30",
+  "started_at": "2026-11-20T02:21:57.928176+05:30",
+  "completed_at": "2026-11-20T02:24:51.134588+05:30",
+  "error_code": null,
+  "error_message": null,
+  "status_message": "Done",
+  "source_count": 25,
+  "finding_count": 4,
+  "result": {
+   "executive_summary": "Tata Motors Passenger Vehicles (PV) faced significant headwinds in late November 2026, posting a consolidated net loss of Rs 5,531 crore for the September quarter due to exceptional costs of Rs 6,738 crore. Consequently, shares plunged nearly 9% following Jaguar Land Rover (JLR) margin guidance cuts and multiple price target reductions by brokerages like Motilal Oswal. Conversely, the company's electric vehicle portfolio showed strong momentum: the Tata Sierra EV secured a 5-star Bharat NCAP safety rating, and Atria Mobility launched India's first rapid-charging corridor for intercity electric buses.",
+   "industry_overview": "The Indian automotive sector in late 2026 is characterized by high volatility in traditional passenger vehicle stocks due to legacy business pressures (specifically JLR), while the Electric Vehicle (EV) segment is gaining traction through safety certifications and infrastructure development. Competitors like Mahindra are actively partnering with global players like Uber to scale EV adoption in the three-wheeler segment.",
+   "market_trends": [
+    "Tata Motors PV shares declined nearly 22% in 2026 following Q2 losses and JLR outlook revisions.",
+    "Exceptional costs of Rs 6,738 crore drove a consolidated net loss of Rs 5,531 crore for the September quarter.",
+    "The Bharat NCAP crash test program is becoming a key benchmark, with the Tata Sierra EV achieving top safety ratings.",
+    "Infrastructure development is accelerating, exemplified by Atria Mobility's new 600-km Bengaluru–Hyderabad charging corridor.",
+    "Strategic partnerships are emerging to lower barriers to entry for EVs, such as Uber and Mahindra's collaboration for electric auto-rickshaws."
+   ],
+   "company_developments": [],
+   "product_launches": [
+    "Sierra EV Safety Certification (timesnownews.com, 2026-11-18)"
+   ],
+   "manufacturing_expansion": [
+    "Charging Infrastructure Expansion (msn.com, 2026-11-18)"
+   ],
+   "partnerships_and_investment": [
+    "Q2 Net Loss and JLR Guidance Cut (financialexpress.com, 2026-11-16)",
+    "Uber-Mahindra EV Partnership (autopunditz.com, 2026-11-17)"
+   ],
+   "policy_and_regulatory": [],
+   "tenders_and_procurement": [],
+   "commercial_opportunities": [
+    "The Tata Sierra EV offers a premium mid-size electric SUV option with verified top-tier safety credentials across all variants.",
+    "Atria Mobility's rapid-charging corridor creates new commercial routes for intercity electric bus operations between Bengaluru and Hyderabad.",
+    "Mahindra's partnership with Uber under the 'EV Auto Advantage' program opens financing and adoption channels for electric three-wheelers."
+   ],
+   "risks": [
+    "JLR business remains under pressure due to headwinds, leading to slashed margin guidance of 2–3%.",
+    "Brokerage downgrades and price target cuts (e.g., Motilal Oswal 'Sell' rating at Rs 240) indicate near-term downside risk for PV shares.",
+    "Continued exceptional costs impacting quarterly profitability despite revenue growth.",
+    "Market sentiment remains fragile with analysts predicting 10-14% downside from current levels."
+   ],
+   "method": "llm (qwen3.5:9b)",
+   "coverage_notes": [
+    "GDELT unreachable."
+   ]
+  },
+  "sources": [
+   {
+    "id": "cc6c3e5afd37abca25d0",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://in.mashable.com/automobiles/116301/tata-sierra-ev-scores-five-stars-in-bncap-crash-tests-heres-what-the-safety-report-reveals",
+    "domain": "in.mashable.com",
+    "title": "Tata Sierra EV Scores Five Stars In BNCAP Crash Tests: Here's What The Safety Report Reveals",
+    "source_type": "news",
+    "published_at": "2026-11-19T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Tata Motors' upcoming Sierra EV has secured a five-star rating in Bharat NCAP crash tests, scoring highly in adult and child ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9cf52ca06dd6af0e2f22",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.timesnownews.com/auto/electric-vehicles/tata-sierra-ev-gets-5-star-safety-rating-in-bharat-ncap-crash-tests-watch-video-article-156530594",
+    "domain": "timesnownews.com",
+    "title": "Tata Sierra EV Gets 5-Star Safety Rating In Bharat NCAP Crash Tests: Watch Video",
+    "source_type": "news",
+    "published_at": "2026-11-19T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "The Tata Sierra EV has earned a 5-star safety rating in the Bharat NCAP crash tests. The electric SUV earned 30.62 points in ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "e7e45353b3d38b9525c5",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.msn.com/en-in/news/other/atria-mobility-commissions-world-s-first-rapid-charging-corridor-for-intercity-electric-buses/ar-AA2hFInx?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Atria Mobility commissions world’s first rapid-charging corridor for intercity electric buses",
+    "source_type": "news",
+    "published_at": "2026-11-19T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Atria Mobility’s new 600-km Bengaluru–Hyderabad charging corridor uses megawatt-scale infrastructure to support daily ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "7f1aa0795706a68096ec",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.msn.com/en-in/money/topstories/tata-investment-tata-chemicals-tata-motors-share-surged-up-to-9-today-heres-why/ar-AA2hAoAg?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Tata Investment, Tata Chemicals, Tata Motors share surged up to 9% today; here's why",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Tata Chemicals led the gainers among Tata group stocks, soaring 9.32 per cent to Rs 669.05 apiece. Tata Investment advanced 7 ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "b3ecc1fd00f58e609a66",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.autopunditz.com/post/uber-mahindra-5000-electric-autos-partnership-india",
+    "domain": "autopunditz.com",
+    "title": "Uber Partners with Mahindra to Deploy 5,000 Electric Autos in India Over 12 Months",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Uber and Mahindra Last Mile Mobility have partnered to deploy 5,000 electric auto-rickshaws across India over 12 months. The ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "5cf151c4c9ed98251ffa",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.msn.com/en-in/news/other/mahindra-uber-partner-to-support-adoption-of-5000-electric-three-wheelers-in-india/ar-AA2hAlI5?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Mahindra, Uber partner to support adoption of 5,000 electric three-wheelers in India",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "The companies will work through Mahindra’s EV Auto Advantage programme to improve financing access and support drivers ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "50e37f2ed9dc6ed2cc7d",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.cnbc.com/quotes/TMPV-IN",
+    "domain": "cnbc.com",
+    "title": "TMPV-IN: Tata Motors Passenger Vehicles Ltd - Stock Price, Quote and News - CNBC",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:07+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Get Tata Motors Passenger Vehicles Ltd (TMPV-IN:National Stock Exchange of India) real-time stock...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "fd5e5a8a5bae97d78d93",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.cartoq.com/car-news/jsw-motors-bharat-mobility-expo-2027/",
+    "domain": "cartoq.com",
+    "title": "JSW Motors To Displace Tata Motors As Biggest Exhibitor At Bharat Mobility Expo 2027",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "JSW Group reportedly plans a pavilion larger than Tata Motors' at Bharat Mobility Expo 2027, showcasing JSW MG, JSW Motors ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "ecb023fa72b65d2a626e",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.cnbctv18.com/market/tata-motors-pv-share-price-q2-result-reaction-buy-sell-motilal-cuts-target-eps-estimates-jlr-headwinds-20034512.htm",
+    "domain": "cnbctv18.com",
+    "title": "Tata Motors PV shares fall over 8% after multiple price target cuts on Q2 loss, JLR guidance revision",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Motilal Oswal has slashed its Earnings Per Share (EPS) estimates for Tata Motors PV by 69% for financial year 2027 and by 5% ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "36443788f61d3973aa79",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.financialexpress.com/market/tata-motors-pv-tanks-9-after-jlr-slashed-margin-to-23should-you-buy-or-sell-now-4385670/",
+    "domain": "financialexpress.com",
+    "title": "Tata Motors PV tanks 9% after JLR slashed margin to 2–3%: Should you Buy or Sell now?",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Tata Motors PV falls 9% after JLR cuts its margin outlook to 2-3%, with Motilal Oswal and Elara Capital flagging further ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "cdb5b0e8a1c46c379f91",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.ciol.com/mobility/uber-targets-5000-electric-autos-with-mahindra-partnership-12814077",
+    "domain": "ciol.com",
+    "title": "Uber Targets 5,000 Electric Autos With Mahindra Partnership",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "The companies will focus on financing and trade-in support for drivers, while Uber expands its efforts to connect metro ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "0ea89d424d8a3567da53",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.indianweb2.com/2026/11/mahindra-uber-to-finance-and-deploy.html",
+    "domain": "indianweb2.com",
+    "title": "Mahindra, Uber to Finance and Deploy 5,000 Electric Autos Across India",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Mahindra and Uber partner to deploy 5,000 electric autos in India, boosting EV adoption with financing support for drivers and greener cities today EV ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "e04015053d3d23799082",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.msn.com/en-in/news/other/5000-electric-autos-in-12-months-uber-launches-ev-auto-advantage-with-mahindra-to-scale-up-green-fleet/ar-AA2hxctQ?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "5,000 electric autos in 12 months: Uber launches EV Auto Advantage with Mahindra to scale up green fleet",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Uber has partnered with Mahindra Last Mile Mobility to support the deployment of 5,000 electric three-wheelers in India over ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "45f90264e382c909ba8e",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.reuters.com/world/india/indias-tata-motors-pv-falls-after-lowering-jlr-outlook-2026-11-16/",
+    "domain": "reuters.com",
+    "title": "India's Tata Motors PV falls after lowering JLR outlook",
+    "source_type": "news",
+    "published_at": "2026-11-16T02:22:07+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Shares of India's Tata Motors Passenger Vehicles fell on Monday after the automaker cut the fiscal ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9705e8e4952bc28ab5f0",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.livemint.com/market/stock-market-news/tata-motors-shares-22-down-in-2026-right-time-to-buy-famous-auto-stock-what-brokerages-say-after-loss-narrows-in-q2-11794720978958.html",
+    "domain": "livemint.com",
+    "title": "Tata Motors shares: 22% down in 2026, right time to buy famous auto stock? What brokerages say after loss narrows in Q2",
+    "source_type": "news",
+    "published_at": "2026-11-16T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Tata Motors PV reported a Q2 FY27 consolidated loss of ₹5,531 cr, including exceptional charges of ₹6,738 cr, even as revenue ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "606f499e221dffc03adf",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.msn.com/en-in/money/other/india-s-fuel-demand-to-keep-climbing-until-2034-despite-electric-vehicle-boom/ar-AA2htgC0?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "India’s fuel demand to keep climbing until 2034 despite electric vehicle boom",
+    "source_type": "news",
+    "published_at": "2026-11-16T02:22:01+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "India's fuel demand from road transport is projected to peak at more than 2.5 million barrels a day in 2034, before gradually ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "30de77d87e5cbfdc0f90",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.fortuneindia.com/opinion/indias-ev-transition-should-follow-the-kilometres-not-just-the-vehicle-count/170001",
+    "domain": "fortuneindia.com",
+    "title": "India’s EV transition should follow the kilometres, not just the vehicle count",
+    "source_type": "news",
+    "published_at": "2026-11-12T05:30:00+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "India has rapidly expanded its EV charging network and begun incentivising electric freight. The next opportunity is to put ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "bdbcc03f57a782eb2066",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://www.indiainfoline.com/news/companies/maruti-suzuki-hyundai-tata-motors-gain-as-much-as-5-whats-driving-the-rally-in-auto-stocks-today",
+    "domain": "indiainfoline.com",
+    "title": "Maruti Suzuki, Hyundai, Tata Motors gain as much as 5%. What's driving the rally in auto stocks today?",
+    "source_type": "news",
+    "published_at": "2026-11-11T02:22:06+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "Automobile stocks rally up to 6.5% on November 19, 2026, as Nifty Auto gains 3%. Maruti Suzuki, M&M, Hyundai and Tata Motors shares advance on strong demand outlook.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "1904987b13b1b62f02c2",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://pr.cullmantimes.com/article/Tata-Motors-and-Iveco-Group-Come-Together-to-Build-for-the-Future-Creating-a-New-Global-Force-in-Commercial-Mobility/6ae9b17acd0777acc0a66ce2",
+    "domain": "pr.cullmantimes.com",
+    "title": "Tata Motors and Iveco Group Come Together to Build for the Future Creating a New...",
+    "source_type": "news",
+    "published_at": "2026-11-06T02:22:07+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": "The Road Ahead With strong roots in India and Europe and a significant presence across Latin America...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "17fc1e305d5d040461be",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQUmhiTkVJVHF3QWtWdzlWTHN6bW5oMnZSMklMTlNWcUZkR2oxcTIwMHpFMFRDWVFIek1kZUh6blFsZU1PVnYxemRqbTEzT3Y1S0Zqdk82OU4zMlBXbmpnNjdyWEtyZEJuUWFnd0ZXTUp2RGJTeXpZSDZ4bzRDRmJWZHFYT1J4eVNad2FCcW85dlNDSVllUDFJVEZRWXVFVE5HVjN1aXR0dlEySF9WWjVhbFB1SW51QzdGWXc?oc=5",
+    "domain": "Motorindia",
+    "title": "Atria Mobility Launches Megawatt-Scale Charging Corridor for Intercity Electric Buses",
+    "source_type": "aggregator",
+    "published_at": "2026-11-19T12:43:18+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "eb82e425203a96923a58",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPOS02eXh6TEtVa3h1eVVoNk5wUVN0SkJfR1FyX1QwbHlYM29zbzBYcXFqNWstM2ZWTXdadVlEanZWdlhxV2tVZFdTVGhaTndRTU84SGFhM3gwd2J4VGhkY3JUZzBLc2JGbVFHWFZmZjdIcVhpOXk2czRzUVplVnB2WkpkTXVNdUV1bU9kQjdYVkhIM2tEYUU4QlZjTHE3ZTRoWkRudWFPZGk1eVY3by1KTnNKdTdVbmczUlphcElpaUJ4b0VCYXRpb3MxMzRJeHBHQ3FjSFk1dXpwem0xZjlrRmtXSHIzMjYxcG9nei1PS2VrZGVkal9Z0gH7AUFVX3lxTE1Rb2tUblFkZ0xKTTUta3o1Q2Fzd3hUcmdVOUNsX1BYbzE1djd3aFVOVkFWWk1DbjYyTjU5X1B5ME9lSHBuOVFHVFhyNzd5R2JRRGR3Vzc1OUpCX0dzR0t1OVpBZXZITTBaMGdfemExa0w5TzBTazNvcy00R240T2dSN0VkZ2x0S1JCdks5ckw1SGF4eC1teWF5dWY4eFZtSXJobnNfWVROU3B4czFRV01tbVNrYUl0bzAtU1RZYWxUOWlIQWd5cGQyMVpNWjhJY3VzNjViMExyMUNKbnhIWktmc0J1cXNTU0ZjM21RU2lfam1OYllvNkJzT3lv?oc=5",
+    "domain": "ET Auto",
+    "title": "Maharashtra tops passenger and commercial vehicle sales; UP leads two- and three-wheelers in Q2: SIAM",
+    "source_type": "aggregator",
+    "published_at": "2026-11-18T20:25:23+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "b33a10fe3f27627d6fb5",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQeENoLTJ6QlRFa29TdGtwYzdvVURJZmFLU3Z4bzRvQTI1a2ZBUkQ2SDRBT1ctRUZTdE5MSEtRWnB2ZU9YRVpZX3BlM0VLM0FvVnVyemI4emJXUkhpQk5jYWFtMDQxRTJLVlV0aGZ1NTRGdnlOemdYLURIVUhhMi0yaWhDcGZHRmxFZXVCRTAwT01EbWtKSDhfeFVCY3ZRVUVwOEJ4Z0ppdFl5M3U2STZTdHZaTEdOLXhhdnNnTWlpTzBtZ0wwdHd2VXFTbXZMUmcyVWfSAdYBQVVfeXFMUHJYd0VXNWNndXNGVHZUVl9Zb2ZpT3QxaENwTm9iekh5MTdzQ0U4OE1jYV9aRnd2Wk4zbWdvSjNiTFFOaTloeE94T0l1VWFheXNOTml6MXBvMF9ndDkwR1d4b29LSll3UmhjaHM4UDZzZXRQYVdEdkEzWjlDa3k3VnNwbjd5LWFPeDJoQXV5a2kzTnRLTWg4SVdyYzE5X012Snk0TzNLcHh3VkRaeklHSlNqS3d0eHV4NkpINDBTWnpqNDJ4ZlF3cHFhLVdUUUNRWVo0cGFiZw?oc=5",
+    "domain": "ET Auto",
+    "title": "Montra Electric launches new Super Auto variant at ₹3.97 lakh",
+    "source_type": "aggregator",
+    "published_at": "2026-11-18T06:34:00+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "a2c5ec933ba269088dea",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZmgzcGp0MDhwNnJVVDJ4T0s3VFpUTlIxQk1qV0c1Zlh2dFJaQWxqVHJxanJYTE9nU3U3ZVhycHJZa3FPTDVMb2liOUVwLU5DRnlYRkxVdFhJRVpXTkNVYk80RmdNSFNNVlU4UXlnZFB1RkJKd0dyTjhIOG02TlJwMUJOdk5WZ1ZXM3pJdUdkSzBBa2FIZy1hZl9RM250Z09qNVpuellPY0NQSDlJaUxlY3poN2NhQQ?oc=5",
+    "domain": "BW Auto World",
+    "title": "Mahindra, Uber Partner To Support Deployment Of 5,000 Electric Three-Wheelers",
+    "source_type": "aggregator",
+    "published_at": "2026-11-16T22:54:11+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "65130b6eb78e17719383",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQOElUdWJ1RThhTHhwSElOT2E3V3ZoY3JWbTFrR2VRZnRqa2lMX0w4dHphWWtxZmtEWE5vV29RTGoxeDJMNFl2SUVKTjJESlNNNTFnT252WXVZTUUtMjlGZ3RpOEp3VXRDNTMwS0dkU0tTazNrR2hEbkxJWTlrS3h3aUhrRXJ2bUNNRExUcU95TDh6clJSbVNBcEhoamk0YUt3dDRCTg?oc=5",
+    "domain": "Reuters",
+    "title": "India's Tata Motors PV falls on JLR outlook cut, weak Chinese demand",
+    "source_type": "aggregator",
+    "published_at": "2026-11-16T09:22:00+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "e29fbeafee357e5ab0f7",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUEVwTGtzaXF2VE9fOXZIWVZPdlVMVlgyN1l6TVdodFN6NTg4d3JRNlNPOGxjR21pVTdTdGxPaEtaRTdnNERDQjZGYWRGdm94UDdFbFZueGttZzQwbXVGU1Zxb0U0NnB0Q25kNEg4V2lBc25GRGFFN3NnNmRQWTBhRGNCdVJxWWVKeDdlVWxuYzJXOG5BQmZobjN0RmdVUVF2NURKOFUzV0NXdUEycG1uOQ?oc=5",
+    "domain": "Multibagg AI",
+    "title": "TI Clean Mobility reports 25% share in three EV segments",
+    "source_type": "aggregator",
+    "published_at": "2026-11-11T13:30:00+05:30",
+    "retrieved_at": "2026-11-20T02:23:59.609317+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   }
+  ],
+  "findings": [
+   {
+    "id": "ff57c5701b6632bf3389",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "title": "Q2 Net Loss and JLR Guidance Cut",
+    "category": "funding",
+    "entity": "Tata Motors Passenger Vehicles",
+    "industry": "EV & Mobility - Passenger & Commercial",
+    "summary": "Tata Motors reported a significant net loss for the September quarter, driven by exceptional items, causing its stock to fall sharply.",
+    "significance": 5,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "36443788f61d3973aa79",
+     "ecb023fa72b65d2a626e"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:24:50.049985+05:30",
+    "evidence_quote": "The Tata Motors PV share price plunged nearly 9% to a low of Rs 262.30 in early trade."
+   },
+   {
+    "id": "8271472512d850476ac9",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "title": "Sierra EV Safety Certification",
+    "category": "product_launch",
+    "entity": "Tata Sierra EV",
+    "industry": "EV & Mobility - Passenger & Commercial",
+    "summary": "The Tata Sierra EV received a 5-star rating in Bharat NCAP crash tests, validating its safety across all variants.",
+    "significance": 4,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "9cf52ca06dd6af0e2f22",
+     "cc6c3e5afd37abca25d0"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:24:50.049985+05:30",
+    "evidence_quote": "The Tata Sierra EV has undergone Bharat NCAP crash tests and earned a 5-star safety rating."
+   },
+   {
+    "id": "d2f4b36f54717f5e9db5",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "title": "Charging Infrastructure Expansion",
+    "category": "expansion",
+    "entity": "Atria Mobility",
+    "industry": "EV & Mobility - Passenger & Commercial",
+    "summary": "A new rapid-charging corridor connecting Bengaluru and Hyderabad has been commissioned to support intercity electric buses.",
+    "significance": 3,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "e7e45353b3d38b9525c5"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:24:50.049985+05:30",
+    "evidence_quote": "Atria Mobility's new 600-km Bengaluru–Hyderabad charging corridor uses megawatt-scale infrastructure to support daily ..."
+   },
+   {
+    "id": "d1f01df0a44c0469c8b8",
+    "research_run_id": "rr-20261119-b001e1a6",
+    "title": "Uber-Mahindra EV Partnership",
+    "category": "partnership",
+    "entity": "Mahindra Last Mile Mobility Limited",
+    "industry": "EV & Mobility - Passenger & Commercial",
+    "summary": "A strategic partnership with Uber aims to deploy 5,000 electric auto-rickshaws in India over the next 12 months.",
+    "significance": 3,
+    "confidence": 1.0,
+    "kind": "source_supported",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "b3ecc1fd00f58e609a66",
+     "5cf151c4c9ed98251ffa"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:24:50.051163+05:30",
+    "evidence_quote": "Mahindra Last Mile Mobility Limited (MLMML) and Uber have announced a strategic partnership to accelerate electric three-wheeler adoption in India."
+   }
+  ]
+ },
+ {
+  "id": "rr-20261119-e4b5ae12",
+  "objective": "Ather Energy developments in India",
+  "industry": "electric two-wheelers",
+  "geography": "India",
+  "time_window": "1m",
+  "date_from": "2026-10-21",
+  "date_to": "2026-11-20",
+  "companies": [
+   "Ather Energy"
+  ],
+  "source_preferences": [
+   "official_company",
+   "news"
+  ],
+  "status": "completed",
+  "provider": "open",
+  "is_demo": false,
+  "provider_request_id": null,
+  "created_at": "2026-11-20T02:12:41.636641+05:30",
+  "started_at": "2026-11-20T02:12:41.772323+05:30",
+  "completed_at": "2026-11-20T02:15:08.247491+05:30",
+  "error_code": null,
+  "error_message": null,
+  "status_message": "Done",
+  "source_count": 25,
+  "finding_count": 25,
+  "result": {
+   "executive_summary": "25 developments from 25 sources (23 news, 2 aggregator) across expansion, funding, market entry, other, policy, product launch, technology. Extractive mode: every item below is quoted from its source; no generated prose.",
+   "industry_overview": null,
+   "market_trends": [],
+   "company_developments": [
+    "India's Ola Electric quarterly loss narrows on cost cuts (reuters.com, 2026-11-12)",
+    "Electric Two-Wheeler Sales October 2026: Dispatches Surge 93% to 2.24 Lakh Units; Bajaj Chetak Leads, TVS iQube Second (autopunditz.com, 2026-11-18)",
+    "The Tata Nano of the electric age? VinFast might have an answer (indiatoday.in, 2026-11-17)",
+    "Ampere Records 70,333 Electric Two-Wheeler Registrations in FY27 (themachinemaker.com, 2026-11-17)",
+    "EV uptake trails festive demand: Petrol two-wheelers drove Delhi’s 79% surge; electric share fell to 7.1% (msn.com, 2026-11-17)",
+    "Electric Vehicle Sales Rise 45 Per Cent to 354,625 in October (constructionworld.in, 2026-11-16)",
+    "EV Makers Turn to Family Scooters to Drive Mass-Market Adoption in India (lapaasvoice.com, 2026-11-12)",
+    "Ather Energy's Market Share Push: Growth, Constraints and the Konarc Gamble (askfuzz.ai, 2026-11-10)",
+    "India: Electric auto rickshaws reshape country's roads (msn.com, 2026-11-09)",
+    "Two-Wheelers Race Ahead as Passenger Vehicle Profits Stall (india.entrepreneur.com, 2026-10-29)",
+    "Ather Energy's market cap hits Rs 65,000 crore, 3.5 times Ola Electric's (msn.com, 2026-10-28)",
+    "43% of Indian two-wheeler buyers consider EVs for their next purchase: Report (indiatoday.in, 2026-10-26)",
+    "Ather Energy shares zoom 15% as Q2 FY27 profit turns positive; Rs 122 crore capex planned (msn.com, 2026-10-25)",
+    "Ather Energy Shares Rally Nearly 6% After Q2 Profit: Why Is the Stock Rising? Brokerage Targets In Focus (news18.com, 2026-10-25)",
+    "Indian Electric Scooter & Motorcycles Market 2026 (Motorcycles Data, 2026-11-19)"
+   ],
+   "product_launches": [
+    "VinFast Electric Scooters For India – Range, Specs, Battery, Details (rushlane.com, 2026-11-18)",
+    "TVS Orbiter Electric City Scooter Makes Its European Debut at EI (gurufocus.com, 2026-11-05)"
+   ],
+   "manufacturing_expansion": [
+    "Electric two-wheeler rental firms charge up for gig delivery boom (business-standard.com, 2026-11-09)",
+    "Ather Energy has a demand problem it would love to have. But can it fix supply fast enough? (msn.com, 2026-11-13)",
+    "Electric auto rickshaws reshape India's roads (yahoo.com, 2026-11-05)",
+    "Ather Energy shares surge 10% after first quarterly profit of Rs 1.26 crore (indiatoday.in, 2026-10-25)"
+   ],
+   "partnerships_and_investment": [
+    "Beyond the big names: 6 NIFTY 500 stocks that quietly rallied up to 200% in six months (upstox.com, 2026-11-17)",
+    "Ather Energy shares surge 10% after Q2 profit turnaround; company earmarks ₹122 crore for expansion (fortuneindia.com, 2026-10-25)",
+    "Ather's stock surge revives investor interest in India's electric two-wheeler startups (ET Auto, 2026-11-19)"
+   ],
+   "policy_and_regulatory": [
+    "BikeWo Green Tech, Gravton Motors Sign MoU for 500 Electric Two-Wheelers (energetica-india.net, 2026-11-17)"
+   ],
+   "tenders_and_procurement": [],
+   "commercial_opportunities": [],
+   "risks": [],
+   "method": "extractive",
+   "coverage_notes": [
+    "GDELT unreachable.",
+    "Local LLM returned invalid output twice; fell back to extractive mode."
+   ]
+  },
+  "sources": [
+   {
+    "id": "810c115c8239c1ac7eb1",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.autopunditz.com/post/electric-two-wheeler-sales-october-2026-1",
+    "domain": "autopunditz.com",
+    "title": "Electric Two-Wheeler Sales October 2026: Dispatches Surge 93% to 2.24 Lakh Units; Bajaj Chetak Leads, TVS iQube Second",
+    "source_type": "news",
+    "published_at": "2026-11-19T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "India's electric two-wheeler dispatches surged 92.9% YoY to 2,24,413 units in October 2026. TVS led the OEM rankings with ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "6e542a4f9ad53c746ce4",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.rushlane.com/vinfast-electric-scooters-for-india-range-specs-battery-details-12561397.html",
+    "domain": "rushlane.com",
+    "title": "VinFast Electric Scooters For India – Range, Specs, Battery, Details",
+    "source_type": "news",
+    "published_at": "2026-11-19T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Although battery-swapping technology offers several advantages to users, it also presents significant infrastructure challenges for OEMs ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "a40db7622f4b8afbe71d",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://upstox.com/news/market-news/stocks/beyond-the-big-names-cupid-ather-energy-welspun-living-kalyan-jewellers-welspun-corp-laurus-labs-nifty-500-stocks-that-quietly-rallied-up-to-200-in-six-months/article-203642/",
+    "domain": "upstox.com",
+    "title": "Beyond the big names: 6 NIFTY 500 stocks that quietly rallied up to 200% in six months",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:07:09+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Cupid, Ather Energy, and Laurus Labs are among the top six stocks which have quietly rallied up to the tune of 200% in the ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "b013592b9852085c0be8",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.energetica-india.net/news/bikewo-green-tech-gravton-motors-sign-mou-for-500-electric-two-wheelers",
+    "domain": "energetica-india.net",
+    "title": "BikeWo Green Tech, Gravton Motors Sign MoU for 500 Electric Two-Wheelers",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "BikeWo Green Tech has signed an MoU with Gravton Motors to explore commercial opportunities in the electric two-wheeler ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "22997f2fd31dfddca5a3",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.indiatoday.in/auto/cars/story/the-tata-nano-of-the-electric-age-vinfast-might-have-an-answer-3040653-2026-11-17",
+    "domain": "indiatoday.in",
+    "title": "The Tata Nano of the electric age? VinFast might have an answer",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "VinFast's tiny VF 2 electric car brings back memories of the Tata Nano, with its compact dimensions, four-seat layout and ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "d1bc24f3540318a9308e",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.msn.com/en-in/news/other/ev-uptake-trails-festive-demand-petrol-two-wheelers-drove-delhi-s-79-surge-electric-share-fell-to-71/ar-AA2hyMoc?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "EV uptake trails festive demand: Petrol two-wheelers drove Delhi’s 79% surge; electric share fell to 7.1%",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "During the festive season, the popularity of two-wheelers has soared in the Delhi vehicle market. From November 1 to 15, a ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "65a141d04e38223aa442",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://themachinemaker.com/news/ampere-records-70333-electric-two-wheeler-registrations-in-fy27/",
+    "domain": "themachinemaker.com",
+    "title": "Ampere Records 70,333 Electric Two-Wheeler Registrations in FY27",
+    "source_type": "news",
+    "published_at": "2026-11-18T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ampere, the electric two-wheeler brand of Greaves Electric Mobility Limited (GEML), has recorded 70,333 VAHAN registrations ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "95295c760131e3867792",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.constructionworld.in/policy-updates-and-economic-news/electric-vehicle-sales-rise-45-per-cent-to-354625-in-october/100392",
+    "domain": "constructionworld.in",
+    "title": "Electric Vehicle Sales Rise 45 Per Cent to 354,625 in October",
+    "source_type": "news",
+    "published_at": "2026-11-17T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Electric vehicle sales in India rose 45 per cent year-on-year to 354,625 units in October 2026, led by strong demand for ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "82fb6ee676cc02f87ede",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.msn.com/en-in/news/other/ather-energy-has-a-demand-problem-it-would-love-to-have-but-can-it-fix-supply-fast-enough/ar-AA2hlYcA?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Ather Energy has a demand problem it would love to have. But can it fix supply fast enough?",
+    "source_type": "news",
+    "published_at": "2026-11-14T02:07:09+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy is losing an estimated 18,000-20,000 potential retail sales every month as demand outstrips production. Capacity expansion could take annual installed capacity to 11.4 lakh units by Q2 ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "89c367dd0988c5adaaf6",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://lapaasvoice.com/ev-makers-turn-to-family-scooters-to-drive-mass-market-adoption-in-india/",
+    "domain": "lapaasvoice.com",
+    "title": "EV Makers Turn to Family Scooters to Drive Mass-Market Adoption in India",
+    "source_type": "news",
+    "published_at": "2026-11-13T02:07:09+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "India's electric two-wheeler manufacturers are shifting their attention from performance-focused scooters to practical, family-oriented models as they look to bring electric mobility into mainstream ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "e56c2241ef94b59f84cb",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.reuters.com/world/india/indias-ola-electric-quarterly-loss-narrows-cost-cuts-2026-11-12/",
+    "domain": "reuters.com",
+    "title": "India's Ola Electric quarterly loss narrows on cost cuts",
+    "source_type": "news",
+    "published_at": "2026-11-13T02:06:46+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ola Electric's quarterly loss narrowed on Thursday, supported by restructuring and cost-control...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "f79fcced07ed76bbf681",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://askfuzz.ai/discover/news/connect-the-dots/ather-energys-market-share-push-growth-constraints-and-the-konarc-gamble",
+    "domain": "askfuzz.ai",
+    "title": "Ather Energy's Market Share Push: Growth, Constraints and the Konarc Gamble",
+    "source_type": "news",
+    "published_at": "2026-11-11T02:07:09+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy hit a record 16.3% market share in India's electric two-wheeler segment this year, but capacity constraints and ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "7f34afe155997d091a00",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.business-standard.com/industry/news/electric-two-wheeler-rental-firms-charge-up-for-gig-delivery-boom-126110901554_1.html",
+    "domain": "business-standard.com",
+    "title": "Electric two-wheeler rental firms charge up for gig delivery boom",
+    "source_type": "news",
+    "published_at": "2026-11-10T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Yulu, Zypp Electric and Baaz Bikes are expanding fleets and operations as they target a growing delivery workforce seeking ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "11683cb01314e3f5d505",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.msn.com/en-ae/news/world/india-electric-auto-rickshaws-reshape-countrys-roads/ar-AA2h09II?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "India: Electric auto rickshaws reshape country's roads",
+    "source_type": "news",
+    "published_at": "2026-11-10T02:07:01+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Electric auto rickshaws reshape India's roads ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "a70131fb831928ddf847",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.gurufocus.com/news/9174066/tvs-orbiter-electric-city-scooter-makes-its-european-debut-at-eicma-2026",
+    "domain": "gurufocus.com",
+    "title": "TVS Orbiter Electric City Scooter Makes Its European Debut at EI",
+    "source_type": "news",
+    "published_at": "2026-11-06T02:06:46+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "TVS Motor Company today unveiled the European-specification Orbiter electric scooter during its...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "8426d1b897171c76a5a4",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.yahoo.com/news/world/articles/electric-auto-rickshaws-reshape-indias-040754815.html",
+    "domain": "yahoo.com",
+    "title": "Electric auto rickshaws reshape India's roads",
+    "source_type": "news",
+    "published_at": "2026-11-06T02:06:46+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Every 90 seconds, an electric three-wheeler rolls off the production line at an Indian factory, underscoring a transformation that has made the country...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "817206de97326c7fe72c",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://india.entrepreneur.com/finance/two-wheelers-race-ahead-as-passenger-vehicle-profits-stall",
+    "domain": "india.entrepreneur.com",
+    "title": "Two-Wheelers Race Ahead as Passenger Vehicle Profits Stall",
+    "source_type": "news",
+    "published_at": "2026-10-30T02:06:46+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "India’s Q2 FY27 auto earnings reveal a two-speed market, with two-wheeler profits surging while carm...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "0adde4cd0764af12da06",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.msn.com/en-in/news/other/ather-energys-market-cap-hits-rs-65000-crore-35-times-ola-electrics/ar-AA2gkzoD?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Ather Energy's market cap hits Rs 65,000 crore, 3.5 times Ola Electric's",
+    "source_type": "news",
+    "published_at": "2026-10-29T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy shares have gained around 20% over the past week after the Bengaluru-based electric scooter maker reported a net profit for the first time in the September quarter.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "07ff4b24118ba796d0ee",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.indiatoday.in/auto/latest-auto-news/story/43-of-indian-two-wheeler-buyers-consider-evs-for-their-next-purchase-report-3025936-2026-10-27",
+    "domain": "indiatoday.in",
+    "title": "43% of Indian two-wheeler buyers consider EVs for their next purchase: Report",
+    "source_type": "news",
+    "published_at": "2026-10-27T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "A new report by Boston Consulting Group revealed that 43% of Indian two-wheeler consumers are considering electric vehicles for their next purchase, signalling growing acceptance of electric mobility.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "df73df17a5b3a084aa60",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.fortuneindia.com/business-news/ather-energy-shares-surge-10-after-q2-profit-turnaround-company-earmarks-122-crore-for-expansion/166674",
+    "domain": "fortuneindia.com",
+    "title": "Ather Energy shares surge 10% after Q2 profit turnaround; company earmarks ₹122 crore for expansion",
+    "source_type": "news",
+    "published_at": "2026-10-26T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy reported a consolidated profit of ₹1.26 crore in the second quarter of FY27, compared with a loss of ₹154.07 ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9e62c8a91a43e296b869",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.indiatoday.in/business/market/story/ather-energy-q2-fy27-first-quarterly-profit-revenue-jumps-63-percent-3025278-2026-10-26",
+    "domain": "indiatoday.in",
+    "title": "Ather Energy shares surge 10% after first quarterly profit of Rs 1.26 crore",
+    "source_type": "news",
+    "published_at": "2026-10-26T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy posted its first quarterly profit as electric scooter sales lifted revenue. The turnaround comes as capacity ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9b4edbd861dc5e4fdd6e",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.msn.com/en-in/money/other/ather-energy-shares-zoom-15-as-q2-fy27-profit-turns-positive-rs-122-crore-capex-planned/ar-AA2g4FjY?ocid=BingNewsVerp",
+    "domain": "msn.com",
+    "title": "Ather Energy shares zoom 15% as Q2 FY27 profit turns positive; Rs 122 crore capex planned",
+    "source_type": "news",
+    "published_at": "2026-10-26T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "Ather Energy reported a consolidated profit of Rs 1.26 crore in Q2 FY27, against a net loss of Rs 154.07 crore in Q2 FY26. The company had reported a net loss of Rs 51.09 crore in Q1 FY27.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "40f8898e6148c5cfcfe0",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://www.news18.com/business/markets/ather-energy-shares-rally-nearly-6-after-q2-profit-why-is-the-stock-rising-brokerage-targets-in-focus-10398992.html",
+    "domain": "news18.com",
+    "title": "Ather Energy Shares Rally Nearly 6% After Q2 Profit: Why Is the Stock Rising? Brokerage Targets In Focus",
+    "source_type": "news",
+    "published_at": "2026-10-26T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": "The primary trigger for the rally was Ather Energy's consolidated net profit of Rs 1.26 crore in Q2 FY27, compared with a net loss of Rs 154.07 crore in a year ago.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "8cfa94ed50b5f65b3962",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaXNHVmFTM05DU0F4TmswUHdWbE9JZm54djAzZXBzY2pYY01YWlJzVjhoQnVQSlpHdnRkMHZDTlpacXdGRkloVG1vcGxEY0tkdXJlNERha3dqRTU5MUhveFR2NUJZMHFYY1E0Qnd3UmdmeXc2ekJoQTZ5T25jVGVoX3lockNqMWRwdXFDQ3ZIeHZYWnNjMlQ3TEgwSy1vT1ZQU0tmWWF5V1JibkNKbDlmSi1meXlxRFNDRVEyTHVIbHZWZTl0QUotaWFkdTc3eThFaGVST1MtRURfMzBhQ1k1Q1hMWWxHazE1M3fSAe4BQVVfeXFMTTdRWmJpeDkyMTJMT1NYc19rQjFpbXpHWDAtbmJIM1p1dHlTQXc2eW5MV1Y2SVU4UHNpUjJKclBPMkZ6WGJEZm5aZ2U2eXpiWlNvZ3lEQl9WRHl5T3dLOW9KMHdmSC0zTkRKV2U5LTJKT3RrcTU1d2JURFFvQ3RYLUc2S0FNVTBpV0E0UDROTXQ4SFRhVDZqd1YxSUc3aUFGc2lZWTY2M2ZZUUZRamxiYlNvS0xaa2VsZlVRamNrelNhSi1WYTc3SzdkZzFMQVF5Y3NKblNiMWIzS0hmX2ZYcXhVY0otUVpuRnlsRVlqdw?oc=5",
+    "domain": "ET Auto",
+    "title": "Ather's stock surge revives investor interest in India's electric two-wheeler startups",
+    "source_type": "aggregator",
+    "published_at": "2026-11-19T21:31:19+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "e20f3776127b7810abd6",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSzJkbV84dlV5TGhYNHFwR2V3TGhRWlY3ejlKVVk0VklQT1RlU010RWhfLU9Bd0FZVFIyWnNLUjVHRFdSMEV6VmQ3SzdpLUpFSFdCclZTNTBqa01WTGhIUzlrVUJ4ZkI1Wk9pa2tyeXZvM3o2d1VreElzT3ZULTlhUmhIb20zam5GWWRxZVBpdmhlRDFo?oc=5",
+    "domain": "Motorcycles Data",
+    "title": "Indian Electric Scooter & Motorcycles Market 2026",
+    "source_type": "aggregator",
+    "published_at": "2026-11-19T13:31:37+05:30",
+    "retrieved_at": "2026-11-20T02:13:25.321049+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   }
+  ],
+  "findings": [
+   {
+    "id": "d92f8e1bd089c142b151",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "43% of Indian two-wheeler buyers consider EVs for their next purchase: Report",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "A new report by Boston Consulting Group revealed that 43% of Indian two-wheeler consumers are considering electric vehicles for their next purchase, signalling growing acceptance of electric mobility. Nearly 43 per cent of Indian two-wheeler consumers are actively considering an electric two-wheeler (E2W) for their next purchase, up from 30 per cent in 2024, according to a new report by Boston…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-26",
+    "source_ids": [
+     "07ff4b24118ba796d0ee"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.976490+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "ac3f999a1c583362ad3f",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ampere Records 70,333 Electric Two-Wheeler Registrations in FY27",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "Ampere, the electric two-wheeler brand of Greaves Electric Mobility Limited (GEML), has recorded 70,333 VAHAN registrations in FY27 up to November 15, surpassing its total registrations of 61,842 units during the entire previous financial year. The company reported 93% year-on-year growth, compared with 36,452 registrations during the corresponding period of FY26.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "65a141d04e38223aa442"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.971889+05:30",
+    "evidence_quote": "Ampere, the electric two-wheeler brand of Greaves Electric Mobility Limited (GEML), has recorded 70,333 VAHAN registrations in FY27 up to November 15, surpassing its total registrations of 61,842 units during the entire previous financial year. The company reported 93% year-on-year growth, compared with 36,452 registrations during the corresponding period of FY26."
+   },
+   {
+    "id": "e504122df0b92461dbab",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy Shares Rally Nearly 6% After Q2 Profit: Why Is the Stock Rising? Brokerage Targets In Focus",
+    "category": "other",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "The primary trigger for the rally was Ather Energy's consolidated net profit of Rs 1.26 crore in Q2 FY27, compared with a net loss of Rs 154.07 crore in a year ago. Ather Energy Share Price Today: Shares of electric two-wheeler manufacturer Ather Energy continued their upward momentum on Tuesday, October 27, following a strong rally in the previous session after the company reported its…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-25",
+    "source_ids": [
+     "40f8898e6148c5cfcfe0"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.977181+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "883a6b577ee6f01a9853",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy has a demand problem it would love to have. But can it fix supply fast enough?",
+    "category": "expansion",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Ather Energy is losing an estimated 18,000-20,000 potential retail sales every month as demand outstrips production. Capacity expansion could take annual installed capacity to 11.4 lakh units by Q2 ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "82fb6ee676cc02f87ede"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.972577+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "d7b3c95af3c0a07a0820",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy shares surge 10% after Q2 profit turnaround; company earmarks ₹122 crore for expansion",
+    "category": "funding",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "ADVERTISEMENT The shares of Bengaluru-based electric two-wheeler startup Ather Energy surged 10% on Monday after the company reported a quarterly profit for the September quarter, marking a sharp improvement from a loss in the year-ago period. The company also announced a ₹122 crore investment to expand manufacturing capacity at its factories in Tamil Nadu and Maharashtra.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-25",
+    "source_ids": [
+     "df73df17a5b3a084aa60"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.977837+05:30",
+    "evidence_quote": "ADVERTISEMENT The shares of Bengaluru-based electric two-wheeler startup Ather Energy surged 10% on Monday after the company reported a quarterly profit for the September quarter, marking a sharp improvement from a loss in the year-ago period. The company also announced a ₹122 crore investment to expand manufacturing capacity at its factories in Tamil Nadu and Maharashtra."
+   },
+   {
+    "id": "631369d33289f1332baa",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy shares surge 10% after first quarterly profit of Rs 1.26 crore",
+    "category": "expansion",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Ather Energy posted its first quarterly profit as electric scooter sales lifted revenue. The turnaround comes as capacity constraints and higher input costs test its expansion plans.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-25",
+    "source_ids": [
+     "9e62c8a91a43e296b869"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.976490+05:30",
+    "evidence_quote": "Ather Energy posted its first quarterly profit as electric scooter sales lifted revenue. The turnaround comes as capacity constraints and higher input costs test its expansion plans."
+   },
+   {
+    "id": "7e92260ff8e787ed8caa",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy shares zoom 15% as Q2 FY27 profit turns positive; Rs 122 crore capex planned",
+    "category": "other",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Ather Energy reported a consolidated profit of Rs 1.26 crore in Q2 FY27, against a net loss of Rs 154.07 crore in Q2 FY26. The company had reported a net loss of Rs 51.09 crore in Q1 FY27.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-25",
+    "source_ids": [
+     "9b4edbd861dc5e4fdd6e"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.976490+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "2abd1f28482c136228f3",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy's Market Share Push: Growth, Constraints and the Konarc Gamble",
+    "category": "market_entry",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Ather Energy has crossed a significant milestone in India's electric two-wheeler market. This puts Ather in third place behind TVS Motor (26% share) and Bajaj Auto (22%), with Hero MotoCorp's Vida in fourth at 11%.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-10",
+    "source_ids": [
+     "f79fcced07ed76bbf681"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.974009+05:30",
+    "evidence_quote": "Ather Energy has crossed a significant milestone in India's electric two-wheeler market. This puts Ather in third place behind TVS Motor (26% share) and Bajaj Auto (22%), with Hero MotoCorp's Vida in fourth at 11%."
+   },
+   {
+    "id": "fd83d117f3bcb037c2fd",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather Energy's market cap hits Rs 65,000 crore, 3.5 times Ola Electric's",
+    "category": "other",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Ather Energy shares have gained around 20% over the past week after the Bengaluru-based electric scooter maker reported a net profit for the first time in the September quarter.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-28",
+    "source_ids": [
+     "0adde4cd0764af12da06"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.975182+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "292950de0dea35a5351a",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Ather's stock surge revives investor interest in India's electric two-wheeler startups",
+    "category": "funding",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "8cfa94ed50b5f65b3962"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T02:15:06.977837+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "f1837812e6d296ddc963",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Beyond the big names: 6 NIFTY 500 stocks that quietly rallied up to 200% in six months",
+    "category": "funding",
+    "entity": "Ather Energy",
+    "industry": "electric two-wheelers",
+    "summary": "Market News 7 min read | Updated on November 18, 2026, 15:51 IST SUMMARY Cupid, Ather Energy, and Laurus Labs are among the top six stocks which have quietly rallied up to the tune of 200% in the last six months despite market volatility. Here's what investors need to know.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "a40db7622f4b8afbe71d"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.971364+05:30",
+    "evidence_quote": "Market News 7 min read | Updated on November 18, 2026, 15:51 IST SUMMARY Cupid, Ather Energy, and Laurus Labs are among the top six stocks which have quietly rallied up to the tune of 200% in the last six months despite market volatility. Here's what investors need to know."
+   },
+   {
+    "id": "fd2a74a38db595b3f794",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "BikeWo Green Tech, Gravton Motors Sign MoU for 500 Electric Two-Wheelers",
+    "category": "policy",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "BikeWo Green Tech has signed an MoU with Gravton Motors to explore commercial opportunities in the electric two-wheeler segment and will initially target the deployment of 500 electric two-wheelers for institutional and enterprise mobility applications. November 17, 2026.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "b013592b9852085c0be8"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.971889+05:30",
+    "evidence_quote": "BikeWo Green Tech has signed an MoU with Gravton Motors to explore commercial opportunities in the electric two-wheeler segment and will initially target the deployment of 500 electric two-wheelers for institutional and enterprise mobility applications. November 17, 2026."
+   },
+   {
+    "id": "3a1d4a85da138b10c882",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "EV Makers Turn to Family Scooters to Drive Mass-Market Adoption in India",
+    "category": "technology",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "India’s electric two-wheeler manufacturers are shifting their attention from performance-focused scooters to practical, family-oriented models as they look to bring electric mobility into mainstream households. After years of targeting technology enthusiasts and premium buyers, companies are increasingly prioritising comfortable seating, larger storage spaces, easy handling and competitive…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-12",
+    "source_ids": [
+     "89c367dd0988c5adaaf6"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.974009+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "2c69b673eec3f30ac35c",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "EV uptake trails festive demand: Petrol two-wheelers drove Delhi’s 79% surge; electric share fell to 7.1%",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "During the festive season, the popularity of two-wheelers has soared in the Delhi vehicle market. From November 1 to 15, a ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "d1bc24f3540318a9308e"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.971889+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "54f611ef12be8f207e14",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Electric Two-Wheeler Sales October 2026: Dispatches Surge 93% to 2.24 Lakh Units; Bajaj Chetak Leads, TVS iQube Second",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "India's electric two-wheeler market recorded strong year-on-year growth in October 2026, with Bajaj Chetak emerging as the best-selling model. TVS iQube retained second position, while Hero Vida more than doubled its dispatches.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "810c115c8239c1ac7eb1"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.970294+05:30",
+    "evidence_quote": "India's electric two-wheeler market recorded strong year-on-year growth in October 2026, with Bajaj Chetak emerging as the best-selling model. TVS iQube retained second position, while Hero Vida more than doubled its dispatches."
+   },
+   {
+    "id": "456132c1b7109c9927c1",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Electric Vehicle Sales Rise 45 Per Cent to 354,625 in October",
+    "category": "technology",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "PureSil Paints Develops Mineral Coatings from Industrial Waste PureSil Paints, a brand of Relic Coatings LLP, has developed an indigenous mineral-based coating technology aimed at reducing dependence on petrochemical-derived raw materials in the paints and coatings industry. Its proprietary Silicification Technology uses agricultural and industrial by-products to manufacture architectural…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "95295c760131e3867792"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.972577+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "e098dde8c9d6eef99b3b",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Electric auto rickshaws reshape India's roads",
+    "category": "expansion",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "Every 90 seconds, an electric three-wheeler rolls off the production line at an Indian factory, underscoring a transformation that has made the country the largest market for battery-powered auto rickshaws. At a bustling plant run by Mahindra Last Mile Mobility, workers and robots fit cells into battery packs, attach body panels to metal frames and fix wheels into place, racing to meet demand for…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-05",
+    "source_ids": [
+     "8426d1b897171c76a5a4"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.975182+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "f9c5350c4e259d8a8796",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Electric two-wheeler rental firms charge up for gig delivery boom",
+    "category": "expansion",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "Yulu, Zypp Electric and Baaz Bikes are expanding fleets and operations as they target a growing delivery workforce seeking ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-09",
+    "source_ids": [
+     "7f34afe155997d091a00"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.969776+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "4d77e122bfc83548cc22",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "India's Ola Electric quarterly loss narrows on cost cuts",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "Ola Electric's quarterly loss narrowed on Thursday, supported by restructuring and cost-control...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-12",
+    "source_ids": [
+     "e56c2241ef94b59f84cb"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.969776+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "0c6debd2ddf00907f9e9",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "India: Electric auto rickshaws reshape country's roads",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "Electric auto rickshaws reshape India's roads ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-09",
+    "source_ids": [
+     "11683cb01314e3f5d505"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.974009+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "e67a3ef584e49daafd39",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Indian Electric Scooter & Motorcycles Market 2026",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-19",
+    "source_ids": [
+     "e20f3776127b7810abd6"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T02:15:06.977837+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "64a37884479945469cc3",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "TVS Orbiter Electric City Scooter Makes Its European Debut at EI",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "TVS Motor Company today unveiled the European-specification Orbiter electric scooter during its...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-05",
+    "source_ids": [
+     "a70131fb831928ddf847"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.975182+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "a189bc594922f16a9463",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "The Tata Nano of the electric age? VinFast might have an answer",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "VinFast's tiny VF 2 electric car brings back memories of the Tata Nano, with its compact dimensions, four-seat layout and modest electric powertrain designed for everyday urban mobility. The Tata Nano was envisioned as an affordable, compact car for Indian families looking to move up from two-wheelers.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "22997f2fd31dfddca5a3"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.971364+05:30",
+    "evidence_quote": "VinFast's tiny VF 2 electric car brings back memories of the Tata Nano, with its compact dimensions, four-seat layout and modest electric powertrain designed for everyday urban mobility. The Tata Nano was envisioned as an affordable, compact car for Indian families looking to move up from two-wheelers."
+   },
+   {
+    "id": "d6926d8455083566e981",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "Two-Wheelers Race Ahead as Passenger Vehicle Profits Stall",
+    "category": "other",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "India’s Q2 FY27 auto earnings reveal a two-speed market, with two-wheeler profits surging while carmakers face rising costs and margin pressure. Opinions expressed by Entrepreneur contributors are their own.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-29",
+    "source_ids": [
+     "817206de97326c7fe72c"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.975182+05:30",
+    "evidence_quote": "India’s Q2 FY27 auto earnings reveal a two-speed market, with two-wheeler profits surging while carmakers face rising costs and margin pressure. Opinions expressed by Entrepreneur contributors are their own."
+   },
+   {
+    "id": "d6963126e99b3c26a6b5",
+    "research_run_id": "rr-20261119-e4b5ae12",
+    "title": "VinFast Electric Scooters For India – Range, Specs, Battery, Details",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "electric two-wheelers",
+    "summary": "The three electric scooters for Indian market from VinFast include Evo, Kyo and Kinet and they come with different ethos to suit different riders VinFast has patented multiple electric two-wheelers in India and launch is expected soon. Recent reports indicate that offering scooters with battery-swapping capability could be one of the key focus areas.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-18",
+    "source_ids": [
+     "6e542a4f9ad53c746ce4"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T02:15:06.969776+05:30",
+    "evidence_quote": "The three electric scooters for Indian market from VinFast include Evo, Kyo and Kinet and they come with different ethos to suit different riders VinFast has patented multiple electric two-wheelers in India and launch is expected soon. Recent reports indicate that offering scooters with battery-swapping capability could be one of the key focus areas."
+   }
+  ]
+ },
+ {
+  "id": "rr-20261119-65917a61",
+  "objective": "Research India's electric mobility industry over the last six months. Identify significant competitor developments, product launches, manufacturing expansions, partnerships, investment activity, policy developments, procurement opportunities and emerging commercial opportunities. Prioritize original company announcements and official government sources. Separate verified facts from analysis and provide the sources supporting every finding.",
+  "industry": "Electric vehicles & mobility",
+  "geography": "India",
+  "time_window": "6m",
+  "date_from": "2026-05-22",
+  "date_to": "2026-11-20",
+  "companies": [
+   "Tata Motors",
+   "Mahindra",
+   "TVS Motor",
+   "Ather Energy",
+   "Ola Electric",
+   "Exide Industries",
+   "Amara Raja Energy & Mobility"
+  ],
+  "source_preferences": [
+   "official_company",
+   "government",
+   "tenders"
+  ],
+  "status": "completed",
+  "provider": "context.dev",
+  "is_demo": false,
+  "provider_request_id": "e5a877ea-3d73-4a82-92a9-2feeb793ca3c",
+  "created_at": "2026-11-20T01:10:09.844628+05:30",
+  "started_at": "2026-11-20T01:10:09.935368+05:30",
+  "completed_at": "2026-11-20T01:10:23.812922+05:30",
+  "error_code": null,
+  "error_message": null,
+  "status_message": null,
+  "source_count": 4,
+  "finding_count": 4,
+  "result": {
+   "executive_summary": "India’s electric mobility sector has accelerated sharply over the last six months, driven by strong government programmes (PARIVARTAN, PM E‑DRIVE, PLI‑ACC), significant OEM commitments and rising private‑sector investment. Key OEMs (Tata Motors, Mahindra & Mahindra, TVS Motor, Ola Electric) have entered new MoUs, expanded manufacturing capacity and launched new models, while the government has allocated over ₹20 billion in incentives for EVs, charging infrastructure and battery‑cell production.",
+   "industry_overview": "The EV ecosystem in India is transitioning from a nascent market to a mature manufacturing hub. EV registrations grew ~46‑fold since 2016, with two‑wheelers and three‑wheelers leading adoption. Domestic production now covers battery packs, motors, drivetrains, power electronics and charging equipment, supported by multiple policy levers (FAME‑II, PM E‑DRIVE, PLI‑Auto, PLI‑ACC).",
+   "market_trends": [
+    "EV sales surged ~46 times since 2016 (Roads Reimagined, 2026)",
+    "Battery‑cell capacity under PLI‑ACC expected to reach ~95 GWh from private players (PLI ACC agreement, 2022)",
+    "OEMs are investing in gigafactories and dedicated EV platforms (Roads Reimagined, 2026)"
+   ],
+   "company_developments": [
+    "Tata Motors, Mahindra & Mahindra, TVS Motor and others signed MoUs under the PARIVARTAN scheme to supply cleaner trucks and buses in Delhi‑NCR (PARIVARTAN, 2026)",
+    "Ola Electric secured a PLI‑ACC agreement to develop ACC battery capacity contributing to the ~95 GWh private‑sector target (PLI ACC, 2022)"
+   ],
+   "product_launches": [
+    "Roads Reimagined notes the inauguration of Suzuki’s first global BEV ‘e VITARA’ in August 2025, signalling new model introductions by OEMs (Roads Reimagined, 2026)"
+   ],
+   "manufacturing_expansion": [
+    "PLI‑ACC agreement earmarks private‑sector capacity of ~95 GWh, with Ola Electric among the three firms receiving incentives to build large‑scale battery plants (PLI ACC, 2022)",
+    "OEMs such as Tata Motors, Mahindra, TVS are expanding capacity through gigafactory investments (Roads Reimagined, 2026)"
+   ],
+   "partnerships_and_investment": [
+    "PARIVARTAN MoUs bind 11 OEMs—including Tata Motors and Mahindra—to the Delhi‑NCR truck‑bus replacement programme (PARIVARTAN, 2026)",
+    "India’s EV ecosystem attracted > USD 1.4 billion in FY 2025, with OEMs securing ~USD 1.2 billion (Roads Reimagined, 2026)"
+   ],
+   "policy_and_regulatory": [
+    "PARIVARTAN scheme approved 3 June 2026, total outlay ₹9,585 crore for truck‑bus renewal (PARIVARTAN, 2026)",
+    "PM E‑DRIVE scheme outlay ₹10,900 crore; as of 22 July 2026 it has incentivised 2,322,878 EVs and allocated ₹2,000 crore for EV public‑charging stations (PM E‑DRIVE, 2026)",
+    "PLI‑ACC scheme budget ₹18,100 crore; aims for 50 GWh ACC capacity, with private‑sector target ~95 GWh (PLI ACC, 2022)"
+   ],
+   "tenders_and_procurement": [
+    "PM E‑DRIVE allocated ₹4,391 crore for 14,028 e‑buses; 13,800 e‑buses have been awarded to seven major cities, with tenders already concluded for 10,900 units (Roads Reimagined, 2026)"
+   ],
+   "commercial_opportunities": [
+    "EV charging infrastructure rollout – ₹2,000 crore earmarked for nationwide EVPCS, with ₹689 crore approved for 6,562 chargers across 3 oil‑marketing companies and 9 states (PM E‑DRIVE, 2026)",
+    "Battery‑cell manufacturing – private‑sector incentives under PLI‑ACC create opportunities for new plant development (PLI ACC, 2022)"
+   ],
+   "risks": [
+    "Policy continuity risk if future budgets reduce incentive levels",
+    "Supply‑chain bottlenecks in battery cell raw materials could constrain manufacturing expansion"
+   ],
+   "method": null,
+   "coverage_notes": []
+  },
+  "sources": [
+   {
+    "id": "c8bb2743dc4890f108d1",
+    "research_run_id": "rr-20261119-65917a61",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291176&reg=48&lang=2",
+    "domain": "pib.gov.in",
+    "title": null,
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T01:10:23.674197+05:30",
+    "snippet": null,
+    "link_status": "ok",
+    "discovered_via": null
+   },
+   {
+    "id": "8bcb929a4e62b9f632c4",
+    "research_run_id": "rr-20261119-65917a61",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290696&reg=48&lang=2",
+    "domain": "pib.gov.in",
+    "title": null,
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T01:10:23.674197+05:30",
+    "snippet": null,
+    "link_status": "ok",
+    "discovered_via": null
+   },
+   {
+    "id": "6d5546b03f353a564659",
+    "research_run_id": "rr-20261119-65917a61",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1846078",
+    "domain": "pib.gov.in",
+    "title": null,
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T01:10:23.674197+05:30",
+    "snippet": null,
+    "link_status": "ok",
+    "discovered_via": null
+   },
+   {
+    "id": "5c7e8b5007a3702ae051",
+    "research_run_id": "rr-20261119-65917a61",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294688&reg=48&lang=1",
+    "domain": "pib.gov.in",
+    "title": "Roads Reimagined: The Rise of India’s Electric Vehicles Ecosystem",
+    "source_type": "government",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T01:10:23.674197+05:30",
+    "snippet": "Supported by a growing supplier ecosystem, domestic production now covers battery packs, motors, drivetrains, power electronics, wiring, and charging equipment. Leading Original Equipment Manufacturers (OEMs) like Tata Motors, Mahindra, TVS, Bajaj Auto are expanding capacity through investments in R&D, gigafactories, dedicated EV platforms.",
+    "link_status": "ok",
+    "discovered_via": null
+   }
+  ],
+  "findings": [
+   {
+    "id": "85372f066329f1454282",
+    "research_run_id": "rr-20261119-65917a61",
+    "title": "PARIVARTAN Scheme MoUs with OEMs",
+    "category": "policy",
+    "entity": "Tata Motors, Mahindra & Mahindra, others",
+    "industry": "Electric vehicles & mobility",
+    "summary": "The Ministry of Road Transport and Highways signed MoUs with 11 OEMs—including Tata Motors and Mahindra & Mahindra—under the PARIVARTAN scheme to supply cleaner trucks and buses in Delhi‑NCR. The scheme was approved on 3 June 2026 with a total outlay of ₹9,585 crore.",
+    "significance": 5,
+    "confidence": 0.9,
+    "kind": "verified_fact",
+    "event_date": "2026-06-03",
+    "source_ids": [
+     "c8bb2743dc4890f108d1"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T01:10:23.674197+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "31a306420a28958f1cf7",
+    "research_run_id": "rr-20261119-65917a61",
+    "title": "PM E‑DRIVE Scheme Incentives and Deployments (as of July 2026)",
+    "category": "policy",
+    "entity": "Government of India",
+    "industry": "Electric vehicles & mobility",
+    "summary": "The PM E‑DRIVE scheme carries a total outlay of ₹10,900 crore. By 22 July 2026 it had incentivised 2,322,878 EVs across categories and reimbursed ₹2,281.94 crore to OEMs. An additional ₹2,000 crore has been allocated for EV public‑charging stations, with ₹689 crore approved for 6,562 chargers.",
+    "significance": 5,
+    "confidence": 0.95,
+    "kind": "verified_fact",
+    "event_date": "2026-07-22",
+    "source_ids": [
+     "8bcb929a4e62b9f632c4"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T01:10:23.674197+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "4f4869a678b4a4af0c98",
+    "research_run_id": "rr-20261119-65917a61",
+    "title": "PLI‑ACC Agreement – Battery Manufacturing Capacity Commitment",
+    "category": "partnership",
+    "entity": "Reliance New Energy, Ola Electric, Rajesh Exports",
+    "industry": "Electric vehicles & mobility",
+    "summary": "Three companies—Reliance New Energy Limited, Ola Electric Mobility Private Limited and Rajesh Exports Limited—signed a Program Agreement under the PLI‑ACC scheme on 28 July 2022, committing to create ~95 GWh of private‑sector ACC battery capacity and receive incentives under the ₹18,100 crore programme.",
+    "significance": 4,
+    "confidence": 0.9,
+    "kind": "verified_fact",
+    "event_date": "2022-07-28",
+    "source_ids": [
+     "6d5546b03f353a564659"
+    ],
+    "flags": [
+     "outside_window"
+    ],
+    "created_at": "2026-11-20T01:10:23.674197+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "35490d932fd459ee1ad8",
+    "research_run_id": "rr-20261119-65917a61",
+    "title": "Roads Reimagined Report – EV Market Growth and OEM Expansion",
+    "category": "other",
+    "entity": "Various OEMs",
+    "industry": "Electric vehicles & mobility",
+    "summary": "The ‘Roads Reimagined’ report (5 August 2026) documents a ~46‑fold increase in EV sales since 2016, exports rising from USD 1.2 million (2020) to USD 84 million (2024), and highlights capacity expansions by Tata Motors, Mahindra, TVS and others. It also notes Suzuki’s inaugural BEV ‘e VITARA’ launch in August 2025 and FY 2025 EV ecosystem investment of > USD 1.4 billion.",
+    "significance": 4,
+    "confidence": 0.92,
+    "kind": "verified_fact",
+    "event_date": "2026-08-05",
+    "source_ids": [
+     "5c7e8b5007a3702ae051"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T01:10:23.674197+05:30",
+    "evidence_quote": null
+   }
+  ]
+ }
+]

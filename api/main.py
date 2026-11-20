@@ -24,10 +24,46 @@ from api.routers import analytics, competitors, pipeline, reports, research, sig
 log = get_logger("api")
 
 
+def _autoseed_if_empty(db_path) -> None:
+    """First boot on a fresh server (e.g. Emergent): seed demo data and build marts.
+
+    Disabled with COMPETE_AUTOSEED=0. Runs before the API opens its DuckDB
+    connection (file lock). Never blocks startup on failure.
+    """
+    import os
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    import duckdb
+
+    if os.environ.get("COMPETE_AUTOSEED", "1") == "0":
+        return
+    try:
+        con = duckdb.connect(str(db_path))
+        try:
+            exists = con.execute(
+                "SELECT count(*) FROM information_schema.tables "
+                "WHERE table_schema='raw' AND table_name='competitors'"
+            ).fetchone()[0]
+            n = con.execute("SELECT count(*) FROM raw.competitors").fetchone()[0] if exists else 0
+        finally:
+            con.close()
+        if n:
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts" / "seed_demo.py"
+        log.info("empty warehouse: seeding demo data and building marts (first boot)")
+        env = {**os.environ, "PYTHONUTF8": "1"}
+        subprocess.run([sys.executable, str(script), "--build"], check=False, timeout=900, env=env)
+    except Exception as exc:  # pragma: no cover - startup must not fail
+        log.warning("autoseed skipped: %s", exc)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     settings.ensure_dirs()
+    _autoseed_if_empty(settings.duckdb_path)
     app.state.db = ApiDB(settings.duckdb_path)
     research_store.bootstrap(app.state.db)
     log.info("API connected to warehouse at %s", settings.duckdb_path)
@@ -74,6 +110,7 @@ async def unhandled_exc_handler(_: Request, exc: Exception) -> JSONResponse:
     return _envelope("internal_error", "An unexpected error occurred.", 500)
 
 
+@app.get("/api/health", include_in_schema=False)
 @app.get("/health", tags=["meta"])
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -81,6 +118,9 @@ def health() -> dict[str, str]:
 
 for r in (competitors.router, signals.router, analytics.router, reports.router, pipeline.router, research.router):
     app.include_router(r)
+    # Hosted deployments (e.g. Emergent) route /api/* to the backend without
+    # stripping the prefix, so every route is also served under /api.
+    app.include_router(r, prefix="/api", include_in_schema=False)
 
 
 def main() -> None:

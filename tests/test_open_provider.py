@@ -70,6 +70,9 @@ def handler(req: httpx.Request) -> httpx.Response:
 
 
 class FakeDDGS:
+    def text(self, q, **kw):
+        return []
+
     def news(self, q, **kw):
         return [{
             "date": (NOW - timedelta(days=2)).isoformat(),
@@ -82,6 +85,9 @@ class FakeDDGS:
 
 class BrokenDDGS:
     def news(self, q, **kw):
+        raise RuntimeError("rate limited")
+
+    def text(self, q, **kw):
         raise RuntimeError("rate limited")
 
 
@@ -154,7 +160,8 @@ def test_llm_quote_verified_and_rejected() -> None:
         {"title": "Made up", "category": "funding", "sources": [1],
          "evidence_quote": "Acme raised one billion dollars from investors yesterday"},
     ])))
-    good, bad = res.findings
+    good, bad = res.findings[:2]
+    assert all(f["kind"] == "source_excerpt" for f in res.findings[2:])  # uncited sources kept
     assert good["kind"] == "source_supported" and good["evidence_quote"]
     assert bad["kind"] == "analysis" and "quote_not_found" in bad["flags"] and bad["evidence_quote"] is None
     assert res.report["method"].startswith("llm")
