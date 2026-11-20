@@ -1,19 +1,17 @@
 # Next steps
 
-## A. Go live (you, about 45 minutes; full guide: `docs/GO_LIVE_ORACLE.md`)
+## A. Go live (about 30 minutes; full guide: `docs/GO_LIVE_VERCEL_RENDER.md`)
 
-1. Create a free Oracle Cloud account and an **Ubuntu 24.04 Ampere A1** VM (2 OCPU / 12 GB). Download its SSH key.
-2. In Oracle's Security List, **open ports 80 and 443**.
-3. In **GoDaddy DNS**, set the `A @` record to the VM's public IP and keep `www` pointing to `@`. Remove any domain forwarding.
-4. SSH into the VM and run this one command:
-   `curl -fsSL https://raw.githubusercontent.com/subham1902/Marketing-Intelligence-Tracker/main/deploy/install.sh | sudo bash`
-   It asks for your domain and email.
-5. Open `https://yourdomain.com` and check that you see the padlock and the Marketing Analysis page.
-6. Save the admin token (`sudo grep ADMIN_TOKEN /etc/mit/mit.env`) somewhere private.
+1. **Render:** New → Blueprint → this repo, then copy the API URL.
+2. **Vercel:** import the repo with Root Directory `web` and set `API_PROXY_TARGET` = the Render URL.
+3. **Vercel → Domains:** add `yourdomain.com` and `www`.
+4. **GoDaddy DNS:** `A @ → 76.76.21.21` and `CNAME www → cname.vercel-dns.com`. Turn off forwarding.
+5. **GitHub → Actions variable:** `API_HEALTH_URL` = `<render-url>/api/health`. This keeps the API awake.
+6. Open `https://yourdomain.com` and check that Marketing Analysis loads.
 
 ## B. Optional, same day
 
-- [ ] Add a free **Groq** key as `OPERATOR_LLM_API_KEY` in `/etc/mit/mit.env`, then run `sudo systemctl restart mit-api`. AI analysis becomes available to every visitor.
+- [ ] Add a free **Groq** key as `OPERATOR_LLM_API_KEY` in Render → Environment. AI analysis becomes available to every visitor.
 - [ ] Rotate the old **Context.dev** key. It was never committed, but rotate it anyway.
 - [ ] Fill in **"Mentor feedback we acted on"** in `docs/PITCH.md`.
 

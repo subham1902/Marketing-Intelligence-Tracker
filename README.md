@@ -25,13 +25,10 @@
 
 ## Deploy your own (free)
 
-Use one Oracle Cloud Always Free VM (no Docker) and your own domain. HTTPS is automatic through Caddy. Follow **[docs/GO_LIVE_ORACLE.md](docs/GO_LIVE_ORACLE.md)**; after the VM and DNS are set up, it's one command:
+- **Easiest:** **Vercel** hosts the website and **Render** hosts the API, both on free plans, with your own domain. Setup is clicks only: see **[docs/GO_LIVE_VERCEL_RENDER.md](docs/GO_LIVE_VERCEL_RENDER.md)**.
+- **Alternative:** one always-free Oracle VM, with no Docker. See [docs/GO_LIVE_ORACLE.md](docs/GO_LIVE_ORACLE.md).
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/subham1902/Marketing-Intelligence-Tracker/main/deploy/install.sh | sudo bash
-```
-
-The deployment runs in **public mode**:
+Both run in **public mode**:
 - Visitors can explore and run analyses, with rate limits per IP.
 - Only the owner can change AI keys or the tracked companies.
 

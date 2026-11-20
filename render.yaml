@@ -1,0 +1,45 @@
+# Render Blueprint: the API (FastAPI + DuckDB) on Render's free plan.
+# Render > New > Blueprint > pick this repo. The website runs on Vercel (web/).
+#
+# Free plan notes:
+# - The filesystem resets on every restart/deploy, so the database is built
+#   during the build (demo data + captured research and marketing snapshots).
+#   The site therefore never looks empty; visitors' new runs last until the next restart.
+# - Free services sleep after 15 min idle; .github/workflows/keepalive.yml pings it.
+services:
+  - type: web
+    name: mit-api
+    runtime: python
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      PYTHONPATH=. python scripts/seed_demo.py --build
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips '*'
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: PYTHONUTF8
+        value: "1"
+      - key: COMPETE_DATA_DIR
+        value: data
+      - key: COMPETE_DUCKDB_PATH
+        value: data/compete.duckdb
+      - key: COMPETE_PUBLIC_MODE
+        value: "true"
+      - key: COMPETE_ADMIN_TOKEN
+        generateValue: true
+      - key: COMPETE_MAX_CONCURRENT_RUNS
+        value: "2"
+      - key: COMPETE_RESEARCH_PROVIDER
+        value: open
+      - key: COMPETE_LLM_PROVIDER
+        value: mock
+      - key: COMPETE_CORS_ORIGINS
+        value: "*"
+      # Optional: give every visitor AI analysis with a free Groq key (set in the Render dashboard).
+      - key: OPERATOR_LLM_API_KEY
+        sync: false
