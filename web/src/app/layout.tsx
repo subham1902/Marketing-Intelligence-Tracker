@@ -38,14 +38,11 @@ export const metadata: Metadata = {
     template: "%s · compete",
   },
   description:
-    "Track every move your competitors make. compete collects, extracts, and ranks meaningful signals - pricing, hiring, launches, messaging - into one calm dashboard.",
+    "India-first market intelligence: company tracking, on-demand research from free public sources, and policy and tender discovery, with every finding linked to its source.",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/compete-logo1.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/compete-logo1.svg",
+    icon: [{ url: "/mi-logo.svg", type: "image/svg+xml" }],
+    shortcut: "/mi-logo.svg",
+    apple: "/mi-logo.svg",
   },
   openGraph: {
     title: "Market Intelligence Tracker — India-first market & competitor research",

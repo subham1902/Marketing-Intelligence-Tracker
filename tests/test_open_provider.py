@@ -335,3 +335,39 @@ def test_date_in_text() -> None:
     assert date_in_text("Nov 10, 2024 · EV as a Service").date().isoformat() == "2024-11-10"
     assert date_in_text("Posted on 3 March 2026 by PIB").date().isoformat() == "2026-03-03"
     assert date_in_text("No date here at all") is None
+
+
+def test_llm_settings_endpoints(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("COMPETE_DUCKDB_PATH", str(tmp_path / "s.duckdb"))
+    monkeypatch.setenv("COMPETE_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("COMPETE_RESEARCH_PROVIDER", "open")
+    monkeypatch.setenv("COMPETE_RESEARCH_SYNTHESIS", "off")
+    from fastapi.testclient import TestClient
+    from pipeline.config import get_settings
+    from pipeline.storage.duckdb_store import Warehouse
+
+    get_settings.cache_clear()
+    Warehouse(tmp_path / "s.duckdb").close()
+    from api.main import app
+
+    with TestClient(app) as c:
+        v = c.get("/api/settings/llm").json()
+        assert v["mode"] == "off" and v["active"] == "extractive (no LLM)" and "groq" in v["presets"]
+        assert c.post("/api/settings/llm/test", json={"mode": "off"}).json()["ok"] is True
+        secret = "sk-test-1234567890abcd"
+        put = c.put("/api/settings/llm", json={"mode": "openai_compatible", "provider": "groq",
+                                               "base_url": "https://api.groq.com/openai/v1",
+                                               "model": "llama-3.3-70b-versatile", "api_key": secret})
+        body = put.text
+        assert secret not in body and put.json()["has_key"] and put.json()["key_hint"] == "…abcd"
+        assert c.get("/api/research/config").json()["synthesis"].startswith("AI summaries (groq")
+        # saving again without a key keeps the stored key
+        again = c.put("/api/settings/llm", json={"mode": "openai_compatible", "provider": "groq",
+                                                 "base_url": "https://api.groq.com/openai/v1",
+                                                 "model": "llama-3.3-70b-versatile"}).json()
+        assert again["has_key"] is True
+        off = c.put("/api/settings/llm", json={"mode": "off"}).json()
+        assert off["mode"] == "off" and c.get("/api/research/config").json()["synthesis"] == "extractive (no LLM)"
+        missing = c.post("/api/settings/llm/test", json={"mode": "openai_compatible", "clear_key": True}).json()
+        assert missing["ok"] is False
+    get_settings.cache_clear()

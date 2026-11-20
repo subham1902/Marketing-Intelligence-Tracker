@@ -199,3 +199,64 @@ export const useFindingCategories = () =>
       return staticGet<{ category: string; count: number }[]>("findings-categories.json", []);
     },
   });
+
+// ------------------------------ AI summaries ------------------------------ //
+
+export interface LLMSettings {
+  mode: "off" | "ollama" | "openai_compatible";
+  provider: string;
+  base_url: string;
+  model: string;
+  has_key: boolean;
+  key_hint: string;
+  source: string;
+  active: string;
+  presets: Record<string, { base_url: string; model: string }>;
+}
+
+export interface LLMSettingsIn {
+  mode: LLMSettings["mode"];
+  provider?: string;
+  base_url?: string;
+  model?: string;
+  api_key?: string;
+  clear_key?: boolean;
+}
+
+export const useLLMSettings = () =>
+  useQuery({
+    queryKey: ["llm-settings"] as const,
+    queryFn: () =>
+      STATIC
+        ? Promise.resolve<LLMSettings>({
+            mode: "off", provider: "", base_url: "", model: "", has_key: false, key_hint: "",
+            source: "static", active: "extractive (no LLM)", presets: {},
+          })
+        : request<LLMSettings>("/settings/llm"),
+  });
+
+export function useSaveLLMSettings() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (body: LLMSettingsIn) =>
+      request<LLMSettings>("/settings/llm", { method: "PUT", body: JSON.stringify(body) }),
+    onSuccess: (s) => {
+      qc.setQueryData(["llm-settings"], s);
+      qc.invalidateQueries({ queryKey: researchKeys.config });
+      toast.success(s.mode === "off" ? "AI summaries turned off" : "AI summaries connected", {
+        description: s.mode === "off" ? "Research uses extractive mode with cited sources." : s.active,
+      });
+    },
+    onError: (e) => toast.error(e instanceof Error ? e.message : "Could not save settings"),
+  });
+}
+
+export function useTestLLM() {
+  return useMutation({
+    mutationFn: (body: LLMSettingsIn) =>
+      request<{ ok: boolean; message: string }>("/settings/llm/test", {
+        method: "POST",
+        body: JSON.stringify(body),
+      }),
+  });
+}

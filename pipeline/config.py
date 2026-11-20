@@ -82,7 +82,7 @@ class Settings(BaseSettings):
     # Research provider: "open" (free, keyless, default) | "contextdev" (paid, optional).
     research_provider: str = Field(default="open", alias="COMPETE_RESEARCH_PROVIDER")
     # Synthesis for the open provider: auto (Ollama if a >=7B model is installed) | extractive | ollama
-    research_synthesis: str = Field(default="auto", alias="COMPETE_RESEARCH_SYNTHESIS")
+    research_synthesis: str = Field(default="off", alias="COMPETE_RESEARCH_SYNTHESIS")
     research_ollama_model: str | None = Field(default=None, alias="COMPETE_RESEARCH_OLLAMA_MODEL")
 
     # API

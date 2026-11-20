@@ -68,6 +68,8 @@ Environment (`.env` at the repo root; see `.env.example`):
 
 **DuckDB on hosted containers:** the file lives in `data/`. If the container filesystem is ephemeral, every redeploy re-seeds, and the real snapshot comes back from `config/research_snapshot.json`. New research done on the hosted app persists only while the container lives, unless `data/` is on persistent storage.
 
+**AI summaries on Emergent:** open **Connect LLM** in the top bar, choose *API key*, pick a preset (or *custom* for Emergent's OpenAI-compatible endpoint and key), then click **Test** and **Save and connect**. With AI off, research stays extractive: every finding is quoted and linked. Settings live in `data/llm_settings.json` (gitignored). The endpoints are `GET/PUT /api/settings/llm` and `POST /api/settings/llm/test`.
+
 ## 3. Files Emergent must not break
 
 | File | Why |
@@ -78,6 +80,7 @@ Environment (`.env` at the repo root; see `.env.example`):
 | `api/research_store.py` | `research.*` schema; columns are added with `ALTER ... IF NOT EXISTS` at startup |
 | `api/routers/research.py` | `/research`, `/findings`, `/companies/{id}/refresh`, `/companies/{id}/developments` |
 | `api/main.py` | `/api` mirror and first-boot autoseed |
+| `api/llm_settings.py` | AI summary connection (off / Ollama / OpenAI-compatible); key server-side only |
 | `api/schemas.py` | API contract; `web/src/lib/research-types.ts` mirrors it |
 | `config/research_snapshot.json` | Real captured runs for hosted first boot |
 | `warehouse/dbt/` | Marts behind the dashboard, company and pricing charts |

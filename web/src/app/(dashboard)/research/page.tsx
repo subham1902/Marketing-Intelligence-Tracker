@@ -108,8 +108,15 @@ export default function ResearchPage() {
                 <span className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400">
                   <Sparkles className="h-3.5 w-3.5" />{" "}
                   {config.data?.provider === "open"
-                    ? `Free public sources (no key) · synthesis: ${config.data?.synthesis ?? "extractive"}`
+                    ? `Free public sources (no key) · ${config.data?.synthesis ?? "extractive"}`
                     : `Live research via ${config.data?.provider} (${config.data?.mode} mode)`}
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event("open-llm-panel"))}
+                    className="ml-1 font-medium text-primary underline-offset-2 hover:underline"
+                  >
+                    {config.data?.synthesis?.startsWith("AI") ? "Change AI summaries" : "Connect LLM for AI summaries"}
+                  </button>
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-1.5 text-amber-700 dark:text-amber-400">

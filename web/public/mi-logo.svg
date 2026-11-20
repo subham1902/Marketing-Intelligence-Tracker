@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Market Intel Tracker">
+  <defs>
+    <linearGradient id="mi-g" x1="6" y1="58" x2="58" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2B3FD6"/>
+      <stop offset="0.45" stop-color="#1FA7EA"/>
+      <stop offset="1" stop-color="#2EE6C2"/>
+    </linearGradient>
+    <linearGradient id="mi-leg" x1="50" y1="56" x2="50" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26D9B4"/>
+      <stop offset="1" stop-color="#2EE6C2"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#0E1730"/>
+  <!-- rising bars inside the M -->
+  <rect x="21.5" y="42" width="4.6" height="11" rx="1.4" fill="#1C9C93"/>
+  <rect x="28.4" y="36.5" width="4.6" height="16.5" rx="1.4" fill="#1C9C93"/>
+  <!-- right leg -->
+  <path d="M49.5 26 V52.5" stroke="url(#mi-leg)" stroke-width="7.5" stroke-linecap="round"/>
+  <!-- M stroke rising into the arrow -->
+  <path d="M10.5 52.5 L19.5 16.5 Q21 12 24.6 15.2 L34.2 27.6 Q36 30 38 27.8 L49 15.5"
+        fill="none" stroke="url(#mi-g)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- arrow head -->
+  <path d="M42.6 11.2 L56 7.6 L53.2 21.4 Z" fill="#2EE6C2" stroke="#2EE6C2" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>

@@ -16,9 +16,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import { CommandPalette } from "@/components/command-palette";
+import { LLMButton, LLMPanel } from "@/components/llm-panel";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -82,14 +83,14 @@ function Brand() {
   return (
     <Link href="/dashboard" className="flex items-center gap-2 px-1 py-1">
       <Image
-        src="/compete-logo.svg"
-        alt="compete logo"
+        src="/mi-logo.svg"
+        alt="Market Intel Tracker logo"
         width={32}
         height={32}
         priority
-        className="h-8 w-8 rounded-lg hue-rotate-[100deg]"
+        className="h-8 w-8 rounded-lg"
       />
-      <span className="text-base font-semibold leading-tight tracking-tight">Market Intel<span className="block text-[10px] font-normal text-muted-foreground">India-first tracker</span></span>
+      <span className="font-display text-[17px] font-bold leading-[1.05] tracking-tight">Market Intel<span className="block text-[15px] font-normal text-muted-foreground">Tracker</span></span>
     </Link>
   );
 }
@@ -97,6 +98,13 @@ function Brand() {
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [llmOpen, setLlmOpen] = useState(false);
+
+  useEffect(() => {
+    const onOpen = () => setLlmOpen(true);
+    window.addEventListener("open-llm-panel", onOpen);
+    return () => window.removeEventListener("open-llm-panel", onOpen);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -135,11 +143,11 @@ export function AppShell({ children }: { children: ReactNode }) {
 
           <Link href="/dashboard" className="flex items-center gap-2 md:hidden">
             <Image
-              src="/compete-logo.svg"
-              alt="compete logo"
+              src="/mi-logo.svg"
+              alt="Market Intel Tracker logo"
               width={24}
               height={24}
-              className="h-6 w-6 rounded-md hue-rotate-[100deg]"
+              className="h-6 w-6 rounded-md"
             />
             <span className="font-semibold">Market Intel</span>
           </Link>
@@ -154,6 +162,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <kbd className="rounded border bg-muted px-1.5 text-[11px]">Ctrl K</kbd>
           </button>
           <div className="ml-auto flex items-center gap-2 sm:ml-0">
+            <LLMButton onClick={() => setLlmOpen(true)} />
             <ThemeToggle />
           </div>
         </header>
@@ -164,6 +173,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </div>
 
       <CommandPalette />
+      <LLMPanel open={llmOpen} onClose={() => setLlmOpen(false)} />
 
       {/* Mobile bottom nav */}
       <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t bg-background/95 backdrop-blur md:hidden">

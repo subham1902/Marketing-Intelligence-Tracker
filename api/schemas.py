@@ -275,3 +275,30 @@ class ResearchConfig(BaseModel):
     mode: str
     synthesis: str | None = None
     providers: list[str] = Field(default_factory=list)
+
+
+# ------------------------------ AI summaries -------------------------------- #
+class LLMSettingsIn(BaseModel):
+    mode: Literal["off", "ollama", "openai_compatible"] = "off"
+    provider: str | None = Field(default=None, max_length=40)
+    base_url: str | None = Field(default=None, max_length=300)
+    model: str | None = Field(default=None, max_length=120)
+    api_key: str | None = Field(default=None, max_length=400, description="Write-only; never returned.")
+    clear_key: bool = False
+
+
+class LLMSettingsView(BaseModel):
+    mode: str
+    provider: str = ""
+    base_url: str = ""
+    model: str = ""
+    has_key: bool = False
+    key_hint: str = ""
+    source: str = "default"
+    active: str = ""
+    presets: dict[str, dict[str, str]] = Field(default_factory=dict)
+
+
+class LLMTestResult(BaseModel):
+    ok: bool
+    message: str

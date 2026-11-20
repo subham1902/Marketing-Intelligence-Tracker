@@ -16,12 +16,16 @@ from pipeline.logging_setup import get_logger
 from pipeline.research.provider import ContextDevProvider, ProviderError, ResearchProvider
 from pipeline.research.service import FINDING_CATEGORIES, ResearchRequest, run_research
 
+from api import llm_settings
 from api import research_store as store
 from api.db import ApiDB
 from api.deps import get_db
 from api.schemas import (
     CategoryCount,
     FeedFinding,
+    LLMSettingsIn,
+    LLMSettingsView,
+    LLMTestResult,
     Page,
     ResearchConfig,
     ResearchCreate,
@@ -48,11 +52,14 @@ def _provider_name(requested: str | None = None) -> str:
 
 
 def _ollama_model(s: Settings) -> str | None:
-    if s.research_synthesis == "extractive":
-        return None
+    """Ollama model to use, or None (only when AI summaries are set to local Ollama)."""
     from pipeline.research.open_provider import detect_ollama_model
 
-    return detect_ollama_model(s.ollama_base_url, s.research_ollama_model)
+    data = llm_settings.load(s)
+    if data.get("mode") != "ollama":
+        return None
+    base = data.get("base_url") or s.ollama_base_url
+    return detect_ollama_model(base, data.get("model") or s.research_ollama_model)
 
 
 def provider_factory(name: str | None = None) -> ResearchProvider:
@@ -61,11 +68,17 @@ def provider_factory(name: str | None = None) -> ResearchProvider:
     if _provider_name(name) == "open":
         from pipeline.research.open_provider import OpenConfig, OpenResearchProvider
 
+        data = llm_settings.load(s)
+        if data.get("mode") == "openai_compatible" and data.get("api_key") and data.get("model"):
+            return OpenResearchProvider(
+                OpenConfig(cache_dir=s.data_dir / "research_cache", llm_model=data["model"]),
+                llm_call=llm_settings.openai_call(data["base_url"], data["api_key"], data["model"]),
+            )
         return OpenResearchProvider(
             OpenConfig(
                 cache_dir=s.data_dir / "research_cache",
                 llm_model=_ollama_model(s),
-                ollama_base_url=s.ollama_base_url,
+                ollama_base_url=llm_settings.ollama_root(data.get("base_url") or s.ollama_base_url),
             )
         )
     return ContextDevProvider(
@@ -125,12 +138,11 @@ def research_config() -> ResearchConfig:
     s = _fresh_settings()
     providers = ["open"] + (["contextdev"] if s.context_dev_api_key else [])
     if _provider_name() == "open":
-        model = _ollama_model(s)
         return ResearchConfig(
             provider="open",
             live_available=True,
             mode="free",
-            synthesis=f"local LLM ({model})" if model else "extractive (no LLM)",
+            synthesis=llm_settings.synthesis_label(llm_settings.load(s), _ollama_model(s)),
             providers=providers,
         )
     return ResearchConfig(
@@ -271,3 +283,33 @@ def company_developments(competitor_id: str, db: ApiDB = Depends(get_db)) -> lis
     if not comp:
         raise HTTPException(status_code=404, detail=f"Company '{competitor_id}' not found.")
     return store.company_developments(db, comp["name"])
+
+
+# ------------------------------ AI summaries -------------------------------- #
+@router.get("/settings/llm", response_model=LLMSettingsView)
+def get_llm_settings() -> dict:
+    s = _fresh_settings()
+    view = llm_settings.public_view(llm_settings.load(s))
+    view["active"] = llm_settings.synthesis_label(llm_settings.load(s), _ollama_model(s))
+    view["presets"] = llm_settings.PRESETS
+    return view
+
+
+@router.put("/settings/llm", response_model=LLMSettingsView)
+def put_llm_settings(body: LLMSettingsIn) -> dict:
+    s = _fresh_settings()
+    saved = llm_settings.save(s, body.model_dump())
+    view = llm_settings.public_view(saved)
+    view["active"] = llm_settings.synthesis_label(saved, _ollama_model(s))
+    view["presets"] = llm_settings.PRESETS
+    return view
+
+
+@router.post("/settings/llm/test", response_model=LLMTestResult)
+def test_llm_settings(body: LLMSettingsIn) -> LLMTestResult:
+    s = _fresh_settings()
+    data = {**llm_settings.load(s), **{k: v for k, v in body.model_dump().items() if v not in (None, "")}}
+    if body.clear_key:
+        data["api_key"] = ""
+    ok, msg = llm_settings.test_connection(data)
+    return LLMTestResult(ok=ok, message=msg)

@@ -15,6 +15,7 @@ cd web; npm install; npm run dev                                 # http://localh
 ```
 
 - **Research works with no keys.** The default `COMPETE_RESEARCH_PROVIDER=open` searches DuckDuckGo news, Google News RSS, PIB press releases and GDELT, fetches the pages and builds an extractive report. Every finding is verbatim source text.
+- **AI summaries (optional): click "Connect LLM" in the top bar.** Choose *Off* (default: cited extracts), *Local model (Ollama)* or *API key* (OpenAI, Groq, Gemini, OpenRouter or any OpenAI-compatible endpoint, including Emergent). Use **Test** to check the connection before saving. The key is stored server-side in `data/llm_settings.json` (gitignored) and never returned to the browser.
 - **Optional: local LLM.** Install [Ollama](https://ollama.com) and run `ollama pull qwen2.5:7b-instruct`. With `COMPETE_RESEARCH_SYNTHESIS=auto`, reports get LLM-written sections, and a finding is marked "source-supported" only when its quote is found verbatim in the cited source.
 - **Optional: Context.dev.** Set `CONTEXT_DEV_API_KEY` and `COMPETE_RESEARCH_PROVIDER=contextdev`. This is a paid provider; its findings are labelled "Provider-cited fact".
 - **Hosting (Emergent and similar):** see [docs/EMERGENT_HANDOFF.md](docs/EMERGENT_HANDOFF.md). The backend serves every route under `/api` as well as `/`.
