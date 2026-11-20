@@ -25,7 +25,7 @@
 
 ## Deploy your own (free)
 
-Use one Oracle Cloud Always Free VM and your own domain. HTTPS is automatic. Follow **[docs/GO_LIVE_ORACLE.md](docs/GO_LIVE_ORACLE.md)**; after the VM and DNS are set up, it's one command:
+Use one Oracle Cloud Always Free VM (no Docker) and your own domain. HTTPS is automatic through Caddy. Follow **[docs/GO_LIVE_ORACLE.md](docs/GO_LIVE_ORACLE.md)**; after the VM and DNS are set up, it's one command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/subham1902/Marketing-Intelligence-Tracker/main/deploy/install.sh | sudo bash

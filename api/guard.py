@@ -2,7 +2,7 @@
 
 Both are no-ops unless ``COMPETE_PUBLIC_MODE`` is true, so local use stays
 unrestricted. On the hosted VM the API is only reachable through Caddy, so the
-first ``X-Forwarded-For`` entry is the real visitor IP.
+``X-Real-IP`` header Caddy sets is the real visitor IP.
 """
 
 from __future__ import annotations
@@ -34,6 +34,11 @@ def require_admin(request: Request) -> None:
 
 
 def client_ip(request: Request) -> str:
+    # Caddy overwrites X-Real-IP with the true remote address, so it can't be spoofed;
+    # X-Forwarded-For is only a fallback for other proxies.
+    real = request.headers.get("x-real-ip", "").strip()
+    if real:
+        return real
     fwd = request.headers.get("x-forwarded-for", "")
     if fwd:
         return fwd.split(",")[0].strip()

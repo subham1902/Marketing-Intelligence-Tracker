@@ -68,6 +68,10 @@ def test_rate_limit_per_ip(client, monkeypatch) -> None:
     # A different visitor is not affected.
     other = client.post("/api/assistant/chat", json={"message": "hi"}, headers={"X-Forwarded-For": "198.51.100.2"})
     assert other.status_code == 200
+    # Behind Caddy, X-Real-IP (set by the proxy) wins over a spoofed X-Forwarded-For.
+    spoof = client.post("/api/assistant/chat", json={"message": "hi"},
+                        headers={"X-Real-IP": "203.0.113.7", "X-Forwarded-For": "10.9.9.9"})
+    assert spoof.status_code == 429
 
 
 def test_operator_key_from_env_is_default_and_hidden(client, monkeypatch, tmp_path) -> None:

@@ -1,5 +1,6 @@
 # Caddy gets and renews HTTPS certificates automatically.
-# Canonical site is the bare domain; www redirects to it.
+# install.sh fills in {$DOMAIN} and {$ACME_EMAIL} and writes this to /etc/caddy/Caddyfile.
+# The canonical site is the bare domain; www redirects to it.
 {
 	email {$ACME_EMAIL}
 }
@@ -16,7 +17,9 @@ www.{$DOMAIN} {
 		Referrer-Policy "strict-origin-when-cross-origin"
 		-Server
 	}
-	reverse_proxy web:3000 {
+	reverse_proxy 127.0.0.1:3000 {
+		# The real visitor IP, set by Caddy (never trusted from the client). Used for rate limits.
+		header_up X-Real-IP {remote_host}
 		# Stream guide answers and research progress without buffering.
 		flush_interval -1
 	}

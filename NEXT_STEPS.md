@@ -9,11 +9,11 @@
    `curl -fsSL https://raw.githubusercontent.com/subham1902/Marketing-Intelligence-Tracker/main/deploy/install.sh | sudo bash`
    It asks for your domain and email.
 5. Open `https://yourdomain.com` and check that you see the padlock and the Marketing Analysis page.
-6. Save the admin token (`grep ADMIN_TOKEN /opt/mit/deploy/.env`) somewhere private.
+6. Save the admin token (`sudo grep ADMIN_TOKEN /etc/mit/mit.env`) somewhere private.
 
 ## B. Optional, same day
 
-- [ ] Add a free **Groq** key as `OPERATOR_LLM_API_KEY` in `/opt/mit/deploy/.env`, then run `docker compose up -d`. AI analysis becomes available to every visitor.
+- [ ] Add a free **Groq** key as `OPERATOR_LLM_API_KEY` in `/etc/mit/mit.env`, then run `sudo systemctl restart mit-api`. AI analysis becomes available to every visitor.
 - [ ] Rotate the old **Context.dev** key. It was never committed, but rotate it anyway.
 - [ ] Fill in **"Mentor feedback we acted on"** in `docs/PITCH.md`.
 

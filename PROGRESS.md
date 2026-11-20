@@ -57,8 +57,8 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 
 | Change | Notes |
 |---|---|
-| Deploy package committed | `deploy/` (Docker Compose: Caddy HTTPS, web, private API), `install.sh` one-command setup, `update.sh`, nightly `backup.sh`; `docs/GO_LIVE_ORACLE.md` |
-| Public mode | `api/guard.py`: owner-only AI settings, company edits and pipeline (X-Admin-Token; the default token is rejected); per-IP rate limits (6 runs per 10 min, 30 chats per min); operator AI key from env; `public_mode` in `/api/health`; the Connect LLM panel explains it |
+| Deploy package (no Docker) | `deploy/install.sh` one command on Ubuntu: Python venv, Node 20, Caddy HTTPS, `mit-api` and `mit-web` systemd services on localhost, firewall, swap, nightly `backup.sh`, `update.sh`; settings in `/etc/mit/mit.env`, data in `/var/lib/mit`; guide `docs/GO_LIVE_ORACLE.md` |
+| Public mode | `api/guard.py`: owner-only AI settings, company edits and pipeline (X-Admin-Token; the default token is rejected); per-IP rate limits (6 runs per 10 min, 30 chats per min; IP from Caddy's X-Real-IP); operator AI key from env; `public_mode` in `/api/health`; the Connect LLM panel explains it |
 | Web headers | nosniff, referrer policy, frame-ancestors, permissions policy; no X-Powered-By |
-| Verified | pytest 108; production build OK; cold boot from an empty data dir in public mode: 7 companies, 7 analyses, 403s for visitors, 200 with the token. Docker image build not run (Docker Desktop engine would not start on this PC) |
+| Verified | pytest 108; production build OK; cold boot from an empty data dir in public mode: 7 companies, 7 analyses, 403s for visitors, 200 with the token. Production rehearsal on this PC (next start → API in public mode): rate limit per visitor through the proxy, security headers present. A real Ubuntu install has not been run yet |
 | Next | `NEXT_STEPS.md` |

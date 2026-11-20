@@ -1,0 +1,23 @@
+[Unit]
+Description=Market Intelligence Tracker API (FastAPI + DuckDB)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=mit
+Group=mit
+WorkingDirectory=/opt/mit
+EnvironmentFile=/etc/mit/mit.env
+Environment=PYTHONUTF8=1 PYTHONUNBUFFERED=1 PYTHONPATH=/opt/mit
+# One worker: DuckDB allows a single writer process. Bound to localhost; only the website reaches it.
+ExecStart=/opt/mit/.venv/bin/uvicorn api.main:app --host 127.0.0.1 --port 8000 --proxy-headers --forwarded-allow-ips 127.0.0.1
+Restart=always
+RestartSec=5
+# First boot seeds demo data and builds marts (can take a few minutes).
+TimeoutStartSec=900
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

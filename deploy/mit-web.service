@@ -1,0 +1,18 @@
+[Unit]
+Description=Market Intelligence Tracker website (Next.js)
+After=network-online.target mit-api.service
+Wants=network-online.target
+
+[Service]
+User=mit
+Group=mit
+WorkingDirectory=/opt/mit/web
+Environment=NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 API_PROXY_TARGET=http://127.0.0.1:8000
+ExecStart=/usr/bin/npx next start -H 127.0.0.1 -p 3000
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
