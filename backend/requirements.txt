@@ -1,0 +1,2 @@
+# Emergent installs backend/requirements.txt; the real list lives at the repo root.
+-r ../requirements.txt

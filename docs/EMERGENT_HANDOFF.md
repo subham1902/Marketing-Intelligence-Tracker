@@ -31,11 +31,13 @@ web/  Next.js 14 (App Router, Tailwind, shadcn-style UI, Tremor charts)
 
 ## 2. Running it on Emergent
 
-Backend:
+Backend (either form works):
 
 ```bash
-pip install -r requirements.txt
-uvicorn api.main:app --host 0.0.0.0 --port 8001      # Emergent's usual backend port
+# Emergent template layout: backend/server.py re-exports the real app
+cd backend && pip install -r requirements.txt && uvicorn server:app --host 0.0.0.0 --port 8001
+# or from the repo root
+pip install -r requirements.txt && uvicorn api.main:app --host 0.0.0.0 --port 8001
 ```
 
 - Every API route is served under both `/` and **`/api`**. Emergent's ingress forwards `/api/*` to the backend unchanged, so no code changes are needed.
@@ -49,7 +51,8 @@ cd web && npm install && npm run dev -- -p 3000      # or: npm run build && npm 
 ```
 
 - The browser calls same-origin `/api/*`. On Emergent the ingress routes that to the backend.
-- Locally, the Next rewrite proxies to `API_PROXY_TARGET` (default `http://127.0.0.1:8000`).
+- If requests reach Next instead of the ingress, the Next rewrite proxies `/api/*` to `API_PROXY_TARGET`, or to `http://127.0.0.1:$BACKEND_PORT` (default 8000). On Emergent, set `BACKEND_PORT=8001`.
+- The frontend lives in `web/`, not `frontend/`. Point Emergent's frontend service at `web/` (or ask the Emergent agent to move it and update paths).
 - `NEXT_PUBLIC_STATIC_DATA=0` (the default) means live backend mode.
 
 Environment (`.env` at the repo root; see `.env.example`):
