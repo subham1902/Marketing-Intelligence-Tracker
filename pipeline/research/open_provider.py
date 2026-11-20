@@ -421,34 +421,47 @@ class OpenResearchProvider:
                 break
         return out
 
-    def fetch(self, cands: list[Candidate]) -> None:
-        if not self.cfg.fetch_pages:
-            return
+    def _fetch_one(self, c: Candidate) -> None:
         import trafilatura
 
+        try:
+            status, html = self._get_text(c.url)
+        except httpx.HTTPError:
+            return
+        if status >= 400 or not html:
+            return
+        try:
+            text = trafilatura.extract(html, include_comments=False, include_tables=False)
+            meta = trafilatura.extract_metadata(html)
+        except Exception:
+            return
+        if text:
+            c.text = text[:20000]
+            if not c.snippet:
+                c.snippet = _lead_sentences(text)
+        if meta is not None:
+            if not c.title and getattr(meta, "title", None):
+                c.title = meta.title
+            if not c.published_at and getattr(meta, "date", None):
+                c.published_at = _parse_dt(meta.date)
+
+    def fetch(self, cands: list[Candidate]) -> None:
+        """Fetch pages in parallel across hosts; requests to one host stay sequential (polite)."""
+        if not self.cfg.fetch_pages:
+            return
+        from concurrent.futures import ThreadPoolExecutor
+
+        by_host: dict[str, list[Candidate]] = {}
         for c in cands:
-            if c.aggregator:
-                continue
-            try:
-                status, html = self._get_text(c.url)
-            except httpx.HTTPError:
-                continue
-            if status >= 400 or not html:
-                continue
-            try:
-                text = trafilatura.extract(html, include_comments=False, include_tables=False)
-                meta = trafilatura.extract_metadata(html)
-            except Exception:
-                continue
-            if text:
-                c.text = text[:20000]
-                if not c.snippet:
-                    c.snippet = _lead_sentences(text)
-            if meta is not None:
-                if not c.title and getattr(meta, "title", None):
-                    c.title = meta.title
-                if not c.published_at and getattr(meta, "date", None):
-                    c.published_at = _parse_dt(meta.date)
+            if not c.aggregator:
+                by_host.setdefault(host_of(c.url), []).append(c)
+
+        def host_worker(items: list[Candidate]) -> None:
+            for c in items:
+                self._fetch_one(c)
+
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            list(pool.map(host_worker, by_host.values()))
 
     # ----------------------------------------------------------- synthesis --
     def _sources(self, run_id: str, cands: list[Candidate]) -> list[dict[str, Any]]:
