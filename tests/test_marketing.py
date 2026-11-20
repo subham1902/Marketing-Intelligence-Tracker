@@ -138,3 +138,19 @@ def test_snapshot_loaded_and_endpoints(client) -> None:
     assert client.get("/marketing/analyses/nope").status_code == 404
     h = client.get("/api/health").json()
     assert h["snapshots"]["marketing_analyses"] == 2
+
+
+def test_ai_recommendations_never_give_investment_advice() -> None:
+    base = synth.rule_based(CO, ITEMS, RIVALS)
+    payload = json.dumps({
+        "insights": [{"claim": "Revenue was ₹1,034 crore", "evidence_ids": ["e1"], "quote": "revenue of ₹1,034 crore"}],
+        "recommendations": [
+            {"action": "Invest in Ather Energy", "why": "growth", "evidence_ids": ["e1"], "quote": ""},
+            {"action": "Buy Ather shares", "why": "growth", "evidence_ids": ["e1"], "quote": ""},
+            {"action": "Expand service centres in tier 2 cities", "why": "complaints", "evidence_ids": ["e1"],
+             "quote": ""},
+        ],
+    })
+    out, mode = synth.ai_enrich(base, CO, ITEMS, lambda s, u: payload)
+    ai = [r["action"] for r in out["recommendations"] if r["label"] == "AI recommendation"]
+    assert mode == "ai" and ai == ["Expand service centres in tier 2 cities"]

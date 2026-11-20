@@ -1,7 +1,7 @@
 "use client";
 
 import { AreaChart, BarChart, DonutChart, SparkAreaChart } from "@/components/charts";
-import { Activity, Bell, Building2, FlaskConical, Signal as SignalIcon, TrendingUp, Inbox } from "lucide-react";
+import { Activity, Bell, Building2, FlaskConical, Signal as SignalIcon, TrendingUp, Inbox, PieChart, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { AsyncState } from "@/components/async-state";
@@ -57,6 +57,23 @@ export default function OverviewPage() {
         description="Market research findings and company signals in one view."
         actions={<RunPipelineButton />}
       />
+
+      <Link
+        href="/marketing?company=ather-energy"
+        className="group mb-5 flex flex-col gap-3 overflow-hidden rounded-2xl border bg-gradient-to-r from-primary/20 via-primary/5 to-mint/15 p-4 ring-glow transition hover:-translate-y-0.5 sm:flex-row sm:items-center sm:p-5"
+      >
+        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-lg">
+          <PieChart className="h-5 w-5" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="text-xs font-semibold uppercase tracking-wider text-primary">New · Marketing Analysis</div>
+          <div className="text-base font-semibold sm:text-lg">A consultant-grade strategy deck on any company, in 30 seconds</div>
+          <p className="text-sm text-muted-foreground">Moat, Five Forces, positioning, 7P and a prioritised to-do list. Every claim links to its public source.</p>
+        </div>
+        <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+          Open Ather&apos;s deck <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+        </span>
+      </Link>
 
       {/* Metric cards: 2-up on phones, 4-up once there's room. */}
       <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">

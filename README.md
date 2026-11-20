@@ -8,7 +8,15 @@
 |---|---|---|---|
 | ![Research](docs/qa/research-workspace.jpg) | ![Guide](docs/qa/guide-answer.png) | ![Activity](docs/qa/activity-drawer.jpg) | ![Connect LLM](docs/qa/connect-llm.jpg) |
 
+**Try it in 60 seconds:** run the quick start below, open **Marketing Analysis** and pick *Ather Energy*. A full strategy deck opens instantly. Click any grey source chip to see the exact quote and link.
+
 **Highlights**
+- **Marketing Analysis (new):** a consultant-style deck for any company, built in about 30 seconds.
+  - **Key takeaways:** strongest moat, biggest competitive pressure, media tone and the first move to make.
+  - **Thirteen sections:** Profitability, Moat, Stakeholder 2×2, Porter's Five Forces radar, Competition, Market attitude, Need gaps, Segmentation, Positioning map, Go-to-market timeline, 7P scorecard and prioritised to-dos.
+  - **Sharing and comparison:** compare two companies head to head, copy a share link, or export an A4 PDF.
+  - **Grounded claims:** every claim is either a quoted, linked source or labelled *Analysis*, *Forecast* or *AI analysis*. AI output is checked: any number not found in the cited source is rejected, and the AI never gives buy or sell advice.
+- **Aurora theme:** a dark-first indigo design with glass panels, motion that respects reduced-motion settings, and a matching light mode. It is fully usable at 390 px.
 - **Research from free public sources:** DuckDuckGo news, Google News, PIB (government) and GDELT, with every finding labelled by provenance and linked to its source.
 - **Company tracking with "Refresh news":** live developments for each company, kept separate from the `[Sample]` demo data.
 - **Guide assistant ("Volt"):** a 3D three.js companion bottom-right (or press **Ctrl+/**). It answers from a knowledge base of the real UI (`config/app_guide.yaml`), reads live run status from the database, explains "what just happened", and says so when it doesn't know. No LLM needed.

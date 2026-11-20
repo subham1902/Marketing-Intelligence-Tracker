@@ -13,53 +13,66 @@
    * cool survey-paper slate, deep grid ink, CHARGE TEAL for actions and
    * SAFFRON reserved for live / government signals.
    */
+  /*
+   * "Aurora" theme: deep indigo night, ELECTRIC VIOLET for actions, MINT for
+   * positive / evidence, SAFFRON reserved for live and government signals.
+   * Dark is the default; light is a soft lilac paper with the same accents.
+   */
   :root {
-    --background: 200 20% 95%;      /* #EEF2F4 survey paper */
-    --foreground: 211 51% 12%;      /* #0F1E2E grid ink */
+    --background: 240 33% 98%;      /* #F8F8FC lilac paper */
+    --foreground: 240 30% 12%;      /* #15152A */
     --card: 0 0% 100%;
-    --card-foreground: 211 51% 12%;
-    --primary: 179 82% 30%;         /* #0E8C8A charge teal */
+    --card-foreground: 240 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 30% 12%;
+    --primary: 252 78% 58%;         /* #6C4CF0 electric violet */
     --primary-foreground: 0 0% 100%;
-    --secondary: 200 22% 90%;
-    --secondary-foreground: 211 45% 16%;
-    --muted: 200 20% 91%;
-    --muted-foreground: 210 14% 38%;
-    --accent: 32 81% 54%;           /* #E8912D saffron (live / government) */
+    --secondary: 245 40% 94%;
+    --secondary-foreground: 245 35% 22%;
+    --muted: 245 30% 94%;
+    --muted-foreground: 240 12% 42%;
+    --accent: 32 90% 54%;           /* saffron (live / government) */
     --accent-foreground: 30 60% 10%;
-    --destructive: 356 70% 48%;
+    --mint: 160 70% 38%;
+    --destructive: 352 75% 52%;
     --destructive-foreground: 0 0% 100%;
-    --border: 204 20% 86%;          /* #D3DCE2 */
-    --input: 204 20% 86%;
-    --ring: 179 82% 30%;
-    --radius: 0.75rem;
+    --border: 245 25% 88%;
+    --input: 245 25% 88%;
+    --ring: 252 78% 58%;
+    --radius: 0.9rem;
+    --glow: 252 78% 58%;
 
-    --lime: 179 82% 30%;
-    --ink: 211 51% 12%;
-    --bone: 200 20% 95%;
+    --lime: 252 78% 58%;
+    --ink: 240 30% 12%;
+    --bone: 240 33% 98%;
   }
 
   .dark {
-    --background: 213 51% 9%;       /* #0B1622 night grid */
-    --foreground: 200 25% 93%;
-    --card: 211 47% 13%;            /* #112131 */
-    --card-foreground: 200 25% 93%;
-    --primary: 178 62% 44%;         /* #2BB5B1 */
-    --primary-foreground: 213 51% 8%;
-    --secondary: 211 40% 17%;
-    --secondary-foreground: 200 25% 93%;
-    --muted: 211 40% 17%;
-    --muted-foreground: 205 16% 66%;
-    --accent: 33 86% 60%;
+    --background: 238 45% 7%;       /* #0A0B1F indigo night */
+    --foreground: 240 30% 95%;
+    --card: 238 38% 11%;            /* #12142B */
+    --card-foreground: 240 30% 95%;
+    --popover: 238 40% 12%;
+    --popover-foreground: 240 30% 95%;
+    --primary: 254 92% 72%;         /* #9B86FF */
+    --primary-foreground: 240 50% 8%;
+    --secondary: 238 32% 17%;
+    --secondary-foreground: 240 30% 95%;
+    --muted: 238 30% 16%;
+    --muted-foreground: 238 16% 68%;
+    --accent: 34 95% 62%;
     --accent-foreground: 30 60% 10%;
-    --destructive: 356 72% 58%;
+    --mint: 160 70% 55%;
+    --destructive: 352 85% 64%;
     --destructive-foreground: 0 0% 100%;
-    --border: 211 34% 21%;
-    --input: 211 34% 21%;
-    --ring: 178 62% 44%;
+    --border: 238 28% 20%;
+    --input: 238 28% 20%;
+    --ring: 254 92% 72%;
+    --glow: 254 92% 72%;
 
-    --lime: 178 62% 44%;
-    --ink: 211 51% 12%;
-    --bone: 200 20% 95%;
+    --lime: 254 92% 72%;
+    --ink: 240 30% 12%;
+    --bone: 240 33% 98%;
   }
 
   * {
@@ -85,12 +98,13 @@
     letter-spacing: -0.015em;
   }
 
-  /* Survey-grid backdrop: a faint map grid behind the app, nothing louder. */
+  /* Aurora backdrop: two soft colour washes plus a faint dot grid. */
   body {
     background-image:
-      linear-gradient(hsl(var(--border) / 0.45) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.45) 1px, transparent 1px);
-    background-size: 48px 48px;
+      radial-gradient(60rem 40rem at 85% -10%, hsl(var(--glow) / 0.16), transparent 60%),
+      radial-gradient(50rem 35rem at -10% 110%, hsl(var(--mint) / 0.10), transparent 60%),
+      radial-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 22px 22px;
     background-attachment: fixed;
   }
 
@@ -243,4 +257,27 @@
   aside, header, footer, body > div > nav, [role="banner"], .print\:hidden { display: none !important; }
   main { padding: 0 !important; margin: 0 !important; }
   .mk-section { break-inside: avoid; box-shadow: none !important; margin-bottom: 8px; }
+}
+
+@layer components {
+  /* Glassy surface used by cards and section panels. */
+  .glass {
+    background: linear-gradient(180deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.78));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 10px 30px -18px hsl(var(--glow) / 0.35);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--mint)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-glow {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.35), 0 12px 40px -12px hsl(var(--glow) / 0.55);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
 }

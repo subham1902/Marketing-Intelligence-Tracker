@@ -15,6 +15,7 @@ from typing import Any
 from pipeline.marketing import signals as sg
 
 NOT_FOUND = "Not found in public sources"
+INVESTMENT_ADVICE = re.compile(r"\b(invest in|buy|sell)\b.*\b(stock|shares?|company)\b|\b(stocks?|shares|ipo)\b", re.I)
 
 
 def _rate(n: int, strong: int = 3, moderate: int = 1) -> str:
@@ -310,6 +311,9 @@ def ai_enrich(result: dict[str, Any], company: dict[str, Any], items: list[dict[
                        for r in data.get("recommendations") or []]
             recs = []
             for r in recs_in:
+                act = str(r.get("action", ""))
+                if INVESTMENT_ADVICE.search(act) or f"invest in {company['name'].lower()}" in act.lower():
+                    continue  # strategy moves for the company only, never buy/invest advice
                 vs = validate_ai_claims([r], items)
                 v = vs[0] if vs else None
                 if v:

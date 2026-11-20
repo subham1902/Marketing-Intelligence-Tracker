@@ -1,6 +1,7 @@
 "use client";
 
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ChevronDown, ExternalLink, Flame, Gauge as GaugeIcon, Shield, Sparkles, Target } from "lucide-react";
 import { createContext, useContext, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -71,8 +72,16 @@ export function Chips({ ev }: { ev?: Ev[] }) {
 
 export function Section({ id, title, children, how }: { id: string; title: string; children: ReactNode; how?: string }) {
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
   return (
-    <section id={id} className="mk-section scroll-mt-24 rounded-xl border bg-card p-4 sm:p-5 print:break-inside-avoid">
+    <motion.section
+      id={id}
+      initial={reduce ? false : { opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      className="mk-section glass scroll-mt-24 rounded-2xl border p-4 sm:p-5 print:break-inside-avoid"
+    >
       <h2 className="mb-3 text-base font-semibold tracking-tight">{title}</h2>
       {children}
       {how && (
@@ -83,7 +92,7 @@ export function Section({ id, title, children, how }: { id: string; title: strin
           {open && <p className="mt-1">{how}</p>}
         </div>
       )}
-    </section>
+    </motion.section>
   );
 }
 
@@ -430,5 +439,53 @@ export function CompareTable({ a, b, nameA, nameB }: { a: MarketingResult; b: Ma
       </div>
       <p className="mt-2 text-xs text-muted-foreground"><Label>Analysis</Label> Open each company&apos;s analysis for the evidence behind every rating.</p>
     </Section>
+  );
+}
+
+
+const FORCE_RANK: Record<string, number> = { high: 3, medium: 2, low: 1 };
+const MOAT_RANK: Record<string, number> = { strong: 4, moderate: 3, weak: 2, unknown: 1 };
+
+/** Four headline takeaways derived only from the sections below (no new facts). */
+export function KeyTakeaways({ r, company }: { r: MarketingResult; company: string }) {
+  const moat = [...r.moat].sort((a, b) => (MOAT_RANK[b.rating] ?? 0) - (MOAT_RANK[a.rating] ?? 0))[0];
+  const force = [...r.porter].sort((a, b) => (FORCE_RANK[b.level] ?? 0) - (FORCE_RANK[a.level] ?? 0))[0];
+  const rival = r.competition[0];
+  const top = r.recommendations[0];
+  const tone = r.tone.score;
+  const toneWord = tone === null ? "not enough coverage" : tone > 0.25 ? "upbeat" : tone < -0.1 ? "critical" : "mixed";
+  const cards = [
+    { icon: Shield, k: "Strongest moat", v: moat && moat.rating !== "unknown" ? `${moat.dimension} (${moat.rating})` : "No moat evidence yet", ev: moat?.evidence },
+    { icon: Flame, k: "Biggest pressure", v: force ? `${force.force}: ${force.level}` : "n/a", ev: force?.evidence },
+    { icon: GaugeIcon, k: "Media tone", v: tone === null ? toneWord : `${toneWord} (${tone >= 0 ? "+" : ""}${tone.toFixed(2)})${rival ? ` · most compared with ${rival.name}` : ""}`, ev: r.tone.most_positive ? [r.tone.most_positive] : [] },
+    { icon: Target, k: "Do this first", v: top ? top.action : "No recommendation triggered", ev: [] as Ev[] },
+  ];
+  return (
+    <div className="mb-4 overflow-hidden rounded-2xl border ring-glow">
+      <div className="bg-gradient-to-r from-primary/20 via-primary/5 to-mint/15 px-4 py-3 sm:px-5">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+          <Sparkles className="h-3.5 w-3.5" /> Key takeaways
+        </div>
+        <p className="mt-1 text-base font-semibold sm:text-lg">
+          {company} in 30 seconds: <span className="text-gradient">{r.snapshot.evidence_count} sources, {r.competition.length} rivals, {r.recommendations.length} moves</span>
+        </p>
+      </div>
+      <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+        {cards.map((c, i) => (
+          <motion.div
+            key={c.k}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08 * i }}
+            className="bg-card p-4"
+          >
+            <div className="mb-1 flex items-center gap-1.5 text-xs text-muted-foreground"><c.icon className="h-3.5 w-3.5 text-primary" /> {c.k}</div>
+            <div className="text-sm font-semibold leading-snug">{c.v}</div>
+            <div className="mt-1 flex items-center gap-1"><Label>Analysis</Label></div>
+            <Chips ev={c.ev?.slice(0, 1)} />
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 }

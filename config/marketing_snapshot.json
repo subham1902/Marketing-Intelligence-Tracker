@@ -4507,21 +4507,6 @@
     ],
     "recommendations": [
      {
-      "action": "Invest in Ather Energy",
-      "why": "The company has achieved a first quarterly profit and is gaining traction from brokerages, indicating strong investor interest.",
-      "impact": null,
-      "effort": null,
-      "kpi": null,
-      "evidence_ids": [
-       "ev-0b00cfa18f",
-       "ev-9856308ef8",
-       "ev-09bc773868"
-      ],
-      "label": "AI recommendation",
-      "verified": false,
-      "priority": 1
-     },
-     {
       "action": "Expand production capacity",
       "why": "Ather Energy is facing a supply-demand gap, and expanding capacity could help meet the increasing demand.",
       "impact": null,
@@ -4532,7 +4517,7 @@
       ],
       "label": "AI recommendation",
       "verified": true,
-      "priority": 2
+      "priority": 1
      },
      {
       "action": "Focus on after-sales support and connected software",
@@ -4545,10 +4530,10 @@
       ],
       "label": "AI recommendation",
       "verified": true,
-      "priority": 3
+      "priority": 2
      },
      {
-      "priority": 4,
+      "priority": 3,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "4 tracked rivals co-mentioned with Ather Energy.",
       "trigger": "high_rivalry",
@@ -4558,7 +4543,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 5,
+      "priority": 4,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "1 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -4568,7 +4553,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 6,
+      "priority": 5,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "10 stated plans found",
       "trigger": "plans_exist",
@@ -8204,19 +8189,6 @@
     ],
     "recommendations": [
      {
-      "action": "Monitor stock price trends",
-      "why": "The stock has shown significant volatility, and understanding the trends can help in making informed investment decisions.",
-      "impact": null,
-      "effort": null,
-      "kpi": null,
-      "evidence_ids": [
-       "ev-2b13b8825e"
-      ],
-      "label": "AI recommendation",
-      "verified": true,
-      "priority": 1
-     },
-     {
       "action": "Focus on grid-scale stationary storage opportunities",
       "why": "The company is actively participating in the PLI scheme for grid-scale stationary storage applications, which could be a significant growth area.",
       "impact": null,
@@ -8228,7 +8200,7 @@
       ],
       "label": "AI recommendation",
       "verified": true,
-      "priority": 2
+      "priority": 1
      },
      {
       "action": "Address cost pressures",
@@ -8242,7 +8214,7 @@
       ],
       "label": "AI recommendation",
       "verified": false,
-      "priority": 3
+      "priority": 2
      },
      {
       "action": "Engage with the new corporate affairs head",
@@ -8255,7 +8227,7 @@
       ],
       "label": "AI recommendation",
       "verified": false,
-      "priority": 4
+      "priority": 3
      },
      {
       "action": "Evaluate the impact of the PLI scheme",
@@ -8268,10 +8240,10 @@
       ],
       "label": "AI recommendation",
       "verified": true,
-      "priority": 5
+      "priority": 4
      },
      {
-      "priority": 6,
+      "priority": 5,
       "action": "Run a targeted digital campaign around the strongest proven product claim",
       "why": "7P Promotion rated unknown",
       "trigger": "weak_promotion",
@@ -8281,7 +8253,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 7,
+      "priority": 6,
       "action": "Expand touchpoints in under-served cities via partner dealers or experience zones",
       "why": "7P Place rated unknown",
       "trigger": "weak_place",
@@ -8291,7 +8263,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 8,
+      "priority": 7,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "5 tracked rivals co-mentioned with Amara Raja Energy & Mobility.",
       "trigger": "high_rivalry",

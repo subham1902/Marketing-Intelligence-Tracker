@@ -6,7 +6,7 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { EmptyState } from "@/components/empty-state";
-import { AnalysisBody, CompareTable, EvidenceCtx, SECTIONS } from "@/components/marketing/sections";
+import { AnalysisBody, CompareTable, EvidenceCtx, KeyTakeaways, SECTIONS } from "@/components/marketing/sections";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -88,7 +88,7 @@ function MarketingView() {
       <div className="mb-4 flex flex-col gap-3 print:hidden">
         <div className="flex items-center gap-2">
           <PieChart className="h-5 w-5 text-primary" />
-          <h1 className="text-xl font-semibold tracking-tight">Marketing Analysis</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Marketing <span className="text-gradient">Analysis</span></h1>
         </div>
         <p className="text-sm text-muted-foreground">
           A consultant-style strategy deck in seconds: moat, Five Forces, stakeholders, positioning, 7P and a to-do list. Every claim links to a public source or is labelled Analysis / Forecast.
@@ -176,7 +176,7 @@ function MarketingView() {
       {ready && a.result && (
         <EvidenceCtx.Provider value={evMap}>
           <div className="lg:grid lg:grid-cols-[11rem_1fr] lg:gap-6">
-            <nav aria-label="Sections" className="sticky top-14 z-20 -mx-4 mb-3 flex gap-1 overflow-x-auto bg-background/90 px-4 py-2 backdrop-blur lg:top-20 lg:mx-0 lg:mb-0 lg:block lg:h-fit lg:space-y-0.5 lg:bg-transparent lg:p-0 print:hidden">
+            <nav aria-label="Sections" className="sticky top-14 z-20 -mx-4 mb-3 no-scrollbar flex gap-1 overflow-x-auto bg-background/90 px-4 py-2 backdrop-blur lg:top-20 lg:mx-0 lg:mb-0 lg:block lg:h-fit lg:space-y-0.5 lg:bg-transparent lg:p-0 print:hidden">
               {SECTIONS.map(([sid, label]) => (
                 <a key={sid} href={`#${sid}`}
                   className={cn("shrink-0 whitespace-nowrap rounded-full px-3 py-1 text-xs lg:block lg:rounded-md lg:text-sm",
@@ -203,6 +203,7 @@ function MarketingView() {
                   <CompareTable a={a.result} b={vsFull.data.result} nameA={name} nameB={vsFull.data.company_name ?? vs} />
                 </div>
               )}
+              <KeyTakeaways r={a.result} company={name} />
               <AnalysisBody r={a.result} company={name} />
               <p className="mt-6 text-xs text-muted-foreground">
                 Labels: Evidence = quoted from a fetched public source · Analysis = transparent rule over that evidence · Forecast = projection from stated plans · AI analysis = model output checked against the cited quote.

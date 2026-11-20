@@ -46,6 +46,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        mint: "hsl(var(--mint))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -53,11 +58,11 @@ const config: Config = {
         // Tremor tokens (light + dark) mapped onto the lime/stone brand.
         tremor: {
           brand: {
-            faint: colors.lime[50],
-            muted: colors.lime[200],
-            subtle: colors.lime[400],
-            DEFAULT: colors.lime[600],
-            emphasis: colors.lime[700],
+            faint: colors.violet[50],
+            muted: colors.violet[200],
+            subtle: colors.violet[400],
+            DEFAULT: colors.violet[600],
+            emphasis: colors.violet[700],
             inverted: colors.white,
           },
           background: {
@@ -79,10 +84,10 @@ const config: Config = {
         "dark-tremor": {
           brand: {
             faint: "#1a1f0e",
-            muted: colors.lime[950],
-            subtle: colors.lime[800],
-            DEFAULT: colors.lime[500],
-            emphasis: colors.lime[400],
+            muted: colors.violet[950],
+            subtle: colors.violet[800],
+            DEFAULT: colors.violet[500],
+            emphasis: colors.violet[400],
             inverted: colors.stone[950],
           },
           background: {

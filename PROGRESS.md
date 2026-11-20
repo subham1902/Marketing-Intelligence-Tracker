@@ -33,3 +33,12 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 | 2 Marketing Analysis | done 13:20 | `pipeline/marketing/` (gather, signals, synth, service), `research.marketing_analyses`, `/marketing/analyses` (+`/api`), snapshot for 7 companies (rule-based, 30 sources each), `/marketing` UI, nav, Ctrl+K, profile button, 3 guide entries, 7 tests. pytest 101. |
 | 3 Judge loop | done 14:43 | `/api/health` detail, `docs/DEPLOY_CHECKLIST.md`, `docs/PITCH.md`, `docs/JUDGE_SCORECARD.md`; extraction fixes (metric priority, money vs percent) |
 | 4 Final | done | SPRINT_REPORT.md; gates green (101 tests); pushed |
+
+## UI/UX upgrade (after sprint)
+
+| Change | Notes |
+|---|---|
+| Aurora theme | Dark by default: indigo night, electric violet, mint and saffron; glass cards; aurora and dot backdrop; Tremor brand set to violet; light mode refreshed |
+| Marketing insights | Key-takeaways hero (moat, pressure, tone, first move) and animated section reveal (reduced-motion safe) |
+| Overview | Marketing Analysis spotlight card |
+| Safety | AI recommendations never give buy/invest advice (filter, test, snapshot cleaned). pytest 102 |
