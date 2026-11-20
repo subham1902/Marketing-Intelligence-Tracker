@@ -121,7 +121,7 @@ function Radar({ data }: { data: { force: string; level: string }[] }) {
   };
   const poly = data.map((d, i) => pt(i, (R * (LEVEL_N[d.level] ?? 0)) / 3).join(",")).join(" ");
   return (
-    <svg viewBox="0 0 220 200" className="mx-auto h-48 w-full max-w-xs" role="img" aria-label="Porter five forces radar">
+    <svg viewBox="-30 -5 280 215" className="mx-auto h-52 w-full max-w-xs" role="img" aria-label="Porter five forces radar">
       {[1, 2, 3].map((l) => (
         <polygon key={l} points={data.map((_, i) => pt(i, (R * l) / 3).join(",")).join(" ")} className="fill-none stroke-border" />
       ))}

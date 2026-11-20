@@ -125,7 +125,7 @@ function MarketingView() {
       {a && (
         <div className="mb-4 flex flex-wrap items-center gap-2 rounded-xl border bg-card p-3">
           <span className="text-lg font-semibold">{name}</span>
-          <Badge variant={a.mode === "ai" ? "default" : "secondary"}>{a.mode === "ai" ? "AI-assisted" : "Rule-based"}</Badge>
+          {a.mode && <Badge variant={a.mode === "ai" ? "default" : "secondary"}>{a.mode === "ai" ? `AI-assisted · ${a.result?.ai_insights?.filter((x) => x.quote).length ?? 0} claims quote-verified` : "Rule-based"}</Badge>}
           {a.result && <Badge variant="muted">{a.result.snapshot.evidence_count} sources · {a.result.snapshot.fetched_count} read in full</Badge>}
           <span className="text-xs text-muted-foreground">
             {a.is_snapshot ? "Captured" : "Run"} {(a.completed_at ?? a.created_at).slice(0, 10)}

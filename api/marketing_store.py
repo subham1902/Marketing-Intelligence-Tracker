@@ -36,9 +36,11 @@ def bootstrap(db: ApiDB, snapshot: Path = SNAPSHOT) -> int:
         "UPDATE research.marketing_analyses SET status='failed', error='The API restarted before this "
         "analysis finished.' WHERE status IN ('queued','running')"
     )
-    if db.scalar("SELECT count(*) FROM research.marketing_analyses WHERE is_snapshot") or not snapshot.exists():
+    if not snapshot.exists():
         return 0
     data = json.loads(snapshot.read_text(encoding="utf-8"))
+    # The committed snapshot is the source of truth for captured analyses: refresh on every boot.
+    db.execute("DELETE FROM research.marketing_analyses WHERE is_snapshot")
     n = 0
     for a in data.get("analyses", []):
         if db.query_one("SELECT id FROM research.marketing_analyses WHERE id=?", [a["id"]]):

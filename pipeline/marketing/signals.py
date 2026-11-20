@@ -38,8 +38,8 @@ FIGURE_RE = re.compile(
     re.IGNORECASE,
 )
 FIGURE_KEYWORDS = {
-    "revenue": "Revenue", "ebitda": "EBITDA", "net profit": "Profit", "profit": "Profit",
-    "loss": "Loss", "margin": "Margin", "market share": "Market share", "units": "Volume",
+    "net loss": "Loss", "loss": "Loss", "ebitda": "EBITDA", "revenue": "Revenue", "net profit": "Profit",
+    "profit": "Profit", "margin": "Margin", "market share": "Market share", "units": "Volume",
     "sales": "Volume", "volume": "Volume", "valuation": "Valuation", "funding": "Funding",
 }
 _YEAR_RE = re.compile(r"\b(?:FY\s?'?(\d{2,4})|Q[1-4]\s?FY\s?'?(\d{2,4})|(20[12]\d))\b", re.IGNORECASE)
@@ -58,13 +58,21 @@ def extract_figures(items: list[dict[str, Any]], names: list[str]) -> list[dict[
             metric = next((v for k, v in FIGURE_KEYWORDS.items() if k in low), None)
             if not metric:
                 continue
-            vals = [m.group(0).strip() for m in FIGURE_RE.finditer(s)]
+            vals = [m.group(0).strip().rstrip(",.") for m in FIGURE_RE.finditer(s)]
             if not vals:
                 continue
+            money = [v for v in vals if not re.search(r"%|per ?cent|units|vehicles", v, re.I)]
+            pct = [v for v in vals if re.search(r"%|per ?cent", v, re.I)]
+            vol = [v for v in vals if re.search(r"units|vehicles|lakh", v, re.I)]
+            pref = {"Margin": pct, "Market share": pct, "Volume": vol or pct}.get(metric, money)
+            if not pref:
+                continue  # e.g. a "loss" sentence whose only figure is a share-price move
+            vals = pref + [v for v in vals if v not in pref]
             key = (metric, vals[0].lower())
-            if key in seen:
+            if key in seen or s[:120] in seen:
                 continue
             seen.add(key)
+            seen.add(s[:120])
             ym = _YEAR_RE.search(s)
             period = ym.group(0).upper().replace(" ", "") if ym else None
             out.append({"metric": metric, "value": vals[0], "values": vals, "period": period,

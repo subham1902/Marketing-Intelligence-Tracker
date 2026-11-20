@@ -24,3 +24,11 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 | C Transparency | done | Activity bar, reading bar, Activity drawer with central fetch instrumentation, stage logging, completion toasts |
 | D Usability | done | `docs/USABILITY_REPORT.md`: 6 issues fixed; screenshots in `docs/qa/` |
 | E Publish | done | Pushed to https://github.com/subham1902/Marketing-Intelligence-Tracker (public); history secret scan clean |
+
+## Judging sprint (`docs/JUDGING_SPRINT_PROMPT.md`, hard stop 15:00 IST)
+
+| Step | Status | Notes |
+|---|---|---|
+| 1 Baseline | done 13:05 | Clean, in sync with origin/main. LLM mode `off` (mock). The hook's `agents/context.md` does not exist. |
+| 2 Marketing Analysis | done 13:20 | `pipeline/marketing/` (gather, signals, synth, service), `research.marketing_analyses`, `/marketing/analyses` (+`/api`), snapshot for 7 companies (rule-based, 30 sources each), `/marketing` UI, nav, Ctrl+K, profile button, 3 guide entries, 7 tests. pytest 101. |
+| 3 Judge loop | in progress | `/api/health` detail, `docs/DEPLOY_CHECKLIST.md`, `docs/PITCH.md`, `docs/JUDGE_SCORECARD.md`; extraction fixes (metric priority, money vs percent) |

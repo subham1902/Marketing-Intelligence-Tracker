@@ -15,7 +15,7 @@
      "evidence_count": 30,
      "fetched_count": 23,
      "coverage": {
-      "Profitability": 1.0,
+      "Profitability": 0.5,
       "Moat": 0.86,
       "Stakeholders": 0.71,
       "Five forces": 1.0,
@@ -29,29 +29,16 @@
     "profitability": {
      "figures": [
       {
-       "metric": "Profit",
-       "value": "9 per cent",
+       "metric": "Loss",
+       "value": "Rs 5,451 crore",
        "values": [
-        "9 per cent",
         "Rs 5,451 crore",
-        "Rs 1,700 crore"
+        "Rs 1,700 crore",
+        "9 per cent"
        ],
        "period": "FY27",
        "quote": "Tata Motors Passenger Vehicles (TMPV) shares cracked 9 per cent intraday on Monday, November 16, after automobile firm disappointed investors and analysts in the July-September quarter of FY27 with a net loss of Rs 5,451 crore, against expectations of a profit of around Rs 1,700 crore.",
        "evidence_id": "ev-0993e9886b"
-      },
-      {
-       "metric": "EBITDA",
-       "value": "1.1%",
-       "values": [
-        "1.1%",
-        "2.6%",
-        "3.9%",
-        "4.6%"
-       ],
-       "period": null,
-       "quote": "Nomura flags margin pressure Nomura said Jaguar Land Rover's EBIT margin was 1.1%, compared with its 2.6% estimate, while Tata Motors' India passenger-vehicle EBITDA margin was 3.9%, below the brokerage's 4.6% forecast.",
-       "evidence_id": "ev-48e732312a"
       },
       {
        "metric": "Loss",
@@ -62,22 +49,11 @@
        "period": "2026",
        "quote": "Shares of Tata Motors Passenger Vehicles Ltd (TMPVL) fell significantly on Monday, October 16, 2026, after the company reported a consolidated loss of Rs 5,531 crore for the second quarter and half-year ended September 30, 2026.",
        "evidence_id": "ev-175ccd584b"
-      },
-      {
-       "metric": "Profit",
-       "value": "Rs 5,531 crore",
-       "values": [
-        "Rs 5,531 crore",
-        "Rs 76,170 crore"
-       ],
-       "period": null,
-       "quote": "Tata Motors PV quarterly results Tata Motors Passenger Vehicles Ltd (TMPVL) reported a consolidated loss of Rs 5,531 crore for the September quarter compared with a profit of Rs 76,170 crore in the year-ago period.",
-       "evidence_id": "ev-175ccd584b"
       }
      ],
      "trend": "Figures cover 2026, FY27 (compare quotes for direction).",
      "label": "Evidence",
-     "summary": "4 financial or operating figures quoted from fetched pages.",
+     "summary": "2 financial or operating figures quoted from fetched pages.",
      "how": "Sentences naming the company that contain a money/percent/units figure and a metric keyword (revenue, EBITDA, profit, loss, margin, market share, units). Headlines are never used."
     },
     "moat": [
@@ -288,7 +264,7 @@
        }
       ],
       "reason": "4 tracked rivals co-mentioned with Tata Motors.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -336,18 +312,14 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
+      "level": "medium",
       "evidence": [
-       {
-        "quote": "Through thispartnership, Tata Motors will introduce its range of advanced commercial vehicles, from sub-1-tonne to 60 tonnes in cargo segment, and mass mobility solutions, from 9 to 71 seats to customers in Syria, supported by sales and service across the country.",
-        "evidence_id": "ev-09d58168f9"
-       },
        {
         "quote": "Tata Motors is also working on a major product offensive, with 15 ICE cars and 10 EVs planned by FY31.",
         "evidence_id": "ev-b703b051e2"
        }
       ],
-      "reason": "3 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "reason": "1 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -1167,38 +1139,7 @@
        "evidence_id": "ev-00f62f4578"
       },
       {
-       "metric": "EBITDA",
-       "value": "4 per cent",
-       "values": [
-        "4 per cent"
-       ],
-       "period": null,
-       "quote": "However, M&M's EBITDA fell 4 per cent quarter-on-quarter (QoQ).",
-       "evidence_id": "ev-00f62f4578"
-      },
-      {
-       "metric": "Valuation",
-       "value": "14%",
-       "values": [
-        "14%"
-       ],
-       "period": null,
-       "quote": "Valuation Picture: Discount to Industry Average The current P/E ratio of Mahindra & Mahindra Ltd at 21.56 represents a discount of approximately 14% compared to the industry's 25.05.",
-       "evidence_id": "ev-db5708c77c"
-      },
-      {
        "metric": "Loss",
-       "value": "7.74%",
-       "values": [
-        "7.74%",
-        "2.64%"
-       ],
-       "period": null,
-       "quote": "Over the past year, Mahindra & Mahindra Ltd has declined by 7.74%, underperforming the Sensex's 2.64% loss.",
-       "evidence_id": "ev-db5708c77c"
-      },
-      {
-       "metric": "Profit",
        "value": "Rs 26.2 crore",
        "values": [
         "Rs 26.2 crore",
@@ -1221,7 +1162,7 @@
      ],
      "trend": null,
      "label": "Evidence",
-     "summary": "8 financial or operating figures quoted from fetched pages.",
+     "summary": "5 financial or operating figures quoted from fetched pages.",
      "how": "Sentences naming the company that contain a money/percent/units figure and a metric keyword (revenue, EBITDA, profit, loss, margin, market share, units). Headlines are never used."
     },
     "moat": [
@@ -1449,7 +1390,7 @@
        }
       ],
       "reason": "4 tracked rivals co-mentioned with Mahindra.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -1501,18 +1442,18 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
+      "level": "medium",
       "evidence": [
        {
-        "quote": "SML Mahindra has announced the price and schedule for its Rs 1,450 crore rights issue.",
-        "evidence_id": "ev-03dc1d516c"
+        "quote": "I own a Mahindra XUV 7XO petrol (6-seater) AX7T since last two months.",
+        "evidence_id": "ev-cb784816ed"
        },
        {
-        "quote": "SML Mahindra has fixed the price of its rights issue at Rs 3,506 per share, representing a discount of around 31 per cent to its previous market price of Rs 5,090.",
-        "evidence_id": "ev-03dc1d516c"
+        "quote": "Mumbai, November 17, 2026: Mahindra today announced that the XEV 9S has secured a 5-star rating under the Bharat New Car Assessment Programme (Bharat NCAP), making it India\u2019s safest 7-seater SUV across both ICE and electric segments.",
+        "evidence_id": "ev-a752055415"
        }
       ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "reason": "2 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -2356,29 +2297,19 @@
        "value": "25.79%",
        "values": [
         "25.79%",
-        "5,14,764 units",
-        "22.1%"
+        "22.1%",
+        "5,14,764 units"
        ],
        "period": null,
        "quote": "Market share declined to 25.79%. - TVS Motor: Dispatched 5,14,764 units, registering strong 22.1% YoY growth.",
        "evidence_id": "ev-87f627e49b"
       },
       {
-       "metric": "Market share",
-       "value": "$20 billion",
-       "values": [
-        "$20 billion"
-       ],
-       "period": null,
-       "quote": "The Venu Srinivasan branch controls TVS Motor Company, India\u2019s third largest two-wheeler manufacturer by market share worth over $20 billion.",
-       "evidence_id": "ev-e54f1f1efe"
-      },
-      {
        "metric": "Profit",
-       "value": "1.32%",
+       "value": "Rs.4,499.80",
        "values": [
-        "1.32%",
-        "Rs.4,499.80"
+        "Rs.4,499.80",
+        "1.32%"
        ],
        "period": null,
        "quote": "Safety meets solid returns here! - - Reliable Performer certified - - Consistent execution proven - - Large Cap safety pick Thursday, 12 November: Profit Booking Triggers Price Correction Following the strong rally, TVS Motor experienced a pullback on Thursday, declining 1.32% to close at Rs.4,499.80 on lower volume of 37,969 shares.",
@@ -2386,24 +2317,14 @@
       },
       {
        "metric": "Loss",
-       "value": "0.08%",
+       "value": "Rs.4,496.30",
        "values": [
-        "0.08%",
-        "Rs.4,496.30"
+        "Rs.4,496.30",
+        "0.08%"
        ],
        "period": null,
        "quote": "Friday, 13 November: Week Ends with Minor Loss Amid Mixed Sentiment TVS Motor closed the week with a marginal decline of 0.08%, settling at Rs.4,496.30 on subdued volume of 14,424 shares.",
        "evidence_id": "ev-98c27486c7"
-      },
-      {
-       "metric": "Revenue",
-       "value": "37.36%",
-       "values": [
-        "37.36%"
-       ],
-       "period": null,
-       "quote": "TVS Srichakra's ability to grow revenues by 37.36% year-on-year in this environment suggests market share gains, likely driven by its association with the TVS Group's automotive ecosystem and expanding distribution reach.",
-       "evidence_id": "ev-1e8eeb6138"
       },
       {
        "metric": "Valuation",
@@ -2418,12 +2339,12 @@
       },
       {
        "metric": "Revenue",
-       "value": "37.5%",
+       "value": "\u20b944.43 crore",
        "values": [
-        "37.5%",
         "\u20b944.43 crore",
+        "\u20b91,272.63 crore",
         "37.5%",
-        "\u20b91,272.63 crore"
+        "37.5%"
        ],
        "period": "2026",
        "quote": "TVS Srichakra Q2 Results: Profit jumps nearly four-fold as revenue rises 37.5% - Published OnNov 14, 2026 | 17:42 IST - Last Updated OnNov 14, 2026 | 17:42 IST TVS Srichakra reported a nearly four-fold YoY jump in Q2 consolidated profit attributable to owners to \u20b944.43 crore, backed by a 37.5% rise in revenue to \u20b91,272.63 crore.",
@@ -2439,11 +2360,32 @@
        "period": "2026",
        "quote": "Tyres and tubes manufacturer TVS Srichakra reported an almost four-fold year-on-year jump in profit to \u20b944 crore for the second quarter ended September 30, 2026 (Q2FY27), compared with \u20b911.1 crore in the corresponding period last year.",
        "evidence_id": "ev-957301f55a"
+      },
+      {
+       "metric": "Profit",
+       "value": "\u20b934.02 crore",
+       "values": [
+        "\u20b934.02 crore",
+        "30.60%"
+       ],
+       "period": "Q1FY27",
+       "quote": "TVS Srichakra Q2 sequential performance On a quarter-on-quarter (QoQ) basis, profit rose 30.60% from \u20b934.02 crore recorded in Q1FY27.",
+       "evidence_id": "ev-957301f55a"
+      },
+      {
+       "metric": "Profit",
+       "value": "\u20b9312 crore",
+       "values": [
+        "\u20b9312 crore"
+       ],
+       "period": null,
+       "quote": "Also read: Sammaan Capital Q2 Results: Profit edges up to \u20b9312 crore, core income turns negative TVS Srichakra is a manufacturer and exporter of two-wheeler, three-wheeler, and off-highway tyres.",
+       "evidence_id": "ev-957301f55a"
       }
      ],
      "trend": "Figures cover 2026, Q1FY27 (compare quotes for direction).",
      "label": "Evidence",
-     "summary": "14 financial or operating figures quoted from fetched pages.",
+     "summary": "11 financial or operating figures quoted from fetched pages.",
      "how": "Sentences naming the company that contain a money/percent/units figure and a metric keyword (revenue, EBITDA, profit, loss, margin, market share, units). Headlines are never used."
     },
     "moat": [
@@ -2680,7 +2622,7 @@
        }
       ],
       "reason": "2 tracked rivals co-mentioned with TVS Motor.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -2732,18 +2674,18 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
+      "level": "medium",
       "evidence": [
        {
-        "quote": "PURE EV Egnite vs TVS Sport Last Updated: November 20, 2026 PURE EV Egnite price starts at Rs.",
-        "evidence_id": "ev-2cfcdb33e5"
+        "quote": "He said TVS continues to gain market share across both electric and internal combustion engine (ICE) segments, while Eicher Motors is expected to benefit from capacity expansion and lean dealer inventories.",
+        "evidence_id": "ev-bb29ab291b"
        },
        {
-        "quote": "Toutche Heileo H200 vs TVS Sport Last Updated: November 20, 2026 Toutche Heileo H200 price starts at Rs.",
-        "evidence_id": "ev-a7de9b73a7"
+        "quote": "Four Production-Ready Models Target Different European Customers TVS Motor's EICMA 2026 product showcase featured three electric models and a lightweight petrol-powered motorcycle.",
+        "evidence_id": "ev-2ad9ae8fa7"
        }
       ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "reason": "2 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -3494,7 +3436,7 @@
       "Profitability": 1.0,
       "Moat": 1.0,
       "Stakeholders": 0.86,
-      "Five forces": 1.0,
+      "Five forces": 0.8,
       "Competition": 1.0,
       "Tone": 1.0,
       "Segmentation": 0.6,
@@ -3596,11 +3538,11 @@
       },
       {
        "metric": "Market share",
-       "value": "83,418 units",
+       "value": "76%",
        "values": [
-        "83,418 units",
         "76%",
-        "18.6%"
+        "18.6%",
+        "83,418 units"
        ],
        "period": "Q4FY26",
        "quote": "Q4 FY26 wholesale volumes reached 83,418 units, up 76% year-on-year, with Ather holding an 18.6% market share for the quarter.",
@@ -3842,7 +3784,7 @@
        }
       ],
       "reason": "4 tracked rivals co-mentioned with Ather Energy.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -3890,18 +3832,9 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
-      "evidence": [
-       {
-        "quote": "Ather Energy\u2019s fivefold share price surge since its stock market debut last May has ignited a fresh wave of investor enthusiasm for India's electric two-wheeler startups.",
-        "evidence_id": "ev-458e99b62e"
-       },
-       {
-        "quote": "Price Performance and Market Positioning Ather Energy\u2019s underlying stock price closed at \u20b91,937, just 0.33% shy of its 52-week high of \u20b91,958.",
-        "evidence_id": "ev-7cbbd6d01f"
-       }
-      ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "level": "low",
+      "evidence": [],
+      "reason": "0 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -4664,7 +4597,7 @@
       "Profitability": 1.0,
       "Moat": 1.0,
       "Stakeholders": 1.0,
-      "Five forces": 1.0,
+      "Five forces": 0.8,
       "Competition": 1.0,
       "Tone": 1.0,
       "Segmentation": 0.8,
@@ -4696,17 +4629,6 @@
        "evidence_id": "ev-b8c754e4ee"
       },
       {
-       "metric": "Revenue",
-       "value": "39%",
-       "values": [
-        "39%",
-        "Rs 421 crore"
-       ],
-       "period": "FY27",
-       "quote": "However, Ola's Q2 revenue fell 39% to Rs 421 crore in FY27.",
-       "evidence_id": "ev-029b51a46d"
-      },
-      {
        "metric": "Margin",
        "value": "29.9%",
        "values": [
@@ -4715,26 +4637,6 @@
        "period": null,
        "quote": "Ola says gross margin, which held at about 29.9% in Q2, will dip a little in Q3 and Q4 because of the dealer rollout, while operating margin should improve meaningfully.",
        "evidence_id": "ev-029b51a46d"
-      },
-      {
-       "metric": "Loss",
-       "value": "54%",
-       "values": [
-        "54%"
-       ],
-       "period": null,
-       "quote": "The reason is simple: Ola Electric's stock has plummeted about 54% from its listing price, and the company is still loss-making.",
-       "evidence_id": "ev-19c04d87ff"
-      },
-      {
-       "metric": "Valuation",
-       "value": "30%",
-       "values": [
-        "30%"
-       ],
-       "period": null,
-       "quote": "SoftBank's own valuation shows its Ola investment is worth about 30% less than what it put in.",
-       "evidence_id": "ev-19c04d87ff"
       },
       {
        "metric": "Loss",
@@ -4759,7 +4661,7 @@
        "evidence_id": "ev-774f93c130"
       },
       {
-       "metric": "EBITDA",
+       "metric": "Loss",
        "value": "\u20b9218 crore",
        "values": [
         "\u20b9218 crore"
@@ -4777,6 +4679,41 @@
        ],
        "period": "FY24",
        "quote": "Ola\u2019s revenue has shrunk from about \u20b95,000 crore in FY24 to \u20b92,250 crore in FY26.",
+       "evidence_id": "ev-f2ff04ae09"
+      },
+      {
+       "metric": "Volume",
+       "value": "34,667 units",
+       "values": [
+        "34,667 units",
+        "34%"
+       ],
+       "period": null,
+       "quote": "However, Ola\u2019s vehicle deliveries were down 34% year-on-year to 34,667 units in Q2.",
+       "evidence_id": "ev-f2ff04ae09"
+      },
+      {
+       "metric": "Volume",
+       "value": "224,064 units",
+       "values": [
+        "224,064 units",
+        "12,000 units",
+        "48%",
+        "26%"
+       ],
+       "period": null,
+       "quote": "The trend persisted in October too, when electric two-wheeler registrations reached 224,064 units, up 48% year-on-year, while Ola\u2019s dropped by 26% to about 12,000 units.",
+       "evidence_id": "ev-f2ff04ae09"
+      },
+      {
+       "metric": "Market share",
+       "value": "5.4%",
+       "values": [
+        "5.4%",
+        "35%"
+       ],
+       "period": "2024",
+       "quote": "Ola\u2019s market share narrowed to 5.4% in October from about 35% in 2024. \u201cThe company will have to sustainably reach 25,000 monthly volumes in order to achieve cash breakeven levels,\u201d said analysts from Kotak Institutional Equities.",
        "evidence_id": "ev-f2ff04ae09"
       }
      ],
@@ -5028,7 +4965,7 @@
        }
       ],
       "reason": "5 tracked rivals co-mentioned with Ola Electric.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -5072,18 +5009,9 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
-      "evidence": [
-       {
-        "quote": "Ola Electric Mobility is shutting down most of its company-owned retail outlets across India by December 2026 to transition entirely to an independent dealer-led sales and service network.",
-        "evidence_id": "ev-07987a9899"
-       },
-       {
-        "quote": "By August 2026, facing stiff competition from legacy automakers such as TVS Motor, Bajaj Auto, and Hero MotoCorp alongside rival Ather Energy, Ola announced it would open both sales and service operations to franchise partners.",
-        "evidence_id": "ev-07987a9899"
-       }
-      ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "level": "low",
+      "evidence": [],
+      "reason": "0 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -5924,7 +5852,7 @@
       "Profitability": 1.0,
       "Moat": 1.0,
       "Stakeholders": 0.86,
-      "Five forces": 0.8,
+      "Five forces": 0.6,
       "Competition": 1.0,
       "Tone": 1.0,
       "Segmentation": 0.8,
@@ -5946,13 +5874,13 @@
        "evidence_id": "ev-ecc9e2fce2"
       },
       {
-       "metric": "Revenue",
-       "value": "54%",
+       "metric": "EBITDA",
+       "value": "\u20b9606 crore",
        "values": [
-        "54%",
         "\u20b9606 crore",
-        "20%",
-        "\u20b95,026 crore"
+        "\u20b95,026 crore",
+        "54%",
+        "20%"
        ],
        "period": null,
        "quote": "Exide\u2019s standalone Ebitda rose nearly 54% year-on-year to \u20b9606 crore as revenue improved 20% to \u20b95,026 crore.",
@@ -5971,20 +5899,10 @@
       },
       {
        "metric": "Profit",
-       "value": "54%",
+       "value": "\u20b9386 crore",
        "values": [
-        "54%"
-       ],
-       "period": null,
-       "quote": "5 min read12 Nov 2026Strong demand and price hikes drove Exide\u2019s 54% profit surge while high input costs dragged Amara Raja down, even as both invest heavily into an uncertain lithium transition.",
-       "evidence_id": "ev-8fb1a98b27"
-      },
-      {
-       "metric": "Profit",
-       "value": "75.1%",
-       "values": [
-        "75.1%",
-        "\u20b9386 crore"
+        "\u20b9386 crore",
+        "75.1%"
        ],
        "period": "FY27",
        "quote": "Exide Industries has announced its financial results for the second quarter of FY27, reporting a substantial 75.1% year-on-year increase in Profit After Tax (PAT) to \u20b9386 crore.",
@@ -5992,11 +5910,11 @@
       },
       {
        "metric": "Revenue",
-       "value": "20.3%",
+       "value": "\u20b95,026 crore",
        "values": [
-        "20.3%",
         "\u20b95,026 crore",
-        "\u20b94,178 crore"
+        "\u20b94,178 crore",
+        "20.3%"
        ],
        "period": "Q2FY27",
        "quote": "Standalone Financial Highlights On a standalone basis, Exide Industries witnessed a 20.3% year-on-year growth in revenue for Q2 FY27, reaching \u20b95,026 crore from \u20b94,178 crore in Q2 FY26.",
@@ -6004,12 +5922,12 @@
       },
       {
        "metric": "Profit",
-       "value": "75%",
+       "value": "Rs 386 Cr",
        "values": [
-        "75%",
         "Rs 386 Cr",
+        "Rs 386 crore",
         "75%",
-        "Rs 386 crore"
+        "75%"
        ],
        "period": null,
        "quote": "Exide Industries Q2 Net Profit Jumps 75% to Rs 386 Cr x Exide Industries reports a 75% surge in Q2 net profit to Rs 386 crore, driven by strong demand across segments.",
@@ -6024,22 +5942,11 @@
        "period": null,
        "quote": "The company had posted a standalone net profit of Rs 221 crore in the corresponding quarter of the previous fiscal, Exide Industries said in a statement.",
        "evidence_id": "ev-9feaa7c656"
-      },
-      {
-       "metric": "Profit",
-       "value": "7%",
-       "values": [
-        "7%",
-        "65%"
-       ],
-       "period": "2026",
-       "quote": "Exide Industries Q2 Results: Stock jumps 7% on strong operating performance, 65% profit growth - Published OnNov 4, 2026 | 13:47 IST - Last Updated OnNov 4, 2026 | 13:47 IST Exide Industries attributed the growth during the quarter to healthy demand, continued benefits of GST 2.0, a lower base and stronger execution of the \"One Exide\" operating model.",
-       "evidence_id": "ev-b0feffe5a4"
       }
      ],
-     "trend": "Figures cover 2026, FY27, Q2FY27 (compare quotes for direction).",
+     "trend": "Figures cover FY27, Q2FY27 (compare quotes for direction).",
      "label": "Evidence",
-     "summary": "9 financial or operating figures quoted from fetched pages.",
+     "summary": "7 financial or operating figures quoted from fetched pages.",
      "how": "Sentences naming the company that contain a money/percent/units figure and a metric keyword (revenue, EBITDA, profit, loss, margin, market share, units). Headlines are never used."
     },
     "moat": [
@@ -6280,7 +6187,7 @@
        }
       ],
       "reason": "3 tracked rivals co-mentioned with Exide Industries.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -6319,18 +6226,9 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
-      "evidence": [
-       {
-        "quote": "MankiranChowhan, MD, Salesforce India, said: \u201cExide\u2019s end-to-end transformation demonstrates how organizations can modernize field operations, service delivery, and partner engagement holistically on a single trusted platform.",
-        "evidence_id": "ev-ce64e6a037"
-       },
-       {
-        "quote": "Exide Redefines Customer Experience with AI and Salesforce Salesforce today announced that Exide Industries, one of India\u2019s leading battery and energy solutions companies, is leveraging Salesforce to unify customer engagement, laying the foundation for the next generation of customer and service excellence.",
-        "evidence_id": "ev-dc16857b7e"
-       }
-      ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "level": "low",
+      "evidence": [],
+      "reason": "0 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
@@ -7053,7 +6951,7 @@
       "Profitability": 1.0,
       "Moat": 0.71,
       "Stakeholders": 0.71,
-      "Five forces": 0.6,
+      "Five forces": 0.4,
       "Competition": 1.0,
       "Tone": 1.0,
       "Segmentation": 0.4,
@@ -7076,13 +6974,13 @@
        "evidence_id": "ev-a58788b914"
       },
       {
-       "metric": "Revenue",
-       "value": "5%",
+       "metric": "EBITDA",
+       "value": "\u20b9386 crore",
        "values": [
-        "5%",
         "\u20b9386 crore",
-        "13%",
-        "\u20b93,843 crore"
+        "\u20b93,843 crore",
+        "5%",
+        "13%"
        ],
        "period": null,
        "quote": "In contrast, Amara Raja Energy & Mobility saw Ebitda fall 5% year-on-year to \u20b9386 crore despite revenue growing 13% to \u20b93,843 crore.",
@@ -7090,19 +6988,9 @@
       },
       {
        "metric": "Loss",
-       "value": "30.8%",
+       "value": "\u20b9687",
        "values": [
-        "30.8%"
-       ],
-       "period": null,
-       "quote": "Holding Amara Raja Energy & Mobility over the past year would have meant a 30.8% loss, including dividends.",
-       "evidence_id": "ev-eb20215849"
-      },
-      {
-       "metric": "Loss",
-       "value": "\u20b9687,",
-       "values": [
-        "\u20b9687,",
+        "\u20b9687",
         "30.8%"
        ],
        "period": null,
@@ -7111,14 +6999,14 @@
       },
       {
        "metric": "Revenue",
-       "value": "44.9 per cent",
+       "value": "\u20b9152.48 crore",
        "values": [
-        "44.9 per cent",
         "\u20b9152.48 crore",
         "\u20b9276.49 crore",
-        "18.5 per cent",
         "\u20b94,108.71 crore",
-        "\u20b93,467.02 crore"
+        "\u20b93,467.02 crore",
+        "44.9 per cent",
+        "18.5 per cent"
        ],
        "period": "Q2FY27",
        "quote": "Amara Raja Energy & Mobility's consolidated net profit declined 44.9 per cent year-on-year to \u20b9152.48 crore in Q2 FY27, compared with \u20b9276.49 crore in the corresponding quarter last year, according to an exchange filing.Revenue from operations increased 18.5 per cent to \u20b94,108.71 crore during the quarter, against \u20b93,467.02 crore in Q2 FY26.",
@@ -7135,53 +7023,21 @@
        "evidence_id": "ev-f69bbbbcff"
       },
       {
-       "metric": "Revenue",
-       "value": "45%",
-       "values": [
-        "45%",
-        "18.5%"
-       ],
-       "period": "2026",
-       "quote": "Amara Raja Energy Q2: Profit drops 45% despite 18.5% revenue growth, board declares dividend - Published OnNov 2, 2026 | 22:13 IST - Last Updated OnNov 2, 2026 | 22:13 IST Margin compression squeezed earnings despite double-digit revenue growth driven by strong automotive demand and expanding new energy segments.",
-       "evidence_id": "ev-7b67d66bff"
-      },
-      {
        "metric": "Profit",
-       "value": "44.9%",
+       "value": "\u20b9153 crore",
        "values": [
-        "44.9%",
         "\u20b9153 crore",
-        "\u20b9277 crore"
+        "\u20b9277 crore",
+        "44.9%"
        ],
        "period": null,
        "quote": "Battery maker Amara Raja Energy & Mobility reported a 44.9% year-on-year decline in consolidated net profit to \u20b9153 crore for the September quarter, compared with \u20b9277 crore in the corresponding period last year.",
        "evidence_id": "ev-7b67d66bff"
-      },
-      {
-       "metric": "Revenue",
-       "value": "30%",
-       "values": [
-        "30%"
-       ],
-       "period": null,
-       "quote": "New energy business Amara Raja said sustained supplies of telecom and electric vehicle (EV) battery packs helped drive revenue growth of more than 30% in its new energy business.",
-       "evidence_id": "ev-7b67d66bff"
-      },
-      {
-       "metric": "Profit",
-       "value": "44.8%",
-       "values": [
-        "44.8%",
-        "44.8%"
-       ],
-       "period": null,
-       "quote": "Amara Raja Q2 Profit Down 44.8%; Plans New Battery Service Unit Amara Raja Energy & Mobility reports 44.8% Q2 profit decline due to higher costs.",
-       "evidence_id": "ev-c3e49f2627"
       }
      ],
      "trend": "Figures cover 2026, Q2FY27 (compare quotes for direction).",
      "label": "Evidence",
-     "summary": "10 financial or operating figures quoted from fetched pages.",
+     "summary": "6 financial or operating figures quoted from fetched pages.",
      "how": "Sentences naming the company that contain a money/percent/units figure and a metric keyword (revenue, EBITDA, profit, loss, margin, market share, units). Headlines are never used."
     },
     "moat": [
@@ -7379,7 +7235,7 @@
        }
       ],
       "reason": "5 tracked rivals co-mentioned with Amara Raja Energy & Mobility.",
-      "how": "high if \u22654 rivals are co-mentioned, medium if 2\u20133, else low."
+      "how": "high if \u22654 rivals are co-mentioned, medium if 2 to 3, else low."
      },
      {
       "force": "Threat of new entrants",
@@ -7413,18 +7269,9 @@
      },
      {
       "force": "Threat of substitutes",
-      "level": "high",
-      "evidence": [
-       {
-        "quote": "Amara Raja managed only limited price hikes \u2014 2% in Q2 after 3% in Q1 \u2014 causing its gross margin to shrink by about 300 basis points to 29.8%.",
-        "evidence_id": "ev-a58788b914"
-       },
-       {
-        "quote": "In contrast, Amara Raja managed only limited price hikes \u2014 2% in Q2 after 3% in Q1, causing its gross margin to shrink by about 300 basis points to 29.8%.",
-        "evidence_id": "ev-5dd78dc4b2"
-       }
-      ],
-      "reason": "4 substitute (petrol, CNG, hybrid, transit) mentions.",
+      "level": "low",
+      "evidence": [],
+      "reason": "0 substitute (petrol, CNG, hybrid, transit) mentions.",
       "how": "high \u22653 substitute mentions, medium \u22651."
      }
     ],
