@@ -1,5 +1,870 @@
 [
  {
+  "id": "rr-20261120-c89ec223",
+  "objective": "Ola Electric developments in India",
+  "industry": "Electric vehicles & mobility",
+  "geography": "India",
+  "time_window": "3m",
+  "date_from": "2026-08-21",
+  "date_to": "2026-11-20",
+  "companies": [],
+  "source_preferences": [
+   "official_company",
+   "news"
+  ],
+  "status": "completed",
+  "provider": "open",
+  "is_demo": false,
+  "provider_request_id": null,
+  "created_at": "2026-11-20T10:48:27.664110+05:30",
+  "started_at": "2026-11-20T10:48:27.731967+05:30",
+  "completed_at": "2026-11-20T10:48:44.588199+05:30",
+  "error_code": null,
+  "error_message": null,
+  "status_message": "Done",
+  "source_count": 25,
+  "finding_count": 23,
+  "result": {
+   "executive_summary": "23 developments from 25 sources (14 aggregator, 11 news) across expansion, market entry, other, partnership, policy, product launch, technology. Extractive mode: every item below is quoted from its source; no generated prose.",
+   "industry_overview": null,
+   "market_trends": [],
+   "company_developments": [
+    "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow (economictimes.indiatimes.com, 2026-11-13)",
+    "Ola Electric Scooters in India (3) (autocarindia.com, 2026-11-10)",
+    "Ola Electric reports Q2 FY27 results and outlines growth strategies (investywise.com, 2026-11-13)",
+    "Ola Electric's revenue falls by 39% in Q2 (newsbytesapp.com, 2026-11-13)",
+    "Ola Electric Mobility Limited submits Q2 FY27 Key Performance Indicator data (investywise.com, 2026-11-13)",
+    "India's Ola Electric quarterly loss narrows on cost cuts (The Hindu, 2026-11-12)",
+    "India's Ola Electric to consider fundraising via rights issue of shares (Reuters, 2026-09-23)",
+    "Ola Electric Opens First Wave of Dealer-Led Stores Across Seven States (Machine Maker, 2026-09-12)",
+    "Ola Electric needs credibility before it can find more cash (The Ken, 2026-09-09)",
+    "Ola Electric opens dealer-led stores, targets 500-plus outlets (Indian Television Dot Com, 2026-09-05)",
+    "E2W Registrations Contract By Over 16% In August; Ola Electric’s Market Share Improves (Inc42, 2026-08-31)",
+    "Ola Electric sales have fallen another 40.0% YTD July 2026 to 69,202 units (Motorcycles Data, 2026-08-21)",
+    "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles (autocarpro.in)"
+   ],
+   "product_launches": [
+    "Ola Electric's cash cushion dwindles as market share slips and losses persist (livemint.com, 2026-11-16)",
+    "India: Ola Electric launches e-scooter with indigenous LFP cells (electrive.com, 2026-09-07)",
+    "Ola Electric Launches S1Z Scooter with In-House LFP Battery Technology (Autocar Professional, 2026-08-28)",
+    "Ola Electric launches S1Z with Bharat Cell LFP technology (Manufacturing Today India, 2026-08-28)"
+   ],
+   "manufacturing_expansion": [
+    "Ola Electric Q2 Results: Revenue Drops 39% As Supply Limits Vehicle Output (businessworld.in, 2026-11-12)",
+    "Ola Electric vs Ather Energy: Capacity, costs and losses compared (Value Research, 2026-10-30)",
+    "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031 (auto.economictimes.indiatimes.com, 2026-11-17)"
+   ],
+   "partnerships_and_investment": [
+    "Ola Electric shares fall over 6 pc as analysts downgrade to sell (thehansindia.com, 2026-10-22)"
+   ],
+   "policy_and_regulatory": [
+    "Ola Electric has 540 patent applications pending in India, flags uncertainty over IP protection (ETLegalWorld.com, 2026-10-09)",
+    "ELECTRIC VEHICLES INDIA (auto.economictimes.indiatimes.com, 2026-10-21)"
+   ],
+   "tenders_and_procurement": [],
+   "commercial_opportunities": [],
+   "risks": [],
+   "method": "extractive",
+   "coverage_notes": [
+    "GDELT unreachable."
+   ]
+  },
+  "sources": [
+   {
+    "id": "323158481632e57843bd",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://auto.economictimes.indiatimes.com/news/commercial-vehicle/mahindra-last-mile-mobility-targets-1-million-evs-on-roads-by-2031/135888819",
+    "domain": "auto.economictimes.indiatimes.com",
+    "title": "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031",
+    "source_type": "news",
+    "published_at": "2026-11-17T10:24:42+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Mahindra Last Mile Mobility targets to revolutionize India's transport with 1 million electric vehicles by 2031, boosting ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "e33dd03da8c00c0a9e39",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.livemint.com/companies/news/ola-electric-cash-reserves-fall-sales-market-share-loss-11794733370775.html",
+    "domain": "livemint.com",
+    "title": "Ola Electric's cash cushion dwindles as market share slips and losses persist",
+    "source_type": "news",
+    "published_at": "2026-11-16T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "While the company's October rights issue of ₹1,000 crore, of which it has raised about ₹600 crore so far, will support its ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "9f79a18849a82b96687a",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://economictimes.indiatimes.com/tech/startups/ola-electrics-q2-revenue-slumps-39-to-rs-421-crore-losses-narrow/articleshow/135769373.cms",
+    "domain": "economictimes.indiatimes.com",
+    "title": "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow",
+    "source_type": "news",
+    "published_at": "2026-11-13T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "3623499393736cb8cc7f",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.investywise.com/ola-electric-shareholders-letter-q2-fy26-27-update/",
+    "domain": "investywise.com",
+    "title": "Ola Electric reports Q2 FY27 results and outlines growth strategies",
+    "source_type": "news",
+    "published_at": "2026-11-13T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Ola Electric Mobility Limited's Q2 FY27 shareholders' letter reveals strong Auto dealer momentum, reduced borrowings to ₹1.8k ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "5dd39f496a4142d30fe0",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.investywise.com/ola-electric-submission-of-key-performance-indicator-data-book/",
+    "domain": "investywise.com",
+    "title": "Ola Electric Mobility Limited submits Q2 FY27 Key Performance Indicator data",
+    "source_type": "news",
+    "published_at": "2026-11-13T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Ola Electric Mobility Limited has submitted its Key Performance Indicator (KPI) Data Book for Q2 FY27, providing detailed ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "c2a852a63094bcf34025",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.newsbytesapp.com/news/business/ola-electric-s-revenue-falls-by-39-in-q2-fy27/story",
+    "domain": "newsbytesapp.com",
+    "title": "Ola Electric's revenue falls by 39% in Q2",
+    "source_type": "news",
+    "published_at": "2026-11-13T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Ola Electric experienced a 39% drop in revenue to Rs 421 crore in Q2 FY27, while successfully reducing its losses by 13% ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "118e7ce5a5b9f0c8b771",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.businessworld.in/article/ola-electric-q2-results-revenue-drops-39-as-supply-limits-vehicle-output-633339",
+    "domain": "businessworld.in",
+    "title": "Ola Electric Q2 Results: Revenue Drops 39% As Supply Limits Vehicle Output",
+    "source_type": "news",
+    "published_at": "2026-11-12T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Ola Electric’s Q2 revenue falls 39 per cent to Rs 421 crore, while loss narrows to Rs 362 crore as supply constraints limit ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "ca22adc33b70e2789600",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.autocarindia.com/bikes/ola-electric-scooters",
+    "domain": "autocarindia.com",
+    "title": "Ola Electric Scooters in India (3)",
+    "source_type": "news",
+    "published_at": "2026-11-10T10:03:50+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "All 3 Ola electric scooters in India, priced from Rs. 79,999 to Rs. 1.3 lakh, with 108 to 320 km of range on a charge.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "a1aaa9a287c6bd2d65e2",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.thehansindia.com/business/ola-electric-shares-fall-over-6-pc-as-analysts-downgrade-to-sell-1134919",
+    "domain": "thehansindia.com",
+    "title": "Ola Electric shares fall over 6 pc as analysts downgrade to sell",
+    "source_type": "news",
+    "published_at": "2026-10-23T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "Ola Electric shares fall 6.5% after Goldman Sachs downgrades the stock to sell and cuts its target price to ₹23, citing cash flow concerns, funding needs and market share challenges.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "e48ad4d44e24977f8461",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://auto.economictimes.indiatimes.com/tag/electric+vehicles+india",
+    "domain": "auto.economictimes.indiatimes.com",
+    "title": "ELECTRIC VEHICLES INDIA",
+    "source_type": "news",
+    "published_at": "2026-10-22T00:00:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "ETAuto.com brings latest electric vehicles india news, views and updates from all top sources for the Indian Auto industry.",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "f5ce21dec055dcab39b2",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://www.autocarpro.in/opinion-column/why-indias-netzero-future-cannot-be-attained-without-a-retrofit-first-strategy-for-millions-of-polluting-vehicles-135929",
+    "domain": "autocarpro.in",
+    "title": "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles",
+    "source_type": "news",
+    "published_at": null,
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment ...",
+    "link_status": "unchecked",
+    "discovered_via": "duckduckgo"
+   },
+   {
+    "id": "2deaeaf4533731e68df8",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTUFVZHpBbGtZYk11SXRkZVppelVqUHc4Sm04SG5seml2ZS1FT3VQekxiNXJ0NjZYaVZ6UGRDSU1wVTllSFdNanFWWW82V1NIbFdzalJrTFhBVUNhLXNpenJxZGIzZzR6VXd3WVRmdE90eUkza0dZTUgwdVI4eW9HVnlKM2hMR2tIX1dxZzF5Q2ZfM1h1T2dXTl9QSFhJU19HSEtZN1RJTE8zcElRUnfSAbQBQVVfeXFMTmVJR01Xb09QeXd4SmhoaDZSaEVHN3dBeUxsLWRhckd2ODBOT0JSRUFQc1VPWGZCZ29odjBkRFE2Q2VLTjZGN0IxdGJSek9ZaG9LYVVyc05vaUtIR00yMmY0MFRxaWY4RHVZMWxoRWtmRVFvVmVYaEN2Z0Uzd2dOd0phU3Zrc1FoVTJ2YlR4d2prVUNtRTNDWnctUHFabDkwcVdfeWJTTmZQRjJkVHpmTTlHdmZu?oc=5",
+    "domain": "The Hindu",
+    "title": "India's Ola Electric quarterly loss narrows on cost cuts",
+    "source_type": "aggregator",
+    "published_at": "2026-11-12T22:27:41+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "240c59be12904e6bb4c7",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMXF6dG5PVWpET3I3ZUpyWnR2MXpMRm5KX3VvX25LbC1EcXpfMXQzWEg3UndXNkNNQmE3Rjl5WThxRzBYVzlMQ1pIdzg4ZFJqQUxzY29YanJ4S21KdkpHVkxqMTlITG5GRlhzOWduWFJ4SVc4bHh0MktWMkJPbFRFRU40R3BKem83S0lvVVlocWxQbFhxNXpiRG5rck5ITkk?oc=5",
+    "domain": "Value Research",
+    "title": "Ola Electric vs Ather Energy: Capacity, costs and losses compared",
+    "source_type": "aggregator",
+    "published_at": "2026-10-30T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "2cbada96a9217fe7ab22",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPMzlrZ1lRMlAxeFlzM0NFN2FMRU5vWGxkSk1kRUhXcEo2UEpIWVNrdjlKN2RqSTMwdnhKMGxvaGhRM01PdHV3ZFZGeE5LSVJjN1EtRmk1ak50YVBlazFyOVNOaFY3VDNhVVhxcTd0MWY1ZFlHcmNkOE9rWE04S2tIeTRyeGlLNG9RNHNUSHg5QU1xVjRUM1FkVFFXWW5NSWVHWDRwNGlDNTg4V0JhZ0I0OV9BR0hYa05BenlodVUxQkxRcFNkZE9SZGRVWkh6RzJvb1JYSWpIZmZRMHFsQWxEMDVyVmlsWWZWanNQeU5PRzdNdG5UeTJkOG1QNF93bEHSAYQCQVVfeXFMTVc2bmE0YVg1RkRJYWcwNWtXaDIzZzRoZ1RORG9MQjZQN2UzNUtpYzN4YkJKYllUdWhpXzFjcWN0UEtyWW5LLU1oRFJ3UUN4enhZcGwyTHNmblk4cGRELWc1ZTFHejRRbkc4ekNzTFpuME12cjlnQnNrdmFQUGxfTFBTVWhsdjFFUUNuUWhLNHdVWXo0VFBzeGlTRkxwWlBhQnFQX05HT3JINUw3TklmVUp4SUVBaVZHb3dEM1JLd3NkWjhPaXBvVGVyS0FxeWNFLVY0NURLQWJkcHBuT2RNanl4R1NsN3VvQVZqYXhTQnN3enNuU2ZtZG9XN1hOMEV2ZDM5YzU?oc=5",
+    "domain": "ETLegalWorld.com",
+    "title": "Ola Electric has 540 patent applications pending in India, flags uncertainty over IP protection",
+    "source_type": "aggregator",
+    "published_at": "2026-10-09T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "77e1cb4b5cdf99bb04db",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSUJiU1Z1QXlZaFZsdjVhNDRtbnVUenRVaWRNeloyTkNtN0ZJbHlfcWxxa0JJYjlkTzZWZjFaaUpXV1pOcmhNTUpCM3R2UmVJdEstQjU5OFNwZDZ0OXc1Y0RtWE93cVN3MkZJakpDREszU1hyYlJVV1BfbktGLW9vMUtWdVI4NWFVQXBUbDlLNWVEQjRtTExsSEo1Nm1yOXl0ZVdTZmRVM0kta1ZSbkYwdGlB?oc=5",
+    "domain": "Reuters",
+    "title": "India's Ola Electric to consider fundraising via rights issue of shares",
+    "source_type": "aggregator",
+    "published_at": "2026-09-23T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "a107554c22a4fdebf823",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdGpoMkpMZGs3anQ0WkNDc0otUGpvRmJMTWg2NWoyWG80cmhhRHc1cVhWZ01fcjNtSVFTbjdsbDc3R2IxV280MWJwTnZtRGR6SVpodFNXdGF5TTNFbHllXzh3QzNBMGZBTXBtVmhYUkNpQ1VkQUpSbmotekVPTnU2bUtfaXQ1a29NZjd0ekdfN0hpcHdZM1JKa3ZkazFrMTlWbHdSQ29mdw?oc=5",
+    "domain": "Machine Maker",
+    "title": "Ola Electric Opens First Wave of Dealer-Led Stores Across Seven States",
+    "source_type": "aggregator",
+    "published_at": "2026-09-12T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "05a8ac53f74415613c79",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbzN3RVBRYjdKTHl0X1I1bmtIeXpEdHpwTzRQTk5FMEYtSk0zTmwwMUlpQWY2YWZYMWd3UzN2YkR5OHRUTE1XNUVuLVFWbDEwV2pxLUhvLV9XSWhpeEpVR0s3VjJHYkNsek8ydnlDYzU0TDRtelVGQlpuUnhVVDVvMXNoNmQxZllfX2dHU1NiYjJTc2xoSlNuNWNHZw?oc=5",
+    "domain": "The Ken",
+    "title": "Ola Electric needs credibility before it can find more cash",
+    "source_type": "aggregator",
+    "published_at": "2026-09-09T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "31f50f91bba46cc01fda",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWkpCUVBtbjUxMWRPU0h6dGV0RjlXZVlYcUNkZ0Eya1dzMU4zQ2Qza19EcVppU3owRmtPOU1jVW9pTzJ5ZU9pQnNxczFxV1owUk10WEVLRHJ6QTJsa1NLS0x5eUhkc3k4a3pWRHJLWE02bW1DMVVfMlhSZ2NRX1hvSEtTU0JtQW5wRWs1Q09mbFFSR202MmFUVkRCMVFXU2llX1BB?oc=5",
+    "domain": "electrive.com",
+    "title": "India: Ola Electric launches e-scooter with indigenous LFP cells",
+    "source_type": "aggregator",
+    "published_at": "2026-09-07T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "9ec4d14490c7fc44f7fd",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdkNyTTZxUFp6emRxMVMwb0dxbHdNZ0tOa1JWQXd5bEVvUlBHRE5fSWZJZXd3XzNmbjFLTzVnQ3QyaGlxUHVDb1pDNk1GRURUd190T3VsR2hvWTl1UFFhemFCVHpwQXdmWlZza3BGdGVsV0lvcG5CVzNldmJoWGQyRlhxVV9xbk9LX3FRaWwxOFIwbEtWQ2F4UzJBcVlaT0RMWU9LU09VQ3BYQ3Bs?oc=5",
+    "domain": "Energetica India Magazine",
+    "title": "Ola Electric Launches First Dealer-Operated Stores Across Seven States",
+    "source_type": "aggregator",
+    "published_at": "2026-09-05T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "a34b27fe693f74df386c",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZUYzMmFFbVMtV1RaUXZISDIwd1AtVktwazNEMTZ5Zld4UmN4V0Z4NU9yYWQ4ZkFVZkdFQUxkc0xidEwzREhBODdJOUVVZkxkSlo1ME8wZHVRTWhmc00tbjU0M21qb1A4c0NOVkV3TnVrdEhCUHRnSEo1R1RVZ2pKZjNscTFuaXBZNmxtekJueHMwMlNxc1ZScjlvbw?oc=5",
+    "domain": "Indian Television Dot Com",
+    "title": "Ola Electric opens dealer-led stores, targets 500-plus outlets",
+    "source_type": "aggregator",
+    "published_at": "2026-09-05T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "f5163e087dd36d6edbdd",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOEhnSUJ5OUsxam12dTdQSXVRZ25XYnM2SVhNYzgtME15cjlkRDhpUDQ3MThQWHc1aU94WjNiQkE4cXNtRmJncDVleXgxTHQ2TUZncm5sMFExSGVGZk56STZDUFdTMjN5WFhNejlWLXZMOXhUVEhuanhTc1drTllXOGMyOEJDUGgwWnJ0cFpQSXJsVGEzcXJ4RTFxOHh4dVJ5cXJvR0ZlMW8tS2M?oc=5",
+    "domain": "Inc42",
+    "title": "E2W Registrations Contract By Over 16% In August; Ola Electric’s Market Share Improves",
+    "source_type": "aggregator",
+    "published_at": "2026-08-31T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "8b4f8487948bf3415fe1",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZU5DNFRoa0VUdVZtNWQwUnE3eTVZczFTeEN0bGczVWtUV3IwWGtHaHRIVXgwZWZ6X1hBLVY4am5DaWFFbi11bDRWVDZDcG9WY2lTWjhFTFQzUDBYOTZJd01hUjVpS2pNSHhXQzJBeFpjTXhHYVctUkVwZkIxWURMdHVOYzZhdTJDeWFQbWJtMjZ6amxrdWNWRVR1RVNoZEdxRDhDZ0YtTjRtS3BU0gG0AUFVX3lxTFBDVUk0akZxRVREZlg1UkJ1ZlBTWXdZbHRGSDZBUzhqWlE2dW5QZFg4bTdYV1h5bUk4ajJJUHFZUlpUNW90VFVBMWJnSkswdVpWMGRLcm1sanMwVG1PWTRMMTVFcER5MEwtV3BhTUpDeEFkMEJkaWhtQXBFQjNwd0o4LXE3aGxkZFR0TC10NlN1bUdYUy04X1hsN0w2eEIxT1A0bkQ3S2FRTnM4d3hVcWkyOW9WZw?oc=5",
+    "domain": "Autocar Professional",
+    "title": "Ola Electric Launches S1Z Scooter with In-House LFP Battery Technology",
+    "source_type": "aggregator",
+    "published_at": "2026-08-28T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "923e0738abd355923ab7",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQLTJNc21IZkFqWlUxd2l0dVBWOEd3YlZBdE1ETTJoSU43bk0yamxoWVQxRERnWUpYR2FMNVY1Z1RwZHppQWk0b2h0cXpkRHZpR1IzYnhxTVk5WnFPQVZ5Z183ZTlzQ2JJd0dlWlJKdjB6ci0wVzJjQnJKZjY3QWxpRTBEbVlBS2NLbkRjX1NUZjlTekU4VTJTdnh5LVFjdw?oc=5",
+    "domain": "Manufacturing Today India",
+    "title": "Ola Electric launches S1Z with Bharat Cell LFP technology",
+    "source_type": "aggregator",
+    "published_at": "2026-08-28T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "35fd975a7cf7c5f6acfd",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWmdGaTZ1Tzk4Q2Z3cnk3UFBKUWt5bHMzc0NudzRlUEVRRDl4LVZacnZvMVI0OV9qaUozM2JPWVdsM2EzTlZZSjhlbVdmQ2l2bGJVc2JRNDBGVDNZX09HMy10UTJRd3VVbmVtZVRpME5CVUdmTkZZOVF0cEMzNUdMa3NEYTJmSWpidXZTXzFHS29EQjUzRldpRGdDNTlXTm8?oc=5",
+    "domain": "Telangana Today",
+    "title": "Ola Electric launches S1Z with made-in-India Bharat Cell LFP technology",
+    "source_type": "aggregator",
+    "published_at": "2026-08-28T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   },
+   {
+    "id": "bf60ba9c1e9db8ff49bf",
+    "research_run_id": "rr-20261120-c89ec223",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05cEc1MG5CenlCTmt4NUctbXRhWndoZWtiX2tUbmQxMWlOT1ptdDF4T1hQZmo0UHZ3OWk4dlpTR3MtVWNhS0k0SWl0RU9EcDFnaWRMTXAwN2p6N2J4eHFpUE1vY1BzemM?oc=5",
+    "domain": "Motorcycles Data",
+    "title": "Ola Electric sales have fallen another 40.0% YTD July 2026 to 69,202 units",
+    "source_type": "aggregator",
+    "published_at": "2026-08-21T12:30:00+05:30",
+    "retrieved_at": "2026-11-20T10:48:43.120493+05:30",
+    "snippet": null,
+    "link_status": "unchecked",
+    "discovered_via": "google_news"
+   }
+  ],
+  "findings": [
+   {
+    "id": "ae02e9c801fad3c6aca1",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "E2W Registrations Contract By Over 16% In August; Ola Electric’s Market Share Improves",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-08-31",
+    "source_ids": [
+     "f5163e087dd36d6edbdd"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "dbf4f95484b91b4b9e56",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "ELECTRIC VEHICLES INDIA",
+    "category": "policy",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Event ETAuto EV Conclave 2026 The 11th ETAuto EV Conclave brings together CXOs, policymakers, and innovators to address these fault lines head-on — across battery manufacturing, charging infrastructure, localisation, raw material security, software-defined vehicles, and workforce readiness. A decade of dialogue has built the foundation.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-21",
+    "source_ids": [
+     "e48ad4d44e24977f8461"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": "Event ETAuto EV Conclave 2026 The 11th ETAuto EV Conclave brings together CXOs, policymakers, and innovators to address these fault lines head-on — across battery manufacturing, charging infrastructure, localisation, raw material security, software-defined vehicles, and workforce readiness. A decade of dialogue has built the foundation."
+   },
+   {
+    "id": "c9912bd5c1d7dfc2ec9e",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "India's Ola Electric quarterly loss narrows on cost cuts",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-12",
+    "source_ids": [
+     "2deaeaf4533731e68df8"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "12f9d3f1da60ecdd16de",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "India's Ola Electric to consider fundraising via rights issue of shares",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-09-23",
+    "source_ids": [
+     "77e1cb4b5cdf99bb04db"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "1f4c708f8e00bef1463b",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "India: Ola Electric launches e-scooter with indigenous LFP cells",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-09-07",
+    "source_ids": [
+     "31f50f91bba46cc01fda"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "fb9dea3c6bdbb8128add",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031",
+    "category": "expansion",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Mahindra Last Mile Mobility aims to put one million electric vehicles on Indian roads by 2031 and plans to supply 5,000 electric three-wheelers to Uber over the next 12 months, Managing Director and CEO Suman Mishra said.Speaking at an event in Mumbai, Mishra said the company was working to expand electric mobility across India's last-mile transport sector, including regions where electrification…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-17",
+    "source_ids": [
+     "323158481632e57843bd"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "5b27d739aadc9446bab9",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric Launches S1Z Scooter with In-House LFP Battery Technology",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-08-28",
+    "source_ids": [
+     "8b4f8487948bf3415fe1"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "200f32127bd43e5a85ee",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric Mobility Limited submits Q2 FY27 Key Performance Indicator data",
+    "category": "technology",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Ola Electric Mobility Limited has submitted its Key Performance Indicator (KPI) Data Book for the second quarter and half-year ended September 30, 2026. The report details various financial and operational metrics, including revenue, gross margin, operating expenses, and EBITDA across automotive and cell segments, as well as consolidated financials.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "5dd39f496a4142d30fe0"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": "Ola Electric Mobility Limited has submitted its Key Performance Indicator (KPI) Data Book for the second quarter and half-year ended September 30, 2026. The report details various financial and operational metrics, including revenue, gross margin, operating expenses, and EBITDA across automotive and cell segments, as well as consolidated financials."
+   },
+   {
+    "id": "2f61991325b48eaa116e",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric Opens First Wave of Dealer-Led Stores Across Seven States",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-09-12",
+    "source_ids": [
+     "a107554c22a4fdebf823",
+     "9ec4d14490c7fc44f7fd"
+    ],
+    "flags": [
+     "aggregator_link",
+     "multi_source"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "b57adfd0a790e9c320e3",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric Q2 Results: Revenue Drops 39% As Supply Limits Vehicle Output",
+    "category": "expansion",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Demand for Ola Electric’s electric two-wheelers is outpacing supply, even as the company’s second-quarter revenue declined and it continued to report a loss. Ola Electric said its supply chain, rather than manufacturing capacity or customer demand, now limits vehicle output.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-12",
+    "source_ids": [
+     "118e7ce5a5b9f0c8b771"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": "Demand for Ola Electric’s electric two-wheelers is outpacing supply, even as the company’s second-quarter revenue declined and it continued to report a loss. Ola Electric said its supply chain, rather than manufacturing capacity or customer demand, now limits vehicle output."
+   },
+   {
+    "id": "f3c937d88d1d4de58cb9",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric Scooters in India (3)",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "or select from slider ₹0 ₹1,00,00,000 Ola Scooter Ola Electric Scooters in India (3) The Ola Electric Scooters collection has 3 models, starting from the Ola S1 Z at Rs. 79,999, the most affordable in the series, to the Ola S1 Pro costing Rs.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-10",
+    "source_ids": [
+     "ca22adc33b70e2789600"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": "or select from slider ₹0 ₹1,00,00,000 Ola Scooter Ola Electric Scooters in India (3) The Ola Electric Scooters collection has 3 models, starting from the Ola S1 Z at Rs. 79,999, the most affordable in the series, to the Ola S1 Pro costing Rs."
+   },
+   {
+    "id": "f75226a68b29e7594e7d",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric has 540 patent applications pending in India, flags uncertainty over IP protection",
+    "category": "policy",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-09",
+    "source_ids": [
+     "2cbada96a9217fe7ab22"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "d6d41df770318aaa49a5",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric launches S1Z with Bharat Cell LFP technology",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-08-28",
+    "source_ids": [
+     "923e0738abd355923ab7",
+     "35fd975a7cf7c5f6acfd"
+    ],
+    "flags": [
+     "aggregator_link",
+     "multi_source"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "45dc3d7786929f735db1",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric needs credibility before it can find more cash",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-09-09",
+    "source_ids": [
+     "05a8ac53f74415613c79"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "210c4cdd559a820ed0d9",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric opens dealer-led stores, targets 500-plus outlets",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-09-05",
+    "source_ids": [
+     "a34b27fe693f74df386c"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "9e5c523363134045115f",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric reports Q2 FY27 results and outlines growth strategies",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Ola Electric Mobility Limited has released its Q2 FY27 shareholders’ letter, highlighting a shift in constraint from demand to supply chain ramp-up. The company reported a stable gross margin of 29.9% and a significant reduction in total borrowings to ₹1,819 crore.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "3623499393736cb8cc7f"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": "Ola Electric Mobility Limited has released its Q2 FY27 shareholders’ letter, highlighting a shift in constraint from demand to supply chain ramp-up. The company reported a stable gross margin of 29.9% and a significant reduction in total borrowings to ₹1,819 crore."
+   },
+   {
+    "id": "b38fd3943bc14acf2552",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric sales have fallen another 40.0% YTD July 2026 to 69,202 units",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-08-21",
+    "source_ids": [
+     "bf60ba9c1e9db8ff49bf"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "2815309c03b749fbf6d3",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric shares fall over 6 pc as analysts downgrade to sell",
+    "category": "partnership",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "- India, Egypt set to explore preferential trade agreement or an FTA: Piyush Goyal - India steps up efforts as peacemaker between Russia and Ukraine, seeks limited yet fruitful outcomes: Report - FairPoint: Sonia's memoir opens Gandhi family's closed doors, but leaves much hidden - India to get preferential access in US market under trade pact: Piyush Goyal - Along with Aatmanirbharta, India must…",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-22",
+    "source_ids": [
+     "a1aaa9a287c6bd2d65e2"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "0f6a38453882127fc952",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric vs Ather Energy: Capacity, costs and losses compared",
+    "category": "expansion",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": null,
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-10-30",
+    "source_ids": [
+     "240c59be12904e6bb4c7"
+    ],
+    "flags": [
+     "aggregator_link"
+    ],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "48b260dbcd983edff994",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric's cash cushion dwindles as market share slips and losses persist",
+    "category": "product_launch",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Ola Electric's cash reserves have dwindled 87% from ₹5,918 crore a month after its stock market debut to ₹750 crore a little over two years later. Bhavish Aggarwal’s electric scooter maker has seen an average monthly cash depletion of ₹215 crore over the period, as sales declined and the former market leader slid to fifth place.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-16",
+    "source_ids": [
+     "e33dd03da8c00c0a9e39"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": "Ola Electric's cash reserves have dwindled 87% from ₹5,918 crore a month after its stock market debut to ₹750 crore a little over two years later. Bhavish Aggarwal’s electric scooter maker has seen an average monthly cash depletion of ₹215 crore over the period, as sales declined and the former market leader slid to fifth place."
+   },
+   {
+    "id": "d42622dd010f00ee2494",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric's revenue falls by 39% in Q2",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Ola Electric experienced a 39% drop in revenue to Rs 421 crore in Q2 FY27, while successfully reducing its losses by 13% ...",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "c2a852a63094bcf34025"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": null
+   },
+   {
+    "id": "06b7f85441f15fb6e46d",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Ola Electric’s Q2 revenue slumps 39% to Rs 421 crore, losses narrow",
+    "category": "market_entry",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "Two-wheeler maker Ola Electric reported revenue from operations of Rs 421 crore for the September quarter, down 39% from Rs 690 crore a year earlier, as vehicle registrations continued to slide. The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by December.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": "2026-11-13",
+    "source_ids": [
+     "9f79a18849a82b96687a"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.132044+05:30",
+    "evidence_quote": "Two-wheeler maker Ola Electric reported revenue from operations of Rs 421 crore for the September quarter, down 39% from Rs 690 crore a year earlier, as vehicle registrations continued to slide. The company said it has stopped taking orders from its direct-to-consumer stores on Nov 1, and plans to close them by December."
+   },
+   {
+    "id": "9bfca222aa64c2f7c136",
+    "research_run_id": "rr-20261120-c89ec223",
+    "title": "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles",
+    "category": "other",
+    "entity": null,
+    "industry": "Electric vehicles & mobility",
+    "summary": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment could offer a faster, cost-effective route to reducing emissions from the existing fleet. India's electric-vehicle story is often framed as a success in the making.",
+    "significance": 3,
+    "confidence": null,
+    "kind": "source_excerpt",
+    "event_date": null,
+    "source_ids": [
+     "f5ce21dec055dcab39b2"
+    ],
+    "flags": [],
+    "created_at": "2026-11-20T10:48:43.136383+05:30",
+    "evidence_quote": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment could offer a faster, cost-effective route to reducing emissions from the existing fleet. India's electric-vehicle story is often framed as a success in the making."
+   }
+  ]
+ },
+ {
   "id": "rr-20261120-aa1982ce",
   "objective": "Government policy, subsidy and incentive developments for electric vehicles in India (PM E-DRIVE, PLI, state EV policies).",
   "industry": "Electric vehicles & mobility",
@@ -842,879 +1707,6 @@
   ]
  },
  {
-  "id": "rr-20261120-5c97da21",
-  "objective": "Ola Electric developments in India",
-  "industry": "Electric vehicles & mobility",
-  "geography": "India",
-  "time_window": "6m",
-  "date_from": "2026-05-22",
-  "date_to": "2026-11-20",
-  "companies": [],
-  "source_preferences": [
-   "official_company",
-   "government",
-   "tenders"
-  ],
-  "status": "completed",
-  "provider": "open",
-  "is_demo": false,
-  "provider_request_id": null,
-  "created_at": "2026-11-20T10:24:37.738504+05:30",
-  "started_at": "2026-11-20T10:24:37.821707+05:30",
-  "completed_at": "2026-11-20T10:26:29.286096+05:30",
-  "error_code": null,
-  "error_message": null,
-  "status_message": "Done",
-  "source_count": 25,
-  "finding_count": 24,
-  "result": {
-   "executive_summary": "Ola Electric, through its subsidiary Mahindra Last Mile Mobility, is focusing on expanding electric mobility in India, targeting one million EVs by 2031. The government is also promoting EV adoption by making them the default choice for government staff cars. The industry is witnessing significant growth in software-defined vehicles and retrofitment strategies. Mahindra Last Mile Mobility has won the Earthshot Prize, which is expected to boost its international expansion plans.",
-   "industry_overview": "The electric vehicle market in India is growing, with a focus on last-mile mobility solutions. The government is implementing policies to promote EV adoption, and there is a growing emphasis on software-defined vehicles and retrofitting existing vehicles to reduce emissions.",
-   "market_trends": [
-    "Government policies favoring EVs",
-    "Growing adoption of software-defined vehicles",
-    "Retrofitment strategies to reduce emissions from existing vehicles"
-   ],
-   "company_developments": [
-    "Mahindra Last Mile Mobility wins The Earthshot Prize 2026 (wionews.com, 2026-11-19)",
-    "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles",
-    "Software-Defined Vehicles Market to Reach USD 310.46 Billion by 2035, Growing at...",
-    "Mumbai: Prince William takes electric rickshaw for a spin at Bandra reclamation",
-    "Two-Wheeler Battery Swapping Isn’t Working Beyond Gig Workers. Here’s Why",
-    "Vayve Mobility Car Showrooms in India (1 Dealer, 1 City)",
-    "India’s EV market is entering its growth phase, and global automakers risk missi...",
-    "Prince William Brings Climate Prize to India, in an Electric Rickshaw",
-    "Hero MotoCorp's Micro Electric Car For India Seats 2, Is Now Patented",
-    "Delhi DTC Electric Bus Catches Fire Near Shastri Park, No Casualties Reported",
-    "India Bans Li-ion Battery Black Mass Exports for Recycling",
-    "India’s unstoppable electric tuk-tuk revolution"
-   ],
-   "product_launches": [],
-   "manufacturing_expansion": [
-    "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031 (auto.economictimes.indiatimes.com, 2026-11-17)",
-    "Mahindra sees its electric three-wheelers going abroad",
-    "India needs a China strategy for battery transition, should combine imports with domestic manufacturing: Expert"
-   ],
-   "partnerships_and_investment": [],
-   "policy_and_regulatory": [
-    "Government makes EVs the default choice for staff cars (livemint.com, 2026-11-11)",
-    "ELECTRIC VEHICLES INDIA",
-    "Sajjan Jindal Backs Centre's EV Push for Staff Cars, Cites Energy Security Boost",
-    "Battery PLI Scheme Achieves Just 1.4 GWh Against 50 GWh Target, NITI Aayog Flags Delays",
-    "India bans lithium-ion battery black mass exports",
-    "Government's EV Staff-Car Push: What It Really Means for Auto Stocks"
-   ],
-   "tenders_and_procurement": [
-    "MHI Receives 22 Bids for 10 GWh Grid-Scale Battery Capacity",
-    "India’s Solar and EV Boom Creates New Career Opportunities in Finance, Procurement and Compliance",
-    "DEFENDER WOLF SERIES II ENTERS MINISTRY OF DEFENCE TRIALS"
-   ],
-   "commercial_opportunities": [
-    "Expanding into international markets",
-    "Increasing software-defined vehicle sales",
-    "Partnerships for retrofitting existing vehicles"
-   ],
-   "risks": [
-    "Slow EV adoption rates",
-    "Dependence on government policies",
-    "Competition from established players"
-   ],
-   "method": "llm (qwen2.5:7b-instruct)",
-   "coverage_notes": [
-    "Web search for official/tender pages unavailable (DDGSException).",
-    "GDELT unreachable."
-   ]
-  },
-  "sources": [
-   {
-    "id": "3a815722b2ae8a3348bb",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.msn.com/en-in/news/other/india-needs-a-china-strategy-for-battery-transition-should-combine-imports-with-domestic-manufacturing-expert/ar-AA2hPbVj?ocid=BingNewsVerp",
-    "domain": "msn.com",
-    "title": "India needs a China strategy for battery transition, should combine imports with domestic manufacturing: Expert",
-    "source_type": "news",
-    "published_at": "2026-11-20T05:30:00+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "India needs a strategy that combines short-term battery imports from China with the development of domestic manufacturing ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "13b8e5f07a27741c7d72",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.prnewswire.com/news-releases/software-defined-vehicles-market-to-reach-usd-310-46-billion-by-2035--growing-at-20-74-cagr-302946139.html",
-    "domain": "prnewswire.com",
-    "title": "Software-Defined Vehicles Market to Reach USD 310.46 Billion by 2035, Growing at...",
-    "source_type": "news",
-    "published_at": "2026-11-20T02:24:41+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "/PRNewswire/ -- According to Market Growth Reports, The global Software-Defined Vehicles Market is...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "cb3edadc67d846efd0b9",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.msn.com/en-in/money/general/mumbai-prince-william-takes-electric-rickshaw-for-a-spin-at-bandra-reclamation/ar-AA2hENgB?ocid=BingNewsVerp",
-    "domain": "msn.com",
-    "title": "Mumbai: Prince William takes electric rickshaw for a spin at Bandra reclamation",
-    "source_type": "news",
-    "published_at": "2026-11-19T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The Prince and Princess of Wales, William and Catherine, drove an electric autorickshaw on the promenade at Bandra ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "ee55fd0a9660c2e10bea",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.forbesindia.com/business/automobile/mahindra-sees-its-electric-three-wheelers-going-abroad-article/3000734",
-    "domain": "forbesindia.com",
-    "title": "Mahindra sees its electric three-wheelers going abroad",
-    "source_type": "news",
-    "published_at": "2026-11-19T10:24:42+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Rajesh Jejurikar, chairman of Mahindra Last Mile Mobility, which won the Earthshot Prize, says the company is looking to ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "0d6084e23a36cf366aae",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.wionews.com/entertainment/mahindra-last-mile-mobility-wins-the-earthshot-prize-2026-for-transforming-last-mile-mobility-in-india-1794937075198",
-    "domain": "wionews.com",
-    "title": "Mahindra Last Mile Mobility wins The Earthshot Prize 2026 in Clean Our Air category",
-    "source_type": "news",
-    "published_at": "2026-11-19T10:24:42+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Mahindra Last Mile Mobility Limited has won The Earthshot Prize 2026 in the 'Clean Our Air' category. The company has been ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "e20fb5fc2d33bb038180",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://pr.cullmantimes.com/article/Mahindra-Last-Mile-Mobility-Wins-The-Earthshot-Prize-2026-for-Transforming-Last-Mile-Mobility-in-India/6aff5619bde2404dafe216a5",
-    "domain": "pr.cullmantimes.com",
-    "title": "Mahindra Last Mile Mobility Wins The Earthshot Prize 2026 for Transforming...",
-    "source_type": "news",
-    "published_at": "2026-11-19T10:24:41+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "MLMML's experience in India illustrates how a transition to electric vehicles can achieve meaningful...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "9ed2ed876d2fd5a573b1",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.constructionworld.in/energy-infrastructure/power-and-renewable-energy/mhi-receives-22-bids-for-10-gwh-grid-scale-battery-capacity/100454",
-    "domain": "constructionworld.in",
-    "title": "MHI Receives 22 Bids for 10 GWh Grid-Scale Battery Capacity",
-    "source_type": "news",
-    "published_at": "2026-11-18T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The Ministry of Heavy Industries (MHI) has received 22 bids to establish 10 GWh of Advanced Chemistry Cell (ACC) battery ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "9053d2c9bab3686a5e4b",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.thecore.in/business/two-wheeler-battery-swapping-isnt-working-beyond-gig-workers-heres-why-874162",
-    "domain": "thecore.in",
-    "title": "Two-Wheeler Battery Swapping Isn’t Working Beyond Gig Workers. Here’s Why",
-    "source_type": "news",
-    "published_at": "2026-11-18T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Despite rising demand from delivery fleets, tax hurdles and regulatory uncertainty are keeping private buyers and the sector's growth on the sidelines.",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "322a228a9c898909f5cb",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://auto.economictimes.indiatimes.com/news/commercial-vehicle/mahindra-last-mile-mobility-targets-1-million-evs-on-roads-by-2031/135888819",
-    "domain": "auto.economictimes.indiatimes.com",
-    "title": "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031",
-    "source_type": "news",
-    "published_at": "2026-11-17T10:24:42+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Mahindra Last Mile Mobility targets to revolutionize India's transport with 1 million electric vehicles by 2031, boosting ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "07bc90f79dc1ef76da4a",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.zigwheels.com/dealers/vayve-mobility",
-    "domain": "zigwheels.com",
-    "title": "Vayve Mobility Car Showrooms in India (1 Dealer, 1 City)",
-    "source_type": "news",
-    "published_at": "2026-11-17T10:24:42+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Vayve Mobility car showroom in 1 city across India - search by city for the address, phone number and directions of every dealer.",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "60b6f85d66b90f03af36",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.morningstar.com/news/business-wire/20261116485299/indias-ev-market-is-entering-its-growth-phase-and-global-automakers-risk-missing-it",
-    "domain": "morningstar.com",
-    "title": "India’s EV market is entering its growth phase, and global automakers risk missi...",
-    "source_type": "news",
-    "published_at": "2026-11-17T10:24:41+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The latest international electric mobility study by management and technology consultancy...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "1a0375fa8d2cdb397e0e",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.nytimes.com/2026/11/17/world/asia/prince-william-climate-prize-india-rickshaw.html",
-    "domain": "nytimes.com",
-    "title": "Prince William Brings Climate Prize to India, in an Electric Rickshaw",
-    "source_type": "news",
-    "published_at": "2026-11-17T10:24:41+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The three-wheeler that the heir to the British throne used was made by one of 15 finalists honored...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "1bc2f0dbd2af26f1226b",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.lokmattimes.com/business/sajjan-jindal-backs-centres-ev-push-for-staff-cars-cites-energy-security-boost-a001-w01/",
-    "domain": "lokmattimes.com",
-    "title": "Sajjan Jindal Backs Centre's EV Push for Staff Cars, Cites Energy Security Boost",
-    "source_type": "news",
-    "published_at": "2026-11-16T10:24:48+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Sajjan Jindal Backs Centre's EV Push for Staff Cars, Cites Energy Security Boost - JSW Group Chairman Sajjan Jindal has ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "3fb4d232de6547664751",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://lapaasvoice.com/battery-pli-scheme-achieves-just-1-4-gwh-against-50-gwh-target-niti-aayog-flags-delays/",
-    "domain": "lapaasvoice.com",
-    "title": "Battery PLI Scheme Achieves Just 1.4 GWh Against 50 GWh Target, NITI Aayog Flags Delays",
-    "source_type": "news",
-    "published_at": "2026-11-15T10:24:48+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "India's ambitious Production Linked Incentive (PLI) scheme for advanced chemistry cell (ACC) batteries has developed only 1.4 ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "dc102edb39e3145ff921",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.autocarpro.in/opinion-column/why-indias-netzero-future-cannot-be-attained-without-a-retrofit-first-strategy-for-millions-of-polluting-vehicles-135929",
-    "domain": "autocarpro.in",
-    "title": "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles",
-    "source_type": "news",
-    "published_at": "2026-11-15T05:30:00+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "4000d593ead8626e4440",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://english.newstrack.com/business/india-solar-ev-boom-career-opportunities-finance-procurement-compliance-648039",
-    "domain": "english.newstrack.com",
-    "title": "India’s Solar and EV Boom Creates New Career Opportunities in Finance, Procurement and Compliance",
-    "source_type": "news",
-    "published_at": "2026-11-14T10:24:48+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Explore how India's expanding solar energy and electric vehicle industries are creating employment opportunities in finance, ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "57c3c419f1a45f787b20",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://finance.yahoo.com/economy/policy/articles/india-bans-lithium-ion-battery-165130734.html",
-    "domain": "finance.yahoo.com",
-    "title": "India bans lithium-ion battery black mass exports",
-    "source_type": "news",
-    "published_at": "2026-11-13T10:24:45+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The measure is intended to improve feedstock availability and capacity utilisation, while increasing critical mineral recovery for the electric vehicle...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "27053a37a53241b12398",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.cartoq.com/car-news/hero-vida-nex-3-electric-car-design-patent-india/",
-    "domain": "cartoq.com",
-    "title": "Hero MotoCorp's Micro Electric Car For India Seats 2, Is Now Patented",
-    "source_type": "news",
-    "published_at": "2026-11-13T10:24:42+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Hero MotoCorp has filed a design patent for the VIDA NEX 3, a two-seater micro electric car with wing-style doors, first ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "e02e479bd99302da321d",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://askfuzz.ai/discover/news/connect-the-dots/governments-ev-staff-car-push-what-it-really-means-for-auto-stocks",
-    "domain": "askfuzz.ai",
-    "title": "Government's EV Staff-Car Push: What It Really Means for Auto Stocks",
-    "source_type": "news",
-    "published_at": "2026-11-12T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "The Centre's decision to make EVs the default choice for government staff cars and double the price ceiling to Rs 20 lakh has ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "e39bf53ba4c369ef1883",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://thelogicalindian.com/delhi-dtc-electric-bus-catches-fire-133598/",
-    "domain": "thelogicalindian.com",
-    "title": "Delhi DTC Electric Bus Catches Fire Near Shastri Park, No Casualties Reported",
-    "source_type": "news",
-    "published_at": "2026-11-12T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "A DTC electric bus was completely gutted in a fire near Delhi's Shastri Park underpass after the driver spotted flames and alerted emergency services; no passengers were aboard and no casualties were ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "f72597cb2f99906c73e2",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://money.rediff.com/news/market/india-bans-lithium-ion-battery-black-mass-exports/57893320261111",
-    "domain": "money.rediff.com",
-    "title": "India Bans Li-ion Battery Black Mass Exports for Recycling",
-    "source_type": "news",
-    "published_at": "2026-11-12T10:24:48+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "India prohibits lithium-ion battery black mass exports to boost domestic recycling, critical mineral recovery, and reduce ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "a0a7f3a2e4f557e9be4d",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://www.livemint.com/news/govt-evs-default-choice-staff-cars-20-lakh-procurement-cap-11794317496374.html",
-    "domain": "livemint.com",
-    "title": "Govt makes EVs default choice for staff cars, sets ₹20 lakh procurement cap",
-    "source_type": "news",
-    "published_at": "2026-11-11T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Government departments should ordinarily replace retiring staff cars with EVs under revised procurement rules. The move ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "391cfdf0a1a9942a107a",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://media.jlr.com/corporate/news/2026/11/defender-wolf-series-ii-enters-mod-trials",
-    "domain": "media.jlr.com",
-    "title": "DEFENDER WOLF SERIES II ENTERS MINISTRY OF DEFENCE TRIALS",
-    "source_type": "news",
-    "published_at": "2026-11-01T10:24:50+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "Gaydon, UK – 19 November 2026: Defender Wolf Series II, JLR's new purpose‑built light mobility vehicle for defence forces, is ...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "285eca33f9cdcde59114",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://auto.economictimes.indiatimes.com/tag/electric+vehicles+india",
-    "domain": "auto.economictimes.indiatimes.com",
-    "title": "ELECTRIC VEHICLES INDIA",
-    "source_type": "news",
-    "published_at": "2026-10-22T00:00:00+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "ETAuto.com brings latest electric vehicles india news, views and updates from all top sources for the Indian Auto industry.",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   },
-   {
-    "id": "f4ed6eb544a785f6ad90",
-    "research_run_id": "rr-20261120-5c97da21",
-    "url": "https://finance.yahoo.com/sectors/energy/articles/india-unstoppable-electric-tuk-tuk-050000953.html",
-    "domain": "finance.yahoo.com",
-    "title": "India’s unstoppable electric tuk-tuk revolution",
-    "source_type": "news",
-    "published_at": "2026-06-23T10:24:45+05:30",
-    "retrieved_at": "2026-11-20T10:25:58.561873+05:30",
-    "snippet": "For decades, the “tuk-tuk” noise of three-wheeled taxis and vans weaving through Asia’s hazy megacities and bustling towns has been central to their char...",
-    "link_status": "unchecked",
-    "discovered_via": "duckduckgo"
-   }
-  ],
-  "findings": [
-   {
-    "id": "295072a2ea3ef0b0c229",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Mahindra Last Mile Mobility targets 1 million EVs on roads by 2031",
-    "category": "expansion",
-    "entity": "Mahindra Last Mile Mobility",
-    "industry": "Electric vehicles & mobility",
-    "summary": "Mahindra Last Mile Mobility aims to put one million electric vehicles on Indian roads by 2031 and plans to supply 5,000 electric three-wheelers to Uber over the next 12 months.",
-    "significance": 5,
-    "confidence": 1.0,
-    "kind": "source_supported",
-    "event_date": "2026-11-17",
-    "source_ids": [
-     "322a228a9c898909f5cb"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.411127+05:30",
-    "evidence_quote": "Mahindra Last Mile Mobility aims to put one million electric vehicles on Indian roads by 2031 and plans to supply 5,000 electric three-wheelers to Uber over the next 12 months, Managing Director and CEO Suman Mishra said."
-   },
-   {
-    "id": "8ca943385801c7be3737",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Mahindra Last Mile Mobility wins The Earthshot Prize 2026",
-    "category": "other",
-    "entity": "Mahindra Last Mile Mobility",
-    "industry": "Electric vehicles & mobility",
-    "summary": "Mahindra Last Mile Mobility has won the Earthshot Prize 2026 in the 'Clean Our Air' category for its efforts to advance cleaner last-mile mobility.",
-    "significance": 5,
-    "confidence": 1.0,
-    "kind": "analysis",
-    "event_date": "2026-11-19",
-    "source_ids": [
-     "0d6084e23a36cf366aae",
-     "e20fb5fc2d33bb038180"
-    ],
-    "flags": [
-     "quote_not_found"
-    ],
-    "created_at": "2026-11-20T10:26:27.413922+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "253fc25c424303a1e660",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Government makes EVs the default choice for staff cars",
-    "category": "policy",
-    "entity": "Government of India",
-    "industry": "Electric vehicles & mobility",
-    "summary": "The finance ministry has made electric vehicles the default choice for government staff cars, signaling a shift away from petrol and diesel vehicles.",
-    "significance": 4,
-    "confidence": 1.0,
-    "kind": "source_supported",
-    "event_date": "2026-11-11",
-    "source_ids": [
-     "a0a7f3a2e4f557e9be4d"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.412548+05:30",
-    "evidence_quote": "The finance ministry has made electric vehicles (EVs) the default choice for government staff cars, signalling a shift away from petrol and diesel vehicles in official fleets as India seeks to cut oil imports and transport emissions."
-   },
-   {
-    "id": "eef17a15f5d78bc7e7ce",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Battery PLI Scheme Achieves Just 1.4 GWh Against 50 GWh Target, NITI Aayog Flags Delays",
-    "category": "policy",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "India’s ambitious Production Linked Incentive (PLI) scheme for advanced chemistry cell (ACC) batteries has developed only 1.4 gigawatt-hours (GWh) of manufacturing capacity against its target of 50 GWh, highlighting significant delays in the country’s efforts to build a domestic battery manufacturing ecosystem. A NITI Aayog assessment prepared in collaboration with IIM Ahmedabad found that…",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-15",
-    "source_ids": [
-     "3fb4d232de6547664751"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.425610+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "88f97703cd825a862352",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "DEFENDER WOLF SERIES II ENTERS MINISTRY OF DEFENCE TRIALS",
-    "category": "tender",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "- Three variants enter the Light Mobility Vehicle tender trials: a General‑Purpose Vehicle, Battlefield Ambulance and Tactical Mobility Vehicle - Designed and engineered in Britain, with engines built in Wolverhampton engine plant, that supports c.1,500 existing UK jobs - 75% of Defender’s gross vehicle revenue returns to the United Kingdom* - Defender’s capability is underpinned by its…",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-01",
-    "source_ids": [
-     "391cfdf0a1a9942a107a"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.446179+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "77203f37a02da4b713cf",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Delhi DTC Electric Bus Catches Fire Near Shastri Park, No Casualties Reported",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "A Delhi Transport Corporation (DTC) electric bus was completely gutted after catching fire near the Shastri Park underpass in northeast Delhi on Wednesday night, November 11. The incident was captured on camera, with footage showing flames engulfing the vehicle.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-12",
-    "source_ids": [
-     "e39bf53ba4c369ef1883"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.437383+05:30",
-    "evidence_quote": "A Delhi Transport Corporation (DTC) electric bus was completely gutted after catching fire near the Shastri Park underpass in northeast Delhi on Wednesday night, November 11. The incident was captured on camera, with footage showing flames engulfing the vehicle."
-   },
-   {
-    "id": "d165f638cf1ccd7bef42",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "ELECTRIC VEHICLES INDIA",
-    "category": "policy",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "Event ETAuto EV Conclave 2026 The 11th ETAuto EV Conclave brings together CXOs, policymakers, and innovators to address these fault lines head-on — across battery manufacturing, charging infrastructure, localisation, raw material security, software-defined vehicles, and workforce readiness. A decade of dialogue has built the foundation.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-10-21",
-    "source_ids": [
-     "285eca33f9cdcde59114"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.413922+05:30",
-    "evidence_quote": "Event ETAuto EV Conclave 2026 The 11th ETAuto EV Conclave brings together CXOs, policymakers, and innovators to address these fault lines head-on — across battery manufacturing, charging infrastructure, localisation, raw material security, software-defined vehicles, and workforce readiness. A decade of dialogue has built the foundation."
-   },
-   {
-    "id": "d4ea3c6347639d7d7515",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Government's EV Staff-Car Push: What It Really Means for Auto Stocks",
-    "category": "policy",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "The Department of Expenditure's November 10 memorandum fundamentally changes how the government buys cars. Electric vehicles are now the \"default and preferred choice\" when ministries replace or condemn their existing internal combustion engine (ICE) staff cars.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-12",
-    "source_ids": [
-     "e02e479bd99302da321d"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.437383+05:30",
-    "evidence_quote": "The Department of Expenditure's November 10 memorandum fundamentally changes how the government buys cars. Electric vehicles are now the \"default and preferred choice\" when ministries replace or condemn their existing internal combustion engine (ICE) staff cars."
-   },
-   {
-    "id": "ca3c9d8dd46d24e46adb",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Hero MotoCorp's Micro Electric Car For India Seats 2, Is Now Patented",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "The Indian two-wheeler giant Hero MotoCorp is now looking to enter the electric car segment. Yes, you read that right.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-13",
-    "source_ids": [
-     "27053a37a53241b12398"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.437383+05:30",
-    "evidence_quote": "The Indian two-wheeler giant Hero MotoCorp is now looking to enter the electric car segment. Yes, you read that right."
-   },
-   {
-    "id": "74995b475c3c1b0b43ab",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India Bans Li-ion Battery Black Mass Exports for Recycling",
-    "category": "technology",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "x India prohibits lithium-ion battery black mass exports to boost domestic recycling of critical minerals, reduce import dependence, and support EV & energy storage sectors. Key Points - India has banned the export of lithium-ion battery black mass.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-12",
-    "source_ids": [
-     "f72597cb2f99906c73e2"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.444161+05:30",
-    "evidence_quote": "x India prohibits lithium-ion battery black mass exports to boost domestic recycling of critical minerals, reduce import dependence, and support EV & energy storage sectors. Key Points - India has banned the export of lithium-ion battery black mass."
-   },
-   {
-    "id": "4693f864909d8c2895f9",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India bans lithium-ion battery black mass exports",
-    "category": "policy",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "India has prohibited exports of lithium-ion battery black mass to secure domestic feedstock for battery recycling and to recover critical minerals used in electric vehicles. The Directorate General of Foreign Trade (DGFT), under the Department of Commerce, amended the export policy for lithium-ion battery black mass from 'Free' to 'Prohibited'.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-13",
-    "source_ids": [
-     "57c3c419f1a45f787b20"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.437383+05:30",
-    "evidence_quote": "India has prohibited exports of lithium-ion battery black mass to secure domestic feedstock for battery recycling and to recover critical minerals used in electric vehicles. The Directorate General of Foreign Trade (DGFT), under the Department of Commerce, amended the export policy for lithium-ion battery black mass from 'Free' to 'Prohibited'."
-   },
-   {
-    "id": "ec207fcb798d8aa69ae9",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India needs a China strategy for battery transition, should combine imports with domestic manufacturing: Expert",
-    "category": "expansion",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "India needs a strategy that combines short-term battery imports from China with the development of domestic manufacturing ...",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-20",
-    "source_ids": [
-     "3a815722b2ae8a3348bb"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.446179+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "41fe31063c60608d9eb9",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India’s EV market is entering its growth phase, and global automakers risk missi...",
-    "category": "market_entry",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "India’s EV market is entering its growth phase, and global automakers risk missing it India’s EV market is entering its growth phase, and global automakers risk missing it Electric cars are approaching a 10 percent share of new passenger car registrations in India. In September 2026, BEV registrations nearly doubled year over year.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-17",
-    "source_ids": [
-     "60b6f85d66b90f03af36"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.425610+05:30",
-    "evidence_quote": "India’s EV market is entering its growth phase, and global automakers risk missing it India’s EV market is entering its growth phase, and global automakers risk missing it Electric cars are approaching a 10 percent share of new passenger car registrations in India. In September 2026, BEV registrations nearly doubled year over year."
-   },
-   {
-    "id": "63a8502e4d2a25f291f4",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India’s Solar and EV Boom Creates New Career Opportunities in Finance, Procurement and Compliance",
-    "category": "tender",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "TRENDING TAGS : India’s Solar and EV Boom Creates New Career Opportunities in Finance, Procurement and Compliance India’s growing clean energy and electric vehicle industries are opening new employment opportunities beyond engineering. Finance, accounting, banking, procurement, supply chain and regulatory compliance professionals are increasingly in demand as the green economy expands towards…",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-14",
-    "source_ids": [
-     "4000d593ead8626e4440"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.436867+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "690cd439d4f234ab1dd3",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "India’s unstoppable electric tuk-tuk revolution",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "For decades, the \"tuk-tuk\" noise of three-wheeled taxis and vans weaving through Asia's hazy megacities and bustling towns has been central to their character. It's a sound so distinctive, it became a nickname for the vehicles themselves.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-06-23",
-    "source_ids": [
-     "f4ed6eb544a785f6ad90"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.446179+05:30",
-    "evidence_quote": "For decades, the \"tuk-tuk\" noise of three-wheeled taxis and vans weaving through Asia's hazy megacities and bustling towns has been central to their character. It's a sound so distinctive, it became a nickname for the vehicles themselves."
-   },
-   {
-    "id": "6f0e3eb359741037b327",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "MHI Receives 22 Bids for 10 GWh Grid-Scale Battery Capacity",
-    "category": "tender",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "PureSil Paints Develops Mineral Coatings from Industrial Waste PureSil Paints, a brand of Relic Coatings LLP, has developed an indigenous mineral-based coating technology aimed at reducing dependence on petrochemical-derived raw materials in the paints and coatings industry. Its proprietary Silicification Technology uses agricultural and industrial by-products to manufacture architectural…",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-18",
-    "source_ids": [
-     "9ed2ed876d2fd5a573b1"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.418863+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "6fa2a0ea794ee6c2f562",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Mahindra sees its electric three-wheelers going abroad",
-    "category": "expansion",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "Mahindra & Mahindra’s electric commercial vehicle arm, Mahindra Last Mile Mobility (MLMM), believes winning this year’s Earthshot Prize will help it expand sales beyond India. The company won in the ‘Clean our air’ category in the climate innovation prize founded by Prince William.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-19",
-    "source_ids": [
-     "ee55fd0a9660c2e10bea"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.418863+05:30",
-    "evidence_quote": "Mahindra & Mahindra’s electric commercial vehicle arm, Mahindra Last Mile Mobility (MLMM), believes winning this year’s Earthshot Prize will help it expand sales beyond India. The company won in the ‘Clean our air’ category in the climate innovation prize founded by Prince William."
-   },
-   {
-    "id": "b44038ebf251360238c0",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Mumbai: Prince William takes electric rickshaw for a spin at Bandra reclamation",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "The Prince and Princess of Wales, William and Catherine, drove an electric autorickshaw on the promenade at Bandra ...",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-19",
-    "source_ids": [
-     "cb3edadc67d846efd0b9"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.417454+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "533053196d964020a3cb",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Prince William Brings Climate Prize to India, in an Electric Rickshaw",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "The three-wheeler that the heir to the British throne used was made by one of 15 finalists honored...",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-17",
-    "source_ids": [
-     "1a0375fa8d2cdb397e0e"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.425610+05:30",
-    "evidence_quote": null
-   },
-   {
-    "id": "d88afe5fba270b9c2e04",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Sajjan Jindal Backs Centre's EV Push for Staff Cars, Cites Energy Security Boost",
-    "category": "policy",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "By ANI | Updated: November 15, 2026 16:00 IST2026-11-15T21:29:08+5:302026-11-15T16:00:11+5:30 JSW Group Chairman Sajjan Jindal has lauded the Central government's directive making electric vehicles (EVs) the default choice for ... JSW Group Chairman Sajjan Jindal has lauded the Central government's directive making electric vehicles (EVs) the default choice for replacing official staff cars.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-16",
-    "source_ids": [
-     "1bc2f0dbd2af26f1226b"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.425610+05:30",
-    "evidence_quote": "By ANI | Updated: November 15, 2026 16:00 IST2026-11-15T21:29:08+5:302026-11-15T16:00:11+5:30 JSW Group Chairman Sajjan Jindal has lauded the Central government's directive making electric vehicles (EVs) the default choice for ... JSW Group Chairman Sajjan Jindal has lauded the Central government's directive making electric vehicles (EVs) the default choice for replacing official staff cars."
-   },
-   {
-    "id": "ad694c70b16cb79be198",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Software-Defined Vehicles Market to Reach USD 310.46 Billion by 2035, Growing at...",
-    "category": "technology",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "PUNE, India, Nov. 19, 2026 /PRNewswire/ -- According to Market Growth Reports, The global Software-Defined Vehicles Market is projected to grow from USD 56.94 billion to USD 310.46 billion by 2035, registering a CAGR of 20.74%.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-19",
-    "source_ids": [
-     "13b8e5f07a27741c7d72"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.417454+05:30",
-    "evidence_quote": "PUNE, India, Nov. 19, 2026 /PRNewswire/ -- According to Market Growth Reports, The global Software-Defined Vehicles Market is projected to grow from USD 56.94 billion to USD 310.46 billion by 2035, registering a CAGR of 20.74%."
-   },
-   {
-    "id": "075c1c813b80b76488dd",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Two-Wheeler Battery Swapping Isn’t Working Beyond Gig Workers. Here’s Why",
-    "category": "technology",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "Despite rising demand from delivery fleets, tax hurdles and regulatory uncertainty are keeping private buyers and the sector's growth on the sidelines. The Gist The rise of battery swapping models in India is transforming the gig economy, particularly for delivery riders who rely on quick vehicle uptime.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-18",
-    "source_ids": [
-     "9053d2c9bab3686a5e4b"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.418863+05:30",
-    "evidence_quote": "Despite rising demand from delivery fleets, tax hurdles and regulatory uncertainty are keeping private buyers and the sector's growth on the sidelines. The Gist The rise of battery swapping models in India is transforming the gig economy, particularly for delivery riders who rely on quick vehicle uptime."
-   },
-   {
-    "id": "56865fc312eaae08416f",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Vayve Mobility Car Showrooms in India (1 Dealer, 1 City)",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "Vayve Mobility has 1 authorised car showroom in India, across 1 city in 1 state or union territory. The largest networks are in Maharashtra (1).",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-17",
-    "source_ids": [
-     "07bc90f79dc1ef76da4a"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.418863+05:30",
-    "evidence_quote": "Vayve Mobility has 1 authorised car showroom in India, across 1 city in 1 state or union territory. The largest networks are in Maharashtra (1)."
-   },
-   {
-    "id": "2351b9239cb51b8affa1",
-    "research_run_id": "rr-20261120-5c97da21",
-    "title": "Why India’s Netzero Future Cannot Be Attained Without a Retrofit-First Strategy for Millions of Polluting Vehicles",
-    "category": "other",
-    "entity": null,
-    "industry": "Electric vehicles & mobility",
-    "summary": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment could offer a faster, cost-effective route to reducing emissions from the existing fleet. India's electric-vehicle story is often framed as a success in the making.",
-    "significance": 3,
-    "confidence": null,
-    "kind": "source_excerpt",
-    "event_date": "2026-11-15",
-    "source_ids": [
-     "dc102edb39e3145ff921"
-    ],
-    "flags": [],
-    "created_at": "2026-11-20T10:26:27.415938+05:30",
-    "evidence_quote": "With EV penetration at 8.5% in FY2025-26 and over 33 crore petrol and diesel vehicles on Indian roads, Auto LPG retrofitment could offer a faster, cost-effective route to reducing emissions from the existing fleet. India's electric-vehicle story is often framed as a success in the making."
-   }
-  ]
- },
- {
   "id": "rr-20261120-f3edb787",
   "objective": "Research India's electric mobility industry. Identify significant competitor developments, product launches, manufacturing expansions, partnerships, investment activity, policy developments, procurement opportunities and emerging commercial opportunities. Prioritize original company announcements and official government sources. Separate verified facts from analysis and provide the sources supporting every finding.",
   "industry": "electric vehicle",
@@ -1749,14 +1741,9 @@
   "source_count": 25,
   "finding_count": 24,
   "result": {
-   "executive_summary": "India's electric mobility industry is experiencing significant growth, driven by government initiatives such as the PM E-DRIVE Scheme. The industry is seeing substantial investment, policy support, and technological advancements. Key players like Mahindra are expanding their EV offerings and achieving safety certifications. The industry is also facing challenges such as export bans on battery black mass, which could reshape the domestic recycling industry.",
-   "industry_overview": "India is focusing on electric mobility to reduce carbon emissions and promote green technology. The government has launched the PM E-DRIVE Scheme to boost EV adoption and infrastructure. The industry is expected to see a surge in investment and employment opportunities. Mahindra is leading in the EV market with safety certifications and innovative solutions.",
-   "market_trends": [
-    "Government incentives for EV adoption",
-    "Increase in EV charging stations",
-    "Safety certifications for EVs",
-    "Focus on recycling and battery management"
-   ],
+   "executive_summary": "24 developments from 25 sources (17 news, 6 government, 2 company) across funding, market entry, other, partnership, policy, product launch, technology, tender. 4 findings have a quote verified in their source; the rest are verbatim source excerpts or labelled analysis. Model-written prose was removed from this stored snapshot because it is not quote-verified.",
+   "industry_overview": null,
+   "market_trends": [],
    "company_developments": [
     "ELECTRIC VEHICLE CHARGING STATIONS",
     "Amendments in Model Building Bye-Laws (MBBL - 2016) for ...",
@@ -1792,19 +1779,9 @@
    "tenders_and_procurement": [
     "Govt makes EVs default choice for staff cars, sets ₹20 lakh procurement cap"
    ],
-   "commercial_opportunities": [
-    "Partnerships with Indian auto companies for cost reduction and market expansion",
-    "Investment in EV charging infrastructure",
-    "Development of new vehicle platforms",
-    "Expansion of EV manufacturing facilities"
-   ],
-   "risks": [
-    "Dependence on imported critical minerals",
-    "Regulatory changes affecting export policies",
-    "Competition from international players",
-    "Technological challenges in battery management"
-   ],
-   "method": "llm (qwen2.5:7b-instruct)",
+   "commercial_opportunities": [],
+   "risks": [],
+   "method": "llm (qwen2.5:7b-instruct) - findings only",
    "coverage_notes": [
     "GDELT unreachable."
    ]
@@ -2626,15 +2603,9 @@
   "source_count": 25,
   "finding_count": 4,
   "result": {
-   "executive_summary": "Tata Motors Passenger Vehicles (PV) faced significant headwinds in late November 2026, posting a consolidated net loss of Rs 5,531 crore for the September quarter due to exceptional costs of Rs 6,738 crore. Consequently, shares plunged nearly 9% following Jaguar Land Rover (JLR) margin guidance cuts and multiple price target reductions by brokerages like Motilal Oswal. Conversely, the company's electric vehicle portfolio showed strong momentum: the Tata Sierra EV secured a 5-star Bharat NCAP safety rating, and Atria Mobility launched India's first rapid-charging corridor for intercity electric buses.",
-   "industry_overview": "The Indian automotive sector in late 2026 is characterized by high volatility in traditional passenger vehicle stocks due to legacy business pressures (specifically JLR), while the Electric Vehicle (EV) segment is gaining traction through safety certifications and infrastructure development. Competitors like Mahindra are actively partnering with global players like Uber to scale EV adoption in the three-wheeler segment.",
-   "market_trends": [
-    "Tata Motors PV shares declined nearly 22% in 2026 following Q2 losses and JLR outlook revisions.",
-    "Exceptional costs of Rs 6,738 crore drove a consolidated net loss of Rs 5,531 crore for the September quarter.",
-    "The Bharat NCAP crash test program is becoming a key benchmark, with the Tata Sierra EV achieving top safety ratings.",
-    "Infrastructure development is accelerating, exemplified by Atria Mobility's new 600-km Bengaluru–Hyderabad charging corridor.",
-    "Strategic partnerships are emerging to lower barriers to entry for EVs, such as Uber and Mahindra's collaboration for electric auto-rickshaws."
-   ],
+   "executive_summary": "4 developments from 25 sources (19 news, 6 aggregator) across expansion, funding, partnership, product launch. 4 findings have a quote verified in their source; the rest are verbatim source excerpts or labelled analysis. Model-written prose was removed from this stored snapshot because it is not quote-verified.",
+   "industry_overview": null,
+   "market_trends": [],
    "company_developments": [],
    "product_launches": [
     "Sierra EV Safety Certification (timesnownews.com, 2026-11-18)"
@@ -2648,18 +2619,9 @@
    ],
    "policy_and_regulatory": [],
    "tenders_and_procurement": [],
-   "commercial_opportunities": [
-    "The Tata Sierra EV offers a premium mid-size electric SUV option with verified top-tier safety credentials across all variants.",
-    "Atria Mobility's rapid-charging corridor creates new commercial routes for intercity electric bus operations between Bengaluru and Hyderabad.",
-    "Mahindra's partnership with Uber under the 'EV Auto Advantage' program opens financing and adoption channels for electric three-wheelers."
-   ],
-   "risks": [
-    "JLR business remains under pressure due to headwinds, leading to slashed margin guidance of 2–3%.",
-    "Brokerage downgrades and price target cuts (e.g., Motilal Oswal 'Sell' rating at Rs 240) indicate near-term downside risk for PV shares.",
-    "Continued exceptional costs impacting quarterly profitability despite revenue growth.",
-    "Market sentiment remains fragile with analysts predicting 10-14% downside from current levels."
-   ],
-   "method": "llm (qwen3.5:9b)",
+   "commercial_opportunities": [],
+   "risks": [],
+   "method": "llm (qwen3.5:9b) - findings only",
    "coverage_notes": [
     "GDELT unreachable."
    ]
