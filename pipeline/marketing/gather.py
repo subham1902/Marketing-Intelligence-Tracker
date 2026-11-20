@@ -40,11 +40,17 @@ def _to_item(c: Candidate) -> dict[str, Any]:
 
 
 def gather(provider: OpenResearchProvider, name: str, *, max_pages: int = 30,
-           status_cb: Callable[[str], None] | None = None) -> list[dict[str, Any]]:
+           status_cb: Callable[[str], None] | None = None,
+           budget_seconds: float = 45.0) -> list[dict[str, Any]]:
+    import time
+
     cb = status_cb or (lambda _s: None)
     cb("Gathering evidence")
     cands: list[Candidate] = []
+    start = time.monotonic()
     for q in queries(name):
+        if time.monotonic() - start > budget_seconds and cands:
+            break  # time budget spent: analyse what we have (partial but never empty-handed)
         cands += provider._ddgs_news(q, 365)
         if len(cands) < 60:
             cands += provider._google_news(q, 1100)

@@ -9,7 +9,6 @@ from pathlib import Path
 
 import httpx
 import pytest
-
 from pipeline.research.open_provider import (
     OpenConfig,
     OpenResearchProvider,

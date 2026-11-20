@@ -562,7 +562,7 @@ class OpenResearchProvider:
 
     # ----------------------------------------------------------- synthesis --
     def _sources(self, run_id: str, cands: list[Candidate]) -> list[dict[str, Any]]:
-        from pipeline.research.service import classify_source, domain_of
+        from pipeline.research.service import domain_of
 
         now = datetime.now(UTC)
         out = []

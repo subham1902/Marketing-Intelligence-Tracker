@@ -154,3 +154,17 @@ def test_ai_recommendations_never_give_investment_advice() -> None:
     out, mode = synth.ai_enrich(base, CO, ITEMS, lambda s, u: payload)
     ai = [r["action"] for r in out["recommendations"] if r["label"] == "AI recommendation"]
     assert mode == "ai" and ai == ["Expand service centres in tier 2 cities"]
+
+
+def test_name_is_cleaned_and_duplicate_runs_are_reused(client, monkeypatch) -> None:
+    from api.routers import marketing
+
+    assert marketing._clean("  <b>Bajaj\tAuto</b>\n ") == "Bajaj Auto"
+    # Simulate a run still in progress: the second request must reuse it, not start another.
+    monkeypatch.setattr(marketing, "process", lambda *a, **k: None)
+    first = client.post("/marketing/analyses", json={"name": "Hero MotoCorp"}).json()
+    second = client.post("/marketing/analyses", json={"name": "  Hero   MotoCorp "}).json()
+    assert first["id"] == second["id"] and first["status"] == "queued"
+    for n in ("A Co", "B Co"):
+        client.post("/marketing/analyses", json={"name": n})
+    assert client.post("/marketing/analyses", json={"name": "D Co"}).status_code == 429

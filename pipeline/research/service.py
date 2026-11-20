@@ -14,8 +14,8 @@ Integrity rules enforced here:
 from __future__ import annotations
 
 import hashlib
-from dataclasses import dataclass, field
 import re
+from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, timedelta
 from typing import Any
 from urllib.parse import urlparse

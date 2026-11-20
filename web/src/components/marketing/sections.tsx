@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, ExternalLink, Flame, Gauge as GaugeIcon, Shield, Sparkles, Target } from "lucide-react";
 import { createContext, useContext, useState, type ReactNode } from "react";
 
@@ -72,15 +71,10 @@ export function Chips({ ev }: { ev?: Ev[] }) {
 
 export function Section({ id, title, children, how }: { id: string; title: string; children: ReactNode; how?: string }) {
   const [open, setOpen] = useState(false);
-  const reduce = useReducedMotion();
   return (
-    <motion.section
+    <section
       id={id}
-      initial={reduce ? false : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
-      className="mk-section glass scroll-mt-24 rounded-2xl border p-4 sm:p-5 print:break-inside-avoid"
+      className="mk-section animate-enter glass scroll-mt-24 rounded-2xl border p-4 sm:p-5 print:break-inside-avoid"
     >
       <h2 className="mb-3 text-base font-semibold tracking-tight">{title}</h2>
       {children}
@@ -92,7 +86,7 @@ export function Section({ id, title, children, how }: { id: string; title: strin
           {open && <p className="mt-1">{how}</p>}
         </div>
       )}
-    </motion.section>
+    </section>
   );
 }
 
@@ -462,7 +456,7 @@ export function KeyTakeaways({ r, company }: { r: MarketingResult; company: stri
   ];
   return (
     <div className="mb-4 overflow-hidden rounded-2xl border ring-glow">
-      <div className="bg-gradient-to-r from-primary/20 via-primary/5 to-mint/15 px-4 py-3 sm:px-5">
+      <div className="bg-gradient-to-r from-primary/10 via-transparent to-transparent px-4 py-3 sm:px-5">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
           <Sparkles className="h-3.5 w-3.5" /> Key takeaways
         </div>
@@ -472,18 +466,12 @@ export function KeyTakeaways({ r, company }: { r: MarketingResult; company: stri
       </div>
       <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((c, i) => (
-          <motion.div
-            key={c.k}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08 * i }}
-            className="bg-card p-4"
-          >
+          <div key={c.k} className="animate-enter bg-card p-4" style={{ animationDelay: `${i * 70}ms` }}>
             <div className="mb-1 flex items-center gap-1.5 text-xs text-muted-foreground"><c.icon className="h-3.5 w-3.5 text-primary" /> {c.k}</div>
             <div className="text-sm font-semibold leading-snug">{c.v}</div>
             <div className="mt-1 flex items-center gap-1"><Label>Analysis</Label></div>
             <Chips ev={c.ev?.slice(0, 1)} />
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

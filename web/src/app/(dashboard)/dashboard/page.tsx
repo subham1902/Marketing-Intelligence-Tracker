@@ -60,7 +60,7 @@ export default function OverviewPage() {
 
       <Link
         href="/marketing?company=ather-energy"
-        className="group mb-5 flex flex-col gap-3 overflow-hidden rounded-2xl border bg-gradient-to-r from-primary/20 via-primary/5 to-mint/15 p-4 ring-glow transition hover:-translate-y-0.5 sm:flex-row sm:items-center sm:p-5"
+        className="group mb-5 flex flex-col gap-3 overflow-hidden rounded-2xl border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-4 ring-glow transition hover:-translate-y-0.5 sm:flex-row sm:items-center sm:p-5"
       >
         <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-lg">
           <PieChart className="h-5 w-5" />

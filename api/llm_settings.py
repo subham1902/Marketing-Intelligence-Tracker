@@ -21,7 +21,6 @@ from pathlib import Path
 from typing import Any
 
 import httpx
-
 from pipeline.config import Settings
 
 _LOCK = threading.Lock()

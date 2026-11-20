@@ -1,9 +1,8 @@
 import asyncio
+import os
 from pathlib import Path
 
 from playwright.async_api import async_playwright
-
-import os
 
 BASE = os.environ.get("SHOOT_BASE", "http://localhost:3002")
 OUT = Path(__file__).resolve().parent.parent / "docs" / "screenshots"

@@ -179,7 +179,7 @@ export function FindingCard({
           </a>
         ))}
         {!sources && finding.source_ids.length > 0 && (
-          <span>{finding.source_ids.length} linked source(s)</span>
+          <span>{finding.source_ids.length} linked {finding.source_ids.length === 1 ? "source" : "sources"}</span>
         )}
         {showRun && (
           <Link href={`/research/view?id=${encodeURIComponent(finding.research_run_id)}`} className="ml-auto text-primary hover:underline">

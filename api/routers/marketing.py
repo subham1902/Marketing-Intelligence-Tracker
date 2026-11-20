@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import uuid
 from datetime import UTC, datetime
 from typing import Any
@@ -16,6 +17,16 @@ from api.db import ApiDB
 from api.deps import get_db
 
 router = APIRouter(tags=["marketing"])
+MAX_CONCURRENT = 3
+
+
+def _clean(name: str) -> str:
+    """Collapse whitespace and drop control / markup characters from a free-text company name."""
+    no_tags = re.sub(r"<[^>]*>", " ", name)
+    no_markup = re.sub(r"[\x00-\x1f<>{}\[\]\\]", " ", no_tags)
+    return re.sub(r"\s+", " ", no_markup).strip()[:80]
+
+
 log = get_logger("api.marketing")
 
 
@@ -73,11 +84,20 @@ def create_analysis(body: MarketingCreate, background: BackgroundTasks, request:
     if body.company and body.company in by_id:
         c = by_id[body.company]
         company = service.build_company(c["id"], c["name"], c.get("industry"))
-    elif body.name and body.name.strip():
-        name = body.name.strip()
+    elif body.name and _clean(body.name):
+        name = _clean(body.name)
         company = service.build_company(service.slug(name), name, None)
     else:
         raise HTTPException(status_code=422, detail="Choose a tracked company or type a company name.")
+    active = db.query(
+        "SELECT id, company FROM research.marketing_analyses WHERE status IN ('queued','running')"
+    )
+    same = next((x for x in active if x["company"] == company["id"]), None)
+    if same:  # a run for this company is already in progress: reuse it instead of duplicating work
+        return store.get(db, same["id"]) or {}
+    if len(active) >= MAX_CONCURRENT:
+        raise HTTPException(status_code=429, detail="Several analyses are already running. "
+                                                    "Try again in a minute or open a captured analysis.")
     aid = f"mk-{datetime.now(UTC):%Y%m%d}-{uuid.uuid4().hex[:8]}"
     store.create(db, aid, company["id"], company["name"])
     background.add_task(process, request.app.state.db, aid, company, service.build_rivals(tracked))

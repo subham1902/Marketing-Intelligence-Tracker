@@ -19,58 +19,58 @@
    * Dark is the default; light is a soft lilac paper with the same accents.
    */
   :root {
-    --background: 240 33% 98%;      /* #F8F8FC lilac paper */
-    --foreground: 240 30% 12%;      /* #15152A */
+    --background: 228 22% 97.5%;    /* soft cool paper */
+    --foreground: 228 28% 14%;
     --card: 0 0% 100%;
     --card-foreground: 240 30% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 30% 12%;
-    --primary: 252 78% 58%;         /* #6C4CF0 electric violet */
+    --primary: 246 52% 54%;         /* muted indigo */
     --primary-foreground: 0 0% 100%;
-    --secondary: 245 40% 94%;
+    --secondary: 228 24% 94%;
     --secondary-foreground: 245 35% 22%;
-    --muted: 245 30% 94%;
-    --muted-foreground: 240 12% 42%;
+    --muted: 228 20% 94%;
+    --muted-foreground: 228 10% 42%;
     --accent: 32 90% 54%;           /* saffron (live / government) */
     --accent-foreground: 30 60% 10%;
-    --mint: 160 70% 38%;
+    --mint: 162 45% 38%;
     --destructive: 352 75% 52%;
     --destructive-foreground: 0 0% 100%;
-    --border: 245 25% 88%;
-    --input: 245 25% 88%;
-    --ring: 252 78% 58%;
+    --border: 228 18% 89%;
+    --input: 228 18% 89%;
+    --ring: 246 52% 54%;
     --radius: 0.9rem;
-    --glow: 252 78% 58%;
+    --glow: 246 52% 54%;
 
-    --lime: 252 78% 58%;
+    --lime: 246 52% 54%;
     --ink: 240 30% 12%;
     --bone: 240 33% 98%;
   }
 
   .dark {
-    --background: 238 45% 7%;       /* #0A0B1F indigo night */
-    --foreground: 240 30% 95%;
-    --card: 238 38% 11%;            /* #12142B */
+    --background: 228 26% 8%;       /* slate night */
+    --foreground: 228 20% 93%;
+    --card: 228 22% 11%;
     --card-foreground: 240 30% 95%;
-    --popover: 238 40% 12%;
+    --popover: 228 22% 12%;
     --popover-foreground: 240 30% 95%;
-    --primary: 254 92% 72%;         /* #9B86FF */
+    --primary: 244 62% 72%;         /* soft periwinkle */
     --primary-foreground: 240 50% 8%;
-    --secondary: 238 32% 17%;
+    --secondary: 228 18% 16%;
     --secondary-foreground: 240 30% 95%;
-    --muted: 238 30% 16%;
-    --muted-foreground: 238 16% 68%;
+    --muted: 228 18% 15%;
+    --muted-foreground: 228 10% 64%;
     --accent: 34 95% 62%;
     --accent-foreground: 30 60% 10%;
-    --mint: 160 70% 55%;
+    --mint: 162 42% 56%;
     --destructive: 352 85% 64%;
     --destructive-foreground: 0 0% 100%;
-    --border: 238 28% 20%;
-    --input: 238 28% 20%;
-    --ring: 254 92% 72%;
-    --glow: 254 92% 72%;
+    --border: 228 16% 19%;
+    --input: 228 16% 19%;
+    --ring: 244 62% 72%;
+    --glow: 244 62% 72%;
 
-    --lime: 254 92% 72%;
+    --lime: 244 62% 72%;
     --ink: 240 30% 12%;
     --bone: 240 33% 98%;
   }
@@ -101,9 +101,9 @@
   /* Aurora backdrop: two soft colour washes plus a faint dot grid. */
   body {
     background-image:
-      radial-gradient(60rem 40rem at 85% -10%, hsl(var(--glow) / 0.16), transparent 60%),
-      radial-gradient(50rem 35rem at -10% 110%, hsl(var(--mint) / 0.10), transparent 60%),
-      radial-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px);
+      radial-gradient(60rem 40rem at 85% -10%, hsl(var(--glow) / 0.07), transparent 60%),
+      radial-gradient(50rem 35rem at -10% 110%, hsl(var(--mint) / 0.04), transparent 60%),
+      radial-gradient(hsl(var(--border) / 0.45) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 22px 22px;
     background-attachment: fixed;
   }
@@ -138,9 +138,9 @@
     text-wrap: balance;
   }
 
-  /* Single-hue lime gradient for headline accents - tonal, not rainbow. */
+  /* Single-hue tonal gradient for headline accents (brand primary). */
   .text-gradient {
-    background-image: linear-gradient(100deg, hsl(68 80% 44%), hsl(var(--lime)), hsl(84 70% 58%));
+    background-image: linear-gradient(100deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -264,20 +264,26 @@
   .glass {
     background: linear-gradient(180deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.78));
     backdrop-filter: blur(10px);
-    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 10px 30px -18px hsl(var(--glow) / 0.35);
-  }
-  .text-gradient {
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--mint)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 8px 24px -20px hsl(0 0% 0% / 0.35);
   }
   .ring-glow {
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.35), 0 12px 40px -12px hsl(var(--glow) / 0.55);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.18), 0 10px 30px -22px hsl(var(--glow) / 0.45);
   }
 }
 
 @layer utilities {
   .no-scrollbar { scrollbar-width: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* Entrance motion: CSS only, ends visible even when throttled; off for reduced motion. */
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@layer utilities {
+  .animate-enter { animation: enter-up 0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-enter { animation: none; }
 }

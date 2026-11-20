@@ -42,3 +42,13 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 | Marketing insights | Key-takeaways hero (moat, pressure, tone, first move) and animated section reveal (reduced-motion safe) |
 | Overview | Marketing Analysis spotlight card |
 | Safety | AI recommendations never give buy/invest advice (filter, test, snapshot cleaned). pytest 102 |
+
+## Retest and hardening pass
+
+| Change | Notes |
+|---|---|
+| Full click-through | All 11 pages checked in the browser; mobile at 390 px has no horizontal scroll |
+| Bug fix | Pages could stay invisible when JS animation frames were paused (background tab). Entrance motion is now CSS only |
+| Theme | Calmer palette (lower saturation, softer glow and backdrop); one tonal headline gradient (an old lime rule was overriding it) |
+| API hardening | Marketing runs: duplicate in-flight runs reused, max 3 concurrent (429), free-text names cleaned, 45 s gathering budget. pytest 103 |
+| Copy | "1 linked source" pluralised correctly |
