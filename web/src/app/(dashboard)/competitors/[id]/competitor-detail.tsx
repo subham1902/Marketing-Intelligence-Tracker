@@ -8,6 +8,7 @@ import { AsyncState } from "@/components/async-state";
 import { ChartCard } from "@/components/chart-card";
 import { CompetitorAvatar } from "@/components/competitor-avatar";
 import { EmptyState } from "@/components/empty-state";
+import { CompanyLiveDevelopments } from "@/components/research/company-live";
 import { Timeline } from "@/components/timeline";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -103,6 +104,8 @@ export function CompetitorDetail({ id }: { id: string }) {
             </div>
           </Card>
 
+          <CompanyLiveDevelopments id={id} />
+
           {/* Charts */}
           <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <ChartCard title="Pricing history" description="Plan prices captured over time">
@@ -180,7 +183,7 @@ export function CompetitorDetail({ id }: { id: string }) {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base">
-                  <Layers className="h-4 w-4 text-muted-foreground" /> Signal timeline
+                  <Layers className="h-4 w-4 text-muted-foreground" /> Sample signals (demo seed)
                 </CardTitle>
               </CardHeader>
               <CardContent>

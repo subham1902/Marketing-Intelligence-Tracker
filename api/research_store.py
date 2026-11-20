@@ -326,10 +326,9 @@ def company_developments(db: ApiDB, name: str, limit: int = 30) -> list[dict[str
             JOIN research.research_runs r ON r.id = f.research_run_id
             WHERE r.status IN ('completed','partial') AND NOT coalesce(r.is_demo, false)
               AND (lower(f.entity) = lower(?)
-                   OR (json_array_length(r.companies) = 1 AND list_contains(
-                         CAST(json_extract_string(r.companies, '$[*]') AS VARCHAR[]), ?)))
+                   OR concat_ws(' ', f.title, f.summary, f.entity, f.evidence_quote) ILIKE ?)
             ORDER BY f.event_date DESC NULLS LAST, f.significance DESC NULLS LAST
             LIMIT ?""",
-        [name, name, limit],
+        [name, f"%{name.split(' ')[0]}%", limit],
     )
     return [_finding_row(r) for r in rows]

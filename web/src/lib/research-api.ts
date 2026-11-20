@@ -160,3 +160,31 @@ export function useCreateResearch() {
     onError: (e) => toast.error(e instanceof Error ? e.message : "Failed to submit research"),
   });
 }
+
+// --------------------------- company live news --------------------------- //
+
+export const useCompanyDevelopments = (id: string) =>
+  useQuery({
+    queryKey: ["company-developments", id] as const,
+    queryFn: () =>
+      STATIC
+        ? Promise.resolve<FeedFinding[]>([])
+        : request<FeedFinding[]>(`/companies/${enc(id)}/developments`),
+    enabled: !!id,
+  });
+
+export function useRefreshCompany(id: string) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: () =>
+      STATIC
+        ? Promise.reject(new ApiError(503, "Static demo build: refreshing needs the FastAPI backend."))
+        : request<ResearchRun>(`/companies/${enc(id)}/refresh`, { method: "POST" }),
+    onSuccess: (run) => {
+      qc.invalidateQueries({ queryKey: researchKeys.runs });
+      if (run.status === "failed") toast.error("Refresh failed", { description: run.error_message ?? undefined });
+      else toast.success("Refreshing news", { description: "Searching free public sources for the last month." });
+    },
+    onError: (e) => toast.error(e instanceof Error ? e.message : "Refresh failed"),
+  });
+}
