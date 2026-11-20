@@ -1,6 +1,6 @@
 "use client";
 
-import { AreaChart, DonutChart, SparkAreaChart } from "@/components/charts";
+import { AreaChart, BarChart, DonutChart, SparkAreaChart } from "@/components/charts";
 import { Activity, Bell, Building2, FlaskConical, Signal as SignalIcon, TrendingUp, Inbox } from "lucide-react";
 import Link from "next/link";
 
@@ -16,7 +16,8 @@ import { StatCard } from "@/components/stat-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCompetitors, useOverview, useSignals } from "@/lib/hooks";
-import { useFindingsFeed, useResearchRuns } from "@/lib/research-api";
+import { useFindingCategories, useFindingsFeed, useResearchRuns } from "@/lib/research-api";
+import { CATEGORY_LABEL, type FindingCategory } from "@/lib/research-types";
 import { signalMeta } from "@/lib/signal-meta";
 
 // Verified evidence first; unverified analysis last.
@@ -33,6 +34,11 @@ export default function OverviewPage() {
   const competitors = useCompetitors();
   const findings = useFindingsFeed({ limit: 50, include_demo: false });
   const runs = useResearchRuns();
+  const cats = useFindingCategories();
+  const catData = (cats.data ?? []).map((c) => ({
+    name: CATEGORY_LABEL[c.category as FindingCategory] ?? c.category,
+    Findings: c.count,
+  }));
 
   const nameById = new Map((competitors.data ?? []).map((c) => [c.id, c.name]));
   const stats = overview.data;
@@ -206,6 +212,25 @@ export default function OverviewPage() {
 
         {/* Right column */}
         <div className="flex flex-col gap-6">
+          <ChartCard title="Market pulse" description="Research findings by category (all runs)">
+            {cats.isLoading ? (
+              <Skeleton className="h-52 w-full" />
+            ) : catData.length === 0 ? (
+              <p className="py-10 text-center text-sm text-muted-foreground">No findings yet</p>
+            ) : (
+              <BarChart
+                data={catData}
+                index="name"
+                categories={["Findings"]}
+                colors={["lime"]}
+                layout="vertical"
+                yAxisWidth={96}
+                showLegend={false}
+                showAnimation
+                className="h-52"
+              />
+            )}
+          </ChartCard>
           <ChartCard title="Signals by type" description="Distribution across the taxonomy">
             {overview.isLoading ? (
               <Skeleton className="h-44 w-full" />

@@ -327,3 +327,11 @@ def test_clean_boilerplate() -> None:
            "Tata Motors PV shares fell 8%. ADVERTISEMENT Analysts cut targets.")
     out = _lead_sentences(raw)
     assert out.startswith("Tata Motors PV shares fell 8%.") and "ADVERTISEMENT" not in out
+
+
+def test_date_in_text() -> None:
+    from pipeline.research.open_provider import date_in_text
+
+    assert date_in_text("Nov 10, 2024 · EV as a Service").date().isoformat() == "2024-11-10"
+    assert date_in_text("Posted on 3 March 2026 by PIB").date().isoformat() == "2026-03-03"
+    assert date_in_text("No date here at all") is None

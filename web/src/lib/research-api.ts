@@ -190,3 +190,12 @@ export function useRefreshCompany(id: string) {
     onError: (e) => toast.error(e instanceof Error ? e.message : "Refresh failed"),
   });
 }
+
+export const useFindingCategories = () =>
+  useQuery({
+    queryKey: ["finding-categories"] as const,
+    queryFn: async () => {
+      if (!STATIC) return request<{ category: string; count: number }[]>("/findings/categories");
+      return staticGet<{ category: string; count: number }[]>("findings-categories.json", []);
+    },
+  });

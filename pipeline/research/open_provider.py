@@ -207,6 +207,27 @@ def _looks_old(url: str, min_year: int) -> bool:
     return bool(years) and max(years) < min_year
 
 
+_MONTHS = {m: i for i, m in enumerate(
+    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def date_in_text(text: str) -> datetime | None:
+    """A date stated in the page text, e.g. "Nov 10, 2024" or "10 November 2024" (source text, not inferred)."""
+    t = text or ""
+    m = re.search(r"\b([A-Z][a-z]{2,8})\.? (\d{1,2}),? (20\d{2})\b", t)
+    if m and m.group(1)[:3].lower() in _MONTHS:
+        mo, d, y = _MONTHS[m.group(1)[:3].lower()], int(m.group(2)), int(m.group(3))
+    else:
+        m = re.search(r"\b(\d{1,2}) ([A-Z][a-z]{2,8}),? (20\d{2})\b", t)
+        if not (m and m.group(2)[:3].lower() in _MONTHS):
+            return None
+        d, mo, y = int(m.group(1)), _MONTHS[m.group(2)[:3].lower()], int(m.group(3))
+    try:
+        return datetime(y, mo, d, tzinfo=UTC)
+    except ValueError:
+        return None
+
+
 def _english(s: str) -> bool:
     return bool(s) and sum(c.isascii() for c in s) / len(s) > 0.9
 
@@ -518,6 +539,8 @@ class OpenResearchProvider:
                 c.title = first
             if not c.published_at and getattr(meta, "date", None):
                 c.published_at = _parse_dt(meta.date)
+        if not c.published_at and text:
+            c.published_at = date_in_text(text[:300])
 
     def fetch(self, cands: list[Candidate]) -> None:
         """Fetch pages in parallel across hosts; requests to one host stay sequential (polite)."""
@@ -756,6 +779,15 @@ class OpenResearchProvider:
             )
         cb(f"Fetching {len(picked)} sources")
         self.fetch(picked)
+        # Dates learned while fetching (page metadata or a stated date) re-apply the window.
+        cutoff = datetime.now(UTC) - timedelta(days=days)
+        dropped = [c for c in picked if c.published_at and c.published_at < cutoff]
+        if dropped:
+            picked = [c for c in picked if c not in dropped]
+            self.notes.append(f"{len(dropped)} fetched page(s) dated before the time window were excluded.")
+        if not picked:
+            raise ProviderError("All relevant articles were older than the selected time window.",
+                                code="no_sources")
         sources = self._sources(run_id, picked)
         result = None
         if self.synthesis_mode == "llm":
