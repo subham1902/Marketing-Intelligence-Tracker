@@ -23,6 +23,20 @@
 - **Always-visible transparency:** a top activity bar, a reading-progress bar, and an **Activity** drawer with every API call, page and research stage, plus completion and failure toasts.
 - **Optional AI summaries** via **Connect LLM** (Ollama or any OpenAI-compatible key). Off by default.
 
+## Deploy your own (free)
+
+Use one Oracle Cloud Always Free VM and your own domain. HTTPS is automatic. Follow **[docs/GO_LIVE_ORACLE.md](docs/GO_LIVE_ORACLE.md)**; after the VM and DNS are set up, it's one command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/subham1902/Marketing-Intelligence-Tracker/main/deploy/install.sh | sudo bash
+```
+
+The deployment runs in **public mode**:
+- Visitors can explore and run analyses, with rate limits per IP.
+- Only the owner can change AI keys or the tracked companies.
+
+The roadmap and remaining steps are in **[NEXT_STEPS.md](NEXT_STEPS.md)**.
+
 ## Quick start (free, no keys)
 
 Windows PowerShell (macOS/Linux: same commands, `export` instead of `$env:`):

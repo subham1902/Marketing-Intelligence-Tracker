@@ -48,3 +48,6 @@ logs/
 # --- Playwright ---
 playwright-report/
 test-results/
+
+# Server secrets
+deploy/.env

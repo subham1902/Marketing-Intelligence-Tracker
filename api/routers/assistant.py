@@ -14,7 +14,7 @@ from pipeline.config import Settings
 from pipeline.logging_setup import get_logger
 from pydantic import BaseModel, Field
 
-from api import llm_settings
+from api import guard, llm_settings
 from api import research_store as store
 from api.db import ApiDB
 from api.deps import get_db
@@ -82,7 +82,7 @@ def _rephrase(reply: guide.GuideReply, message: str) -> str | None:
         return None
 
 
-@router.post("/assistant/chat")
+@router.post("/assistant/chat", dependencies=[Depends(guard.chat_limit)])
 async def assistant_chat(body: ChatIn, db: ApiDB = Depends(get_db)) -> StreamingResponse:
     ctx = await asyncio.to_thread(_context, db)
     reply = guide.answer(body.message, body.pathname, body.activity, **ctx)

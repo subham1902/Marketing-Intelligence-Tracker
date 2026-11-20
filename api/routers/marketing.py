@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import uuid
 from datetime import UTC, datetime
@@ -12,12 +13,13 @@ from pipeline.logging_setup import get_logger
 from pipeline.marketing import service
 from pydantic import BaseModel, Field
 
+from api import guard
 from api import marketing_store as store
 from api.db import ApiDB
 from api.deps import get_db
 
 router = APIRouter(tags=["marketing"])
-MAX_CONCURRENT = 3
+MAX_CONCURRENT = int(os.environ.get("COMPETE_MAX_CONCURRENT_RUNS", "3") or 3)
 
 
 def _clean(name: str) -> str:
@@ -76,7 +78,7 @@ def process(db: ApiDB, aid: str, company: dict[str, Any], rivals: dict[str, Any]
             close()
 
 
-@router.post("/marketing/analyses", status_code=202)
+@router.post("/marketing/analyses", status_code=202, dependencies=[Depends(guard.run_limit)])
 def create_analysis(body: MarketingCreate, background: BackgroundTasks, request: Request,
                     db: ApiDB = Depends(get_db)) -> dict:
     tracked = _tracked(db)

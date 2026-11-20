@@ -46,7 +46,18 @@ def load(s: Settings) -> dict[str, Any]:
                 return data
         except (ValueError, OSError):
             pass
-    # No saved settings: honour the env switch, defaulting to extractive.
+    # No saved settings: an operator key from the environment (hosted servers) comes first.
+    import os
+
+    op_key = os.environ.get("OPERATOR_LLM_API_KEY", "").strip()
+    if op_key:
+        return {
+            "mode": "openai_compatible", "provider": "operator",
+            "base_url": os.environ.get("OPERATOR_LLM_BASE_URL", "https://api.groq.com/openai/v1").strip(),
+            "model": os.environ.get("OPERATOR_LLM_MODEL", "llama-3.3-70b-versatile").strip(),
+            "api_key": op_key, "source": "env",
+        }
+    # Then the synthesis env switch, defaulting to extractive.
     env = (s.research_synthesis or "").lower()
     if env in ("ollama", "auto"):
         return {"mode": "ollama", "base_url": "", "model": s.research_ollama_model or "", "source": "env"}

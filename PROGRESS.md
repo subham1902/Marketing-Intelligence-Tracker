@@ -52,3 +52,13 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 | Theme | Calmer palette (lower saturation, softer glow and backdrop); one tonal headline gradient (an old lime rule was overriding it) |
 | API hardening | Marketing runs: duplicate in-flight runs reused, max 3 concurrent (429), free-text names cleaned, 45 s gathering budget. pytest 103 |
 | Copy | "1 linked source" pluralised correctly |
+
+## Deploy readiness (Oracle Cloud Free + GoDaddy)
+
+| Change | Notes |
+|---|---|
+| Deploy package committed | `deploy/` (Docker Compose: Caddy HTTPS, web, private API), `install.sh` one-command setup, `update.sh`, nightly `backup.sh`; `docs/GO_LIVE_ORACLE.md` |
+| Public mode | `api/guard.py`: owner-only AI settings, company edits and pipeline (X-Admin-Token; the default token is rejected); per-IP rate limits (6 runs per 10 min, 30 chats per min); operator AI key from env; `public_mode` in `/api/health`; the Connect LLM panel explains it |
+| Web headers | nosniff, referrer policy, frame-ancestors, permissions policy; no X-Powered-By |
+| Verified | pytest 108; production build OK; cold boot from an empty data dir in public mode: 7 companies, 7 analyses, 403s for visitors, 200 with the token. Docker image build not run (Docker Desktop engine would not start on this PC) |
+| Next | `NEXT_STEPS.md` |

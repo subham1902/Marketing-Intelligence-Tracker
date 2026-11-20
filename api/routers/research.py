@@ -16,7 +16,7 @@ from pipeline.logging_setup import get_logger
 from pipeline.research.provider import ContextDevProvider, ProviderError, ResearchProvider
 from pipeline.research.service import FINDING_CATEGORIES, ResearchRequest, run_research
 
-from api import llm_settings
+from api import guard, llm_settings
 from api import research_store as store
 from api.db import ApiDB
 from api.deps import get_db
@@ -154,7 +154,7 @@ def research_config() -> ResearchConfig:
     )
 
 
-@router.post("/research", response_model=ResearchRun, status_code=202)
+@router.post("/research", response_model=ResearchRun, status_code=202, dependencies=[Depends(guard.run_limit)])
 def create_research(
     body: ResearchCreate,
     background: BackgroundTasks,
@@ -254,7 +254,10 @@ def findings_categories(db: ApiDB = Depends(get_db)) -> list[dict]:
 
 
 # ------------------------- company refresh (free) -------------------------- #
-@router.post("/companies/{competitor_id}/refresh", response_model=ResearchRun, status_code=202)
+@router.post(
+    "/companies/{competitor_id}/refresh", response_model=ResearchRun, status_code=202,
+    dependencies=[Depends(guard.run_limit)],
+)
 def refresh_company(
     competitor_id: str, background: BackgroundTasks, request: Request, db: ApiDB = Depends(get_db)
 ) -> dict:
@@ -295,7 +298,7 @@ def get_llm_settings() -> dict:
     return view
 
 
-@router.put("/settings/llm", response_model=LLMSettingsView)
+@router.put("/settings/llm", response_model=LLMSettingsView, dependencies=[Depends(guard.require_admin)])
 def put_llm_settings(body: LLMSettingsIn) -> dict:
     s = _fresh_settings()
     saved = llm_settings.save(s, body.model_dump())
@@ -305,7 +308,7 @@ def put_llm_settings(body: LLMSettingsIn) -> dict:
     return view
 
 
-@router.post("/settings/llm/test", response_model=LLMTestResult)
+@router.post("/settings/llm/test", response_model=LLMTestResult, dependencies=[Depends(guard.require_admin)])
 def test_llm_settings(body: LLMSettingsIn) -> LLMTestResult:
     s = _fresh_settings()
     data = {**llm_settings.load(s), **{k: v for k, v in body.model_dump().items() if v not in (None, "")}}

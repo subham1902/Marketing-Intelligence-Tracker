@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { type LLMSettings, useLLMSettings, useSaveLLMSettings, useTestLLM } from "@/lib/research-api";
+import { type LLMSettings, useLLMSettings, usePublicMode, useSaveLLMSettings, useTestLLM } from "@/lib/research-api";
 import { cn } from "@/lib/utils";
 
 type Mode = LLMSettings["mode"];
@@ -61,6 +61,7 @@ export function LLMButton({ onClick }: { onClick: () => void }) {
 export function LLMPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
   const s = useLLMSettings();
   const save = useSaveLLMSettings();
+  const isPublic = usePublicMode().data === true;
   const test = useTestLLM();
   const [mode, setMode] = useState<Mode>("off");
   const [provider, setProvider] = useState("groq");
@@ -130,7 +131,13 @@ export function LLMPanel({ open, onClose }: { open: boolean; onClose: () => void
                 <p className="mt-1 text-sm text-muted-foreground">
                   Optional. Research always works without it: every finding stays quoted and linked to its source.
                 </p>
-                <p className="mt-1 text-xs text-primary">Tip: add a free Groq key to enable AI analysis in Marketing Analysis (claims are quote-checked).</p>
+                {isPublic ? (
+                  <p className="mt-2 rounded-md border bg-muted/50 p-2 text-xs text-muted-foreground">
+                    On this public site, AI settings are managed by the site owner. Everything works without AI: findings stay quoted and linked. Run the app yourself to connect your own model.
+                  </p>
+                ) : (
+                  <p className="mt-1 text-xs text-primary">Tip: add a free Groq key to enable AI analysis in Marketing Analysis (claims are quote-checked).</p>
+                )}
               </div>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close">
                 <X className="h-4 w-4" />
@@ -278,11 +285,11 @@ export function LLMPanel({ open, onClose }: { open: boolean; onClose: () => void
             <div className="flex items-center justify-between gap-2 border-t p-4">
               <span className="text-xs text-muted-foreground">Now: {s.data?.active ?? "…"}</span>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" disabled={test.isPending} onClick={() => test.mutate(body())}>
+                <Button variant="outline" size="sm" disabled={test.isPending || isPublic} onClick={() => test.mutate(body())}>
                   {test.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <PlugZap className="h-4 w-4" />}
                   Test
                 </Button>
-                <Button size="sm" disabled={save.isPending} onClick={() => save.mutate(body(), { onSuccess: onClose })}>
+                <Button size="sm" disabled={save.isPending || isPublic} onClick={() => save.mutate(body(), { onSuccess: onClose })}>
                   {save.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
                   {mode === "off" ? "Use cited extracts" : "Save and connect"}
                 </Button>

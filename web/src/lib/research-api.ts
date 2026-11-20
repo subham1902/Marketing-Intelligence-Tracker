@@ -258,8 +258,19 @@ export function useTestLLM() {
         method: "POST",
         body: JSON.stringify(body),
       }),
+    onError: (e: Error) => toast.error(e.message),
   });
 }
+
+/** True on the public hosted site, where AI and company settings are owner-only. */
+export const usePublicMode = () =>
+  useQuery({
+    queryKey: ["health"],
+    queryFn: () => request<{ public_mode?: boolean }>("/health"),
+    enabled: !STATIC,
+    staleTime: 5 * 60_000,
+    select: (h) => !!h.public_mode,
+  });
 
 // --------------------------- run stage activity --------------------------- //
 

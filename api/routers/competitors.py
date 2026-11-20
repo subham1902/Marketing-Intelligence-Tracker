@@ -6,12 +6,14 @@ import re
 
 from fastapi import APIRouter, Depends, HTTPException
 
+from api import guard
 from api import repository as repo
 from api.db import ApiDB
 from api.deps import get_db
 from api.schemas import Competitor, CompetitorCreate, CompetitorUpdate
 
 router = APIRouter(prefix="/competitors", tags=["competitors"])
+ADMIN = [Depends(guard.require_admin)]
 
 
 def _slugify(name: str) -> str:
@@ -24,7 +26,7 @@ def list_competitors(db: ApiDB = Depends(get_db)) -> list[dict]:
     return repo.list_competitors(db)
 
 
-@router.post("", response_model=Competitor, status_code=201)
+@router.post("", response_model=Competitor, status_code=201, dependencies=ADMIN)
 def create_competitor(body: CompetitorCreate, db: ApiDB = Depends(get_db)) -> dict:
     competitor_id = body.id or _slugify(body.name)
     if repo.get_competitor(db, competitor_id):
@@ -51,7 +53,7 @@ def get_competitor(competitor_id: str, db: ApiDB = Depends(get_db)) -> dict:
     return found
 
 
-@router.patch("/{competitor_id}", response_model=Competitor)
+@router.patch("/{competitor_id}", response_model=Competitor, dependencies=ADMIN)
 def update_competitor(
     competitor_id: str, body: CompetitorUpdate, db: ApiDB = Depends(get_db)
 ) -> dict:
@@ -77,7 +79,7 @@ def update_competitor(
     return updated
 
 
-@router.delete("/{competitor_id}", status_code=204)
+@router.delete("/{competitor_id}", status_code=204, dependencies=ADMIN)
 def delete_competitor(competitor_id: str, db: ApiDB = Depends(get_db)) -> None:
     if not repo.get_competitor(db, competitor_id):
         raise HTTPException(status_code=404, detail=f"Competitor '{competitor_id}' not found.")

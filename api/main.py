@@ -62,8 +62,17 @@ def _autoseed_if_empty(db_path) -> None:
             return
         script = Path(__file__).resolve().parents[1] / "scripts" / "seed_demo.py"
         log.info("empty warehouse: seeding demo data and building marts (first boot)")
-        env = {**os.environ, "PYTHONUTF8": "1"}
-        subprocess.run([sys.executable, str(script), "--build"], check=False, timeout=900, env=env)
+        root = str(script.parents[1])
+        # The seed script imports `pipeline`; on hosts that install only
+        # requirements.txt (Docker, Emergent) the repo root must be on the path.
+        env = {
+            **os.environ,
+            "PYTHONUTF8": "1",
+            "PYTHONPATH": os.pathsep.join(p for p in (root, os.environ.get("PYTHONPATH", "")) if p),
+        }
+        subprocess.run(
+            [sys.executable, str(script), "--build"], check=False, timeout=900, env=env, cwd=root
+        )
     except Exception as exc:  # pragma: no cover - startup must not fail
         log.warning("autoseed skipped: %s", exc)
 
@@ -132,7 +141,9 @@ def health(request: Request) -> dict:
         mode = llm_settings.load(Settings()).get("mode") or "off"
     except Exception:
         mode = "unknown"
-    return {"status": "ok", "version": app.version, "llm_mode": mode,
+    from api import guard
+
+    return {"status": "ok", "version": app.version, "llm_mode": mode, "public_mode": guard.public_mode(),
             "snapshots": marketing_store.counts(db) if db else {}}
 
 

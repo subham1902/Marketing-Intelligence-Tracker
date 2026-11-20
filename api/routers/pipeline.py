@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, Depends
 from pipeline.logging_setup import get_logger
 
+from api import guard
 from api.schemas import PipelineRunRequest, PipelineRunResponse
 
 router = APIRouter(prefix="/pipeline", tags=["pipeline"])
@@ -22,7 +23,7 @@ def _run(provider: str | None, limit: int) -> None:
         log.error("pipeline run failed: %s", exc)
 
 
-@router.post("/run", response_model=PipelineRunResponse, status_code=202)
+@router.post("/run", response_model=PipelineRunResponse, status_code=202, dependencies=[Depends(guard.require_admin)])
 def run_pipeline(body: PipelineRunRequest, background: BackgroundTasks) -> PipelineRunResponse:
     """Kick off detect→extract in the background (does not re-collect pages)."""
     background.add_task(_run, body.provider, body.limit)
