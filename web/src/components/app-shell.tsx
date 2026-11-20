@@ -10,8 +10,7 @@ import {
   Search,
   FileText,
   Settings,
-  Signal,
-} from "lucide-react";
+  Signal, PieChart } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,6 +29,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
   { href: "/research", label: "Research", icon: FlaskConical },
+  { href: "/marketing", label: "Marketing Analysis", icon: PieChart },
   { href: "/feed", label: "Feed", icon: Newspaper },
   { href: "/competitors", label: "Companies", icon: Building2 },
   { href: "/signals", label: "Signals", icon: Signal },
@@ -40,7 +40,7 @@ const NAV = [
 
 // The bottom bar fits five comfortably; Settings stays in the sidebar/menu.
 const MOBILE_NAV = NAV.filter((n) =>
-  ["/dashboard", "/research", "/feed", "/competitors", "/reports"].includes(n.href),
+  ["/dashboard", "/research", "/marketing", "/competitors", "/reports"].includes(n.href),
 );
 
 function isActive(pathname: string, href: string): boolean {

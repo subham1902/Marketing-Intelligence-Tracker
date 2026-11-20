@@ -77,6 +77,13 @@ export function CommandPalette() {
         href: `/competitors/${c.id}`,
         icon: Building2,
       })),
+      ...(companies.data ?? []).map((c) => ({
+        id: `m-${c.id}`,
+        label: `Marketing analysis: ${c.name}`,
+        hint: "Porter, moat, 7P",
+        href: `/marketing?company=${encodeURIComponent(c.id)}`,
+        icon: FileText,
+      })),
       ...(runs.data ?? []).slice(0, 15).map((r) => ({
         id: `r-${r.id}`,
         label: r.objective,

@@ -64,7 +64,8 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
 
 
 def test_health(client) -> None:
-    assert client.get("/health").json() == {"status": "ok"}
+    h = client.get("/health").json()
+    assert h["status"] == "ok" and "llm_mode" in h and "version" in h
 
 
 def test_list_competitors(client) -> None:

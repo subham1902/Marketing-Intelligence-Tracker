@@ -17,9 +17,18 @@ from pipeline.config import get_settings
 from pipeline.logging_setup import get_logger
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from api import research_store
+from api import marketing_store, research_store
 from api.db import ApiDB
-from api.routers import analytics, assistant, competitors, pipeline, reports, research, signals
+from api.routers import (
+    analytics,
+    assistant,
+    competitors,
+    marketing,
+    pipeline,
+    reports,
+    research,
+    signals,
+)
 
 log = get_logger("api")
 
@@ -66,6 +75,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     _autoseed_if_empty(settings.duckdb_path)
     app.state.db = ApiDB(settings.duckdb_path)
     research_store.bootstrap(app.state.db)
+    marketing_store.bootstrap(app.state.db)
     log.info("API connected to warehouse at %s", settings.duckdb_path)
     try:
         yield
@@ -75,7 +85,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(
     title="compete API",
-    version="0.1.0",
+    version="0.2.0",
     description="Competitive Intelligence Platform - typed read API over the DuckDB marts.",
     lifespan=lifespan,
 )
@@ -112,13 +122,23 @@ async def unhandled_exc_handler(_: Request, exc: Exception) -> JSONResponse:
 
 @app.get("/api/health", include_in_schema=False)
 @app.get("/health", tags=["meta"])
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health(request: Request) -> dict:
+    from pipeline.config import Settings
+
+    from api import llm_settings
+
+    db = getattr(request.app.state, "db", None)
+    try:
+        mode = llm_settings.load(Settings()).get("mode") or "off"
+    except Exception:
+        mode = "unknown"
+    return {"status": "ok", "version": app.version, "llm_mode": mode,
+            "snapshots": marketing_store.counts(db) if db else {}}
 
 
 for r in (
     competitors.router, signals.router, analytics.router, reports.router, pipeline.router,
-    research.router, assistant.router,
+    research.router, assistant.router, marketing.router,
 ):
     app.include_router(r)
     # Hosted deployments (e.g. Emergent) route /api/* to the backend without

@@ -1,5 +1,38 @@
 # In-app guide knowledge base. Generated from docs/APP_MAP.md; every claim must match the UI.
 entries:
+  # ---------------------------------------------------------------- marketing analysis
+  - id: nav-marketing
+    title: Marketing Analysis
+    keywords: [marketing, marketing analysis, strategy, consultant, deck, moat, 7p, marketing mix, positioning, go-to-market, gtm, segmentation, stakeholders]
+    answer: >-
+      **Marketing Analysis** (left sidebar, or Ctrl+K "Marketing analysis: <company>", or the
+      **Marketing analysis** button on a company profile) builds a strategy deck for one company:
+      Snapshot, Profitability, Moat, Stakeholders, Porter's Five Forces, Competition, Market attitude,
+      Need gaps, Segmentation, Positioning, Go-to-market, 7P scorecard and a prioritised to-do list.
+      Every claim has an evidence chip (click it for the quote and source) or is labelled Analysis / Forecast.
+    route: /marketing
+    action_label: Open Marketing Analysis
+    related: [howto-porter, howto-marketing-export]
+  - id: howto-porter
+    title: See Porter's Five Forces for a company
+    keywords: [porter, five forces, 5 forces, rivalry, buyer power, supplier power, substitutes, new entrants, ather, ola, tata, competition]
+    answer: >-
+      Open **Marketing Analysis**, pick the company (for example Ather Energy) and jump to **Five forces**
+      in the section rail. Each force is rated low/medium/high by a transparent rule shown under
+      *How this was scored*, with the source quotes behind it.
+    route: /marketing?company=ather-energy#porter
+    action_label: Open Five Forces for Ather
+    related: [nav-marketing]
+  - id: howto-marketing-export
+    title: Share or export a Marketing Analysis
+    keywords: [share, export, pdf, print, download, link, marketing]
+    answer: >-
+      On a Marketing Analysis, click **Copy share link** for a direct URL, or **Download PDF** to open the
+      browser print dialog with an A4-friendly layout. **Refresh** runs a new analysis from free public sources;
+      if sources are blocked, the latest captured analysis stays available. Analyse any company by typing its name.
+    route: /marketing
+    action_label: Open Marketing Analysis
+    related: [nav-marketing]
   # ---------------------------------------------------------------- navigation
   - id: nav-overview
     title: The Overview page

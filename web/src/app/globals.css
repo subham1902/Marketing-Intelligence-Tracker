@@ -235,3 +235,12 @@
     animation: charge 0.8s linear infinite;
   }
 }
+
+/* Marketing Analysis print / PDF export */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: #fff !important; }
+  aside, header, footer, body > div > nav, [role="banner"], .print\:hidden { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; }
+  .mk-section { break-inside: avoid; box-shadow: none !important; margin-bottom: 8px; }
+}
