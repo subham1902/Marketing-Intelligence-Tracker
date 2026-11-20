@@ -120,7 +120,7 @@ export function CompetitorDetail({ id }: { id: string }) {
                   data={pricingData}
                   index="date"
                   categories={plans}
-                  colors={["lime", "emerald", "amber", "stone", "teal"]}
+                  colors={["teal", "amber", "sky", "slate", "emerald"]}
                   valueFormatter={(v) => formatPrice(v, pricingCurrency)}
                   showAnimation
                   yAxisWidth={pricingCurrency === "INR" ? 72 : 44}
@@ -142,7 +142,7 @@ export function CompetitorDetail({ id }: { id: string }) {
                   data={hiringData}
                   index="location"
                   categories={["count"]}
-                  colors={["lime"]}
+                  colors={["teal"]}
                   layout="vertical"
                   showAnimation
                   showLegend={false}

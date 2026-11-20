@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { EmptyState } from "@/components/empty-state";
-import { FindingCard, StatusBadge } from "@/components/research/research-ui";
+import { FindingCard, StageBar, StatusBadge } from "@/components/research/research-ui";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -43,6 +43,11 @@ export function CompanyLiveDevelopments({ id }: { id: string }) {
         </Button>
       </CardHeader>
       <CardContent className="pt-0">
+        {active && run.data && (
+          <div className="mb-3">
+            <StageBar status={run.data.status} message={run.data.status_message} compact />
+          </div>
+        )}
         {run.data && (
           <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
             <StatusBadge status={run.data.status} />

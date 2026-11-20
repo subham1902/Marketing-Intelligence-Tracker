@@ -78,7 +78,7 @@ export default function OverviewPage() {
               data={trend}
               categories={["total_changes"]}
               index="week"
-              colors={["lime"]}
+              colors={["teal"]}
               className="h-9 w-full"
             />
           )}
@@ -104,7 +104,7 @@ export default function OverviewPage() {
       <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+            <h2 className="font-display text-base font-semibold text-foreground">
               Latest live developments
             </h2>
             <Link href="/feed" className="text-sm text-primary hover:underline">
@@ -142,7 +142,7 @@ export default function OverviewPage() {
         </div>
         <div>
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+            <h2 className="font-display text-base font-semibold text-foreground">
               Recent research
             </h2>
             <Link href="/research" className="text-sm text-primary hover:underline">
@@ -169,7 +169,7 @@ export default function OverviewPage() {
         {/* Recent signals feed */}
         <div className="lg:col-span-2">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+            <h2 className="font-display text-base font-semibold text-foreground">
               Recent signals
             </h2>
             <Link href="/signals" className="text-sm text-primary hover:underline">
@@ -222,7 +222,7 @@ export default function OverviewPage() {
                 data={catData}
                 index="name"
                 categories={["Findings"]}
-                colors={["lime"]}
+                colors={["teal"]}
                 layout="vertical"
                 yAxisWidth={96}
                 showLegend={false}
@@ -318,7 +318,7 @@ export default function OverviewPage() {
               data={trend}
               index="week"
               categories={["total_changes", "high_significance_changes"]}
-              colors={["lime", "stone"]}
+              colors={["teal", "amber"]}
               showAnimation
               showLegend
               yAxisWidth={36}

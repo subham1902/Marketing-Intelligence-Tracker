@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Space_Grotesk, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
 
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
-const sans = Space_Grotesk({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -50,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${display.variable} ${serif.variable}`}>
       <body className="font-sans">
         <Providers>{children}</Providers>
       </body>

@@ -226,7 +226,7 @@ export default function ResearchPage() {
         </Card>
 
         <div className="lg:col-span-2">
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          <h2 className="mb-3 font-display text-base font-semibold text-foreground">
             Research runs
           </h2>
           <AsyncState

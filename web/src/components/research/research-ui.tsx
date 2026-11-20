@@ -195,7 +195,7 @@ export function RunRow({ run }: { run: ResearchRunSummary }) {
   return (
     <Link
       href={`/research/view?id=${encodeURIComponent(run.id)}`}
-      className="flex flex-col gap-1.5 rounded-lg border bg-card p-3 transition-colors hover:bg-secondary/40"
+      className="pressable flex flex-col gap-1.5 rounded-lg border bg-card p-3"
     >
       <div className="flex flex-wrap items-center gap-2">
         <StatusBadge status={run.status} />
@@ -205,6 +205,9 @@ export function RunRow({ run }: { run: ResearchRunSummary }) {
         <DataOriginBadge isDemo={run.is_demo} provider={run.provider} />
         <RelativeTime value={run.created_at} className="ml-auto text-xs" />
       </div>
+      {(run.status === "running" || run.status === "queued") && (
+        <StageBar status={run.status} message={run.status_message} compact />
+      )}
       <p className="line-clamp-2 text-sm font-medium">{run.objective}</p>
       <p className="text-xs text-muted-foreground">
         {[run.industry, run.geography].filter(Boolean).join(" · ")}
@@ -213,5 +216,63 @@ export function RunRow({ run }: { run: ResearchRunSummary }) {
         {run.status === "failed" && run.error_message && ` · ${run.error_message}`}
       </p>
     </Link>
+  );
+}
+
+const STAGES = ["Queued", "Discovering sources", "Fetching pages", "Synthesizing"] as const;
+
+function stageIndex(status: ResearchStatus, message?: string | null): number {
+  if (status === "completed" || status === "partial") return STAGES.length;
+  if (status === "queued") return 0;
+  const m = (message ?? "").toLowerCase();
+  if (m.startsWith("synthesiz") || m.startsWith("waiting for context")) return 3;
+  if (m.startsWith("fetching")) return 2;
+  if (m.startsWith("discovering")) return 1;
+  return 1;
+}
+
+/** Battery-style progress through the backend's real run stages. */
+export function StageBar({
+  status,
+  message,
+  compact,
+}: {
+  status: ResearchStatus;
+  message?: string | null;
+  compact?: boolean;
+}) {
+  const idx = stageIndex(status, message);
+  const failed = status === "failed";
+  return (
+    <div className="w-full" aria-label={`Research progress: ${message ?? status}`}>
+      <div className={cn("flex gap-1", compact ? "h-1.5" : "h-2.5")}>
+        {STAGES.map((s, i) => (
+          <div key={s} className="relative flex-1 overflow-hidden rounded-full bg-muted">
+            <div
+              className={cn(
+                "absolute inset-y-0 left-0 rounded-full transition-[width] duration-700 ease-out",
+                failed ? "bg-destructive/60" : i < idx ? "bg-primary" : i === idx ? "charging" : "",
+              )}
+              style={{ width: failed ? (i <= idx ? "100%" : "0%") : i < idx ? "100%" : i === idx ? "100%" : "0%" }}
+            />
+          </div>
+        ))}
+      </div>
+      {!compact && (
+        <div className="mt-2 grid grid-cols-4 gap-1 text-[11px]">
+          {STAGES.map((s, i) => (
+            <span
+              key={s}
+              className={cn(
+                "transition-colors",
+                i < idx ? "text-foreground" : i === idx ? "font-medium text-primary" : "text-muted-foreground",
+              )}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

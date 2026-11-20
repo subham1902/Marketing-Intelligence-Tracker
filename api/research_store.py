@@ -8,6 +8,7 @@ startup so an existing warehouse gains them without reseeding.
 from __future__ import annotations
 
 import json
+import re
 from datetime import UTC, datetime
 from typing import Any
 
@@ -326,9 +327,21 @@ def company_developments(db: ApiDB, name: str, limit: int = 30) -> list[dict[str
             JOIN research.research_runs r ON r.id = f.research_run_id
             WHERE r.status IN ('completed','partial') AND NOT coalesce(r.is_demo, false)
               AND (lower(f.entity) = lower(?)
-                   OR concat_ws(' ', f.title, f.summary, f.entity, f.evidence_quote) ILIKE ?)
+                   OR regexp_matches(concat_ws(' ', f.title, f.summary, f.entity, f.evidence_quote), ?, 'i'))
             ORDER BY f.event_date DESC NULLS LAST, f.significance DESC NULLS LAST
             LIMIT ?""",
-        [name, f"%{name.split(' ')[0]}%", limit],
+        # Whole-word match on the first name token ("Ather" must not match "rather").
+        [name, rf"\b{re.escape(name.split(' ')[0])}\b", limit * 3],
     )
-    return [_finding_row(r) for r in rows]
+    # The same story can come from several runs; keep the newest copy of each headline.
+    seen: set[str] = set()
+    out = []
+    for r in rows:
+        key = re.sub(r"\W+", " ", (r.get("title") or "").lower()).strip()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(_finding_row(r))
+        if len(out) >= limit:
+            break
+    return out

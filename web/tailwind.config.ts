@@ -14,6 +14,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "ui-sans-serif", "system-ui"],
         serif: ["var(--font-serif)", "ui-serif", "Georgia", "serif"],
       },
       colors: {
@@ -169,7 +170,7 @@ const config: Config = {
   safelist: [
     {
       pattern:
-        /^(bg|text|border|ring|stroke|fill)-(lime|green|emerald|teal|yellow|amber|stone|zinc|neutral|gray|rose)-(50|100|200|300|400|500|600|700|800|900|950)$/,
+        /^(bg|text|border|ring|stroke|fill)-(lime|green|emerald|teal|yellow|amber|stone|zinc|neutral|gray|rose|sky|slate)-(50|100|200|300|400|500|600|700|800|900|950)$/,
       variants: ["hover", "ui-selected"],
     },
     {

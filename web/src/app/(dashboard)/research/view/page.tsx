@@ -8,7 +8,7 @@ import { Suspense, useMemo } from "react";
 import { AsyncState } from "@/components/async-state";
 import { EmptyState } from "@/components/empty-state";
 import { RelativeTime } from "@/components/relative-time";
-import { DataOriginBadge, FindingCard, StatusBadge } from "@/components/research/research-ui";
+import { DataOriginBadge, FindingCard, StageBar, StatusBadge } from "@/components/research/research-ui";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -86,8 +86,8 @@ function ReportView() {
 
             {(run.data.status === "queued" || run.data.status === "running") && (
               <Card className="mb-6">
-                <CardContent className="flex items-start gap-3 py-6">
-                  <Loader2 className="mt-0.5 h-5 w-5 animate-spin text-primary" />
+                <CardContent className="flex flex-col gap-4 py-6">
+                  <StageBar status={run.data.status} message={run.data.status_message} />
                   <div>
                     <p className="text-sm font-medium">
                       {run.data.status === "queued"

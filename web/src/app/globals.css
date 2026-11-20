@@ -8,55 +8,58 @@
    * paper, warm INK, and one ELECTRIC LIME accent. The marketing site and the
    * dashboard share these tokens so the product feels like one object.
    */
+  /*
+   * "Grid map" system for an India-first EV & market-intelligence product:
+   * cool survey-paper slate, deep grid ink, CHARGE TEAL for actions and
+   * SAFFRON reserved for live / government signals.
+   */
   :root {
-    --background: 43 38% 95%;
-    --foreground: 28 14% 10%;
-    --card: 42 40% 98%;
-    --card-foreground: 28 14% 10%;
-    --primary: 76 72% 42%;
-    --primary-foreground: 80 70% 9%;
-    --secondary: 40 26% 91%;
-    --secondary-foreground: 28 16% 12%;
-    --muted: 40 24% 90%;
-    --muted-foreground: 30 7% 38%;
-    --accent: 76 72% 42%;
-    --accent-foreground: 80 70% 9%;
-    --destructive: 7 70% 46%;
+    --background: 200 20% 95%;      /* #EEF2F4 survey paper */
+    --foreground: 211 51% 12%;      /* #0F1E2E grid ink */
+    --card: 0 0% 100%;
+    --card-foreground: 211 51% 12%;
+    --primary: 179 82% 30%;         /* #0E8C8A charge teal */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 22% 90%;
+    --secondary-foreground: 211 45% 16%;
+    --muted: 200 20% 91%;
+    --muted-foreground: 210 14% 38%;
+    --accent: 32 81% 54%;           /* #E8912D saffron (live / government) */
+    --accent-foreground: 30 60% 10%;
+    --destructive: 356 70% 48%;
     --destructive-foreground: 0 0% 100%;
-    --border: 36 20% 84%;
-    --input: 36 20% 84%;
-    --ring: 76 72% 42%;
-    --radius: 0.8rem;
+    --border: 204 20% 86%;          /* #D3DCE2 */
+    --input: 204 20% 86%;
+    --ring: 179 82% 30%;
+    --radius: 0.75rem;
 
-    --lime: 76 78% 52%;
-    /* ink/bone are constant surfaces (always dark/light) so white-on-ink
-       panels read correctly in both themes - do NOT swap these per theme. */
-    --ink: 28 12% 9%;
-    --bone: 43 38% 95%;
+    --lime: 179 82% 30%;
+    --ink: 211 51% 12%;
+    --bone: 200 20% 95%;
   }
 
   .dark {
-    --background: 28 10% 7%;
-    --foreground: 42 34% 94%;
-    --card: 28 9% 10%;
-    --card-foreground: 42 34% 94%;
-    --primary: 76 82% 56%;
-    --primary-foreground: 80 70% 8%;
-    --secondary: 28 8% 15%;
-    --secondary-foreground: 42 34% 94%;
-    --muted: 28 8% 15%;
-    --muted-foreground: 36 11% 64%;
-    --accent: 76 82% 56%;
-    --accent-foreground: 80 70% 8%;
-    --destructive: 7 72% 55%;
+    --background: 213 51% 9%;       /* #0B1622 night grid */
+    --foreground: 200 25% 93%;
+    --card: 211 47% 13%;            /* #112131 */
+    --card-foreground: 200 25% 93%;
+    --primary: 178 62% 44%;         /* #2BB5B1 */
+    --primary-foreground: 213 51% 8%;
+    --secondary: 211 40% 17%;
+    --secondary-foreground: 200 25% 93%;
+    --muted: 211 40% 17%;
+    --muted-foreground: 205 16% 66%;
+    --accent: 33 86% 60%;
+    --accent-foreground: 30 60% 10%;
+    --destructive: 356 72% 58%;
     --destructive-foreground: 0 0% 100%;
-    --border: 32 9% 18%;
-    --input: 32 9% 18%;
-    --ring: 76 82% 56%;
+    --border: 211 34% 21%;
+    --input: 211 34% 21%;
+    --ring: 178 62% 44%;
 
-    --lime: 76 82% 56%;
-    --ink: 28 12% 9%;
-    --bone: 43 38% 95%;
+    --lime: 178 62% 44%;
+    --ink: 211 51% 12%;
+    --bone: 200 20% 95%;
   }
 
   * {
@@ -70,11 +73,34 @@
       "calt" 1;
   }
 
-  /* Numeric / timestamp values use a monospace face for that "data" feel. */
+  /* Numbers line up (tabular figures) without switching to a monospace face. */
   .tabular {
     font-variant-numeric: tabular-nums;
-    font-family:
-      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui;
+    letter-spacing: -0.015em;
+  }
+
+  /* Survey-grid backdrop: a faint map grid behind the app, nothing louder. */
+  body {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.45) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -171,5 +197,41 @@
   .animate-aurora,
   .animate-pulse-ring {
     animation: none !important;
+  }
+}
+
+@layer utilities {
+  /* Clickable surfaces: a quick lift on hover and a press on click. */
+  .pressable {
+    transition:
+      transform 160ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease;
+  }
+  .pressable:hover {
+    border-color: hsl(var(--primary) / 0.45);
+  }
+  .pressable:active {
+    transform: scale(0.985);
+  }
+
+  /* Charging stripes for an in-progress stage. */
+  @keyframes charge {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 28px 0;
+    }
+  }
+  .charging {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      hsl(var(--primary)) 0 7px,
+      hsl(var(--primary) / 0.65) 7px 14px
+    );
+    background-size: 28px 100%;
+    animation: charge 0.8s linear infinite;
   }
 }
