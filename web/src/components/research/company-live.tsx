@@ -10,7 +10,7 @@ import { FindingCard, StageBar, StatusBadge } from "@/components/research/resear
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useCompanyDevelopments, useRefreshCompany, useResearchRun } from "@/lib/research-api";
+import { useCompanyDevelopments, useRefreshCompany, useResearchRun, useRunActivity } from "@/lib/research-api";
 
 /** Live developments from free public sources, kept apart from [Sample] seed signals. */
 export function CompanyLiveDevelopments({ id }: { id: string }) {
@@ -18,6 +18,7 @@ export function CompanyLiveDevelopments({ id }: { id: string }) {
   const refresh = useRefreshCompany(id);
   const [runId, setRunId] = useState<string>("");
   const run = useResearchRun(runId);
+  useRunActivity(run.data, { label: "News refresh" });
   const qc = useQueryClient();
   const active = run.data && (run.data.status === "queued" || run.data.status === "running");
 

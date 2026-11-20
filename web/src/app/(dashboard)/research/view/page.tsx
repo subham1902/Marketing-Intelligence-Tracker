@@ -13,7 +13,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useResearchFindings, useResearchRun, useResearchSources } from "@/lib/research-api";
+import { useResearchFindings, useResearchRun, useResearchSources, useRunActivity } from "@/lib/research-api";
+import { useActivity } from "@/lib/activity";
 import type { ResearchReport, ResearchSource } from "@/lib/research-types";
 
 const SECTIONS: { key: keyof ResearchReport; title: string }[] = [
@@ -31,6 +32,8 @@ const SECTIONS: { key: keyof ResearchReport; title: string }[] = [
 function ReportView() {
   const id = useSearchParams().get("id") ?? "";
   const run = useResearchRun(id);
+  useRunActivity(run.data);
+  const { log } = useActivity();
   const done = run.data?.status === "completed" || run.data?.status === "partial";
   const sources = useResearchSources(id, done);
   const findings = useResearchFindings(id, done);
@@ -248,6 +251,7 @@ function ReportView() {
                             href={s.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => log({ kind: "action", label: `Opened source: ${s.domain ?? "link"}` })}
                             className="inline-flex shrink-0 items-center gap-1 text-sm text-primary hover:underline"
                           >
                             Open source <ExternalLink className="h-3.5 w-3.5" />

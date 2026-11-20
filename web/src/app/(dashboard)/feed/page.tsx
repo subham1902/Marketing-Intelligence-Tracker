@@ -16,12 +16,14 @@ import {
   type FindingCategory,
   type FindingKind,
 } from "@/lib/research-types";
+import { useActivity } from "@/lib/activity";
 import { cn } from "@/lib/utils";
 
 export default function FeedPage() {
   const [category, setCategory] = useState<FindingCategory | undefined>();
   const [kind, setKind] = useState<FindingKind | undefined>();
   const [includeDemo, setIncludeDemo] = useState(true);
+  const { log } = useActivity();
   const feed = useFindingsFeed({ category, kind, include_demo: includeDemo, limit: 200 });
 
   const chip = (active: boolean) =>
@@ -43,7 +45,14 @@ export default function FeedPage() {
             All categories
           </button>
           {FINDING_CATEGORIES.map((c) => (
-            <button key={c} className={chip(category === c)} onClick={() => setCategory(c)}>
+            <button
+              key={c}
+              className={chip(category === c)}
+              onClick={() => {
+                setCategory(c);
+                log({ kind: "action", label: `Feed filter: ${CATEGORY_LABEL[c]}`, route: "/feed" });
+              }}
+            >
               {CATEGORY_LABEL[c]}
             </button>
           ))}
@@ -58,7 +67,14 @@ export default function FeedPage() {
             </button>
           ))}
           <label className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
-            <input type="checkbox" checked={includeDemo} onChange={(e) => setIncludeDemo(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={includeDemo}
+              onChange={(e) => {
+                setIncludeDemo(e.target.checked);
+                log({ kind: "action", label: e.target.checked ? "Showing demo snapshot" : "Hid demo snapshot", route: "/feed" });
+              }}
+            />
             Include demo snapshot
           </label>
         </div>

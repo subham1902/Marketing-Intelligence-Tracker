@@ -13,3 +13,14 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Hard stop: 08:30 IST, 20 Nov 2026.
 | 7 Hand-off | done (05:30 IST) | MORNING_REPORT.md (with future roadmap), docs/EMERGENT_HANDOFF.md, README quick start. Final gates green. |
 
 **Next action:** MVP complete. Import into Emergent following docs/EMERGENT_HANDOFF.md; roadmap is in MORNING_REPORT.md.
+
+
+## Afternoon release task (`docs/GUIDE_ASSISTANT_AND_RELEASE_PROMPT.md`)
+
+| Phase | Status | Notes |
+|---|---|---|
+| A Baseline + app map | done | `docs/APP_MAP.md`; gates green |
+| B Guide assistant | done | 37-entry KB, BM25 + status + activity, streaming endpoint, three.js "Volt" bot, Streamdown panel; 16 guide tests |
+| C Transparency | done | Activity bar, reading bar, Activity drawer with central fetch instrumentation, stage logging, completion toasts |
+| D Usability | done | `docs/USABILITY_REPORT.md`: 6 issues fixed; screenshots in `docs/qa/` |
+| E Publish | done | Pushed to https://github.com/subham1902/Marketing-Intelligence-Tracker (public); history secret scan clean |

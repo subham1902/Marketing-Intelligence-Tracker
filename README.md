@@ -4,6 +4,17 @@
 
 > Built on [`yassnemo/compete`](https://github.com/yassnemo/compete) (MIT). The upstream licence and attribution are retained; the original README follows below.
 
+| Research workspace | Guide assistant | Activity drawer | Connect LLM |
+|---|---|---|---|
+| ![Research](docs/qa/research-workspace.jpg) | ![Guide](docs/qa/guide-answer.png) | ![Activity](docs/qa/activity-drawer.jpg) | ![Connect LLM](docs/qa/connect-llm.jpg) |
+
+**Highlights**
+- **Research from free public sources:** DuckDuckGo news, Google News, PIB (government) and GDELT, with every finding labelled by provenance and linked to its source.
+- **Company tracking with "Refresh news":** live developments for each company, kept separate from the `[Sample]` demo data.
+- **Guide assistant ("Volt"):** a 3D three.js companion bottom-right (or press **Ctrl+/**). It answers from a knowledge base of the real UI (`config/app_guide.yaml`), reads live run status from the database, explains "what just happened", and says so when it doesn't know. No LLM needed.
+- **Always-visible transparency:** a top activity bar, a reading-progress bar, and an **Activity** drawer with every API call, page and research stage, plus completion and failure toasts.
+- **Optional AI summaries** via **Connect LLM** (Ollama or any OpenAI-compatible key). Off by default.
+
 ## Quick start (free, no keys)
 
 Windows PowerShell (macOS/Linux: same commands, `export` instead of `$env:`):

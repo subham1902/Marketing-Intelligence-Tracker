@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  Bot,
   Building2,
   CornerDownLeft,
   FileText,
@@ -16,9 +17,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { useCompetitors } from "@/lib/hooks";
 import { useResearchRuns } from "@/lib/research-api";
+import { useActivity } from "@/lib/activity";
 import { cn } from "@/lib/utils";
 
-type Item = { id: string; label: string; hint?: string; href: string; icon: typeof Search };
+type Item = { id: string; label: string; hint?: string; href: string; icon: typeof Search; guide?: boolean };
 
 const PAGES: Item[] = [
   { id: "p-dash", label: "Overview", href: "/dashboard", icon: LayoutDashboard },
@@ -38,6 +40,7 @@ export function CommandPalette() {
   const input = useRef<HTMLInputElement>(null);
   const companies = useCompetitors();
   const runs = useResearchRuns();
+  const { log } = useActivity();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -83,12 +86,25 @@ export function CommandPalette() {
       })),
     ];
     const t = q.trim().toLowerCase();
-    return (t ? all.filter((i) => `${i.label} ${i.hint ?? ""}`.toLowerCase().includes(t)) : all).slice(0, 12);
+    const ask: Item = {
+      id: "guide",
+      label: t ? `Ask the guide: “${q.trim()}”` : "Ask the guide…",
+      hint: "Ctrl+/",
+      href: "",
+      icon: Bot,
+      guide: true,
+    };
+    return [ask, ...(t ? all.filter((i) => `${i.label} ${i.hint ?? ""}`.toLowerCase().includes(t)) : all)].slice(0, 12);
   }, [q, companies.data, runs.data]);
 
   const go = (i: Item | undefined) => {
     if (!i) return;
     setOpen(false);
+    log({ kind: "action", label: `Palette: ${i.label.slice(0, 60)}`, route: i.href || undefined });
+    if (i.guide) {
+      window.dispatchEvent(new CustomEvent("open-guide", { detail: q.trim() || undefined }));
+      return;
+    }
     router.push(i.href);
   };
 

@@ -131,3 +131,15 @@ Spec: `docs/OVERNIGHT_BUILD_PROMPT.md`. Progress per phase is in `PROGRESS.md`; 
 - **Phase 6:** browser QA fixes: background polling, objective-driven discovery and ranking, verified-first ordering, a label on the unverified LLM summary.
 - **Gates:** pytest 72 passed; tsc clean; `npm run build` success; `/api/health` ok.
 - **Alternative not taken:** Emergent's universal LLM key for hosted summaries. It's a P0 idea in the hand-off doc and must keep the `quote_in_text` rule.
+
+
+## Guide, transparency and release (20 Nov 2026, afternoon)
+
+- **Guide:** `docs/APP_MAP.md` → `config/app_guide.yaml` (37 entries). `pipeline/assistant/guide.py` does BM25 with a page boost, live-status intents and activity summaries, and is honest at low confidence. `POST /assistant/chat` streams word chunks with a `<<META>>` trailer; optional rephrasing goes through the connected LLM and falls back to the deterministic answer.
+- **Frontend:** `components/guide/*`, including a three.js bot ("Volt"), a Radix Dialog panel and Streamdown animated rendering. The palette gets "Ask the guide"; Ctrl+/ opens the guide.
+- **Transparency:** `lib/activity.tsx` (context + reducer, localStorage, central fetch instrumentation) and `components/transparency.tsx` (activity bar, reading bar, Activity drawer).
+- **New dependencies** (licences and peer dependencies checked; no React/Next/Tailwind upgrades):
+  - `streamdown@2.8.0` (Apache-2.0; peer React ^18 || ^19)
+  - `three@0.187.0` (MIT)
+  - `@types/three` (dev)
+- **Gates:** pytest 94 passed; tsc clean; next lint clean; `npm run build` success.

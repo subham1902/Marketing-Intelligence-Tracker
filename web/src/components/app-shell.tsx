@@ -19,6 +19,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { CommandPalette } from "@/components/command-palette";
+import { Guide } from "@/components/guide/guide";
+import { ActivityBar, ActivityButton, ActivityDrawer, ReadingProgress } from "@/components/transparency";
 import { LLMButton, LLMPanel } from "@/components/llm-panel";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -99,6 +101,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [llmOpen, setLlmOpen] = useState(false);
+  const [activityOpen, setActivityOpen] = useState(false);
 
   useEffect(() => {
     const onOpen = () => setLlmOpen(true);
@@ -162,9 +165,11 @@ export function AppShell({ children }: { children: ReactNode }) {
             <kbd className="rounded border bg-muted px-1.5 text-[11px]">Ctrl K</kbd>
           </button>
           <div className="ml-auto flex items-center gap-2 sm:ml-0">
+            <ActivityButton onClick={() => setActivityOpen(true)} />
             <LLMButton onClick={() => setLlmOpen(true)} />
             <ThemeToggle />
           </div>
+          <ReadingProgress />
         </header>
 
         <main className="mx-auto w-full max-w-7xl px-4 pb-24 pt-6 md:px-8 md:pb-10">
@@ -174,6 +179,9 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <CommandPalette />
       <LLMPanel open={llmOpen} onClose={() => setLlmOpen(false)} />
+      <ActivityDrawer open={activityOpen} onClose={() => setActivityOpen(false)} />
+      <Guide />
+      <ActivityBar />
 
       {/* Mobile bottom nav */}
       <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t bg-background/95 backdrop-blur md:hidden">

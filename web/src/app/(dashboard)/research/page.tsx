@@ -23,6 +23,7 @@ import {
   type SourcePreference,
   type TimeWindow,
 } from "@/lib/research-types";
+import { useActivity } from "@/lib/activity";
 import { cn } from "@/lib/utils";
 
 const EXAMPLE =
@@ -58,6 +59,7 @@ export default function ResearchPage() {
   const runs = useResearchRuns();
   const competitors = useCompetitors();
   const create = useCreateResearch();
+  const { log } = useActivity();
 
   const [objective, setObjective] = useState(EXAMPLE);
   const [industry, setIndustry] = useState("Electric vehicles & mobility");
@@ -132,6 +134,7 @@ export default function ResearchPage() {
                   key={t.label}
                   type="button"
                   onClick={() => {
+                    log({ kind: "action", label: `Used template: ${t.label}`, route: "/research" });
                     setObjective(t.objective);
                     setPrefs(t.prefs);
                     setTimeWindow(t.window);
