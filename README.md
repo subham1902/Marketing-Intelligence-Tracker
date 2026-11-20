@@ -1,3 +1,34 @@
+# Market Intelligence Tracker
+
+**India-first AI market intelligence for businesses.** Company and competitor tracking, on-demand market research from **free public sources**, and government, policy and tender discovery. Findings are structured, labelled by provenance and linked to their sources. The demo vertical is Indian EV and mobility; the architecture is industry-agnostic.
+
+> Built on [`yassnemo/compete`](https://github.com/yassnemo/compete) (MIT). The upstream licence and attribution are retained; the original README follows below.
+
+## Quick start (free, no keys)
+
+Windows PowerShell (macOS/Linux: same commands, `export` instead of `$env:`):
+
+```powershell
+uv sync --extra dev --extra dbt --extra api --extra report      # or: pip install -r requirements.txt
+uv run uvicorn api.main:app --port 8000                          # first boot seeds demo data + real snapshot (~1-2 min)
+cd web; npm install; npm run dev                                 # http://localhost:3000
+```
+
+- **Research works with no keys.** The default `COMPETE_RESEARCH_PROVIDER=open` searches DuckDuckGo news, Google News RSS, PIB press releases and GDELT, fetches the pages and builds an extractive report. Every finding is verbatim source text.
+- **Optional: local LLM.** Install [Ollama](https://ollama.com) and run `ollama pull qwen2.5:7b-instruct`. With `COMPETE_RESEARCH_SYNTHESIS=auto`, reports get LLM-written sections, and a finding is marked "source-supported" only when its quote is found verbatim in the cited source.
+- **Optional: Context.dev.** Set `CONTEXT_DEV_API_KEY` and `COMPETE_RESEARCH_PROVIDER=contextdev`. This is a paid provider; its findings are labelled "Provider-cited fact".
+- **Hosting (Emergent and similar):** see [docs/EMERGENT_HANDOFF.md](docs/EMERGENT_HANDOFF.md). The backend serves every route under `/api` as well as `/`.
+
+| Label | Meaning |
+|---|---|
+| Source excerpt | Verbatim text from the source (no generated prose) |
+| Source-supported (quote verified) | LLM finding whose evidence quote was found in the cited source |
+| Provider-cited fact | Context.dev says a source supports it; not independently verified |
+| Analysis | Interpretation, or a citation that could not be verified |
+| Demo snapshot / [Sample] | Preloaded sample data, never live |
+
+---
+
 # compete - Competitive Intelligence Platform
 
 **Watch every move your competitors make.** compete runs scheduled agents over a

@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     )
 
     # LLM
-    llm_provider: str = Field(default="gemini", alias="COMPETE_LLM_PROVIDER")
+    llm_provider: str = Field(default="mock", alias="COMPETE_LLM_PROVIDER")  # keyless default for hosting
     llm_model: str = Field(default="gemini-1.5-flash", alias="COMPETE_LLM_MODEL")
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")
     groq_api_key: str | None = Field(default=None, alias="GROQ_API_KEY")

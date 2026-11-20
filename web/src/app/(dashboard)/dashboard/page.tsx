@@ -23,7 +23,7 @@ export default function OverviewPage() {
   const overview = useOverview();
   const signals = useSignals({ limit: 8 });
   const competitors = useCompetitors();
-  const findings = useFindingsFeed({ limit: 50 });
+  const findings = useFindingsFeed({ limit: 50, include_demo: false });
   const runs = useResearchRuns();
 
   const nameById = new Map((competitors.data ?? []).map((c) => [c.id, c.name]));
@@ -91,7 +91,7 @@ export default function OverviewPage() {
         <div className="lg:col-span-2">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-              Important developments
+              Latest live developments
             </h2>
             <Link href="/feed" className="text-sm text-primary hover:underline">
               Intelligence feed
@@ -107,7 +107,7 @@ export default function OverviewPage() {
             empty={
               <EmptyState
                 icon={FlaskConical}
-                title="No research findings yet"
+                title="No live findings yet"
                 description="Run a research objective to populate market developments."
               />
             }
