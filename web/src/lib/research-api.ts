@@ -116,6 +116,7 @@ export const useResearchRuns = () =>
     queryFn: researchApi.runs,
     // Poll only while a run is genuinely in flight on the backend.
     refetchInterval: (q) => (q.state.data?.some((r) => ACTIVE.has(r.status)) ? 3000 : false),
+    refetchIntervalInBackground: true,
   });
 
 export const useResearchRun = (id: string) =>
@@ -124,6 +125,7 @@ export const useResearchRun = (id: string) =>
     queryFn: () => researchApi.run(id),
     enabled: !!id,
     refetchInterval: (q) => (q.state.data && ACTIVE.has(q.state.data.status) ? 3000 : false),
+    refetchIntervalInBackground: true, // keep status honest if the user switches tabs
   });
 
 export const useResearchSources = (id: string, enabled = true) =>

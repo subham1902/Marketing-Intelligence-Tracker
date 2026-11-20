@@ -19,6 +19,14 @@ import { useCompetitors, useOverview, useSignals } from "@/lib/hooks";
 import { useFindingsFeed, useResearchRuns } from "@/lib/research-api";
 import { signalMeta } from "@/lib/signal-meta";
 
+// Verified evidence first; unverified analysis last.
+const KIND_RANK: Record<string, number> = {
+  source_supported: 0,
+  verified_fact: 1,
+  source_excerpt: 2,
+  analysis: 3,
+};
+
 export default function OverviewPage() {
   const overview = useOverview();
   const signals = useSignals({ limit: 8 });
@@ -114,7 +122,11 @@ export default function OverviewPage() {
           >
             <div className="flex flex-col gap-3">
               {[...(findings.data?.items ?? [])]
-                .sort((a, b) => (b.significance ?? 0) - (a.significance ?? 0))
+                .sort(
+                  (a, b) =>
+                    KIND_RANK[a.kind] - KIND_RANK[b.kind] ||
+                    (b.significance ?? 0) - (a.significance ?? 0),
+                )
                 .slice(0, 4)
                 .map((f) => (
                   <FindingCard key={f.id} finding={f} showRun />

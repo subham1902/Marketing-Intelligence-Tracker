@@ -235,7 +235,13 @@ class OpenResearchProvider:
     def _queries(self, req: Any) -> list[str]:
         base = (req.industry or "electric vehicle").strip()
         geo = req.geography or "India"
-        qs = [f"{base} {geo}"]
+        # The objective's own words lead: a short objective ("Ola Electric developments")
+        # is usually the most specific query we have.
+        stop = {"research", "identify", "the", "and", "of", "in", "for", "over", "last", "months",
+                "month", "india", "india's", "developments", "latest", "significant", "a", "to"}
+        words = [w.strip(".,;:'\"()") for w in (req.objective or "").split()]
+        key = [w for w in words if w and w.lower() not in stop][:6]
+        qs = ([f"{' '.join(key)} {geo}"] if key else []) + [f"{base} {geo}"]
         qs += [f"{c} {geo}" for c in (req.companies or [])[:5]]
         prefs = set(req.source_preferences or [])
         if "government" in prefs or "regulatory" in prefs or not prefs:
@@ -383,13 +389,21 @@ class OpenResearchProvider:
         ts = c.published_at.timestamp() if c.published_at else 0.0
         return (pri, -ts)
 
-    def select(self, cands: list[Candidate], days: int, relevance: list[str]) -> list[Candidate]:
+    def select(self, cands: list[Candidate], days: int, relevance: list[str],
+               focus: list[str] | None = None) -> list[Candidate]:
         cutoff = datetime.now(UTC) - timedelta(days=days)
         rel = [r.lower() for r in relevance if r]
         seen_url: set[str] = set()
         seen_title: set[str] = set()
         out = []
-        for c in sorted(cands, key=self._rank_key):
+        foc = [f.lower() for f in (focus or []) if f]
+
+        def key(c: Candidate):
+            blob = f"{c.title or ''} {c.snippet or ''}".lower()
+            hit = 0 if (foc and any(f in blob for f in foc)) else 1
+            return (hit, *self._rank_key(c))
+
+        for c in sorted(cands, key=key):
             if c.published_at and c.published_at < cutoff:
                 continue
             key = _norm_url(c.url)
@@ -642,7 +656,11 @@ class OpenResearchProvider:
         cands = self.discover(req, days)
         relevance = [*(req.companies or []), *[w for w in (req.industry or "").lower().split() if len(w) > 3],
                      "electric", " ev", "ev ", "e-mobility", "battery", "charging"]
-        picked = self.select(cands, days, relevance)
+        # Named entities from the objective (capitalized words) are ranked first.
+        focus = [w.strip(".,;:'\"()") for w in (req.objective or "").split()
+                 if w[:1].isupper() and w.lower().strip(".,") not in ("research", "india", "india's", "identify")]
+        focus = [" ".join(focus)] if len(focus) > 1 else focus  # "Ola Electric", not "Electric"
+        picked = self.select(cands, days, relevance, focus=focus + list(req.companies or []))
         if not picked:
             raise ProviderError(
                 "No relevant articles were found in the free sources for this window. "

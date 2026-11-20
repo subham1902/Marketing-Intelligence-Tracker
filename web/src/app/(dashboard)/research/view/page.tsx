@@ -132,6 +132,11 @@ function ReportView() {
                       <CardTitle className="text-base">Executive summary</CardTitle>
                     </CardHeader>
                     <CardContent className="text-sm leading-relaxed">
+                      {run.data.result.method?.startsWith("llm") && (
+                        <p className="mb-2 rounded-md border border-amber-500/30 bg-amber-500/5 px-2 py-1 text-xs text-amber-800 dark:text-amber-300">
+                          AI-written summary from a local model. Not quote-verified and may contain errors; rely on the source-supported findings and sources.
+                        </p>
+                      )}
                       {run.data.result.executive_summary ?? <span className="text-muted-foreground">Not provided.</span>}
                     </CardContent>
                   </Card>
