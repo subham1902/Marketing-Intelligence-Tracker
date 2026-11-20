@@ -143,6 +143,11 @@ export function FindingCard({
             Outside time window
           </Badge>
         )}
+        {finding.flags.includes("multi_source") && (
+          <Badge variant="outline" className="text-muted-foreground" title="Several publishers reported this story">
+            Covered by {finding.source_ids.length} sources
+          </Badge>
+        )}
         {showRun && feed.is_demo && <DataOriginBadge isDemo />}
         {finding.entity && <span className="text-sm font-medium">{finding.entity}</span>}
         <span className="ml-auto flex items-center gap-2">

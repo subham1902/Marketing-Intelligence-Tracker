@@ -141,6 +141,49 @@ def _strip_title(text: str, title: str | None) -> str:
     return t
 
 
+_STOP = {"the", "a", "an", "of", "in", "on", "for", "to", "and", "with", "as", "by", "at", "its", "is", "from"}
+
+
+def _tokens(title: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z0-9]+", (title or "").lower()) if w not in _STOP and len(w) > 2}
+
+
+def cluster_findings(findings: list[dict[str, Any]], threshold: float = 0.6) -> list[dict[str, Any]]:
+    """Merge findings whose headlines describe the same story (token Jaccard >= threshold).
+
+    The first (highest-ranked) finding is kept; the others' sources are attached
+    and the finding is flagged ``multi_source`` so the UI can show "N sources".
+    """
+    out: list[dict[str, Any]] = []
+    toks: list[set[str]] = []
+    for f in findings:
+        t = _tokens(f["title"])
+        for i, kept in enumerate(out):
+            u = t | toks[i]
+            if u and len(t & toks[i]) / len(u) >= threshold:
+                for sid in f["source_ids"]:
+                    if sid not in kept["source_ids"]:
+                        kept["source_ids"].append(sid)
+                if "multi_source" not in kept["flags"]:
+                    kept["flags"].append("multi_source")
+                break
+        else:
+            out.append(f)
+            toks.append(t)
+    return out
+
+
+_GENERIC_TITLE = re.compile(
+    r"^(press release page|latest releases|press information bureau|home|news|press releases?)"
+    r"(\s*[|\-:]\s*(press information bureau|pib|government of india))*\s*$",
+    re.IGNORECASE,
+)
+
+
+def _generic_title(t: str | None) -> bool:
+    return bool(t) and bool(_GENERIC_TITLE.match(t.strip()))
+
+
 def _english(s: str) -> bool:
     return bool(s) and sum(c.isascii() for c in s) / len(s) > 0.9
 
@@ -440,8 +483,14 @@ class OpenResearchProvider:
             if not c.snippet:
                 c.snippet = _lead_sentences(text)
         if meta is not None:
-            if not c.title and getattr(meta, "title", None):
-                c.title = meta.title
+            mt = getattr(meta, "title", None)
+            if (not c.title or _generic_title(c.title)) and mt and not _generic_title(mt):
+                c.title = mt
+        if c.title and _generic_title(c.title) and text:
+            # Portal pages (e.g. PIB) carry a site-wide <title>; use the article's first line.
+            first = next((ln.strip() for ln in text.splitlines() if 20 <= len(ln.strip()) <= 220), None)
+            if first:
+                c.title = first
             if not c.published_at and getattr(meta, "date", None):
                 c.published_at = _parse_dt(meta.date)
 
@@ -530,7 +579,7 @@ class OpenResearchProvider:
                 "evidence_quote": excerpt if (excerpt and c.text and quote_in_text(excerpt, c.text)) else None,
                 "created_at": datetime.now(UTC),
             })
-        return findings
+        return cluster_findings(findings)
 
     def _report_from(self, findings: list[dict[str, Any]], sources: list[dict[str, Any]], mode: str,
                      summary: str | None = None, extra: dict[str, Any] | None = None) -> dict[str, Any]:

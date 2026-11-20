@@ -28,6 +28,28 @@ import { cn } from "@/lib/utils";
 const EXAMPLE =
   "Research India's electric mobility industry over the last six months. Identify significant competitor developments, product launches, manufacturing expansions, partnerships, investment activity, policy developments, procurement opportunities and emerging commercial opportunities. Prioritize original company announcements and official government sources. Separate verified facts from analysis and provide the sources supporting every finding.";
 
+const TEMPLATES: { label: string; objective: string; prefs: SourcePreference[]; window: TimeWindow }[] = [
+  { label: "Market overview", objective: EXAMPLE, prefs: ["official_company", "government", "tenders"], window: "3m" },
+  {
+    label: "Policy & incentives",
+    objective: "Government policy, subsidy and incentive developments for electric vehicles in India (PM E-DRIVE, PLI, state EV policies).",
+    prefs: ["government", "regulatory"],
+    window: "3m",
+  },
+  {
+    label: "Tenders & procurement",
+    objective: "Public tenders and procurement for electric buses, EV charging infrastructure and batteries in India.",
+    prefs: ["tenders", "government"],
+    window: "3m",
+  },
+  {
+    label: "Competitor moves",
+    objective: "Product launches, partnerships, funding and expansion announcements by Indian EV makers.",
+    prefs: ["official_company", "news"],
+    window: "1m",
+  },
+];
+
 const GEOS = ["India", "South India", "North India", "West India", "East India", "Global (India focus)"];
 
 export default function ResearchPage() {
@@ -97,6 +119,22 @@ export default function ResearchPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-2">
+              {TEMPLATES.map((t) => (
+                <button
+                  key={t.label}
+                  type="button"
+                  onClick={() => {
+                    setObjective(t.objective);
+                    setPrefs(t.prefs);
+                    setTimeWindow(t.window);
+                  }}
+                  className="rounded-md border border-dashed px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="objective">Research objective</Label>
               <textarea

@@ -289,3 +289,23 @@ def test_company_refresh_and_developments(tmp_path: Path, monkeypatch: pytest.Mo
         assert dev and all(not d["is_demo"] for d in dev)
         assert c.post("/companies/nope/refresh").status_code == 404
     get_settings.cache_clear()
+
+
+def test_cluster_findings_merges_same_story() -> None:
+    from pipeline.research.open_provider import cluster_findings
+
+    fs = [
+        {"title": "Ola Electric Q2 revenue falls 39%", "source_ids": ["a"], "flags": []},
+        {"title": "Ola Electric's Q2 revenue falls by 39%", "source_ids": ["b"], "flags": []},
+        {"title": "Ather opens new plant", "source_ids": ["c"], "flags": []},
+    ]
+    out = cluster_findings(fs)
+    assert len(out) == 2 and out[0]["source_ids"] == ["a", "b"] and "multi_source" in out[0]["flags"]
+
+
+def test_generic_title_detection() -> None:
+    from pipeline.research.open_provider import _generic_title
+
+    assert _generic_title("Press Release Page | Press Information Bureau")
+    assert _generic_title("Latest Releases - Press Information Bureau")
+    assert not _generic_title("Cabinet approves electric bus scheme")
