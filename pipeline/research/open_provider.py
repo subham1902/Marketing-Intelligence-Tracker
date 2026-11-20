@@ -184,6 +184,15 @@ def _generic_title(t: str | None) -> bool:
     return bool(t) and bool(_GENERIC_TITLE.match(t.strip()))
 
 
+def _looks_old(url: str, min_year: int) -> bool:
+    """True for archive hosts or URLs whose embedded year is before ``min_year``."""
+    host = host_of(url)
+    if host.startswith("archive."):
+        return True
+    years = [int(y) for y in re.findall(r"(?<!\d)(19\d{2}|20\d{2})(?!\d)", url)]
+    return bool(years) and max(years) < min_year
+
+
 def _english(s: str) -> bool:
     return bool(s) and sum(c.isascii() for c in s) / len(s) > 0.9
 
@@ -449,6 +458,8 @@ class OpenResearchProvider:
         for c in sorted(cands, key=key):
             if c.published_at and c.published_at < cutoff:
                 continue
+            if not c.published_at and _looks_old(c.url, cutoff.year):
+                continue  # undated archive pages (e.g. archive.pib.gov.in/.../lyr2000/...)
             key = _norm_url(c.url)
             tkey = _norm_text(c.title or "")[:80]
             if key in seen_url or (tkey and tkey in seen_title):

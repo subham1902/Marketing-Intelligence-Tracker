@@ -309,3 +309,12 @@ def test_generic_title_detection() -> None:
     assert _generic_title("Press Release Page | Press Information Bureau")
     assert _generic_title("Latest Releases - Press Information Bureau")
     assert not _generic_title("Cabinet approves electric bus scheme")
+
+
+def test_looks_old() -> None:
+    from pipeline.research.open_provider import _looks_old
+
+    assert _looks_old("https://archive.pib.gov.in/archive/releases98/lyr2000/rapr2000/r27042000.html", 2026)
+    assert _looks_old("https://example.com/news/2019/05/ev.html", 2026)
+    assert not _looks_old("https://newindiasamachar.pib.gov.in/WriteReadData/Magazine//2026/Feb/M1.pdf", 2026)
+    assert not _looks_old("https://pib.gov.in/PressReleasePage.aspx?PRID=2072136", 2026)
