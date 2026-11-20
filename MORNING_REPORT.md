@@ -68,3 +68,28 @@ Then open http://localhost:3000. For Emergent, follow `docs/EMERGENT_HANDOFF.md`
 5. **Open the broad EV snapshot:** government (PIB) sources and tender/policy findings.
 6. **Feed:** filter to Policy, turn off "Include demo snapshot", and switch kinds.
 7. Close on the message: free, keyless and honest. Nothing is invented, and every claim links to its source.
+
+## Added after the core build (05:05–05:30 IST)
+- Emergent layout adapters: `backend/server.py` (`uvicorn server:app --port 8001`) and `backend/requirements.txt`. The Next proxy port is configurable (`BACKEND_PORT=8001`), and `COMPETE_CORS_ORIGINS=*` is supported.
+- Faster free research: pages are fetched in parallel across hosts. An uncached run takes about 32 s.
+- Story clustering ("Covered by N sources"), one-click research templates (Market overview, Policy & incentives, Tenders, Competitor moves), and a "Market pulse" chart on the dashboard.
+- Quality fixes for extractive mode: generic portal titles are replaced with the article headline, old archive pages are dropped, news-page boilerplate is stripped, and dates stated in a page are read and the window re-applied after fetching.
+- Hosted snapshot cleaned up: the flawed LLM run was replaced, and unverified model prose was removed from the stored LLM runs.
+- 77 tests pass; tsc is clean; the build succeeds. The code also compiles under Python 3.11.
+
+## Future roadmap (after MVP submission)
+**P0: next on Emergent**
+1. Persistent storage for `data/`, so research survives redeploys (or move `research.*` to Emergent's managed DB behind the same store functions).
+2. Optional hosted LLM summaries using Emergent's universal LLM key. Keep the `quote_in_text` rule: only verified quotes may be labelled "source-supported", and prose stays labelled "AI-written".
+3. UI redesign: report hero, findings ↔ sources side panel, a mobile layout pass.
+4. Some PIB pages carry no date and a generic title. Parse PIB's own date and headline elements (some still show "Press Release Page", undated).
+
+**P1**
+5. Scheduled company refresh (a daily cron calling `POST /api/companies/{id}/refresh`) and alerts on new high-significance findings.
+6. A tender portal integration where a public API exists (e.g. the CPPP mirror); never bypass CAPTCHAs.
+7. Deduplicate findings across runs, and add an entity/company graph.
+8. Export a report to PDF or a share link.
+9. Industry templates beyond EV (the product is industry-agnostic).
+10. Auth and multi-user workspaces.
+
+**Known gaps:** GDELT is rate-limited from some networks; Google News links are aggregator redirects; a few government pages are undated; the scripted QA (`scripts/qa_journey.py`) needs a browser-capable environment.
