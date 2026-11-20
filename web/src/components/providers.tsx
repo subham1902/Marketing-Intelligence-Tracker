@@ -6,6 +6,8 @@ import { ThemeProvider } from "next-themes";
 import { useState, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
+import { ActivityProvider } from "@/lib/activity";
+
 export function Providers({ children }: { children: ReactNode }) {
   const [client] = useState(
     () =>
@@ -21,8 +23,10 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <QueryClientProvider client={client}>
-        <MotionConfig reducedMotion="user">{children}</MotionConfig>
-        <Toaster richColors closeButton position="bottom-right" />
+        <MotionConfig reducedMotion="user">
+          <ActivityProvider>{children}</ActivityProvider>
+        </MotionConfig>
+        <Toaster richColors closeButton position="bottom-left" />
       </QueryClientProvider>
     </ThemeProvider>
   );

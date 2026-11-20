@@ -5,8 +5,10 @@
 // backend, so it fails honestly instead of pretending.
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useRef } from "react";
 import { toast } from "sonner";
 
+import { useActivity } from "./activity";
 import { ApiError } from "./api";
 import type {
   FeedFinding,
@@ -154,9 +156,7 @@ export function useCreateResearch() {
       if (run.status === "failed") {
         toast.error("Research could not start", { description: run.error_message ?? undefined });
       } else {
-        toast.success("Research submitted", {
-          description: "Status reflects the backend; typical runs take 30-180 seconds.",
-        });
+        /* progress is shown by the stage bar and the Activity drawer; no toast per click */
       }
     },
     onError: (e) => toast.error(e instanceof Error ? e.message : "Failed to submit research"),
@@ -185,7 +185,7 @@ export function useRefreshCompany(id: string) {
     onSuccess: (run) => {
       qc.invalidateQueries({ queryKey: researchKeys.runs });
       if (run.status === "failed") toast.error("Refresh failed", { description: run.error_message ?? undefined });
-      else toast.success("Refreshing news", { description: "Searching free public sources for the last month." });
+      /* stage bar + Activity drawer show progress; completion toast comes from useRunActivity */
     },
     onError: (e) => toast.error(e instanceof Error ? e.message : "Refresh failed"),
   });
@@ -259,4 +259,35 @@ export function useTestLLM() {
         body: JSON.stringify(body),
       }),
   });
+}
+
+// --------------------------- run stage activity --------------------------- //
+
+/**
+ * Log real stage changes of a run (observed while polling) to the activity
+ * tracker, and toast only when a long task completes or fails.
+ */
+export function useRunActivity(run: ResearchRun | undefined, opts: { label?: string } = {}) {
+  const { log } = useActivity();
+  const last = useRef<string | null>(null);
+  useEffect(() => {
+    if (!run) return;
+    const stage =
+      run.status === "running" || run.status === "queued" ? run.status_message ?? run.status : run.status;
+    const key = `${run.id}:${stage}`;
+    if (last.current === key) return;
+    const wasActive = last.current !== null && last.current.startsWith(run.id);
+    last.current = key;
+    const route = `/research/view?id=${encodeURIComponent(run.id)}`;
+    const name = opts.label ?? "Research";
+    if (run.status === "running" || run.status === "queued") {
+      log({ kind: "stage", label: `${name}: ${stage}`, route, status: "info" });
+    } else if (wasActive && (run.status === "completed" || run.status === "partial")) {
+      log({ kind: "stage", label: `${name} completed: ${run.finding_count} findings`, route, status: "success" });
+      toast.success(`${name} completed`, { description: `${run.finding_count} findings from ${run.source_count} sources.` });
+    } else if (wasActive && run.status === "failed") {
+      log({ kind: "stage", label: `${name} failed`, route, status: "error", error: run.error_message ?? undefined });
+      toast.error(`${name} failed`, { description: run.error_message ?? undefined });
+    }
+  }, [run?.id, run?.status, run?.status_message]); // eslint-disable-line react-hooks/exhaustive-deps
 }
