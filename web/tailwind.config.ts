@@ -7,6 +7,8 @@ const config: Config = {
     "./src/**/*.{ts,tsx}",
     // Tremor module - required so its classes are generated.
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx,mjs}",
+    // Streamdown (guide message rendering) ships Tailwind classes.
+    "./node_modules/streamdown/dist/*.js",
   ],
   theme: {
     transparent: "transparent",
