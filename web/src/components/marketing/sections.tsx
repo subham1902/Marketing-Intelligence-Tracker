@@ -392,3 +392,43 @@ export function AnalysisBody({ r, company }: { r: MarketingResult; company: stri
     </div>
   );
 }
+
+const CELL: Record<string, string> = {
+  strong: "text-emerald-600 dark:text-emerald-400", low: "text-emerald-600 dark:text-emerald-400",
+  high: "text-rose-600 dark:text-rose-400", weak: "text-rose-600 dark:text-rose-400",
+  moderate: "text-amber-600 dark:text-amber-400", medium: "text-amber-600 dark:text-amber-400",
+  average: "text-amber-600 dark:text-amber-400", unknown: "text-muted-foreground",
+};
+
+export function CompareTable({ a, b, nameA, nameB }: { a: MarketingResult; b: MarketingResult; nameA: string; nameB: string }) {
+  const rows: [string, string, string, string][] = [
+    ...a.porter.map((p, i) => ["Five forces", p.force, p.level, b.porter[i]?.level ?? "unknown"] as [string, string, string, string]),
+    ...a.moat.map((m, i) => ["Moat", m.dimension, m.rating, b.moat[i]?.rating ?? "unknown"] as [string, string, string, string]),
+    ...a.mix.map((m, i) => ["7P", m.p, m.rating, b.mix[i]?.rating ?? "unknown"] as [string, string, string, string]),
+  ];
+  const tone = (r: MarketingResult) => (r.tone.score === null ? "n/a" : `${r.tone.score >= 0 ? "+" : ""}${r.tone.score.toFixed(2)}`);
+  return (
+    <Section id="compare" title={`Head to head: ${nameA} vs ${nameB}`} how="Same rules applied to each company's own evidence. Five forces: high = more pressure (worse); moat and 7P: strong = better.">
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-xs text-muted-foreground"><th className="py-1 pr-2">Framework</th><th className="pr-2">Dimension</th><th className="pr-2">{nameA}</th><th>{nameB}</th></tr>
+          </thead>
+          <tbody>
+            <tr className="border-t"><td className="py-1.5 pr-2 text-xs text-muted-foreground">Snapshot</td><td className="pr-2">Sources</td><td className="pr-2">{a.snapshot.evidence_count}</td><td>{b.snapshot.evidence_count}</td></tr>
+            <tr className="border-t"><td className="py-1.5 pr-2 text-xs text-muted-foreground">Attitude</td><td className="pr-2">Indicative tone</td><td className="pr-2">{tone(a)}</td><td>{tone(b)}</td></tr>
+            {rows.map(([f, d, x, y]) => (
+              <tr key={f + d} className="border-t">
+                <td className="py-1.5 pr-2 text-xs text-muted-foreground">{f}</td>
+                <td className="pr-2">{d}</td>
+                <td className={cn("pr-2 font-medium capitalize", CELL[x])}>{x}</td>
+                <td className={cn("font-medium capitalize", CELL[y])}>{y}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground"><Label>Analysis</Label> Open each company&apos;s analysis for the evidence behind every rating.</p>
+    </Section>
+  );
+}

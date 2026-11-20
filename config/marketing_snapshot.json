@@ -5,7 +5,7 @@
    "id": "mk-snap-tata-motors",
    "company": "tata-motors",
    "company_name": "Tata Motors",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:41:33.683260+00:00",
    "completed_at": "2026-11-20T07:41:33.683260+00:00",
    "result": {
@@ -707,7 +707,66 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Expand into new markets.",
+      "why": "Tata Motors is already expanding its commercial vehicle network globally, which can be leveraged to enter new markets.",
+      "impact": "This can increase market share and brand recognition in new regions.",
+      "effort": "High",
+      "kpi": "Increase in sales and market share in Syria and other new markets.",
+      "evidence_ids": [
+       "ev-66187f30be",
+       "ev-09d58168f9",
+       "ev-79ff986a8e",
+       "ev-d76b1490aa",
+       "ev-b703b051e2",
+       "ev-19804431bb",
+       "ev-1afbac2ae2",
+       "ev-4bbbc1ab6f",
+       "ev-7d9f58a10d",
+       "ev-8274ea4b8b",
+       "ev-d5cc3b0859",
+       "ev-f755e0ddbf",
+       "ev-41d5360fbb",
+       "ev-10a614f082",
+       "ev-bdf05cce83",
+       "ev-703623f548"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 1
+     },
+     {
+      "action": "Invest in technology and platform sharing.",
+      "why": "Tata Motors is collaborating with other automotive companies for technology and platform sharing, which can lead to cost savings and faster product development.",
+      "impact": "This can lead to enhanced technological capabilities and market access.",
+      "effort": "Medium",
+      "kpi": "Increase in partnerships and technology transfer.",
+      "evidence_ids": [
+       "ev-79ff986a8e",
+       "ev-b703b051e2",
+       "ev-4bbbc1ab6f",
+       "ev-1afbac2ae2",
+       "ev-41d5360fbb"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 2
+     },
+     {
+      "action": "Focus on safety and EVs.",
+      "why": "Tata Motors is focusing on electric vehicles and safety, which can improve brand reputation and customer trust.",
+      "impact": "Improving safety ratings can enhance brand reputation and customer trust.",
+      "effort": "High",
+      "kpi": "Increase in EV sales and positive customer feedback.",
+      "evidence_ids": [
+       "ev-7d9f58a10d",
+       "ev-4bbbc1ab6f"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "4 tracked rivals co-mentioned with Tata Motors.",
       "trigger": "high_rivalry",
@@ -717,7 +776,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "3 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -727,7 +786,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 3,
+      "priority": 6,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "6 stated plans found",
       "trigger": "plans_exist",
@@ -737,7 +796,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 4,
+      "priority": 7,
       "action": "Invest in the weakest moat dimension that rivals already use (see Moat)",
       "why": "Moat weak/unknown: Switching costs, Distribution, Regulatory",
       "trigger": "weak_moat",
@@ -745,6 +804,72 @@
       "effort": "High",
       "kpi": "Moat evidence count next quarter",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Tata Motors is expanding its commercial vehicle network globally.",
+      "evidence_ids": [
+       "ev-66187f30be",
+       "ev-09d58168f9",
+       "ev-79ff986a8e",
+       "ev-d76b1490aa",
+       "ev-b703b051e2",
+       "ev-19804431bb",
+       "ev-1afbac2ae2",
+       "ev-4bbbc1ab6f",
+       "ev-7d9f58a10d",
+       "ev-8274ea4b8b",
+       "ev-d5cc3b0859",
+       "ev-f755e0ddbf",
+       "ev-41d5360fbb",
+       "ev-10a614f082",
+       "ev-bdf05cce83",
+       "ev-703623f548"
+      ],
+      "quote": "Tata Motors has entered into a partnership with Ghassan Aboud Automotive, through its subsidiary Grand Auto & Machinery Co. (GAMCO), to distribute its commercial vehicles in Syria, marking the Indian automaker's entry into the country's transportation and logistics market, it was announced",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Tata Motors is collaborating with other automotive companies for technology and platform sharing.",
+      "evidence_ids": [
+       "ev-79ff986a8e",
+       "ev-b703b051e2",
+       "ev-4bbbc1ab6f",
+       "ev-1afbac2ae2",
+       "ev-41d5360fbb"
+      ],
+      "quote": "For collaborative projects with other OEMs, Tata Group companies such as Tata AutoComp, Agratas, Tata Technologies, Tata Elxsi and TCS could also play a key role",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Tata Motors is focusing on electric vehicles (EVs) and safety.",
+      "evidence_ids": [
+       "ev-7d9f58a10d",
+       "ev-4bbbc1ab6f"
+      ],
+      "quote": "The Tata Sierra EV has undergone Bharat NCAP crash tests and earned a 5-star safety rating.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Tata Motors is addressing supply chain and talent gaps in its semiconductor push.",
+      "evidence_ids": [
+       "ev-082d22bc5f"
+      ],
+      "quote": "Tata Electronics, which is investing up to \u20b91.18 lakh crore in semiconductor manufacturing facilities in Gujarat and Assam, is grappling with challenges ranging from developing a local supplier ecosystem and transporting specialised equipment to bridging the gap between available talent and industry readiness.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Tata Motors is exploring partnerships with global automakers for technology and platform sharing.",
+      "evidence_ids": [
+       "ev-79ff986a8e",
+       "ev-b703b051e2",
+       "ev-4bbbc1ab6f",
+       "ev-1afbac2ae2",
+       "ev-41d5360fbb"
+      ],
+      "quote": "The Tata Group is drawing interest from global automakers seeking cooperation in vehicles, engineering and technology, with conversations involving Honda Motor Company and Hyundai Motor Company taking place over the past year.",
+      "label": "AI analysis"
      }
     ]
    },
@@ -1085,7 +1210,7 @@
    "id": "mk-snap-mahindra",
    "company": "mahindra",
    "company_name": "Mahindra",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:42:08.723608+00:00",
    "completed_at": "2026-11-20T07:42:08.723608+00:00",
    "result": {
@@ -1870,7 +1995,47 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Highlight Mahindra's electric vehicle initiatives and safety features in marketing campaigns.",
+      "why": "To capitalize on the growing demand for eco-friendly and safe vehicles.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-00f62f4578",
+       "ev-a752055415"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 1
+     },
+     {
+      "action": "Engage with the automotive community and potential investors through social media and webinars.",
+      "why": "To increase brand visibility and gather insights from industry experts and potential investors.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-dd823cc721"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 2
+     },
+     {
+      "action": "Develop strategic partnerships with ride-sharing companies to promote electric vehicles.",
+      "why": "To increase the accessibility and adoption of electric vehicles among drivers.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-06a2d8ddf5"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "4 tracked rivals co-mentioned with Mahindra.",
       "trigger": "high_rivalry",
@@ -1880,7 +2045,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "4 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -1890,7 +2055,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 3,
+      "priority": 6,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "4 stated plans found",
       "trigger": "plans_exist",
@@ -1900,7 +2065,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 4,
+      "priority": 7,
       "action": "Invest in the weakest moat dimension that rivals already use (see Moat)",
       "why": "Moat weak/unknown: Distribution",
       "trigger": "weak_moat",
@@ -1908,6 +2073,40 @@
       "effort": "High",
       "kpi": "Moat evidence count next quarter",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Mahindra has received significant investment from domestic and global institutional investors.",
+      "evidence_ids": [
+       "ev-dd823cc721"
+      ],
+      "quote": "Kotak Mahindra Mutual Fund (MF) led the buying spree, acquiring 2.05 crore shares or a 0.33 per cent stake, for Rs 448.95 crore, making it the biggest buyer in the transaction.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Mahindra is focusing on electric three-wheelers and expanding its business through an IPO.",
+      "evidence_ids": [
+       "ev-00f62f4578"
+      ],
+      "quote": "Mahindra\u2019s electric 3W business IPO in pipeline: Can $1 billion valuation climb higher? ED & CEO Rajesh Jejurikar reveal",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Mahindra has won the Earthshot Prize 2026 for its clean mobility initiatives.",
+      "evidence_ids": [
+       "ev-96ba8640c5"
+      ],
+      "quote": "Mahindra Last Mile Mobility has been named the winner of The Earthshot Prize 2026 in the \u2018Clean Our Air\u2019 category for its efforts to advance cleaner last-mile mobility while supporting drivers and small businesses.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Mahindra is expanding its electric vehicle (EV) offerings with a focus on safety and performance.",
+      "evidence_ids": [
+       "ev-a752055415"
+      ],
+      "quote": "A first and a best: The XEV 9S is India\u2019s first 7-seater EV to earn the top 5-star rating, and the highest-scoring 7-seater (ICE or EV) tested to date, with 76.15 points.",
+      "label": "AI analysis"
      }
     ]
    },
@@ -2248,7 +2447,7 @@
    "id": "mk-snap-tvs-motor",
    "company": "tvs-motor",
    "company_name": "TVS Motor",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:42:41.882831+00:00",
    "completed_at": "2026-11-20T07:42:41.882831+00:00",
    "result": {
@@ -3065,7 +3264,47 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Develop a new commuter motorcycle targeting the 110cc segment.",
+      "why": "The 110cc segment has served the purpose of daily use, low running costs, and easy maintenance for many buyers.",
+      "impact": "This could help regain market share in the 110cc segment.",
+      "effort": "Moderate",
+      "kpi": "Increase in sales of new commuter motorcycle in the 110cc segment.",
+      "evidence_ids": [
+       "ev-3d071776ce",
+       "ev-7bdebafcc4"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 1
+     },
+     {
+      "action": "Focus on international markets, particularly Africa.",
+      "why": "TVS Motor is expanding its African footprint through new models and distribution partnerships.",
+      "impact": "This could increase international sales and diversify revenue streams.",
+      "effort": "High",
+      "kpi": "Increase in international sales by 20% within the next year.",
+      "evidence_ids": [
+       "ev-dd1edf1abc"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 2
+     },
+     {
+      "action": "Address succession issues within the family to maintain company stability.",
+      "why": "There is a family feud over asset control, which has taken a legal turn.",
+      "impact": "This could reduce internal conflicts and improve company performance.",
+      "effort": "High",
+      "kpi": "Decrease in legal costs by 30% within the next year.",
+      "evidence_ids": [
+       "ev-069c5f7d12"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "4 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -3075,7 +3314,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "9 stated plans found",
       "trigger": "plans_exist",
@@ -3083,6 +3322,58 @@
       "effort": "Medium",
       "kpi": "Waitlist sign-ups",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "TVS Motor has discontinued the Star City Plus in India.",
+      "evidence_ids": [
+       "ev-3d071776ce",
+       "ev-7bdebafcc4"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "The Star City Plus was part of TVS Motor's budget commuter motorcycle range.",
+      "evidence_ids": [
+       "ev-7bdebafcc4"
+      ],
+      "quote": "The Star City Plus was part of TVS Motor's budget commuter motorcycle range.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "TVS Motor's market share has increased in October 2026.",
+      "evidence_ids": [
+       "ev-87f627e49b"
+      ],
+      "quote": "India's two-wheeler industry recorded strong wholesale growth in October 2026, with Hero MotoCorp maintaining its leadership and TVS Motor strengthening its market position.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Lakshmi Venu has formally requested a partition of her branch\u2019s assets in the TVS family.",
+      "evidence_ids": [
+       "ev-f5d11f42f6",
+       "ev-f1f00eac3a",
+       "ev-b0a9929317",
+       "ev-ff6ed26049",
+       "ev-e54f1f1efe",
+       "ev-999860c0c9",
+       "ev-dd1edf1abc",
+       "ev-a9a6a7e154",
+       "ev-babfc45905",
+       "ev-069c5f7d12"
+      ],
+      "quote": "Lakshmi Venu, the daughter of TVS Holdings chairman Venu Srinivasan, has sought formal partition of assets of the Venu Srinivasan branch of the TVS family by issuing a legal notice to her father.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "TVS Motor is expanding its African footprint through new models and distribution partnerships.",
+      "evidence_ids": [
+       "ev-dd1edf1abc"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
      }
     ]
    },
@@ -3423,7 +3714,7 @@
    "id": "mk-snap-ather-energy",
    "company": "ather-energy",
    "company_name": "Ather Energy",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:43:17.453415+00:00",
    "completed_at": "2026-11-20T07:43:17.453415+00:00",
    "result": {
@@ -4216,7 +4507,48 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Invest in Ather Energy",
+      "why": "The company has achieved a first quarterly profit and is gaining traction from brokerages, indicating strong investor interest.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-0b00cfa18f",
+       "ev-9856308ef8",
+       "ev-09bc773868"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 1
+     },
+     {
+      "action": "Expand production capacity",
+      "why": "Ather Energy is facing a supply-demand gap, and expanding capacity could help meet the increasing demand.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-ef4a23d697"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 2
+     },
+     {
+      "action": "Focus on after-sales support and connected software",
+      "why": "The market is moving beyond its early subsidy-led phase, with connected software, product dependability, and after-sales support becoming more important to buyers.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-4e85a94de5"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "4 tracked rivals co-mentioned with Ather Energy.",
       "trigger": "high_rivalry",
@@ -4226,7 +4558,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "1 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -4236,7 +4568,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 3,
+      "priority": 6,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "10 stated plans found",
       "trigger": "plans_exist",
@@ -4244,6 +4576,54 @@
       "effort": "Medium",
       "kpi": "Waitlist sign-ups",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Ather Energy's market share in the electric two-wheeler segment has reached 16.32%, its highest market share to date.",
+      "evidence_ids": [
+       "ev-4e85a94de5",
+       "ev-4fff9891a5",
+       "ev-ef4a23d697",
+       "ev-282060e9a8",
+       "ev-28c70e5eac",
+       "ev-ffbdf4fc88"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Ather Energy has seen a significant increase in its open interest in derivatives, indicating strong investor interest.",
+      "evidence_ids": [
+       "ev-7cbbd6d01f"
+      ],
+      "quote": "Ather Energy's open interest in derivatives rose sharply by 6,243 contracts, a 17.39% increase from the previous OI of 35,892 to 42,135.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Ather Energy has achieved a first quarterly profit, marking a significant milestone in its financial performance.",
+      "evidence_ids": [
+       "ev-0b00cfa18f"
+      ],
+      "quote": "Ather Energy reported its first quarterly net profit in the September quarter, posting Rs 1.26 crore against a loss of Rs 154.07 crore a year earlier, as strong sales growth and improved margins helped the company\u2019s overall performance.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Ather Energy is facing a supply-demand gap, with an estimated 18,000-20,000 potential retail sales lost each month.",
+      "evidence_ids": [
+       "ev-ef4a23d697"
+      ],
+      "quote": "Ather Energy is losing an estimated 18,000-20,000 potential retail sales every month as demand outstrips production.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Investment in Ather Energy is gaining traction, with brokerages raising their price targets following strong Q2 results.",
+      "evidence_ids": [
+       "ev-9856308ef8",
+       "ev-09bc773868"
+      ],
+      "quote": "Ather Energy shares extended their rally on Tuesday, rising 4 percent in early trade after surging more than 14 percent in the previous session. Brokerages Nomura and HSBC raised their price targets following the electric two-wheeler maker's strong fiscal second quarter earnings.",
+      "label": "AI analysis"
      }
     ]
    },
@@ -4584,7 +4964,7 @@
    "id": "mk-snap-ola-electric",
    "company": "ola-electric",
    "company_name": "Ola Electric",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:43:45.752247+00:00",
    "completed_at": "2026-11-20T07:43:45.752247+00:00",
    "result": {
@@ -5451,7 +5831,52 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Implement cost-saving measures",
+      "why": "To offset the financial challenges and improve profitability.",
+      "impact": "Reduced operational costs and improved margins.",
+      "effort": "High",
+      "kpi": "Cost savings and profitability",
+      "evidence_ids": [
+       "ev-08a471d000",
+       "ev-b8c754e4ee",
+       "ev-5ee94641d9"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 1
+     },
+     {
+      "action": "Expand dealer network",
+      "why": "To increase market reach and sales.",
+      "impact": "Increased sales and market penetration.",
+      "effort": "Medium",
+      "kpi": "Number of dealer outlets and sales growth",
+      "evidence_ids": [
+       "ev-07987a9899",
+       "ev-029b51a46d",
+       "ev-bd6c99841d"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 2
+     },
+     {
+      "action": "Focus on operational efficiency",
+      "why": "To improve overall business performance and reduce losses.",
+      "impact": "Improved operational efficiency and reduced losses.",
+      "effort": "High",
+      "kpi": "Operational efficiency and loss reduction",
+      "evidence_ids": [
+       "ev-8cce85ee23",
+       "ev-25491760df",
+       "ev-51f1c2cb6e"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Run a targeted digital campaign around the strongest proven product claim",
       "why": "7P Promotion rated unknown",
       "trigger": "weak_promotion",
@@ -5461,7 +5886,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Address the recurring complaint themes publicly with a service-quality fix",
       "why": "Indicative tone -0.16",
       "trigger": "negative_tone",
@@ -5471,7 +5896,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 3,
+      "priority": 6,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "5 tracked rivals co-mentioned with Ola Electric.",
       "trigger": "high_rivalry",
@@ -5481,7 +5906,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 4,
+      "priority": 7,
       "action": "Reduce dependence on discounts and subsidies with value bundles (service, warranty)",
       "why": "1 price-cut / discount / subsidy mentions.",
       "trigger": "buyer_power",
@@ -5491,7 +5916,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 5,
+      "priority": 8,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "10 stated plans found",
       "trigger": "plans_exist",
@@ -5499,6 +5924,58 @@
       "effort": "Medium",
       "kpi": "Waitlist sign-ups",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Ola Electric expects a 20% cost advantage from in-house battery cells.",
+      "evidence_ids": [
+       "ev-08a471d000",
+       "ev-b8c754e4ee",
+       "ev-5ee94641d9"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Ola Electric is shifting to a dealer-led sales and service network.",
+      "evidence_ids": [
+       "ev-07987a9899",
+       "ev-029b51a46d",
+       "ev-bd6c99841d"
+      ],
+      "quote": "Ola Electric Mobility is shutting down most of its company-owned retail outlets across India by December 2026 to transition entirely to an independent dealer-led sales and service network.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Ola Electric is facing financial challenges, with revenue declining and losses widening.",
+      "evidence_ids": [
+       "ev-8cce85ee23",
+       "ev-25491760df",
+       "ev-51f1c2cb6e"
+      ],
+      "quote": "Ola Electric reported a consolidated net loss of \u20b9362 crore for the second quarter of FY27, narrowing 13.4 per cent from a net loss of \u20b9418 crore in the corresponding quarter of the previous financial year.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Ola Electric is focusing on cost savings through in-house battery cell manufacturing.",
+      "evidence_ids": [
+       "ev-08a471d000",
+       "ev-b8c754e4ee",
+       "ev-5ee94641d9"
+      ],
+      "quote": "If I make my own cells, I will get about a 20% cost advantage at the right scale of production of my cells.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Ola Electric is reducing its direct-to-consumer model and increasing dealer outlets.",
+      "evidence_ids": [
+       "ev-07987a9899",
+       "ev-029b51a46d",
+       "ev-bd6c99841d"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
      }
     ]
    },
@@ -5839,7 +6316,7 @@
    "id": "mk-snap-exide",
    "company": "exide",
    "company_name": "Exide Industries",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:44:19.718590+00:00",
    "completed_at": "2026-11-20T07:44:19.718590+00:00",
    "result": {
@@ -6580,7 +7057,51 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Invest in digital transformation",
+      "why": "Exide is already leveraging Salesforce to enhance customer experience and operational efficiency, indicating a strong interest in digital transformation.",
+      "impact": "Improving customer satisfaction and operational efficiency can lead to increased market share and customer loyalty.",
+      "effort": "High",
+      "kpi": "Customer satisfaction scores, operational efficiency metrics",
+      "evidence_ids": [
+       "ev-dc16857b7e",
+       "ev-52cbe47875",
+       "ev-ecc9e2fce2"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 1
+     },
+     {
+      "action": "Expand into new markets",
+      "why": "Exide is investing in the lithium-ion battery sector and renewable energy, indicating a willingness to explore new markets.",
+      "impact": "Expanding into new markets can diversify revenue streams and reduce dependency on traditional segments.",
+      "effort": "Medium",
+      "kpi": "New market penetration, revenue from new segments",
+      "evidence_ids": [
+       "ev-c21faf84fa",
+       "ev-3df37eab7a",
+       "ev-9feaa7c656"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 2
+     },
+     {
+      "action": "Focus on cost optimization",
+      "why": "Exide is facing high input costs, which are impacting its profitability.",
+      "impact": "Cost optimization can improve profitability and maintain competitive pricing.",
+      "effort": "High",
+      "kpi": "Cost reduction metrics, gross margin",
+      "evidence_ids": [
+       "ev-a58788b914",
+       "ev-8fb1a98b27"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 3
+     },
+     {
+      "priority": 4,
       "action": "Expand touchpoints in under-served cities via partner dealers or experience zones",
       "why": "7P Place rated weak",
       "trigger": "weak_place",
@@ -6590,7 +7111,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 5,
       "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
       "why": "1 stated plans found",
       "trigger": "plans_exist",
@@ -6598,6 +7119,58 @@
       "effort": "Medium",
       "kpi": "Waitlist sign-ups",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Exide Industries is expanding its operations into the lithium-ion battery sector.",
+      "evidence_ids": [
+       "ev-c21faf84fa",
+       "ev-e6e7e8f0f9",
+       "ev-3df37eab7a",
+       "ev-9feaa7c656"
+      ],
+      "quote": "Exide Industries has announced its financial results for the second quarter of FY27, reporting a substantial 75.1% year-on-year increase in Profit After Tax (PAT) to \u20b9386 crore. This growth was driven by a 20.3% rise in standalone revenue to \u20b95,026 crore. The company also highlighted the successful commissioning of its 6 GWh lithium-ion cell gigafactory in Bengaluru, marking a significant step in its new energy business.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Exide is leveraging Salesforce to enhance customer experience and operational efficiency.",
+      "evidence_ids": [
+       "ev-dc16857b7e",
+       "ev-52cbe47875",
+       "ev-ecc9e2fce2"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Exide is focusing on renewable energy and defence sectors through significant investments.",
+      "evidence_ids": [
+       "ev-cea08e332d"
+      ],
+      "quote": "Jai Balaji Group announces a \u20b96,000 crore investment in West Bengal, targeting specialised steel, defence, aerospace, and renewable energy, creating 20,000+ jobs.",
+      "label": "AI analysis"
+     },
+     {
+      "claim": "Exide is actively bidding for government incentives for battery manufacturing.",
+      "evidence_ids": [
+       "ev-c21faf84fa",
+       "ev-6c373407d0"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Exide is experiencing strong growth in its core lead-acid battery business.",
+      "evidence_ids": [
+       "ev-a58788b914",
+       "ev-8fb1a98b27",
+       "ev-38655c8e97",
+       "ev-3df37eab7a",
+       "ev-9feaa7c656"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
      }
     ]
    },
@@ -6938,7 +7511,7 @@
    "id": "mk-snap-amara-raja",
    "company": "amara-raja",
    "company_name": "Amara Raja Energy & Mobility",
-   "mode": "rule",
+   "mode": "ai",
    "created_at": "2026-11-20T07:44:47.914069+00:00",
    "completed_at": "2026-11-20T07:44:47.914069+00:00",
    "result": {
@@ -7631,7 +8204,74 @@
     ],
     "recommendations": [
      {
-      "priority": 1,
+      "action": "Monitor stock price trends",
+      "why": "The stock has shown significant volatility, and understanding the trends can help in making informed investment decisions.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-2b13b8825e"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 1
+     },
+     {
+      "action": "Focus on grid-scale stationary storage opportunities",
+      "why": "The company is actively participating in the PLI scheme for grid-scale stationary storage applications, which could be a significant growth area.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-e6e7e8f0f9",
+       "ev-6c373407d0"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 2
+     },
+     {
+      "action": "Address cost pressures",
+      "why": "Rising raw material costs have significantly impacted the company's profitability, and addressing these costs is crucial for long-term growth.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-6358378a94",
+       "ev-abe027f98e"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 3
+     },
+     {
+      "action": "Engage with the new corporate affairs head",
+      "why": "The appointment of Dheeraj Jain as the new Head of Corporate Affairs could bring new strategies and initiatives to the company.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-9caf10bab1"
+      ],
+      "label": "AI recommendation",
+      "verified": false,
+      "priority": 4
+     },
+     {
+      "action": "Evaluate the impact of the PLI scheme",
+      "why": "Participating in the PLI scheme for advanced chemistry cell manufacturing could provide significant opportunities for growth and profitability.",
+      "impact": null,
+      "effort": null,
+      "kpi": null,
+      "evidence_ids": [
+       "ev-6c373407d0"
+      ],
+      "label": "AI recommendation",
+      "verified": true,
+      "priority": 5
+     },
+     {
+      "priority": 6,
       "action": "Run a targeted digital campaign around the strongest proven product claim",
       "why": "7P Promotion rated unknown",
       "trigger": "weak_promotion",
@@ -7641,7 +8281,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 2,
+      "priority": 7,
       "action": "Expand touchpoints in under-served cities via partner dealers or experience zones",
       "why": "7P Place rated unknown",
       "trigger": "weak_place",
@@ -7651,7 +8291,7 @@
       "label": "Rule-based recommendation"
      },
      {
-      "priority": 3,
+      "priority": 8,
       "action": "Sharpen positioning on one differentiator versus the most co-mentioned rival",
       "why": "5 tracked rivals co-mentioned with Amara Raja Energy & Mobility.",
       "trigger": "high_rivalry",
@@ -7659,26 +8299,50 @@
       "effort": "Low",
       "kpi": "Win-rate versus named rival",
       "label": "Rule-based recommendation"
+     }
+    ],
+    "ai_insights": [
+     {
+      "claim": "Amara Raja Energy & Mobility's stock price has shown volatility over the past year.",
+      "evidence_ids": [
+       "ev-2b13b8825e"
+      ],
+      "quote": "This price remains significantly below its 52-week high of \u20b91,017.20, while comfortably above the 52-week low of \u20b9671.45, indicating a wide range of volatility over the past year.",
+      "label": "AI analysis"
      },
      {
-      "priority": 4,
-      "action": "Pre-build demand for the announced plans (waitlists, pilots) ahead of launch",
-      "why": "5 stated plans found",
-      "trigger": "plans_exist",
-      "impact": "Faster ramp after launch",
-      "effort": "Medium",
-      "kpi": "Waitlist sign-ups",
-      "label": "Rule-based recommendation"
+      "claim": "Amara Raja Energy & Mobility is focusing on grid-scale stationary storage (GSSS) applications through the PLI scheme.",
+      "evidence_ids": [
+       "ev-e6e7e8f0f9",
+       "ev-6c373407d0"
+      ],
+      "quote": "The 10 GWh capacity on offer is earmarked for grid-scale stationary storage (GSSS) applications.",
+      "label": "AI analysis"
      },
      {
-      "priority": 5,
-      "action": "Invest in the weakest moat dimension that rivals already use (see Moat)",
-      "why": "Moat weak/unknown: Brand, Network effects, Switching costs",
-      "trigger": "weak_moat",
-      "impact": "Longer-term defensibility",
-      "effort": "High",
-      "kpi": "Moat evidence count next quarter",
-      "label": "Rule-based recommendation"
+      "claim": "Amara Raja Energy & Mobility's Q2 FY27 results showed a 45% decline in net profit, driven by rising raw material costs.",
+      "evidence_ids": [
+       "ev-6358378a94",
+       "ev-abe027f98e"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Amara Raja Energy & Mobility is expanding its corporate affairs team with the appointment of Dheeraj Jain.",
+      "evidence_ids": [
+       "ev-9caf10bab1"
+      ],
+      "quote": null,
+      "label": "AI analysis (not quote-verified)"
+     },
+     {
+      "claim": "Amara Raja Energy & Mobility is experiencing a shift in its technical trend from bearish to mildly bullish.",
+      "evidence_ids": [
+       "ev-2b13b8825e"
+      ],
+      "quote": "Amara Raja Energy & Mobility\u2019s technical trend has shifted from bearish to mildly b",
+      "label": "AI analysis"
      }
     ]
    },

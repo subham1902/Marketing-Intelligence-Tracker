@@ -130,6 +130,7 @@ export function LLMPanel({ open, onClose }: { open: boolean; onClose: () => void
                 <p className="mt-1 text-sm text-muted-foreground">
                   Optional. Research always works without it: every finding stays quoted and linked to its source.
                 </p>
+                <p className="mt-1 text-xs text-primary">Tip: add a free Groq key to enable AI analysis in Marketing Analysis (claims are quote-checked).</p>
               </div>
               <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close">
                 <X className="h-4 w-4" />

@@ -6,7 +6,7 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { EmptyState } from "@/components/empty-state";
-import { AnalysisBody, EvidenceCtx, SECTIONS } from "@/components/marketing/sections";
+import { AnalysisBody, CompareTable, EvidenceCtx, SECTIONS } from "@/components/marketing/sections";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -46,6 +46,10 @@ function MarketingView() {
   useAnalysisActivity(analysis.data);
   const start = useStartAnalysis();
   const [custom, setCustom] = useState("");
+  const [vs, setVs] = useState("");
+  const vsList = useAnalyses(vs || undefined);
+  const vsLatest = vs ? vsList.data?.find((x) => x.status === "completed") : undefined;
+  const vsFull = useAnalysis(vsLatest?.id);
   const ids = useMemo(() => SECTIONS.map((s) => s[0]), []);
   const a = analysis.data;
   const ready = a?.status === "completed" && !!a.result;
@@ -183,6 +187,22 @@ function MarketingView() {
             </nav>
             <div className="min-w-0">
               <h1 className="mb-3 hidden text-2xl font-bold print:block">Marketing Analysis: {name}</h1>
+              <div className="mb-4 flex flex-wrap items-center gap-2 text-sm print:hidden">
+                <span className="text-muted-foreground">Compare with</span>
+                <select aria-label="Compare with" className="h-8 rounded-md border bg-background px-2 text-sm" value={vs} onChange={(e) => setVs(e.target.value)}>
+                  <option value="">None</option>
+                  {(companies.data ?? []).filter((c) => c.id !== a.company).map((c) => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+                {vs && vsFull.isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
+                {vs && !vsList.isLoading && !vsLatest && <span className="text-xs text-muted-foreground">No analysis yet for that company.</span>}
+              </div>
+              {vsFull.data?.result && (
+                <div className="mb-4">
+                  <CompareTable a={a.result} b={vsFull.data.result} nameA={name} nameB={vsFull.data.company_name ?? vs} />
+                </div>
+              )}
               <AnalysisBody r={a.result} company={name} />
               <p className="mt-6 text-xs text-muted-foreground">
                 Labels: Evidence = quoted from a fetched public source · Analysis = transparent rule over that evidence · Forecast = projection from stated plans · AI analysis = model output checked against the cited quote.
